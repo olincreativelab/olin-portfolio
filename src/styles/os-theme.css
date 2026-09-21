@@ -1379,3 +1379,461 @@ body[data-mode="builder"] .minimap-node.active .minimap-node-thumb {
   background: #38BDF8;
 }
 
+/* ==========================================================================
+   14. OPEN CANVAS WORKSPACE & SECTIONS (No Redundant OS Windows)
+   ========================================================================== */
+.canvas-section {
+  position: relative;
+  margin-bottom: 64px;
+}
+
+.canvas-section-header {
+  margin-bottom: 28px;
+}
+
+.canvas-frame-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-tech);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-electric-blue);
+  background: rgba(78, 75, 245, 0.08);
+  border: 1px solid rgba(78, 75, 245, 0.2);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+body[data-mode="builder"] .canvas-frame-tag {
+  color: #38BDF8;
+  background: rgba(56, 189, 248, 0.12);
+  border-color: rgba(56, 189, 248, 0.25);
+}
+
+.canvas-tag-meta {
+  color: var(--color-muted-blueprint);
+  font-size: 10px;
+  font-weight: 500;
+  padding-left: 6px;
+  border-left: 1px solid rgba(78, 75, 245, 0.2);
+}
+
+.canvas-section-title {
+  font-family: var(--font-brand);
+  font-size: clamp(24px, 2.8vw, 36px);
+  font-weight: 900;
+  color: var(--color-dark-ink);
+  letter-spacing: -0.6px;
+  line-height: 1.2;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+body[data-mode="builder"] .canvas-section-title {
+  color: #F8FAFC;
+}
+
+.canvas-section-sub {
+  font-family: var(--font-brand);
+  font-size: 15.5px;
+  color: var(--color-slate-body);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 680px;
+}
+
+body[data-mode="builder"] .canvas-section-sub {
+  color: #94A3B8;
+}
+
+/* --------------------------------------------------------------------------
+   15. DREAMING AI IN CLOUDS DIORAMA (Poétique & Aérien)
+   -------------------------------------------------------------------------- */
+.dreaming-ai-diorama {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #F0F4FF 0%, #E8EEFF 50%, #FDF4EB 100%);
+  border: 1.5px solid rgba(78, 75, 245, 0.16);
+  box-shadow: 0 16px 40px rgba(78, 75, 245, 0.09), 0 2px 6px rgba(1, 5, 15, 0.03);
+  margin-top: 32px;
+  padding: 8px 8px 16px;
+}
+
+body[data-mode="builder"] .dreaming-ai-diorama {
+  background: linear-gradient(135deg, #0B0F19 0%, #111827 50%, #172554 100%);
+  border-color: rgba(56, 189, 248, 0.25);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.dreaming-ai-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 14px 10px;
+  font-family: var(--font-tech);
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #4F46E5;
+}
+
+body[data-mode="builder"] .dreaming-ai-header {
+  color: #38BDF8;
+}
+
+.dreaming-ai-canvas-wrap {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  max-height: 480px;
+}
+
+.dreaming-ai-img {
+  width: 100%;
+  height: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dreaming-ai-diorama:hover .dreaming-ai-img {
+  transform: scale(1.02);
+}
+
+.dreaming-ai-caption-overlay {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  right: 18px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  box-shadow: 0 8px 30px rgba(1, 5, 15, 0.14);
+}
+
+body[data-mode="builder"] .dreaming-ai-caption-overlay {
+  background: rgba(11, 15, 25, 0.92);
+  border-color: rgba(56, 189, 248, 0.3);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.dreaming-ai-text {
+  font-family: var(--font-brand);
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--color-dark-ink);
+}
+
+body[data-mode="builder"] .dreaming-ai-text {
+  color: #F8FAFC;
+}
+
+.dreaming-ai-text strong {
+  color: var(--color-electric-blue);
+}
+
+body[data-mode="builder"] .dreaming-ai-text strong {
+  color: #38BDF8;
+}
+
+.dreaming-ai-badge {
+  flex-shrink: 0;
+  background: #FEF08A;
+  color: #854D0E;
+  border: 1.5px solid #FACC15;
+  font-family: var(--font-tech);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+}
+
+/* --------------------------------------------------------------------------
+   16. AUTHENTIC FIGJAM BOARD (Act 3 : L'Atelier des Superpouvoirs)
+   -------------------------------------------------------------------------- */
+.figjam-board-frame {
+  position: relative;
+  background: #FAF8F5;
+  border: 2px solid #8718DC;
+  border-radius: 18px;
+  padding: 12px 14px 28px;
+  box-shadow: 0 20px 50px rgba(135, 24, 220, 0.12), 0 4px 12px rgba(1, 5, 15, 0.04);
+}
+
+body[data-mode="builder"] .figjam-board-frame {
+  background: #0B0F19;
+  border-color: #A855F7;
+  box-shadow: 0 20px 50px rgba(168, 85, 247, 0.16);
+}
+
+.figjam-board-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 10px 14px;
+  font-family: var(--font-tech);
+  font-size: 11px;
+  font-weight: 800;
+  color: #8718DC;
+  letter-spacing: 0.5px;
+}
+
+body[data-mode="builder"] .figjam-board-header {
+  color: #C084FC;
+}
+
+.figjam-board-canvas {
+  position: relative;
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  background-image: radial-gradient(#E2E8F0 1.2px, transparent 1.2px);
+  background-size: 20px 20px;
+  padding: 36px 28px;
+  border: 1px dashed rgba(135, 24, 220, 0.3);
+}
+
+body[data-mode="builder"] .figjam-board-canvas {
+  background-color: #0F172A;
+  background-image: radial-gradient(rgba(148, 163, 184, 0.15) 1.2px, transparent 1.2px);
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+.figjam-sticky-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+@media (max-width: 980px) {
+  .figjam-sticky-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* The Authentic FigJam Sticky Note */
+.figjam-sticky-note {
+  position: relative;
+  padding: 28px 22px 20px;
+  border-radius: 6px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.09), 0 2px 5px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s var(--ease-spring), box-shadow 0.25s ease;
+  user-select: none;
+}
+
+.figjam-sticky-note:hover {
+  transform: translateY(-6px) scale(1.02) !important;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.14);
+  z-index: 10;
+}
+
+.figjam-sticky-note.yellow {
+  background: #FEF08A;
+  color: #713F12;
+  transform: rotate(-1.5deg);
+}
+
+.figjam-sticky-note.mint {
+  background: #D1FAE5;
+  color: #064E3B;
+  transform: rotate(1.2deg);
+}
+
+.figjam-sticky-note.purple {
+  background: #EDE9FE;
+  color: #4C1D95;
+  transform: rotate(-1deg);
+}
+
+/* Washi Tape Strip on Top */
+.figjam-washi {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(1deg);
+  width: 72px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-left: 2px dashed rgba(0, 0, 0, 0.15);
+  border-right: 2px dashed rgba(0, 0, 0, 0.15);
+}
+
+.sticky-top-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.sticky-number {
+  font-family: var(--font-tech);
+  font-size: 11px;
+  font-weight: 800;
+  opacity: 0.65;
+}
+
+.sticky-title {
+  font-family: var(--font-brand);
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.3;
+  margin: 0 0 10px;
+}
+
+.sticky-desc {
+  font-family: var(--font-brand);
+  font-size: 13.5px;
+  line-height: 1.55;
+  opacity: 0.9;
+  margin: 0 0 18px;
+  flex-grow: 1;
+}
+
+.sticky-tags-cluster {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.sticky-tag {
+  font-family: var(--font-tech);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.sticky-author-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(0, 0, 0, 0.15);
+  font-family: var(--font-tech);
+  font-size: 10px;
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+/* --------------------------------------------------------------------------
+   17. COMPUTER SCREENS AS PUNCTUATIONS (Act 4 : Cas d'études en production)
+   -------------------------------------------------------------------------- */
+.project-screens-list {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.project-computer-screen {
+  position: relative;
+  border-radius: 18px;
+  background: #FFFFFF;
+  border: 1.5px solid rgba(78, 75, 245, 0.18);
+  box-shadow: 0 20px 50px rgba(78, 75, 245, 0.1), 0 4px 12px rgba(1, 5, 15, 0.05);
+  overflow: hidden;
+  transition: transform var(--trans-smooth), box-shadow var(--trans-smooth);
+}
+
+.project-computer-screen:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 60px rgba(78, 75, 245, 0.16);
+}
+
+body[data-mode="builder"] .project-computer-screen {
+  background: #0F172A;
+  border-color: rgba(56, 189, 248, 0.25);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Screen Chrome (macOS / Tablette / Monitor Bar) */
+.screen-chrome-bar {
+  background: #F1F5F9;
+  border-bottom: 1px solid #E2E8F0;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-tech);
+  font-size: 11px;
+  user-select: none;
+}
+
+body[data-mode="builder"] .screen-chrome-bar {
+  background: #1E293B;
+  border-bottom-color: rgba(56, 189, 248, 0.2);
+  color: #94A3B8;
+}
+
+.screen-dots {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.screen-url-badge {
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  border-radius: 6px;
+  padding: 3px 14px;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--color-slate-body);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+body[data-mode="builder"] .screen-url-badge {
+  background: #0B0F19;
+  border-color: rgba(56, 189, 248, 0.3);
+  color: #38BDF8;
+}
+
+.screen-status-badge {
+  font-weight: 700;
+  font-size: 10px;
+  color: #059669;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.screen-status-badge::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10B981;
+}
+
+.screen-viewport {
+  padding: 32px 36px;
+}
+
+@media (max-width: 768px) {
+  .screen-viewport {
+    padding: 20px 16px;
+  }
+}
+
+
