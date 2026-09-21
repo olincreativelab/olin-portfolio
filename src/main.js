@@ -175,7 +175,7 @@ if (modalBackdrop) {
   });
 }
 
-// Live OS Clock (Nantes / Paris CET time)
+// Live OS Clock (Montaigu / Europe/Paris CET time)
 function updateOsClock() {
   const clockEl = document.getElementById("os-live-clock");
   if (!clockEl) return;
@@ -186,10 +186,37 @@ function updateOsClock() {
     minute: "2-digit",
     second: "2-digit"
   });
-  clockEl.textContent = `Nantes ${timeString}`;
+  clockEl.textContent = `Montaigu ${timeString}`;
 }
 setInterval(updateOsClock, 1000);
 updateOsClock();
+
+// Finder Master-Detail Interaction (Side-panel project switcher)
+function initFinderInteraction() {
+  const folderItems = document.querySelectorAll(".finder-folder-item");
+  const projectCards = document.querySelectorAll(".finder-project-card");
+
+  folderItems.forEach(item => {
+    item.addEventListener("click", () => {
+      const targetId = item.getAttribute("data-finder-target");
+      if (!targetId) return;
+
+      // Update active sidebar item
+      folderItems.forEach(f => f.classList.remove("active"));
+      item.classList.add("active");
+
+      // Update active project stage card with smooth transition
+      projectCards.forEach(card => {
+        if (card.getAttribute("data-finder-id") === targetId) {
+          card.classList.add("active");
+        } else {
+          card.classList.remove("active");
+        }
+      });
+    });
+  });
+}
+initFinderInteraction();
 
 // Escape key to close modal
 document.addEventListener("keydown", (e) => {
@@ -330,8 +357,8 @@ if (btnDesign && btnBuilder) {
    -------------------------------------------------------------------------- */
 const minimapNodes = document.querySelectorAll(".minimap-node");
 const minimapPct = document.getElementById("minimap-pct");
-const sectionIds = ["bureau", "profil", "services", "projets", "contact"];
-const sections = sectionIds.map(id => document.getElementById(id));
+const sectionIds = ["hero", "bureau", "atelier", "profil", "services", "projets", "contact"];
+const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
 
 function updateMinimap() {
   const scrollY = window.scrollY;

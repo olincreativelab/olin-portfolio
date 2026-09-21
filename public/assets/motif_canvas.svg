@@ -1,0 +1,10 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<path d="M0 0H400V400H0V0Z" fill="#FDFAFE"/>
+<path d="M0 0H400V400H0V0Z" fill="url(#pattern0_4285_96248)" fill-opacity="0.2"/>
+<defs>
+<pattern id="pattern0_4285_96248" patternUnits="userSpaceOnUse" patternTransform="matrix(4.17 0 0 4.17 0 0)" preserveAspectRatio="none" viewBox="0 0 3 3" width="1" height="1">
+<g id="pattern0_4285_96248_inner">
+<circle cx="0.5" cy="0.5" r="0.5" fill="#7A7AFF"/>
+</g>
+</pattern></defs>
+</svg>

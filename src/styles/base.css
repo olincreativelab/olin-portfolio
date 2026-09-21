@@ -10,10 +10,11 @@ html {
 }
 
 body {
-  background-color: var(--color-canvas-bg);
-  /* Live Figma/FigJam Canvas Dot Grid */
-  background-image: radial-gradient(rgba(78, 75, 245, 0.08) 1.2px, transparent 1.2px);
-  background-size: 28px 28px;
+  background-color: #FDFAFE;
+  /* Authentic Vector FigJam/Figma Dot-Grid Pattern */
+  background-image: url('/assets/motif_canvas.svg');
+  background-size: 400px 400px;
+  background-repeat: repeat;
   font-family: var(--font-body);
   color: var(--color-dark-ink);
   line-height: 1.55;
@@ -21,6 +22,39 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   IMPECCABLE BROWSER SURFACES: SELECTION & SCROLLBAR
+   -------------------------------------------------------------------------- */
+::selection {
+  background: #4353FF;
+  color: #FFFFFF;
+}
+
+::-moz-selection {
+  background: #4353FF;
+  color: #FFFFFF;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FDFAFE;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(67, 83, 255, 0.28);
+  border-radius: 9999px;
+  border: 2px solid #FDFAFE;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(67, 83, 255, 0.6);
 }
 
 /* Base link and button resets */
