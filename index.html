@@ -6,10 +6,10 @@
   <title>Josselin Hillion — Senior Product Designer &amp; Builder | Olin.os</title>
   <meta name="description" content="Portfolio de Josselin Hillion : Senior Product Designer & Builder (ENSAM x EDNA). 10 ans d'expérience à relier vision prospective, ergonomie terrain et build fonctionnel." />
 
-  <!-- Google Fonts: Geologica (Display & Text), Kode Mono (Tech/OS labels) -->
+  <!-- Google Fonts: Instrument Serif, Geologica, Space Grotesk, Kode Mono, Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600;700;800;900&family=Kode+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Geologica:ital,wght@0,300..900;1,700;1,800;1,900&family=Space+Grotesk:wght@500;600;700&family=Kode+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/src/styles/tokens.css" />
@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="/src/styles/hero.css" />
   <link rel="stylesheet" href="/src/styles/components.css" />
   <link rel="stylesheet" href="/src/styles/os-theme.css" />
+  <link rel="stylesheet" href="/src/styles/direction-hero.css" />
 </head>
 <body>
 
@@ -67,105 +68,113 @@
     <!-- -----------------------------------------------------------------------
          ACTE 1: LE HERO CANVAS OUVERT (Inspiration UMI)
          ----------------------------------------------------------------------- -->
+    <!-- -----------------------------------------------------------------------
+         ACTE 1: LE HERO CANVAS DIRECTION (Inspiration Figma Olin)
+         ----------------------------------------------------------------------- -->
     <div class="parallax-wrapper">
-      <div class="parallax-side-anchor left" style="top: 120px;">
-        <div class="parallax-card accent-yellow">
-          ☁️ <strong>L'établi du builder</strong><br />
-          <span style="font-size: 10px; opacity: 0.85;">Vision &amp; poésie d'usage</span>
-        </div>
-      </div>
-      <div class="parallax-side-anchor right" style="top: 180px;">
-        <div class="parallax-card accent-blue">
-          ⚡️ <strong>Zero Opinion</strong><br />
-          <span style="font-size: 10px; opacity: 0.85;">La décision par la preuve</span>
-        </div>
-      </div>
+      <section id="hero" class="direction-hero-section">
+        
+        <!-- Top bar floating stickers -->
+        <div class="direction-top-bar">
+          <div class="direction-sticker-brand">
+            <svg class="sticker-window-icon" width="44" height="44" viewBox="0 0 48 48" fill="none">
+              <rect x="6" y="8" width="34" height="30" rx="6" transform="rotate(-6 23 23)" fill="#FFFFFF" stroke="#0F0C20" stroke-width="2.5"/>
+              <rect x="6" y="8" width="34" height="8" rx="4" transform="rotate(-6 23 23)" fill="#0F0C20"/>
+              <circle cx="12" cy="12" r="1.5" transform="rotate(-6 23 23)" fill="#FFFFFF"/>
+              <circle cx="16" cy="12" r="1.5" transform="rotate(-6 23 23)" fill="#FFFFFF"/>
+              <path d="M14 26C16 29 22 30 26 25" transform="rotate(-6 23 23)" stroke="#0F0C20" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
 
-      <section id="hero" class="umi-hero-section">
-        <!-- Floating Constellation of Orbiting Artifacts -->
-        <div class="umi-orbit-wrapper">
+          <div class="direction-pill-status">
+            <span class="status-pulse-green"></span>
+            <span class="status-text">DISPONIBLE · Q3/Q4 2026</span>
+          </div>
+        </div>
+
+        <!-- Grand Titre Asymétrique Studio -->
+        <div class="direction-title-block">
+          <div class="title-row row-1">
+            <span class="font-serif-ital">TRANS</span><span class="font-sans-heavy-ital">FORMONS</span>
+          </div>
+          <div class="title-row row-2">
+            <span class="font-sans-heavy-ital">VOS SERVICES</span>
+          </div>
+          <div class="title-row row-3-purple">
+            <div class="purple-line-1">
+              <span class="font-sans-heavy-ital color-purple">EN EXPÉRIENCES</span>
+            </div>
+            <div class="purple-line-2">
+              <span class="font-sans-heavy-ital color-purple">CLIENT UNIQUES !</span><span class="cursor-blink">_</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Zone inférieure du Viewport 1 (Terminal Readme à gauche + Nav Canvas à droite) -->
+        <div class="direction-viewport-lower">
           
-          <!-- Top Left: Olin Brand Card with Vector Smile Pattern -->
-          <div class="umi-orbit-item orbit-tl">
-            <div class="brand-orbit-card">
-              <div class="brand-orbit-texture"></div>
-              <img src="/assets/olin_logo_white.png" alt="Olin Logo" class="brand-orbit-logo" id="mascot-img" />
-              <div class="brand-orbit-quip" id="mascot-bubble">Promis, ici pas de lorem ipsum ! 👀</div>
+          <!-- Terminal Readme.md -->
+          <div class="direction-readme-card" id="readme-terminal">
+            <div class="readme-header">
+              <div class="readme-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="readme-title">Readme.md</div>
+            </div>
+            <div class="readme-body">
+              <p>En tant que designer de services, j'allie UX strat, CX et intelligence artificielle pour transformer vos défis en solutions créatives.</p>
+              <p>Mon approche centrée sur l'utilisateur garantit une expérience fluide et engageante, tout en optimisant les processus métiers.</p>
+              <div class="readme-actions">
+                <a href="#projets" class="btn-readme-primary">
+                  <span>explorez les projets</span>
+                  <span class="btn-arrow">↓</span>
+                </a>
+                <a href="#contact" class="btn-readme-link">
+                  <span>discutons</span>
+                  <span class="btn-arrow">↗</span>
+                </a>
+              </div>
             </div>
           </div>
 
-          <!-- Top Right: Double Diploma Card ENSAM x EDNA -->
-          <div class="umi-orbit-item orbit-tr">
-            <div class="diploma-orbit-card">
-              <span class="figjam-author-tag">↖ Josselin (Owner)</span>
-              <div class="diploma-title">🎓 DOUBLE DIPLÔME</div>
-              <div class="diploma-schools">ENSAM <span>(Ingénierie)</span> × EDNA <span>(Design UX)</span></div>
-              <span class="diploma-badge">7 ans Grands Comptes &amp; Scale-ups</span>
-            </div>
-          </div>
-
-          <!-- Mid Left: Sticky Chip Immersion Terrain -->
-          <div class="umi-orbit-item orbit-ml">
-            <div class="figjam-sticky-chip yellow">
-              <span>📌</span>
-              <span>Immersion terrain chantiers</span>
-            </div>
-          </div>
-
-          <!-- Mid Right: Sticky Chip 100% Code Prod -->
-          <div class="umi-orbit-item orbit-mr">
-            <div class="figjam-sticky-chip mint">
-              <span>⚡️</span>
-              <span>100% Code en Prod</span>
-            </div>
-          </div>
-
-          <!-- Bottom Left: Pill Badge Testé avec des gants -->
-          <div class="umi-orbit-item orbit-bl">
-            <div class="figjam-pill-badge purple">
-              <span>🧤 Testé avec des gants &amp; plein soleil</span>
-            </div>
-          </div>
-
-          <!-- Bottom Right: Pill Badge Zéro Bullshit -->
-          <div class="umi-orbit-item orbit-br">
-            <div class="figjam-pill-badge blue">
-              <span>🎯 Zéro Bullshit • Décision par la preuve</span>
-            </div>
+          <!-- Nav Canvas Flottante (Angle Droit) -->
+          <div class="direction-canvas-panel">
+            <div class="canvas-panel-header">OLIN.OS CANVAS <span id="canvas-scroll-pct">0%</span></div>
+            <nav class="canvas-panel-nav">
+              <a href="#hero" class="canvas-nav-item active">BUREAU</a>
+              <a href="#atelier" class="canvas-nav-item">ATELIER</a>
+              <a href="#projets" class="canvas-nav-item">PROJETS</a>
+              <a href="#contact" class="canvas-nav-item highlight">DISCUTONS !</a>
+            </nav>
           </div>
 
         </div>
 
-        <!-- Central Core: Manifesto & Direct Actions -->
-        <div class="umi-central-core">
-          <div class="umi-tag-pill">
-            <span class="live-pulse-dot"></span>
-            <span>THE POETIC BUILDER CANVAS // MONTAIGU &amp; NANTES</span>
+        <!-- Carte About this person (À cheval sur le pli 810px) -->
+        <div class="direction-about-person-card" id="about-person-window">
+          <div class="about-window-header">
+            <div class="about-window-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="about-window-title">About this person</div>
           </div>
-
-          <h1 class="umi-headline">
-            « LA TÊTE DANS LES NUAGES,<br />
-            <span class="umi-headline-highlight">LES MAINS DANS LE CONCRET.</span> »
-          </h1>
-
-          <p class="umi-subheadline">
-            <strong>Senior Product Designer &amp; Builder.</strong> 10 ans d’immersion à relier vision prospective, ergonomie terrain et build fonctionnel pour dompter la complexité logicielle sans jamais sacrifier la poésie d'usage.
-          </p>
-
-          <div class="umi-actions-row">
-            <a href="#projets" class="umi-btn-primary">
-              <span>Explorer les dossiers projets</span>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
-            </a>
-            <a href="#contact" class="umi-btn-secondary">
-              <span>Prendre contact</span>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-            </a>
+          <div class="about-window-body">
+            <div class="about-avatar-wrapper">
+              <div class="about-avatar-bg">
+                <img src="/assets/motif_patries_olin.svg" alt="" class="about-avatar-pattern" />
+                <img src="/assets/josselin_avatar_clean.png" alt="Josselin Hillion" class="about-avatar-photo" />
+              </div>
+            </div>
+            <h3 class="about-person-role">SENIOR PRODUCT<br />DESIGNER &amp; BUILDER</h3>
+            <div class="about-person-brand">OLIN</div>
+            <div class="about-person-name">name <strong>Josselin Hillion</strong></div>
+            <a href="#atelier" class="about-person-link">en savoir plus ↗</a>
           </div>
-
-          <!-- Quick alias anchor -->
-          <span id="bureau" style="display: block; position: relative; top: -100px; visibility: hidden;"></span>
         </div>
+
+        <!-- Quick alias anchor -->
+        <span id="bureau" style="display: block; position: relative; top: -100px; visibility: hidden;"></span>
+
       </section>
     </div>
 

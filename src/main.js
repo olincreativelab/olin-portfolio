@@ -402,6 +402,24 @@ minimapNodes.forEach(node => {
 });
 
 /* --------------------------------------------------------------------------
+   DIRECTION CANVAS SCROLL PERCENTAGE LISTENER
+   -------------------------------------------------------------------------- */
+const canvasScrollPct = document.getElementById("canvas-scroll-pct");
+window.addEventListener("scroll", () => {
+  if (canvasScrollPct) {
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const currentScroll = window.scrollY;
+    const pct = maxScroll > 0 ? Math.min(100, Math.max(0, Math.round((currentScroll / maxScroll) * 100))) : 0;
+    canvasScrollPct.textContent = `${pct}%`;
+  }
+  if (window.scrollY > 480) {
+    document.body.classList.add("scrolled-past-hero");
+  } else {
+    document.body.classList.remove("scrolled-past-hero");
+  }
+}, { passive: true });
+
+/* --------------------------------------------------------------------------
    PARALLAX DRIFT ON SIDE CARDS (Smooth 60fps)
    -------------------------------------------------------------------------- */
 const parallaxCards = document.querySelectorAll(".parallax-card");
@@ -420,6 +438,3 @@ window.addEventListener("scroll", () => {
     parallaxTicking = true;
   }
 }, { passive: true });
-
-
-
