@@ -1,0 +1,1541 @@
+{
+  "version": "2.7",
+  "themes": {},
+  "variables": {},
+  "children": [
+    {
+      "type": "frame",
+      "id": "desktop-1001",
+      "name": "Olin.os — Portfolio Master (Desktop 1440)",
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 3600,
+      "fill": "#FDFAFE",
+      "clip": true,
+      "layout": "vertical",
+      "gap": 48,
+      "padding": [
+        0,
+        0,
+        60,
+        0
+      ],
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "menubar-1002",
+          "name": "OS Menubar",
+          "width": 1440,
+          "height": 52,
+          "fill": "#FFFFFF",
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#E2E8F0"
+          },
+          "layout": "horizontal",
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "padding": [
+            0,
+            32,
+            0,
+            32
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "menu-left-1003",
+              "name": "Brand & Posture",
+              "layout": "horizontal",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "brand-logo-1004",
+                  "name": "OLN Logo",
+                  "content": "OLN",
+                  "fontSize": 20,
+                  "fontWeight": "900",
+                  "fill": "#4353FF"
+                },
+                {
+                  "type": "text",
+                  "id": "posture-1005",
+                  "name": "Posture Tag",
+                  "content": "PORTFOLIO // 2026 • SENIOR PRODUCT DESIGNER & BUILDER",
+                  "fontSize": 11,
+                  "fontWeight": "700",
+                  "fill": "#64748B"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "menu-right-1006",
+              "name": "Status & Montaigu Clock",
+              "layout": "horizontal",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "status-pill-1007",
+                  "name": "Availability Pill",
+                  "fill": "#ECFDF5",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#A7F3D0"
+                  },
+                  "cornerRadius": 99,
+                  "padding": [
+                    4,
+                    12
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "avail-txt-1008",
+                      "content": "🟢 DISPONIBLE • Q3/Q4 2026",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "fill": "#065F46"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "clock-1009",
+                  "content": "Montaigu 17:45",
+                  "fontSize": 11,
+                  "fontWeight": "700",
+                  "fill": "#01050F"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "hero-stage-1010",
+          "name": "Acte 1 — Hero Canvas Ouvert (Umi Style)",
+          "width": 1200,
+          "height": 620,
+          "layout": "none",
+          "fill": "#00000000",
+          "children": [
+            {
+              "type": "frame",
+              "id": "hero-core-1011",
+              "name": "Hero Central Core",
+              "x": 200,
+              "y": 90,
+              "width": 800,
+              "height": 440,
+              "layout": "vertical",
+              "alignItems": "center",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "pill-canvas-1012",
+                  "name": "Canvas Tag",
+                  "fill": "#EEF2FF",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#C7D2FE"
+                  },
+                  "cornerRadius": 99,
+                  "padding": [
+                    6,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "pill-tag-txt-1013",
+                      "content": "THE POETIC BUILDER CANVAS // MONTAIGU & NANTES",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "fill": "#4353FF"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "hero-title-1014",
+                  "name": "Manifesto Title",
+                  "content": "« LA TÊTE DANS LES NUAGES,\nLES MAINS DANS LE CONCRET. »",
+                  "fontSize": 44,
+                  "fontWeight": "900",
+                  "fill": "#01050F",
+                  "align": "center",
+                  "lineHeight": 1.15
+                },
+                {
+                  "type": "text",
+                  "id": "hero-sub-1015",
+                  "name": "Posture Subtitle",
+                  "content": "Senior Product Designer & Builder. 10 ans d’immersion à relier vision prospective, ergonomie terrain et build fonctionnel pour dompter la complexité logicielle sans sacrifier la poésie d’usage.",
+                  "fontSize": 16,
+                  "fontWeight": "400",
+                  "fill": "#475569",
+                  "align": "center",
+                  "lineHeight": 1.6
+                },
+                {
+                  "type": "frame",
+                  "id": "hero-cta-row-1016",
+                  "name": "CTA Row",
+                  "layout": "horizontal",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "btn-primary-1017",
+                      "name": "Primary CTA Button",
+                      "fill": "#01050F",
+                      "cornerRadius": 12,
+                      "padding": [
+                        14,
+                        28
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "btn-txt1-1018",
+                          "content": "Explorer les dossiers projets ↓",
+                          "fontSize": 13,
+                          "fontWeight": "700",
+                          "fill": "#FFFFFF"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "btn-sec-1019",
+                      "name": "Secondary CTA Button",
+                      "fill": "#FFFFFF",
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1.5,
+                        "fill": "#CBD5E1"
+                      },
+                      "cornerRadius": 12,
+                      "padding": [
+                        14,
+                        26
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "btn-txt2-1020",
+                          "content": "Prendre contact ↗",
+                          "fontSize": 13,
+                          "fontWeight": "700",
+                          "fill": "#01050F"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "brand-card-1021",
+              "name": "Olin Brand Card",
+              "x": 10,
+              "y": 20,
+              "width": 220,
+              "height": 140,
+              "fill": "#4353FF",
+              "cornerRadius": 18,
+              "layout": "vertical",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "gap": 10,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "logo-txt-1022",
+                  "content": "OLN",
+                  "fontSize": 32,
+                  "fontWeight": "900",
+                  "fill": "#FFFFFF"
+                },
+                {
+                  "type": "frame",
+                  "id": "quip-bubble-1023",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 8,
+                  "padding": [
+                    4,
+                    10
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "quip-txt-1024",
+                      "content": "Promis, ici pas de lorem ipsum ! 👀",
+                      "fontSize": 10,
+                      "fontWeight": "700",
+                      "fill": "#01050F"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "diploma-card-1025",
+              "name": "Double Diploma Card",
+              "x": 960,
+              "y": 20,
+              "width": 230,
+              "height": 130,
+              "fill": "#FFFFFF",
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "#E2E8F0"
+              },
+              "cornerRadius": 16,
+              "padding": [
+                14,
+                16
+              ],
+              "layout": "vertical",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "owner-tag-1026",
+                  "content": "↖ Josselin (Owner)",
+                  "fontSize": 10,
+                  "fontWeight": "800",
+                  "fill": "#8718DC"
+                },
+                {
+                  "type": "text",
+                  "id": "dip-title-1027",
+                  "content": "🎓 DOUBLE DIPLÔME",
+                  "fontSize": 10,
+                  "fontWeight": "800",
+                  "fill": "#64748B"
+                },
+                {
+                  "type": "text",
+                  "id": "dip-schools-1028",
+                  "content": "ENSAM (Ingénierie) × EDNA (Design UX)",
+                  "fontSize": 12,
+                  "fontWeight": "800",
+                  "fill": "#01050F"
+                },
+                {
+                  "type": "text",
+                  "id": "dip-badge-1029",
+                  "content": "7 ans Grands Comptes & Scale-ups",
+                  "fontSize": 10,
+                  "fontWeight": "700",
+                  "fill": "#059669"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "chip-1-1030",
+              "name": "Immersion Terrain Chip",
+              "x": 20,
+              "y": 270,
+              "fill": "#FEF9C3",
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "#FDE047"
+              },
+              "cornerRadius": 12,
+              "padding": [
+                10,
+                18
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "chip-1-txt-1031",
+                  "content": "📌 Immersion terrain chantiers",
+                  "fontSize": 11,
+                  "fontWeight": "700",
+                  "fill": "#713F12"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "chip-2-1032",
+              "name": "100% Code Prod Chip",
+              "x": 1000,
+              "y": 260,
+              "fill": "#D1FAE5",
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "#6EE7B7"
+              },
+              "cornerRadius": 12,
+              "padding": [
+                10,
+                18
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "chip-2-txt-1033",
+                  "content": "⚡️ 100% Code en Prod",
+                  "fontSize": 11,
+                  "fontWeight": "700",
+                  "fill": "#065F46"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "chip-3-1034",
+              "name": "Testé gants Pill",
+              "x": 80,
+              "y": 530,
+              "fill": "#F3E8FF",
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "#D8B4FE"
+              },
+              "cornerRadius": 99,
+              "padding": [
+                8,
+                18
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "chip-3-txt-1035",
+                  "content": "🧤 Testé avec des gants & plein soleil",
+                  "fontSize": 11,
+                  "fontWeight": "700",
+                  "fill": "#581C87"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "chip-4-1036",
+              "name": "Zéro Bullshit Pill",
+              "x": 850,
+              "y": 530,
+              "fill": "#EFF6FF",
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "#BFDBFE"
+              },
+              "cornerRadius": 99,
+              "padding": [
+                8,
+                18
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "chip-4-txt-1037",
+                  "content": "🎯 Zéro Bullshit • Décision par la preuve",
+                  "fontSize": 11,
+                  "fontWeight": "700",
+                  "fill": "#1E40AF"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "figjam-section-1038",
+          "name": "Acte 2 — Board FigJam Collaboratif",
+          "width": 1200,
+          "height": 640,
+          "fill": "#FFFFFF",
+          "stroke": {
+            "align": "inside",
+            "thickness": 2,
+            "fill": "#8718DC"
+          },
+          "cornerRadius": 24,
+          "clip": true,
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "fj-hdr-1039",
+              "name": "FigJam Header Bar",
+              "width": 1200,
+              "height": 48,
+              "fill": "#8718DC",
+              "layout": "horizontal",
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "padding": [
+                0,
+                24,
+                0,
+                24
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "fj-title-1040",
+                  "content": "FigJam Board // Discovery, Systems & Delivery • BOARD LIVE",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "#FFFFFF"
+                },
+                {
+                  "type": "text",
+                  "id": "fj-collab-1041",
+                  "content": "Collaborateurs : [JH] [PM] [DV]",
+                  "fontSize": 11,
+                  "fontWeight": "700",
+                  "fill": "#F3E8FF"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "fj-grid-1042",
+              "name": "FigJam Grid",
+              "width": 1200,
+              "height": 592,
+              "fill": "#FAFAFE",
+              "layout": "horizontal",
+              "gap": 28,
+              "padding": [
+                40,
+                36,
+                40,
+                36
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "stk-1-1043",
+                  "name": "Sticky 1 — Discovery",
+                  "width": 350,
+                  "height": 480,
+                  "fill": "#FEF9C3",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#FDE047"
+                  },
+                  "cornerRadius": 16,
+                  "padding": [
+                    20,
+                    20
+                  ],
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "s1-tag-1044",
+                      "content": "01 / DISCOVERY • FOCUS",
+                      "fontSize": 10,
+                      "fontWeight": "800",
+                      "fill": "#A16207"
+                    },
+                    {
+                      "type": "text",
+                      "id": "s1-title-1045",
+                      "content": "IMMERSION SANS FILTRE",
+                      "fontSize": 17,
+                      "fontWeight": "900",
+                      "fill": "#713F12"
+                    },
+                    {
+                      "type": "text",
+                      "id": "s1-desc-1046",
+                      "content": "Cartographie des irritants réels. Observer les gestes métiers là où ils se déroulent : sur les chantiers poussiéreux, en concession ou dans les cockpits.",
+                      "fontSize": 13,
+                      "fill": "#854D0E",
+                      "lineHeight": 1.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "s1-sign-1047",
+                      "content": "✍️ Josselin (Product) • 15j chantiers",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "fill": "#A16207"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "s1-comm-1048",
+                      "name": "Comment Thread",
+                      "fill": "#FFFFFF",
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "#E2E8F0"
+                      },
+                      "cornerRadius": 12,
+                      "padding": [
+                        10,
+                        14
+                      ],
+                      "layout": "vertical",
+                      "gap": 4,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "s1-c-hdr-1049",
+                          "content": "💬 Josselin Hillion • il y a 2h",
+                          "fontSize": 10,
+                          "fontWeight": "800",
+                          "fill": "#8718DC"
+                        },
+                        {
+                          "type": "text",
+                          "id": "s1-c-body-1050",
+                          "content": "« Sur le chantier BTP, les artisans avaient les doigts sales et portaient des gants : d’où les boutons géants 56px et le offline-first. »",
+                          "fontSize": 11,
+                          "fill": "#01050F",
+                          "lineHeight": 1.4
+                        },
+                        {
+                          "type": "text",
+                          "id": "s1-c-reac-1051",
+                          "content": "👍 12  💯 8",
+                          "fontSize": 10,
+                          "fontWeight": "700",
+                          "fill": "#64748B"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "stk-2-1052",
+                  "name": "Sticky 2 — Code & Prod",
+                  "width": 350,
+                  "height": 480,
+                  "fill": "#D1FAE5",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#6EE7B7"
+                  },
+                  "cornerRadius": 16,
+                  "padding": [
+                    20,
+                    20
+                  ],
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "s2-tag-1053",
+                      "content": "02 / CODE & PROD • SHIPPED",
+                      "fontSize": 10,
+                      "fontWeight": "800",
+                      "fill": "#047857"
+                    },
+                    {
+                      "type": "text",
+                      "id": "s2-title-1054",
+                      "content": "DU CONCEPT AU COMMIT",
+                      "fontSize": 17,
+                      "fontWeight": "900",
+                      "fill": "#065F46"
+                    },
+                    {
+                      "type": "text",
+                      "id": "s2-desc-1055",
+                      "content": "Zéro déperdition d’intention. Maîtrise des composants React, HTML/CSS au cordeau, APIs et Webhooks. Ce qui est maquetté est ce qui tourne en prod.",
+                      "fontSize": 13,
+                      "fill": "#065F46",
+                      "lineHeight": 1.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "s2-sign-1056",
+                      "content": "⚡️ Josselin (Builder) • 100% Code Prod",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "fill": "#047857"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "s2-comm-1057",
+                      "name": "Comment Thread",
+                      "fill": "#FFFFFF",
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "#E2E8F0"
+                      },
+                      "cornerRadius": 12,
+                      "padding": [
+                        10,
+                        14
+                      ],
+                      "layout": "vertical",
+                      "gap": 4,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "s2-c-hdr-1058",
+                          "content": "💬 Tech Lead Ekino • validé",
+                          "fontSize": 10,
+                          "fontWeight": "800",
+                          "fill": "#059669"
+                        },
+                        {
+                          "type": "text",
+                          "id": "s2-c-body-1059",
+                          "content": "« Travailler avec Josselin fait gagner un sprint complet par release : les tokens et composants sont déjà prêts pour l’intégration. »",
+                          "fontSize": 11,
+                          "fill": "#01050F",
+                          "lineHeight": 1.4
+                        },
+                        {
+                          "type": "text",
+                          "id": "s2-c-reac-1060",
+                          "content": "🚀 15  🔥 9",
+                          "fontSize": 10,
+                          "fontWeight": "700",
+                          "fill": "#64748B"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "stk-3-1061",
+                  "name": "Sticky 3 — Scalabilité",
+                  "width": 350,
+                  "height": 480,
+                  "fill": "#F3E8FF",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#D8B4FE"
+                  },
+                  "cornerRadius": 16,
+                  "padding": [
+                    20,
+                    20
+                  ],
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "s3-tag-1062",
+                      "content": "03 / SCALABILITÉ • SYSTÈMES",
+                      "fontSize": 10,
+                      "fontWeight": "800",
+                      "fill": "#6B21A8"
+                    },
+                    {
+                      "type": "text",
+                      "id": "s3-title-1063",
+                      "content": "SYSTÈMES VIVANTS",
+                      "fontSize": 17,
+                      "fontWeight": "900",
+                      "fill": "#581C87"
+                    },
+                    {
+                      "type": "text",
+                      "id": "s3-desc-1064",
+                      "content": "Standardisation rigoureuse des bibliothèques de composants, documentation interactive et tokens partagés entre design et dev (W3C, WCAG AAA).",
+                      "fontSize": 13,
+                      "fill": "#581C87",
+                      "lineHeight": 1.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "s3-sign-1065",
+                      "content": "📐 Josselin (System) • 120+ Tokens",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "fill": "#6B21A8"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "s3-comm-1066",
+                      "name": "Comment Thread",
+                      "fill": "#FFFFFF",
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "#E2E8F0"
+                      },
+                      "cornerRadius": 12,
+                      "padding": [
+                        10,
+                        14
+                      ],
+                      "layout": "vertical",
+                      "gap": 4,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "s3-c-hdr-1067",
+                          "content": "💬 Direction Design • approuvé",
+                          "fontSize": 10,
+                          "fontWeight": "800",
+                          "fill": "#8718DC"
+                        },
+                        {
+                          "type": "text",
+                          "id": "s3-c-body-1068",
+                          "content": "« Un Design System n’est pas un musée de boutons, c’est le langage commun qui permet de concevoir 3x plus vite sans régresser. »",
+                          "fontSize": 11,
+                          "fill": "#01050F",
+                          "lineHeight": 1.4
+                        },
+                        {
+                          "type": "text",
+                          "id": "s3-c-reac-1069",
+                          "content": "❤️ 11  🎯 7",
+                          "fontSize": 10,
+                          "fontWeight": "700",
+                          "fill": "#64748B"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "finder-section-1070",
+          "name": "Acte 3 — Finder Master-Detail Projets",
+          "width": 1200,
+          "height": 560,
+          "fill": "#FFFFFF",
+          "stroke": {
+            "align": "inside",
+            "thickness": 2,
+            "fill": "#01050F"
+          },
+          "cornerRadius": 20,
+          "clip": true,
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "fnd-chrome-1071",
+              "name": "Finder Chrome",
+              "width": 1200,
+              "height": 44,
+              "fill": "#F1F5F9",
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "#CBD5E1"
+              },
+              "layout": "horizontal",
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "padding": [
+                0,
+                20,
+                0,
+                20
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "fnd-dots-1072",
+                  "content": "🔴 🟡 🟢",
+                  "fontSize": 12
+                },
+                {
+                  "type": "text",
+                  "id": "fnd-path-1073",
+                  "content": "Olin.os / 📁 Projets_Production / 2026_Case_Studies",
+                  "fontSize": 11,
+                  "fontWeight": "700",
+                  "fill": "#01050F"
+                },
+                {
+                  "type": "text",
+                  "id": "fnd-stat-1074",
+                  "content": "3 ÉTUDES STAR VÉRIFIÉES",
+                  "fontSize": 10,
+                  "fontWeight": "700",
+                  "fill": "#059669"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "fnd-split-1075",
+              "name": "Split View Container",
+              "width": 1200,
+              "height": 516,
+              "layout": "horizontal",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "fnd-side-1076",
+                  "name": "Left Sidebar",
+                  "width": 320,
+                  "height": 516,
+                  "fill": "#F8FAFC",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#E2E8F0"
+                  },
+                  "padding": [
+                    20,
+                    16
+                  ],
+                  "layout": "vertical",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "fnd-cat1-1077",
+                      "content": "EN PRODUCTION // HARDWARE",
+                      "fontSize": 10,
+                      "fontWeight": "800",
+                      "fill": "#64748B"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "fnd-i1-1078",
+                      "fill": "#4353FF",
+                      "cornerRadius": 10,
+                      "padding": [
+                        10,
+                        12
+                      ],
+                      "layout": "horizontal",
+                      "justifyContent": "space_between",
+                      "width": 288,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "fnd-i1-t-1079",
+                          "content": "📱 01_Excibat_BTP.app",
+                          "fontSize": 12,
+                          "fontWeight": "700",
+                          "fill": "#FFFFFF"
+                        },
+                        {
+                          "type": "text",
+                          "id": "fnd-i1-b-1080",
+                          "content": "TABLETTE",
+                          "fontSize": 9,
+                          "fontWeight": "700",
+                          "fill": "#FFFFFF"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "fnd-i2-1081",
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 10,
+                      "padding": [
+                        10,
+                        12
+                      ],
+                      "layout": "horizontal",
+                      "justifyContent": "space_between",
+                      "width": 288,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "fnd-i2-t-1082",
+                          "content": "🏎️ 02_Renault_Moments.hmi",
+                          "fontSize": 12,
+                          "fontWeight": "600",
+                          "fill": "#01050F"
+                        },
+                        {
+                          "type": "text",
+                          "id": "fnd-i2-b-1083",
+                          "content": "SHOWROOM",
+                          "fontSize": 9,
+                          "fontWeight": "700",
+                          "fill": "#64748B"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "fnd-i3-1084",
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 10,
+                      "padding": [
+                        10,
+                        12
+                      ],
+                      "layout": "horizontal",
+                      "justifyContent": "space_between",
+                      "width": 288,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "fnd-i3-t-1085",
+                          "content": "📊 03_DataCity_Paris.sig",
+                          "fontSize": 12,
+                          "fontWeight": "600",
+                          "fill": "#01050F"
+                        },
+                        {
+                          "type": "text",
+                          "id": "fnd-i3-b-1086",
+                          "content": "CONSOLE",
+                          "fontSize": 9,
+                          "fontWeight": "700",
+                          "fill": "#64748B"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "fnd-stage-1087",
+                  "name": "Right Project Stage",
+                  "width": 880,
+                  "height": 516,
+                  "fill": "#FFFFFF",
+                  "padding": [
+                    36,
+                    40
+                  ],
+                  "layout": "vertical",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "scr-badge-row-1088",
+                      "layout": "horizontal",
+                      "justifyContent": "space_between",
+                      "width": 800,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "scr-url-1089",
+                          "content": "🌐 https://excibat.app/chantier-loire-atlantique",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "fill": "#475569"
+                        },
+                        {
+                          "type": "text",
+                          "id": "scr-st-1090",
+                          "content": "TABLETTE CHANTIER // OFFLINE-FIRST",
+                          "fontSize": 10,
+                          "fontWeight": "800",
+                          "fill": "#059669"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "scr-title-1091",
+                      "content": "Excibat Platform : SaaS GED pour le BTP",
+                      "fontSize": 24,
+                      "fontWeight": "900",
+                      "fill": "#01050F"
+                    },
+                    {
+                      "type": "text",
+                      "id": "scr-desc-1092",
+                      "content": "Refonte ergonomique de l’application de pilotage et d’estimation de chantiers pour artisans et conducteurs de travaux. Architecture modulaire, synchronisation locale offline-first et contrastes renforcés en plein soleil.",
+                      "fontSize": 14,
+                      "fill": "#334155",
+                      "lineHeight": 1.6
+                    },
+                    {
+                      "type": "frame",
+                      "id": "scr-metrics-1093",
+                      "layout": "horizontal",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "m1-1094",
+                          "fill": "#EFF6FF",
+                          "cornerRadius": 8,
+                          "padding": [
+                            6,
+                            12
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "m1-t-1095",
+                              "content": "+35% gain efficacité",
+                              "fontSize": 11,
+                              "fontWeight": "700",
+                              "fill": "#1E40AF"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "m2-1096",
+                          "fill": "#EFF6FF",
+                          "cornerRadius": 8,
+                          "padding": [
+                            6,
+                            12
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "m2-t-1097",
+                              "content": "-60% erreurs devis",
+                              "fontSize": 11,
+                              "fontWeight": "700",
+                              "fill": "#1E40AF"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "m3-1098",
+                          "fill": "#EFF6FF",
+                          "cornerRadius": 8,
+                          "padding": [
+                            6,
+                            12
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "m3-t-1099",
+                              "content": "10 000+ chantiers",
+                              "fontSize": 11,
+                              "fontWeight": "700",
+                              "fill": "#1E40AF"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "code-box-1100",
+                      "fill": "#F1F5F9",
+                      "cornerRadius": 8,
+                      "padding": [
+                        8,
+                        14
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "code-txt-1101",
+                          "content": "// STACK: React • Tailwind • SQLite Offline Sync • APIs Oodrive GED & Stripe",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "fill": "#0369A1"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "star-btn-1102",
+                      "fill": "#01050F",
+                      "cornerRadius": 12,
+                      "padding": [
+                        12,
+                        24
+                      ],
+                      "width": 260,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "star-btn-t-1103",
+                          "content": "Ouvrir l’étude STAR complète ↗",
+                          "fontSize": 12,
+                          "fontWeight": "700",
+                          "fill": "#FFFFFF"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "contact-section-1104",
+          "name": "Acte 4 — Ciel Golden & Bento Apple",
+          "width": 1200,
+          "height": 600,
+          "layout": "vertical",
+          "gap": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "golden-box-1105",
+              "name": "Golden Twilight Banner",
+              "width": 1200,
+              "height": 240,
+              "fill": "#F3E8FF",
+              "stroke": {
+                "align": "inside",
+                "thickness": 1.5,
+                "fill": "#E9D5FF"
+              },
+              "cornerRadius": 24,
+              "padding": [
+                32,
+                40
+              ],
+              "layout": "vertical",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "gld-tag-1106",
+                  "content": "Canvas Twilight // 04_Vision_Poetique_Et_Rencontre • MONTAIGU & GRAND OUEST",
+                  "fontSize": 11,
+                  "fontWeight": "700",
+                  "fill": "#7E22CE"
+                },
+                {
+                  "type": "text",
+                  "id": "gld-title-1107",
+                  "content": "FAÇONNONS ENSEMBLE DES EXPÉRIENCES ÉVIDENTES.",
+                  "fontSize": 32,
+                  "fontWeight": "900",
+                  "fill": "#3B0764"
+                },
+                {
+                  "type": "text",
+                  "id": "gld-sub-1108",
+                  "content": "« La tête dans les nuages pour imaginer les futurs possibles, les mains dans le concret pour forger le code de production. »",
+                  "fontSize": 15,
+                  "fill": "#581C87",
+                  "align": "center"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "bento-grid-1109",
+              "name": "Apple Bento Grid",
+              "width": 1200,
+              "height": 330,
+              "layout": "horizontal",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "b1-1110",
+                  "width": 380,
+                  "height": 320,
+                  "fill": "#EEF2FF",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1.5,
+                    "fill": "#C7D2FE"
+                  },
+                  "cornerRadius": 20,
+                  "padding": [
+                    24,
+                    24
+                  ],
+                  "layout": "vertical",
+                  "justifyContent": "space_between",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "b1-top-1111",
+                      "layout": "vertical",
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "b1-icon-1112",
+                          "content": "📍",
+                          "fontSize": 24
+                        },
+                        {
+                          "type": "text",
+                          "id": "b1-t-1113",
+                          "content": "Disponibilité Q3/Q4 2026",
+                          "fontSize": 18,
+                          "fontWeight": "800",
+                          "fill": "#01050F"
+                        },
+                        {
+                          "type": "text",
+                          "id": "b1-d-1114",
+                          "content": "Basé à Montaigu-Vendée (30 min de Nantes et La Roche-sur-Yon). Rôles visés : Lead / Senior Product Designer & Builder.",
+                          "fontSize": 13,
+                          "fill": "#475569",
+                          "lineHeight": 1.5
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "b1-loc-1115",
+                      "content": "Montaigu • Nantes • Remote",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "fill": "#059669"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "b2-1116",
+                  "width": 250,
+                  "height": 320,
+                  "fill": "#FFFFFF",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#E2E8F0"
+                  },
+                  "cornerRadius": 20,
+                  "padding": [
+                    24,
+                    24
+                  ],
+                  "layout": "vertical",
+                  "justifyContent": "space_between",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "b2-top-1117",
+                      "layout": "vertical",
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "b2-icon-1118",
+                          "content": "💼",
+                          "fontSize": 24
+                        },
+                        {
+                          "type": "text",
+                          "id": "b2-t-1119",
+                          "content": "LinkedIn",
+                          "fontSize": 18,
+                          "fontWeight": "800",
+                          "fill": "#01050F"
+                        },
+                        {
+                          "type": "text",
+                          "id": "b2-d-1120",
+                          "content": "Josselin Hillion : Articles, retours d’expérience et réseau produit.",
+                          "fontSize": 13,
+                          "fill": "#64748B",
+                          "lineHeight": 1.5
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "b2-a-1121",
+                      "content": "Se connecter ↗",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "fill": "#0A66C2"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "b3-1122",
+                  "width": 250,
+                  "height": 320,
+                  "fill": "#FFFFFF",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#E2E8F0"
+                  },
+                  "cornerRadius": 20,
+                  "padding": [
+                    24,
+                    24
+                  ],
+                  "layout": "vertical",
+                  "justifyContent": "space_between",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "b3-top-1123",
+                      "layout": "vertical",
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "b3-icon-1124",
+                          "content": "🐦",
+                          "fontSize": 24
+                        },
+                        {
+                          "type": "text",
+                          "id": "b3-t-1125",
+                          "content": "X (Twitter)",
+                          "fontSize": 18,
+                          "fontWeight": "800",
+                          "fill": "#01050F"
+                        },
+                        {
+                          "type": "text",
+                          "id": "b3-d-1126",
+                          "content": "@josselinhillion : Veille continue UI, LLM et build.",
+                          "fontSize": 13,
+                          "fill": "#64748B",
+                          "lineHeight": 1.5
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "b3-a-1127",
+                      "content": "Suivre le profil ↗",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "fill": "#01050F"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "b4-1128",
+                  "width": 250,
+                  "height": 320,
+                  "fill": "#FFFFFF",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#E2E8F0"
+                  },
+                  "cornerRadius": 20,
+                  "padding": [
+                    24,
+                    24
+                  ],
+                  "layout": "vertical",
+                  "justifyContent": "space_between",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "b4-top-1129",
+                      "layout": "vertical",
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "b4-icon-1130",
+                          "content": "✉️",
+                          "fontSize": 24
+                        },
+                        {
+                          "type": "text",
+                          "id": "b4-t-1131",
+                          "content": "Email Direct",
+                          "fontSize": 18,
+                          "fontWeight": "800",
+                          "fill": "#01050F"
+                        },
+                        {
+                          "type": "text",
+                          "id": "b4-d-1132",
+                          "content": "josselin@olin.design : Cliquez pour copier.",
+                          "fontSize": 13,
+                          "fill": "#64748B",
+                          "lineHeight": 1.5
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "b4-a-1133",
+                      "content": "Copier l’email 📋",
+                      "fontSize": 11,
+                      "fontWeight": "700",
+                      "fill": "#4353FF"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "footer-1134",
+          "name": "OS Footer",
+          "width": 1440,
+          "height": 48,
+          "fill": "#FDFAFE",
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#E2E8F0"
+          },
+          "layout": "horizontal",
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "padding": [
+            0,
+            40,
+            0,
+            40
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "ftr-cp-1135",
+              "content": "© 2026 Josselin Hillion • Olin.os Design System",
+              "fontSize": 11,
+              "fontWeight": "700",
+              "fill": "#64748B"
+            },
+            {
+              "type": "text",
+              "id": "ftr-loc-1136",
+              "content": "MONTAIGU • NANTES & GRAND OUEST • HANDCRAFTED WITH CODE & CARE",
+              "fontSize": 10,
+              "fontWeight": "800",
+              "fill": "#4353FF"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

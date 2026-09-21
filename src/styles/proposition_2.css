@@ -1,0 +1,755 @@
+/* ==========================================================================
+   PROPOSITION 2 — Olin.os Studio
+   Design System : Editorial Serif x Bold Italic x Neo-Brutalist Mint x Poetic Clouds
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Geologica:ital,wght@0,400;0,600;0,700;1,800;1,900&family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* --- Page Canvas Base --- */
+.p2-body {
+  background-color: #FDFAFE;
+  background-image: url('/assets/motif_canvas.svg');
+  background-repeat: repeat;
+  background-size: 32px 32px;
+  color: #0F0C20;
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.p2-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* --- 1. Top Sub-Bar (Sticker & Status) --- */
+.p2-top-subbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0 16px;
+}
+
+.p2-sticker-icon {
+  width: 42px;
+  height: 42px;
+  filter: drop-shadow(0 4px 10px rgba(15, 12, 32, 0.08));
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.p2-sticker-icon:hover {
+  transform: rotate(-4deg) scale(1.1);
+}
+
+.p2-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: #E8F8F0;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: 9999px;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #065F46;
+  letter-spacing: 0.04em;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.08);
+}
+
+.p2-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+  animation: p2Pulse 2s infinite ease-in-out;
+}
+
+@keyframes p2Pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.6; }
+}
+
+/* --- 2. Hero Typographique Asymétrique avec Flèche --- */
+.p2-hero-block {
+  padding: 20px 0 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.p2-hero-title-top {
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  font-size: clamp(48px, 6.8vw, 92px);
+  color: #0F0C20;
+}
+
+.p2-serif-ital {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.p2-sans-bold-ital {
+  font-family: 'Geologica', sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+/* Flèche Manuscrite */
+.p2-arrow-bridge {
+  display: flex;
+  justify-content: center;
+  margin: -10px 0 -15px;
+  padding-left: 60px;
+}
+
+.p2-hand-drawn-arrow {
+  width: 90px;
+  height: 110px;
+  stroke: #0F0C20;
+  stroke-width: 2.5;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Titre Bas Violet */
+.p2-hero-title-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 20px;
+  font-size: clamp(42px, 6.2vw, 84px);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: #6900FF;
+}
+
+.p2-cursor-blink {
+  display: inline-block;
+  color: #6900FF;
+  animation: p2Cursor 1s infinite step-start;
+  margin-left: 2px;
+}
+
+@keyframes p2Cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* CTAs Horizontaux du Hero */
+.p2-hero-ctas-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 36px;
+  flex-wrap: wrap;
+}
+
+.p2-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #6900FF 0%, #5300CC 100%);
+  color: #FFFFFF !important;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 9999px;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(105, 0, 255, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.p2-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(105, 0, 255, 0.45);
+}
+
+.p2-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFFFFF;
+  color: #0F0C20 !important;
+  border: 1.5px solid #0F0C20;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 13px 26px;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.p2-btn-secondary:hover {
+  background: #F4F0FC;
+  transform: translateY(-2px);
+}
+
+/* --- 3. Carte Maîtresse Profil (Readme Rétro) --- */
+.p2-profile-card-wrap {
+  margin: 32px 0 60px;
+}
+
+.p2-window-frame {
+  background: #FFFFFF;
+  border: 1.5px solid #0F0C20;
+  border-radius: 4px;
+  box-shadow: 0 20px 40px rgba(15, 12, 32, 0.08);
+  overflow: hidden;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.p2-window-bar {
+  background: #0F0C20;
+  color: #FFFFFF;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.p2-window-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.p2-window-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  opacity: 0.85;
+}
+
+.p2-window-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Space Grotesk', monospace;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.p2-profile-content {
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.p2-avatar-badge {
+  width: 150px;
+  height: 140px;
+  background: #2B4BFF;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(43, 75, 255, 0.3);
+  margin-bottom: 20px;
+}
+
+.p2-avatar-pattern {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.22;
+}
+
+.p2-avatar-img {
+  width: 120px;
+  height: auto;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
+}
+
+.p2-profile-name {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 15px;
+  color: #6A6582;
+  margin-bottom: 4px;
+}
+
+.p2-profile-role {
+  font-family: 'Geologica', sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #0F0C20;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.p2-profile-pitch {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #2D2845;
+  margin-bottom: 20px;
+  max-width: 480px;
+}
+
+.p2-profile-pitch strong {
+  color: #0F0C20;
+}
+
+.p2-btn-outline-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border: 1.5px solid #DCD5EC;
+  border-radius: 9999px;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: #6900FF !important;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.p2-btn-outline-pill:hover {
+  border-color: #6900FF;
+  background: #F4F0FC;
+  transform: translateY(-1px);
+}
+
+/* --- 4. Frame: L'Atelier (Fond Lilas & Cartes Menthe Neo-Brutalist) --- */
+.p2-frame-atelier-wrap {
+  margin: 60px 0 80px;
+}
+
+.p2-frame-label {
+  display: inline-block;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: #6900FF;
+  background: #F0ECFA;
+  border: 1px dashed #6900FF;
+  padding: 4px 14px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.p2-atelier-board {
+  background: #ECE6F8;
+  border: 1.5px solid #DCD5EC;
+  border-radius: 12px;
+  padding: 48px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: relative;
+}
+
+.p2-mint-card {
+  background: #00F5A0;
+  border: 2px solid #0F0C20;
+  border-radius: 4px;
+  box-shadow: 6px 6px 0px #0F0C20;
+  padding: 28px 32px;
+  max-width: 580px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.p2-mint-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px #0F0C20;
+}
+
+.p2-mint-card.align-left {
+  align-self: flex-start;
+}
+
+.p2-mint-card.align-right {
+  align-self: flex-end;
+}
+
+.p2-mint-card-title {
+  font-family: 'Geologica', sans-serif;
+  font-size: 19px;
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+  color: #0F0C20;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.p2-mint-card-desc {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: #0F0C20;
+  margin-bottom: 16px;
+}
+
+.p2-mint-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0F0C20 !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* --- 5. Intermède Poétique (Ciel Crépuscule) --- */
+.p2-clouds-interlude {
+  margin: 60px 0 90px;
+}
+
+.p2-clouds-window {
+  border: 1.5px solid #0F0C20;
+  border-radius: 4px;
+  box-shadow: 0 20px 48px rgba(15, 12, 32, 0.12);
+  overflow: hidden;
+  position: relative;
+}
+
+.p2-clouds-image-wrap {
+  height: 380px;
+  position: relative;
+  overflow: hidden;
+}
+
+.p2-clouds-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.85) contrast(1.05);
+}
+
+.p2-clouds-overlay-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 12, 32, 0.35);
+  text-align: center;
+  padding: 0 24px;
+}
+
+.p2-clouds-mantra {
+  font-family: 'Space Grotesk', monospace;
+  font-size: clamp(24px, 3.8vw, 42px);
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.35;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* --- 6. Frame: Mes Derniers Projets (Preuves STAR) --- */
+.p2-frame-projets-wrap {
+  margin: 60px 0 90px;
+}
+
+.p2-projets-board {
+  background: #F3F6FC;
+  border: 1.5px solid #DCD5EC;
+  border-radius: 12px;
+  padding: 48px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.p2-projets-header-pill {
+  background: #00F5A0;
+  border: 2px solid #0F0C20;
+  box-shadow: 4px 4px 0px #0F0C20;
+  padding: 12px 24px;
+  font-family: 'Geologica', sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+  color: #0F0C20;
+  align-self: flex-start;
+}
+
+/* Carte Projet Déroulée */
+.p2-project-card {
+  background: #FFFFFF;
+  border: 1.5px solid #0F0C20;
+  border-radius: 4px;
+  box-shadow: 6px 6px 0px #0F0C20;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.p2-project-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px #0F0C20;
+}
+
+@media (max-width: 900px) {
+  .p2-project-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+.p2-project-info {
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.p2-project-badge {
+  display: inline-block;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: #6900FF;
+  background: #F0ECFA;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  align-self: flex-start;
+}
+
+.p2-project-title {
+  font-family: 'Geologica', sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #0F0C20;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.p2-project-desc {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: #4B4564;
+  margin-bottom: 20px;
+}
+
+.p2-project-metrics {
+  display: flex;
+  gap: 20px;
+  padding: 16px 0;
+  border-top: 1px solid #F0ECFA;
+  border-bottom: 1px solid #F0ECFA;
+  margin-bottom: 20px;
+}
+
+.p2-metric-val {
+  font-family: 'Geologica', sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: #6900FF;
+}
+
+.p2-metric-lbl {
+  font-size: 11px;
+  color: #6A6582;
+}
+
+.p2-project-visual {
+  background: #F8F6FC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-left: 1.5px solid #0F0C20;
+  padding: 16px;
+}
+
+.p2-project-img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(15, 12, 32, 0.1);
+  object-fit: contain;
+}
+
+/* --- 7. Bento Prise de Contact & Clôture --- */
+.p2-contact-bento {
+  margin: 60px 0 90px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .p2-contact-bento {
+    grid-template-columns: 1fr;
+  }
+}
+
+.p2-bento-card-dispo {
+  background: #FFFFFF;
+  border: 1.5px solid #0F0C20;
+  border-radius: 4px;
+  padding: 32px;
+  box-shadow: 6px 6px 0px #0F0C20;
+}
+
+.p2-bento-card-action {
+  background: #6900FF;
+  border: 1.5px solid #0F0C20;
+  border-radius: 4px;
+  padding: 32px;
+  box-shadow: 6px 6px 0px #0F0C20;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* --- 8. Footer Bleu Roi Olin --- */
+.p2-footer-banner {
+  background-color: #2B4BFF;
+  background-image: url('/assets/motif_patries_olin.svg');
+  background-repeat: repeat;
+  background-size: 64px 64px;
+  color: #FFFFFF;
+  padding: 60px 24px;
+  text-align: center;
+  border-top: 2px solid #0F0C20;
+}
+
+.p2-footer-content {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(43, 75, 255, 0.88);
+  backdrop-filter: blur(8px);
+  padding: 24px 32px;
+  border-radius: 12px;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+}
+
+.p2-footer-since {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+
+.p2-footer-email {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.p2-footer-copy {
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+/* --- Switcher de version dans le header --- */
+.p2-version-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: #6900FF;
+  color: #FFFFFF !important;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 9999px;
+  text-decoration: none;
+}
+
+/* --- Menubar Navigation Style --- */
+.p2-body .os-menubar {
+  height: 52px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+.p2-body .os-logo-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.p2-body .os-logo-img {
+  height: 26px;
+  width: auto;
+  max-width: 100px;
+  object-fit: contain;
+}
+
+.p2-body .os-menubar-posture {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 11.5px;
+  color: #6A6582;
+}
+
+.p2-body .os-menubar-posture strong {
+  color: #0F0C20;
+}
+
+.p2-body .os-menu-left {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.p2-body .os-menu-items {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.p2-body .os-menu-items a {
+  color: #0F0C20;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.p2-body .os-menu-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.p2-body .os-clock {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #6A6582;
+}
