@@ -1,0 +1,55 @@
+:root {
+  /* Chromatic Palette Olin (Brand Guidelines) */
+  --color-canvas-bg: #F3F5FB; /* Canvas Glacier */
+  --color-canvas-subtle: #EDF2F9;
+  --color-electric-blue: #4E4BF5;
+  --color-electric-gradient: linear-gradient(135deg, #4338CA 0%, #5B50F6 50%, #3B82F6 100%);
+  --color-card-surface: #FFFFFF;
+  --color-card-tint: #EEF4FF;
+  --color-dark-ink: #01050F;
+  --color-slate-body: #334155;
+  --color-muted-blueprint: #626D82;
+  --color-neon-mint: #01EEBA;
+  --color-cyan-doodle: #38BDF8;
+  --color-purple-lilas: #8718DC;
+  --color-amber-solar: #F59E0B;
+  --color-figma-blue: #3196FF;
+  --color-white: #FFFFFF;
+  --color-border-subtle: #E2E8F0;
+
+  /* Sticky Post-it Palette */
+  --sticky-yellow: #FEF9C3;
+  --sticky-yellow-border: #FDE047;
+  --sticky-yellow-ink: #713F12;
+  --sticky-pink: #FCE7F3;
+  --sticky-pink-border: #F472B6;
+  --sticky-pink-ink: #831843;
+  --sticky-cyan: #E0F2FE;
+  --sticky-cyan-border: #38BDF8;
+  --sticky-cyan-ink: #0C4A6E;
+
+  /* Typography */
+  --font-display: "Geologica", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: "Geologica", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-tech: "Kode Mono", monospace;
+
+  /* Radius System */
+  --radius-hero: 28px;
+  --radius-card: 20px;
+  --radius-pill: 9999px;
+  --radius-btn: 8px;
+  --radius-tag: 6px;
+
+  /* Elevations & Shadows */
+  --shadow-hero: 0 16px 48px rgba(79, 70, 229, 0.18);
+  --shadow-card: 0 4px 20px rgba(1, 5, 15, 0.05);
+  --shadow-card-hover: 0 16px 36px rgba(79, 70, 229, 0.12);
+  --shadow-floating: 0 18px 36px rgba(1, 5, 15, 0.22);
+  --shadow-sticky: 2px 8px 20px rgba(0, 0, 0, 0.08);
+
+  /* Transitions */
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --trans-fast: 0.15s ease;
+  --trans-smooth: 0.3s var(--ease-smooth);
+}

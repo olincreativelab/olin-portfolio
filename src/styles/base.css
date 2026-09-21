@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--color-canvas-bg);
+  /* Live Figma/FigJam Canvas Dot Grid */
+  background-image: radial-gradient(rgba(78, 75, 245, 0.08) 1.2px, transparent 1.2px);
+  background-size: 28px 28px;
+  font-family: var(--font-body);
+  color: var(--color-dark-ink);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Base link and button resets */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Layout container */
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Figma Frame Label */
+.frame-label {
+  font-family: var(--font-tech);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-muted-blueprint);
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+  user-select: none;
+}
+
+.frame-label::before {
+  content: "#";
+  color: var(--color-figma-blue);
+  font-weight: 800;
+}
+
+/* Section titles */
+.section-header {
+  margin-bottom: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
+}
+
+.title-slanted {
+  font-size: 34px;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -0.8px;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .title-slanted {
+    font-size: 26px;
+  }
+}

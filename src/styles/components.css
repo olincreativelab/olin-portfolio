@@ -1,0 +1,867 @@
+/* ==========================================================================
+   OLIN DESIGN SYSTEM - COMPONENTS
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   SECTION HEADINGS & UTILITIES
+   -------------------------------------------------------------------------- */
+.section-wrapper {
+  max-width: 1180px;
+  margin: 0 auto 100px;
+  padding: 0 24px;
+}
+
+.section-header {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.section-badge {
+  font-family: var(--font-tech);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-electric-blue);
+  background: var(--color-card-surface);
+  padding: 4px 12px;
+  border-radius: var(--radius-tag);
+  display: inline-block;
+  align-self: flex-start;
+  border: 1px solid rgba(78, 75, 245, 0.15);
+}
+
+.section-title {
+  font-size: clamp(26px, 3.2vw, 38px);
+  font-weight: 900;
+  color: var(--color-dark-ink);
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
+
+.section-title.slanted {
+  font-style: italic;
+  transform: skewX(-6deg);
+  display: inline-block;
+}
+
+.section-desc {
+  font-size: 16px;
+  color: var(--color-muted-blueprint);
+  max-width: 640px;
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   BENTO SERVICES GRID (Asymmetrical layout matching wireframe)
+   -------------------------------------------------------------------------- */
+.bento-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+@media (max-width: 900px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bento-card {
+  background: var(--color-card-surface);
+  border-radius: var(--radius-card);
+  padding: 36px 32px;
+  position: relative;
+  overflow: visible;
+  border: 1px solid rgba(78, 75, 245, 0.08);
+  transition: transform var(--trans-smooth), box-shadow var(--trans-smooth), border-color var(--trans-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(78, 75, 245, 0.25);
+}
+
+.bento-column-stacked {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.bento-tall-card {
+  justify-content: space-between;
+}
+
+.bento-card-badge {
+  font-family: var(--font-tech);
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-electric-blue);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bento-card-title {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--color-dark-ink);
+  line-height: 1.25;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.bento-card-p {
+  font-size: 15px;
+  color: var(--color-slate-body);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.bento-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.bento-tag-item {
+  font-family: var(--font-tech);
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--color-white);
+  color: var(--color-dark-ink);
+  padding: 6px 12px;
+  border-radius: var(--radius-tag);
+  border: 1px solid rgba(1, 5, 15, 0.06);
+  box-shadow: 0 2px 6px rgba(1, 5, 15, 0.02);
+}
+
+/* Doodle Arrow & Micro Visuals */
+.doodle-arrow {
+  position: absolute;
+  pointer-events: none;
+  color: var(--color-cyan-doodle);
+}
+
+.bento-blueprint-box {
+  background: var(--color-white);
+  border-radius: 16px;
+  border: 1px solid rgba(78, 75, 245, 0.15);
+  box-shadow: 0 8px 24px rgba(78, 75, 245, 0.06);
+  margin-top: 24px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.blueprint-header {
+  background: #F8FAFC;
+  border-bottom: 1px solid rgba(78, 75, 245, 0.1);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.blueprint-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.blueprint-dot.red { background: #FF5F56; }
+.blueprint-dot.yellow { background: #FFBD2E; }
+.blueprint-dot.green { background: #27C93F; }
+
+.blueprint-title {
+  font-family: var(--font-tech);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-muted-blueprint);
+  margin-left: 6px;
+  letter-spacing: 0.5px;
+}
+
+.blueprint-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.blueprint-step {
+  font-family: var(--font-tech);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-slate-body);
+  background: #F1F5F9;
+  padding: 8px 14px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid transparent;
+}
+
+.blueprint-step.active {
+  background: #EEF2FF;
+  border-color: var(--color-electric-blue);
+  color: var(--color-electric-blue);
+  font-weight: 700;
+}
+
+.step-num {
+  font-weight: 800;
+  color: var(--color-electric-blue);
+}
+
+.blueprint-arrow {
+  text-align: center;
+  font-size: 12px;
+  color: var(--color-cyan-doodle);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.card-cloud-thumb {
+  width: 100%;
+  height: 140px;
+  border-radius: 14px;
+  object-fit: cover;
+  margin-top: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 24px rgba(78, 75, 245, 0.08);
+}
+
+/* --------------------------------------------------------------------------
+   PROJECT SHOWCASE CARDS (Case Studies)
+   -------------------------------------------------------------------------- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 28px;
+}
+
+.project-card {
+  background: var(--color-white);
+  border-radius: var(--radius-card);
+  padding: 32px;
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: transform var(--trans-smooth), box-shadow var(--trans-smooth), border-color var(--trans-smooth);
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(1, 5, 15, 0.08);
+  border-color: rgba(78, 75, 245, 0.35);
+}
+
+.project-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.project-sector {
+  font-family: var(--font-tech);
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-electric-blue);
+  background: var(--color-card-surface);
+  padding: 4px 10px;
+  border-radius: var(--radius-tag);
+}
+
+.project-role {
+  font-family: var(--font-tech);
+  font-size: 11px;
+  color: var(--color-muted-blueprint);
+  font-weight: 500;
+}
+
+.project-title {
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--color-dark-ink);
+  margin-bottom: 8px;
+}
+
+.project-desc {
+  font-size: 14.5px;
+  color: var(--color-slate-body);
+  line-height: 1.55;
+  margin-bottom: 22px;
+}
+
+.project-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  background: #F8FAFC;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 24px;
+  border: 1px solid #EDF2F7;
+}
+
+.metric-box {
+  text-align: center;
+}
+
+.metric-val {
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--color-electric-blue);
+  font-family: var(--font-tech);
+  display: block;
+}
+
+.metric-lbl {
+  font-size: 10px;
+  color: var(--color-muted-blueprint);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 2px;
+  line-height: 1.2;
+}
+
+.project-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-dark-ink);
+  color: var(--color-white);
+  padding: 12px 20px;
+  border-radius: var(--radius-btn);
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  transition: background var(--trans-fast), transform var(--trans-fast);
+}
+
+.project-btn:hover {
+  background: var(--color-electric-blue);
+}
+
+.project-btn svg {
+  transition: transform var(--trans-smooth);
+}
+
+.project-btn:hover svg {
+  transform: translate(3px, -3px);
+}
+
+/* --------------------------------------------------------------------------
+   CONTACT SECTION ("GARDONS CONTACT !")
+   -------------------------------------------------------------------------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.contact-card {
+  background: var(--color-card-surface);
+  border: 1px solid rgba(78, 75, 245, 0.1);
+  border-radius: var(--radius-card);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  transition: transform var(--trans-smooth), background var(--trans-fast), border-color var(--trans-fast);
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  background: var(--color-card-hover);
+  border-color: rgba(78, 75, 245, 0.3);
+}
+
+.contact-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-electric-blue);
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(78, 75, 245, 0.08);
+}
+
+.contact-card-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-dark-ink);
+  margin-bottom: 4px;
+}
+
+.contact-card-sub {
+  font-size: 13px;
+  color: var(--color-muted-blueprint);
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.contact-card-action {
+  font-family: var(--font-tech);
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-electric-blue);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+}
+
+/* --------------------------------------------------------------------------
+   FOOTER (Riso Minimalist)
+   -------------------------------------------------------------------------- */
+.footer {
+  border-top: 1px solid var(--color-border-subtle);
+  padding: 40px 24px;
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-logo {
+  height: 28px;
+  width: auto;
+}
+
+.footer-copy {
+  font-size: 13px;
+  color: var(--color-muted-blueprint);
+}
+
+.footer-pill {
+  font-family: var(--font-tech);
+  font-size: 11px;
+  background: #F1F5F9;
+  color: var(--color-slate-body);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+}
+
+/* --------------------------------------------------------------------------
+   INTERACTIVE CASE STUDY MODAL / DRAWER
+   -------------------------------------------------------------------------- */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(1, 5, 15, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.modal-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-sheet {
+  background: var(--color-white);
+  border-radius: var(--radius-card);
+  max-width: 760px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 40px;
+  box-shadow: 0 24px 64px rgba(1, 5, 15, 0.25);
+  position: relative;
+  transform: translateY(20px) scale(0.98);
+  transition: transform var(--trans-smooth);
+}
+
+.modal-backdrop.open .modal-sheet {
+  transform: translateY(0) scale(1);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: #F1F5F9;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-dark-ink);
+  transition: background var(--trans-fast);
+}
+
+.modal-close-btn:hover {
+  background: #E2E8F0;
+}
+
+.star-section {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.star-step {
+  border-left: 3px solid var(--color-electric-blue);
+  padding-left: 16px;
+}
+
+.star-step-tag {
+  font-family: var(--font-tech);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-electric-blue);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.star-step-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--color-dark-ink);
+  margin-bottom: 6px;
+}
+
+.star-step-desc {
+  font-size: 14px;
+  color: var(--color-slate-body);
+  line-height: 1.55;
+}
+
+/* Toast notification for copy email */
+.toast-notice {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--color-dark-ink);
+  color: var(--color-white);
+  padding: 12px 20px;
+  border-radius: var(--radius-btn);
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 2000;
+}
+
+.toast-notice.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ==========================================================================
+   FACETIOUS OPEN INTERFACE ELEMENTS (Figma, Miro, FigJam & Riso Vibes)
+   ========================================================================== */
+
+/* 1. COLLABORATIVE MULTIPLAYER CURSORS */
+.collab-cursor {
+  position: absolute;
+  z-index: 40;
+  pointer-events: auto;
+  cursor: grab;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.2s var(--ease-spring);
+  animation: cursorFloat 6s ease-in-out infinite;
+}
+
+.collab-cursor:hover {
+  transform: scale(1.06) rotate(-2deg);
+  z-index: 50;
+}
+
+.cursor-pointer-svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+}
+
+.cursor-tag {
+  font-family: var(--font-tech);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-white);
+  padding: 5px 12px;
+  border-radius: 4px 14px 14px 14px;
+  margin-top: -4px;
+  margin-left: 12px;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cursor-tag.purple {
+  background: var(--color-purple-lilas);
+}
+
+.cursor-tag.mint {
+  background: #059669;
+  color: #FFFFFF;
+}
+
+.cursor-tag.blue {
+  background: var(--color-electric-blue);
+}
+
+.cursor-tag.amber {
+  background: #D97706;
+}
+
+@keyframes cursorFloat {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  35% { transform: translateY(-6px) translateX(4px); }
+  70% { transform: translateY(4px) translateX(-3px); }
+}
+
+/* 2. PLAYFUL STICKY POST-IT NOTES */
+.sticky-note {
+  position: absolute;
+  padding: 18px 20px;
+  border-radius: 4px;
+  box-shadow: var(--shadow-sticky);
+  max-width: 260px;
+  z-index: 25;
+  transition: transform 0.25s var(--ease-spring), box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.sticky-note:hover {
+  transform: scale(1.05) rotate(0deg) !important;
+  box-shadow: 0 16px 32px rgba(0,0,0,0.14);
+  z-index: 35;
+}
+
+.sticky-tape {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(2px);
+  border: 1px dashed rgba(0,0,0,0.1);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.sticky-note.yellow {
+  background: var(--sticky-yellow);
+  color: var(--sticky-yellow-ink);
+  border: 1px solid var(--sticky-yellow-border);
+}
+
+.sticky-note.pink {
+  background: var(--sticky-pink);
+  color: var(--sticky-pink-ink);
+  border: 1px solid var(--sticky-pink-border);
+}
+
+.sticky-note.cyan {
+  background: var(--sticky-cyan);
+  color: var(--sticky-cyan-ink);
+  border: 1px solid var(--sticky-cyan-border);
+}
+
+.sticky-tag {
+  font-family: var(--font-tech);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  opacity: 0.8;
+}
+
+.sticky-text {
+  font-size: 12.5px;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+/* 3. FIGMA SELECTION BOUNDING BOX */
+.figma-selection-wrapper {
+  position: relative;
+  border: 1.5px solid var(--color-figma-blue);
+  border-radius: var(--radius-card);
+}
+
+.figma-handle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--color-white);
+  border: 1.5px solid var(--color-figma-blue);
+  border-radius: 1px;
+  z-index: 10;
+}
+
+.handle-tl { top: -4px; left: -4px; cursor: nwse-resize; }
+.handle-tr { top: -4px; right: -4px; cursor: nesw-resize; }
+.handle-bl { bottom: -4px; left: -4px; cursor: nesw-resize; }
+.handle-br { bottom: -4px; right: -4px; cursor: nwse-resize; }
+
+.figma-dimension-badge {
+  position: absolute;
+  bottom: -24px;
+  right: 12px;
+  background: var(--color-figma-blue);
+  color: var(--color-white);
+  font-family: var(--font-tech);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(49, 150, 255, 0.3);
+}
+
+/* 4. MASCOT SPEECH BUBBLE (FACÉTIEUX) */
+.mascot-speech-bubble {
+  position: absolute;
+  top: -20px;
+  right: -130px;
+  background: var(--color-white);
+  color: var(--color-dark-ink);
+  font-family: var(--font-tech);
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 14px 14px 14px 2px;
+  box-shadow: 0 8px 24px rgba(1, 5, 15, 0.18);
+  white-space: nowrap;
+  cursor: pointer;
+  transform: rotate(4deg);
+  transition: transform 0.2s var(--ease-spring), background 0.2s ease;
+  user-select: none;
+  border: 1px solid rgba(78, 75, 245, 0.15);
+}
+
+.mascot-speech-bubble:hover {
+  transform: rotate(0deg) scale(1.08);
+  background: #F8FAFC;
+}
+
+.mascot-speech-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 12px;
+  width: 0;
+  height: 0;
+  border-top: 6px solid var(--color-white);
+  border-right: 6px solid transparent;
+}
+
+/* 5. RISO TAMPON / STAMPS */
+.riso-stamp {
+  font-family: var(--font-tech);
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 4px 10px;
+  border: 1.5px dashed var(--color-purple-lilas);
+  color: var(--color-purple-lilas);
+  border-radius: 6px;
+  display: inline-block;
+  transform: rotate(-3deg);
+  background: rgba(135, 24, 220, 0.05);
+}
+
+.riso-stamp.mint {
+  border-color: #059669;
+  color: #059669;
+  background: rgba(5, 150, 105, 0.06);
+  transform: rotate(2deg);
+}
+
+/* 6. MOCKUP WINDOW HEADER (● ● ● macOS) */
+.mockup-window-header {
+  background: #F8FAFC;
+  border-bottom: 1px solid #EDF2F7;
+  padding: 8px 14px;
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: -32px -32px 20px -32px;
+}
+
+.mockup-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.mockup-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.mockup-dot.red { background: #FF5F56; }
+.mockup-dot.yellow { background: #FFBD2E; }
+.mockup-dot.green { background: #27C93F; }
+
+.mockup-url {
+  font-family: var(--font-tech);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--color-muted-blueprint);
+  background: var(--color-white);
+  padding: 2px 10px;
+  border-radius: 4px;
+  border: 1px solid #E2E8F0;
+}
