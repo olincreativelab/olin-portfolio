@@ -995,3 +995,303 @@
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.5; transform: scale(0.85); }
 }
+
+/* ==========================================================================
+   9. BUTTONS (ATOME D'ACTION MAÎTRE - FIGMA 4407:102)
+   ========================================================================== */
+.olin-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: var(--hit-target-min, 44px);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  box-sizing: border-box;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.15s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.15s ease;
+}
+
+/* Bouton Primaire (Dégradé Violet/Bleu signature) */
+.olin-btn--primary {
+  background: linear-gradient(124.44deg, #A100FF 7%, #0028FF 118%);
+  color: #FAFAFA;
+  border: 1px solid #FAFAFA;
+  box-shadow: 2px 2px 0px #01050F;
+}
+
+.olin-btn--primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 3px 3px 0px #0028FF;
+}
+
+.olin-btn--primary:active {
+  transform: translateY(1px);
+  box-shadow: 0px 0px 0px transparent;
+}
+
+.olin-btn--primary:focus-visible {
+  outline: 2px solid #0028FF;
+  outline-offset: 3px;
+}
+
+/* Bouton Secondaire (Studio Pro blanc à bordure franche) */
+.olin-btn--secondary {
+  background-color: #FFFFFF;
+  color: #01050F;
+  border: 1px solid #01050F;
+  box-shadow: 2px 2px 0px #01050F;
+}
+
+.olin-btn--secondary:hover {
+  background-color: #F8FAFC;
+  transform: translateY(-1px);
+  box-shadow: 3px 3px 0px #01050F;
+}
+
+.olin-btn--secondary:active {
+  transform: translateY(1px);
+  box-shadow: 0px 0px 0px transparent;
+}
+
+/* ==========================================================================
+   10. MOCKUP WINDOW HEADER (● ● ● macOS DOCK & FINDER)
+   ========================================================================== */
+.olin-window {
+  background: #FFFFFF;
+  border: 1px solid #01050F;
+  border-radius: 8px;
+  box-shadow: 3px 3px 0px #01050F;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.olin-window__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: #F1F5F9;
+  border-bottom: 1px solid #01050F;
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  font-size: 12px;
+  color: #64748B;
+  user-select: none;
+}
+
+.olin-window__dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.olin-window__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.olin-window__dot--red { background-color: #FF5F56; }
+.olin-window__dot--yellow { background-color: #FFBD2E; }
+.olin-window__dot--green { background-color: #27C93F; }
+
+.olin-window__title {
+  font-weight: 500;
+  color: #01050F;
+}
+
+.olin-window__body {
+  padding: 24px;
+  background: #FFFFFF;
+}
+
+/* ==========================================================================
+   11. PINNED STICKY NOTE (MOLÉCULE D'ATELIER - 4 TONS & INCLINAISON)
+   ========================================================================== */
+.olin-sticky {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  border-radius: 4px;
+  border: 1px solid #01050F;
+  box-shadow: 3px 3px 0px #01050F;
+  font-family: var(--font-body, 'Geologica', sans-serif);
+  font-size: 14px;
+  line-height: 1.5;
+  color: #01050F;
+}
+
+.olin-sticky--tilted {
+  transform: rotate(-1.5deg);
+  transition: transform 0.2s ease;
+}
+
+.olin-sticky--tilted:hover {
+  transform: rotate(0deg) translateY(-2px);
+}
+
+/* Ruban adhésif / Scotch Washi */
+.olin-sticky::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px dashed rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.olin-sticky--yellow { background-color: #FFE500; }
+.olin-sticky--mint { background-color: #E0F7F0; }
+.olin-sticky--pink { background-color: #FCE7F3; }
+.olin-sticky--white { background-color: #FFFFFF; }
+
+.olin-sticky__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   12. METRIC CARD / CAPSULE D'IMPACT (NIVEAU 1 SCAN 90s)
+   ========================================================================== */
+.olin-metric-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 20px;
+  background: #FFFFFF;
+  border: 1px solid #01050F;
+  border-radius: 8px;
+  box-shadow: 2px 2px 0px #01050F;
+}
+
+.olin-metric-card__value {
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  font-size: 32px;
+  font-weight: 700;
+  color: #0028FF;
+  line-height: 1;
+}
+
+.olin-metric-card__label {
+  font-family: var(--font-body, 'Geologica', sans-serif);
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748B;
+  line-height: 1.3;
+}
+
+/* ==========================================================================
+   13. STEPPER 4 ACTES (PROGRESSION HORIZONTALE PLEINE LARGEUR)
+   ========================================================================== */
+.olin-stepper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  width: 100%;
+  margin: 32px 0;
+}
+
+@media (max-width: 768px) {
+  .olin-stepper {
+    grid-template-columns: 1fr;
+  }
+}
+
+.olin-stepper__item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 16px;
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.olin-stepper__item--active {
+  border-color: #0028FF;
+  background: #EEF2FF;
+  box-shadow: 2px 2px 0px #0028FF;
+}
+
+.olin-stepper__num {
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  font-size: 12px;
+  font-weight: 600;
+  color: #0028FF;
+}
+
+.olin-stepper__label {
+  font-family: var(--font-body, 'Geologica', sans-serif);
+  font-size: 14px;
+  font-weight: 600;
+  color: #01050F;
+}
+
+/* ==========================================================================
+   14. SENIOR DRAWERS (ACCORDÉONS & BENTO 2X2 - NIVEAU 4)
+   ========================================================================== */
+.olin-drawers-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .olin-drawers-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.olin-drawer {
+  background: #FFFFFF;
+  border: 1px solid #01050F;
+  border-radius: 8px;
+  box-shadow: 2px 2px 0px #01050F;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.olin-drawer__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  font-size: 14px;
+  font-weight: 600;
+  color: #01050F;
+  text-transform: uppercase;
+}
+
+.olin-drawer__content {
+  font-family: var(--font-body, 'Geologica', sans-serif);
+  font-size: 14px;
+  line-height: 1.6;
+  color: #334155;
+}
