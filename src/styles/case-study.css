@@ -513,7 +513,7 @@
 .cs-context {
   padding-top: 72px;
   /* Respiration nette avant l'aiguillage des 4 étapes */
-  padding-bottom: 120px;
+  padding-bottom: 176px;
   border-bottom: 1px dashed rgba(1, 5, 15, 0.15);
 }
 
@@ -1186,7 +1186,7 @@
 
 @media (max-width: 768px) {
   .cs-context {
-    padding-bottom: 72px;
+    padding-bottom: 112px;
   }
 }
 
