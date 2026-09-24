@@ -1,0 +1,13 @@
+{
+  "case": "Renault Moments",
+  "role": "Senior UX Strategist",
+  "components": {
+    "mobile_illustration_342": "illu_renault_mobile_342.png",
+    "vision_strategique": "slot_vision_strategique.png",
+    "parcours_experience": "slot_parcours_experience.png",
+    "journey_illustrations": "slot_journey_illustrations.png",
+    "mockup_app_mobile": "slot_mockup_app_mobile.png",
+    "persona_tom": "sticker_persona_tom.png",
+    "logo_renault": "slot_logo_renault.png"
+  }
+}
