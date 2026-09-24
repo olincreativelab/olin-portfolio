@@ -280,8 +280,14 @@
          NIVEAU 2 — STEPPER D'AIGUILLAGE NARRATIF (STICKY MOBILE & DESKTOP)
          Apparaît APRES le contexte pour guider l'exploration des 4 actes
          ======================================================================= -->
-    <nav class="cs-stepper-bar" aria-label="Progression du deep dive en 4 actes">
-      <ol class="olin-stepper cs-container" data-stepper>
+    <nav class="cs-stepper-bar" aria-label="Progression du deep dive en 4 actes" data-stepper-bar>
+      <!-- Mobile : accordéon compact affichant l'étape en cours -->
+      <button type="button" class="cs-stepper-toggle" aria-expanded="false" aria-controls="cs-stepper-list" data-stepper-toggle>
+        <span class="cs-stepper-toggle__count"><span class="cs-sr-only">Étape en cours : </span><span data-stepper-count>01</span>/04</span>
+        <span class="cs-stepper-toggle__label" data-stepper-label>Poser le concept</span>
+        <span class="cs-stepper-toggle__chevron" aria-hidden="true">▾</span>
+      </button>
+      <ol id="cs-stepper-list" class="olin-stepper cs-container" data-stepper>
         <li><a class="olin-stepper__item olin-stepper__item--active" href="#acte-01" aria-current="step"><span class="olin-stepper__num">01 • Juil. 2021</span><span class="olin-stepper__label">Poser le concept</span></a></li>
         <li><a class="olin-stepper__item" href="#acte-02"><span class="olin-stepper__num">02 • Automne 2021</span><span class="olin-stepper__label">Développer la posture</span></a></li>
         <li><a class="olin-stepper__item" href="#acte-03"><span class="olin-stepper__num">03 • Déc. 2021</span><span class="olin-stepper__label">Raconter le service</span></a></li>
