@@ -512,7 +512,8 @@
 
 .cs-context {
   padding-top: 72px;
-  padding-bottom: 56px;
+  /* Respiration nette avant l'aiguillage des 4 étapes */
+  padding-bottom: 120px;
   border-bottom: 1px dashed rgba(1, 5, 15, 0.15);
 }
 
@@ -1168,8 +1169,10 @@
    RESPONSIVE
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
+  /* Latéral uniquement : ne pas écraser le rythme vertical des sections */
   .cs-container {
-    padding: 0 24px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 
   .cs-metrics {
@@ -1182,12 +1185,20 @@
 }
 
 @media (max-width: 768px) {
+  .cs-context {
+    padding-bottom: 72px;
+  }
+}
+
+@media (max-width: 768px) {
   .cs-page {
     --cs-menubar-h: 56px;
   }
 
+  /* Latéral uniquement : ne pas écraser le rythme vertical des sections */
   .cs-container {
-    padding: 0 16px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .cs-menubar {
