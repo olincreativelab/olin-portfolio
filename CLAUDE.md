@@ -87,8 +87,9 @@ Réutiliser systématiquement les classes suivantes :
 ---
 
 ## 🧠 7. Skills & Guides d'Expertise Spécialisés (`.claude/skills/`)
-Claude Cloud dispose de 3 compétences maîtresses embarquées dans le repo :
+Claude Cloud dispose de 4 compétences maîtresses embarquées dans le repo :
 1. **`frontend-craft`** (`.claude/skills/frontend-craft/SKILL.md`) : Rigueur typographique, zéro style par défaut, hiérarchie visuelle d'élite, contrastes WCAG 2.2 et hit-targets $\ge 44$px.
 2. **`web-motion`** (`.claude/skills/web-motion/SKILL.md`) : Courbes bézier vives (`cubic-bezier(0.16, 1, 0.3, 1)`), sensation mécanique d'enfoncement tactile et respect de `prefers-reduced-motion`.
 3. **`responsive-checker`** (`.claude/skills/responsive-checker/SKILL.md`) : Zéro débordement horizontal, repliement fluide des grilles et lisibilité mobile 390px.
+4. **`bmad-quality-gate`** (`.claude/skills/bmad-quality-gate/SKILL.md`) : Grille d'audit contradictoire (Business, Marketing, Architecture, Design) obligatoire avant toute Pull Request.
 
