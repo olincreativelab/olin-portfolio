@@ -1510,3 +1510,170 @@ a.olin-picture-frame:hover .olin-photo-duotone > img {
 .olin-picture-frame:hover .olin-photo-duotone::after {
   opacity: 0.25;
 }
+
+/* ==========================================================================
+   ❖ MINI-PLAYER BRAIN.FM (.olin-brainfm-player) — 02 · Molécule
+   ========================================================================== */
+
+.olin-brainfm-player {
+  --player-bg: #FAFAFA;
+  --player-border: #01050F;
+  --player-mint: #00F5A0;
+  --player-blue: #0128FE;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--player-bg);
+  border: 1.5px solid var(--player-border);
+  box-shadow: 2px 2px 0px var(--player-border);
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  color: var(--player-border);
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s ease;
+  user-select: none;
+}
+
+/* Format Pilule Compact */
+.olin-brainfm-player--pill {
+  height: 38px;
+  padding: 3px 10px 3px 4px;
+  border-radius: 9999px;
+}
+
+.olin-brainfm-player:hover {
+  transform: translateY(-1px);
+  box-shadow: 3px 3px 0px var(--player-border);
+}
+
+/* Bouton Play/Pause avec hit-target tactile garanti */
+.olin-brainfm-player__btn-play {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: var(--player-border);
+  color: #FAFAFA;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.olin-brainfm-player__btn-play::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  bottom: -8px;
+  left: -8px;
+  right: -8px; /* Garantit le hit-target de 44px */
+}
+
+.olin-brainfm-player__btn-play:hover {
+  background: var(--player-blue);
+  transform: scale(1.05);
+}
+
+.olin-brainfm-player__icon--pause {
+  display: none;
+}
+
+.olin-brainfm-player.is-playing .olin-brainfm-player__icon--play {
+  display: none;
+}
+
+.olin-brainfm-player.is-playing .olin-brainfm-player__icon--pause {
+  display: block;
+}
+
+/* Égaliseur visuel (4 barres) */
+.olin-brainfm-equalizer {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2.5px;
+  height: 14px;
+  padding: 0 2px;
+}
+
+.olin-brainfm-equalizer__bar {
+  width: 2.5px;
+  height: 100%;
+  background: var(--player-mint);
+  border: 0.5px solid var(--player-border);
+  border-radius: 1px;
+  transform-origin: bottom;
+  transform: scaleY(0.25);
+  transition: transform 0.2s ease;
+}
+
+/* Animation active en lecture (GPU-accelerated scaleY) */
+.olin-brainfm-player.is-playing .olin-brainfm-equalizer__bar:nth-child(1) {
+  animation: olinEqualizerJump 0.8s ease-in-out infinite alternate;
+}
+.olin-brainfm-player.is-playing .olin-brainfm-equalizer__bar:nth-child(2) {
+  animation: olinEqualizerJump 1.1s ease-in-out infinite 0.15s alternate;
+}
+.olin-brainfm-player.is-playing .olin-brainfm-equalizer__bar:nth-child(3) {
+  animation: olinEqualizerJump 0.9s ease-in-out infinite 0.3s alternate;
+}
+.olin-brainfm-player.is-playing .olin-brainfm-equalizer__bar:nth-child(4) {
+  animation: olinEqualizerJump 1.2s ease-in-out infinite 0.1s alternate;
+}
+
+@keyframes olinEqualizerJump {
+  0% { transform: scaleY(0.2); }
+  50% { transform: scaleY(0.9); }
+  100% { transform: scaleY(0.4); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .olin-brainfm-player.is-playing .olin-brainfm-equalizer__bar {
+    animation: none;
+    transform: scaleY(0.6);
+  }
+}
+
+/* Métadonnées */
+.olin-brainfm-player__meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  line-height: 1;
+}
+
+.olin-brainfm-player__badge {
+  padding: 2px 5px;
+  background: var(--player-mint);
+  border: 1px solid var(--player-border);
+  border-radius: 3px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  font-size: 9.5px;
+}
+
+.olin-brainfm-player__track {
+  font-weight: 600;
+  color: #2D3748;
+  white-space: nowrap;
+}
+
+/* Toggle expansion */
+.olin-brainfm-player__btn-toggle {
+  background: transparent;
+  border: none;
+  color: #718096;
+  cursor: pointer;
+  padding: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.olin-brainfm-player__btn-toggle:hover {
+  color: var(--player-border);
+  transform: translateY(1px);
+}
+

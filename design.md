@@ -242,6 +242,47 @@ tokens:
           Frame_Style:
             type: "VARIANT"
             values: ["Raw", "Window Card", "Tape Pinned"]
+
+      cursor_figjam:
+        name: "❖ cursor-figjam"
+        node_id: "4515:45983"
+        page: "4. Molecules"
+        properties:
+          Pointer_Type:
+            type: "VARIANT"
+            values: ["Hand", "Arrow"]
+          Theme:
+            type: "VARIANT"
+            values: ["Lead Architect (Blue)", "Creative UI (Purple)", "Engineering (Mint)", "Reviewer (Dark)"]
+          Motion:
+            type: "VARIANT"
+            values: ["Floating", "Static"]
+          User_Name:
+            type: "TEXT"
+            default: "Josselin Hillion"
+          Show_Tag:
+            type: "BOOLEAN"
+            default: true
+
+      mini_player_brainfm:
+        name: "❖ mini-player-brainfm"
+        page: "4. Molecules"
+        properties:
+          Format:
+            type: "VARIANT"
+            values: ["Pill", "Card"]
+          Playback_State:
+            type: "VARIANT"
+            values: ["Paused", "Playing"]
+          Mental_State:
+            type: "VARIANT"
+            values: ["Focus", "Relax", "Create"]
+          Track_Name:
+            type: "TEXT"
+            default: "Kyoto // 40Hz Neural Flow"
+          Show_Visualizer:
+            type: "BOOLEAN"
+            default: true
 ---
 
 # 🤖 Olin.os Machine-Readable Design Contract (`design.md`)
