@@ -136,10 +136,10 @@ export class BrainFmPlayerController {
   async _initPlayer() {
     await loadYouTubeIframeApi();
 
-    // Conteneur hors-champ. YouTube exige un lecteur d'au moins 200×200 px
-    // pour lire une vidéo intégrée : on le garde à cette taille, invisible.
-    // L'API remplace la cible par l'iframe : la cible est un enfant du
-    // conteneur, qui garde ainsi son positionnement.
+    // Conteneur invisible mais DANS la fenêtre : YouTube exige un lecteur
+    // d'au moins 200×200 px, et les navigateurs peuvent refuser de lire un
+    // média placé hors écran. L'API remplace la cible par l'iframe : la cible
+    // est un enfant du conteneur, qui garde ainsi son positionnement.
     let host = document.getElementById("olin-brainfm-yt-host");
     if (!host) {
       host = document.createElement("div");
@@ -147,11 +147,12 @@ export class BrainFmPlayerController {
       host.setAttribute("aria-hidden", "true");
       host.style.cssText = `
         position: fixed;
-        left: -10000px;
+        right: 0;
         bottom: 0;
+        z-index: -1;
         width: 200px;
         height: 200px;
-        opacity: 0.01;
+        opacity: 0.001;
         pointer-events: none;
         overflow: hidden;
       `;
@@ -232,7 +233,8 @@ export class BrainFmPlayerController {
    * @private
    */
   _handleStateChange(state) {
-    // YT.PlayerState.PLAYING = 1, PAUSED = 2, ENDED = 0
+    // YT.PlayerState.PLAYING = 1, PAUSED = 2, ENDED = 0, BUFFERING = 3
+    if (state === 3) return;
     this.element.classList.remove("is-loading");
     if (state === 1) {
       this.isPlaying = true;
@@ -265,7 +267,18 @@ export class BrainFmPlayerController {
 
   play() {
     if (this.player && this.isReady) {
+      this.element.classList.add("is-loading");
       this.player.playVideo();
+      // Lecture bloquée par le navigateur (politique d'autoplay) : l'état ne
+      // passe jamais à PLAYING. On libère le bouton pour qu'un nouveau clic,
+      // cette fois dans le geste de l'utilisateur, lance la lecture.
+      clearTimeout(this._playWatchdog);
+      this._playWatchdog = setTimeout(() => {
+        if (!this.isPlaying) {
+          console.warn("[BrainFmPlayer] Lecture non démarrée (autoplay bloqué ou flux indisponible). État YouTube :", this.player.getPlayerState?.());
+          this.element.classList.remove("is-loading");
+        }
+      }, 4000);
     }
   }
 
@@ -341,5 +354,10 @@ export function initLazyBrainFmPlayers(root = document) {
     ["pointerenter", "focusin", "touchstart"].forEach((type) => {
       element.addEventListener(type, warmUp, { once: true, passive: true });
     });
+    // Préchargement quand le navigateur est inactif après le chargement :
+    // sur mobile il n'y a pas de survol, et le premier tap doit trouver un
+    // lecteur prêt pour que la lecture parte dans le geste.
+    const idle = window.requestIdleCallback || ((cb) => setTimeout(cb, 2000));
+    window.addEventListener("load", () => idle(warmUp, { timeout: 4000 }), { once: true });
   });
 }
