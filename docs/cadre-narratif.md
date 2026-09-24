@@ -331,7 +331,7 @@ Voici la matérialisation visuelle exacte des écrans et des 4 moments de conver
 > Ces tests ont permis d'éprouver la charge cognitive en situation simulée de conduite : le décompte temps réel a été supprimé suite aux retours utilisateurs car jugé anxiogène, au profit d'alertes préventives discrètes. Fort de ces enseignements factuels, le dossier a été présenté devant les membres du **COMEX de Renault Group**. La direction générale a validé la vision stratégique et a immédiatement acté le lancement du premier MVP opérationnel en usine : l'application embarquée *Collections*.
 >
 > ⏱️ *Retour terrain :*  
-> *« Lors du premier prototype, nous avions laissé un décompte d'autonomie à la seconde près. Retour immédiat des testeurs : à 110 km/h, voir des secondes s'égrener en rouge donne l'impression d'être dans un film d'action avec une bombe à désamorcer plutôt que sur l'A11 un vendredi soir. On a vite réhabilité des minutes calmes. »*
+> *« Pour la première fois, la voiture ne ressemble pas à une tablette avec 50 applications qu'on n'ouvrira jamais en conduisant. Tout s'aligne sur notre journée : elle anticipe la pause, propose la bonne action au bon moment, puis s'efface. C'est un compagnon de route, plus un catalogue d'ingénieurs. »*
 
 * **Livrables Clés de l'Étape :** Prototypes interactifs de test, Rapport de synthèse des 2 vagues de tests (Lot 2 & Lot 3), Support de présentation décisionnel COMEX.
 * **Artefact Preuve en Regard :** Matrice du Gradient d'attention HMI (`Portfolio/Cas d'usage/assets_renault/p248_attention_gradient.png`) et cockpit OpenR complet.
@@ -355,9 +355,10 @@ Voici la matérialisation visuelle exacte des écrans et des 4 moments de conver
 
 ---
 
-#### D. La Transposition Koralplay (« The So What? »)
-* **Système Multi-Marques (Multi-Tenant) :** Renault Moments concevait déjà un socle logiciel transverse déclinable selon les marques (*Renault lifestyle, Dacia essentiel, Alpine performance*). C'est la réplique exacte du Core Koralplay face aux déclinaisons Bet241 ou Loteries d'État.
-* **Ergonomie sous Haute Pression :** Gérer l'attention d'un conducteur à 130 km/h fait écho direct à l'ergonomie d'un parieur en plein Live-Betting : zéro friction, lisibilité instantanée, décision en un geste.
+#### D. Transposition Produit & Systèmes Complexes (« The So What? »)
+* **01 // Tuer le réflexe d'empilement (L'Orchestration vs Feature Creep) :** Dans tout produit complexe (SaaS B2B, fintech, cockpit embarqué), le réflexe paresseux des équipes est d'empiler des fonctionnalités et des widgets. Ce cas prouve ma capacité à désaturer la charge mentale : organiser le temps d'usage plutôt que l'espace écran, faire remonter la bonne information au bon moment, permettre une décision en un geste, puis s'effacer.
+* **02 // La prospective pragmatique (Du cap stratégique COMEX au premier sprint de code) :** Éviter le piège classique des designers qui font soit de la science-fiction non codable, soit du ticket Jira au ras des pâquerettes. Capacité à aligner une direction générale sur un cap stratégique à 5 ans, tout en sachant immédiatement découper et spécifier un premier MVP fonctionnel (le Concept Model) exploitable par les développeurs dès le sprint suivant.
+* **03 // Décider par le réel, pas par l'opinion (Le Reality Check) :** Ne jamais engager des mois de développement sur de simples hypothèses de bureau. Éprouver le système sur des prototypes haute fidélité face à de vrais utilisateurs, écouter les signaux faibles, tuer les fausses bonnes idées sans ego (supprimer le décompte anxiogène) et bâtir un pacte de confiance transparent.
 
 ---
 
