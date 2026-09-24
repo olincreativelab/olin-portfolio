@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300..900&family=Instrument+Serif:ital@1&family=Kode+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300..900&family=Kode+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="/src/styles/tokens.css" />
   <link rel="stylesheet" href="/src/styles/base.css" />
@@ -126,39 +126,57 @@
     </section>
 
     <!-- =======================================================================
-         CARTOUCHE OS TERMINAL (Figma « Me and My compt »)
+         IDENTITÉ — PopUp « Olin.md » + PopUp « profil-pic.png »
+         (Figma 4515:46078 et 4515:46095, la photo chevauche en bas à droite)
          ======================================================================= -->
-    <section class="lp-identity lp-container" aria-labelledby="lp-terminal-title">
-      <div class="olin-window lp-terminal">
-        <div class="olin-window__header"><span class="olin-window__title">olin.md</span></div>
-        <div class="olin-window__body lp-terminal__body">
-          <div class="lp-terminal__id">
-            <a class="olin-picture-frame lp-terminal__photo" href="#contact" aria-label="Contacter Josselin Hillion">
-              <div class="olin-photo-duotone">
-                <img src="/assets/josselin_avatar_clean.png" alt="Portrait de Josselin Hillion" width="116" height="106" />
-                <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
-              </div>
-            </a>
-            <div>
-              <p class="lp-terminal__name">Josselin Hillion</p>
-              <h2 id="lp-terminal-title" class="lp-terminal__role">Senior Product Designer &amp; Builder</h2>
-              <p class="lp-terminal__school">Double diplôme EDNA × ENSAM Arts et Métiers</p>
+    <section class="lp-identity lp-container" aria-labelledby="lp-olinmd-title">
+      <div class="lp-identity__desk">
+        <div class="olin-popup lp-olinmd">
+          <div class="olin-popup__header"><span class="lp-olinmd__icon" aria-hidden="true">&gt;_</span>Olin.md</div>
+          <div class="olin-popup__body lp-olinmd__body">
+            <p class="lp-olinmd__name">Josselin Hillion</p>
+            <h2 id="lp-olinmd-title" class="lp-olinmd__role">Senior Product Designer &amp; Builder</h2>
+
+            <div class="lp-olinmd__prompt">
+              <p class="lp-olinmd__prompt-head">→ Master_Prompt</p>
+              <p><span class="lp-olinmd__key">RÔLE :</span> En tant que designer produit senior, j'allie UX strat, CX et intelligence artificielle pour transformer vos défis en solutions créatives.</p>
+              <p>Mon approche centrée sur l'utilisateur garantit une expérience fluide et engageante, tout en optimisant les processus métiers.</p>
+              <dl>
+                <div><dt>APPROCHE :</dt> <dd>Lean UX, Design thinking, Agile</dd></div>
+                <div><dt>OUTILS :</dt> <dd>Figma/FigJam, Antigravity, n8n, Bubble</dd></div>
+                <div><dt>SECTEURS :</dt> <dd>SaaS B2B, Industrie 4.0, Construction, Mobilité, Finance, Retail</dd></div>
+              </dl>
             </div>
-          </div>
 
-          <div class="lp-terminal__prompt">
-            <p class="lp-terminal__prompt-head">→ Master_Prompt</p>
-            <dl>
-              <div><dt>RÔLE :</dt><dd>En tant que designer produit senior, j'allie UX strat, CX et intelligence artificielle pour transformer vos défis en solutions créatives.</dd></div>
-              <div><dt>APPROCHE :</dt><dd>Lean UX, Design thinking, Agile</dd></div>
-              <div><dt>OUTILS :</dt><dd>Figma / FigJam, Antigravity, n8n, Bubble</dd></div>
-              <div><dt>SECTEURS :</dt><dd>SaaS B2B, Industrie 4.0, Construction, Mobilité, Finance, Retail</dd></div>
-            </dl>
+            <a class="olin-link lp-olinmd__link" href="#projets">plus de détails <span class="olin-link-arrow" aria-hidden="true">↗</span></a>
           </div>
-
-          <a class="olin-btn olin-btn--primary lp-terminal__cta" href="#contact">Discuter de votre produit <span aria-hidden="true">↗</span></a>
         </div>
+
+        <button type="button" class="olin-popup lp-profile" data-profile-open aria-haspopup="dialog" aria-label="Agrandir la photo de profil de Josselin Hillion">
+          <span class="olin-popup__header">profil-pic.png</span>
+          <span class="lp-profile__canvas" aria-hidden="true">
+            <span class="lp-profile__dots"></span>
+            <img class="lp-profile__frame" src="/assets/profile/profil_window_frame.svg" alt="" width="227" height="227" />
+            <img class="lp-profile__portrait" src="/assets/josselin_portrait_vector_window.svg" alt="" width="163" height="204" decoding="async" />
+            <span class="lp-profile__grain"></span>
+          </span>
+        </button>
       </div>
+
+      <dialog class="lp-lightbox" data-profile-dialog aria-label="Photo de profil de Josselin Hillion">
+        <div class="olin-popup lp-lightbox__window">
+          <div class="olin-popup__header">profil-pic.png</div>
+          <div class="lp-profile__canvas">
+            <span class="lp-profile__dots" aria-hidden="true"></span>
+            <img class="lp-profile__frame" src="/assets/profile/profil_window_frame.svg" alt="" width="227" height="227" />
+            <img class="lp-profile__portrait" src="/assets/josselin_portrait_vector_window.svg" alt="Portrait de Josselin Hillion, souriant, lunettes bleues, dans une fenêtre Olin.os" width="163" height="204" />
+            <span class="lp-profile__grain" aria-hidden="true"></span>
+          </div>
+        </div>
+        <form method="dialog">
+          <button class="lp-lightbox__close" type="submit" aria-label="Fermer la photo agrandie">✕</button>
+        </form>
+      </dialog>
     </section>
 
     <!-- =======================================================================
@@ -200,6 +218,7 @@
           <div class="olin-sticky lp-sticky--neon">
             <div class="olin-sticky__header"><span>Le build comme preuve</span></div>
             <p>Une webapp en production : facturation Stripe et signatures Oodrive certifiées, sans dette technique.</p>
+            <p class="lp-floor__soon"><span class="olin-tag olin-tag--neutral olin-tag--pill">case study en préparation</span></p>
             <a class="olin-sticky__action" href="mailto:olin.creativelab@gmail.com?subject=Cas%20Excibat">demander le cas complet ↗</a>
           </div>
         </div>
@@ -226,7 +245,17 @@
             <li class="lp-flow__step">
               <span class="lp-flow__num">03 // Webapp</span>
               <a class="olin-picture-frame" href="/assets/excibat/excibat_dashboard.png" target="_blank" rel="noopener" aria-label="Agrandir le dashboard promoteur Excibat (nouvel onglet)">
-                <img class="lp-flow__shot" src="/assets/excibat/excibat_dashboard.png" width="956" height="423" loading="lazy" alt="Dashboard promoteur Excibat : 14 programmes actifs, 128 signatures Oodrive, 18,4 k€ de revenus Stripe récurrents et tableau des programmes immobiliers avec statut GPA, signatures et facturation." />
+                <div class="olin-photo-duotone">
+                  <img class="lp-flow__shot" src="/assets/excibat/excibat_dashboard.png" width="956" height="423" loading="lazy" alt="Dashboard promoteur Excibat : 14 programmes actifs, 128 signatures Oodrive, 18,4 k€ de revenus Stripe récurrents et tableau des programmes immobiliers avec statut GPA, signatures et facturation." />
+                  <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+                </div>
+                <div class="olin-picture-frame__caption">
+                  <div class="olin-picture-frame__text">
+                    <span class="olin-picture-frame__title">Dashboard promoteur // Excibat</span>
+                    <span>Signatures Oodrive et facturation Stripe.</span>
+                  </div>
+                  <span class="olin-picture-frame__zoom">Agrandir ↗</span>
+                </div>
               </a>
             </li>
           </ol>
@@ -272,56 +301,155 @@
           </div>
         </div>
       </article>
+
+      <!-- Étage 3 — DATACITY PARIS FOR YOU -->
+      <article class="lp-floor lp-container" aria-labelledby="lp-datacity-title">
+        <div class="lp-floor__pitch">
+          <span class="olin-tag olin-tag--neutral olin-tag--tag">Smart City &amp; Data</span>
+          <h3 id="lp-datacity-title" class="lp-floor__title">DataCity <span>— Paris For You</span></h3>
+          <p class="lp-floor__lead">Webapp de flux touristiques personnalisés : désengorger les sites saturés grâce à la data transactionnelle et géographique.</p>
+          <p class="lp-floor__text">Ville de Paris, Mastercard, NUMA, l'Office du Tourisme et l'APUR autour d'une même question : comment répartir les visiteurs sans leur imposer de détour subi ? Une interface épurée à 3 paramètres, testée en marchant 2 h dans les rues de Paris.</p>
+
+          <ul class="lp-floor__metrics" aria-label="Chiffres clés DataCity">
+            <li class="olin-metric-card">
+              <span class="olin-metric-card__value">4 mois</span>
+              <span class="olin-metric-card__label">du cadrage au Demoday à l'Hôtel de Ville</span>
+            </li>
+            <li class="olin-metric-card">
+              <span class="olin-metric-card__value">Silver</span>
+              <span class="olin-metric-card__label">IIID Award 2020, data &amp; information design</span>
+            </li>
+          </ul>
+
+          <div class="olin-sticky olin-sticky--white">
+            <div class="olin-sticky__header"><span>Open Data</span><span>Mastercard</span></div>
+            <p>De la donnée transactionnelle à un parcours de visite que l'on a envie de suivre.</p>
+            <a class="olin-sticky__action" href="/datacity-paris-for-you.html">découvrez ce projet ↗</a>
+          </div>
+        </div>
+
+        <div class="olin-window lp-floor__visual">
+          <div class="olin-window__header"><span class="olin-window__title">paris-for-you.mapbox — webapp</span></div>
+          <div class="olin-window__body">
+            <a class="olin-picture-frame" href="/datacity-paris-for-you.html" aria-label="Voir le case study DataCity — Paris For You">
+              <div class="olin-photo-duotone">
+                <img src="/assets/datacity/p08_wireframes_ui_cible.png" width="960" height="540" loading="lazy" alt="Conception des écrans Paris For You : du wireframe à la maquette UI cible, carte de Paris et parcours personnalisé." />
+                <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+              </div>
+              <div class="olin-picture-frame__caption">
+                <div class="olin-picture-frame__text">
+                  <span class="olin-picture-frame__title">Wireframe ➔ UI cible</span>
+                  <span>La complexité algorithmique masquée derrière 3 paramètres.</span>
+                </div>
+                <span class="olin-picture-frame__zoom">Case study ↗</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Étage 4 — ROYAL CANIN (layout inversé, pas encore d'illustration) -->
+      <article class="lp-floor lp-floor--reverse lp-container" aria-labelledby="lp-royalcanin-title">
+        <div class="olin-window lp-floor__visual">
+          <div class="olin-window__header"><span class="olin-window__title">royal-canin.kiosk — borne phygitale</span></div>
+          <div class="olin-window__body lp-kiosk">
+            <span class="olin-sticker olin-sticker--cut lp-kiosk__logo" style="--olin-sticker-tilt: -3deg"><img src="/assets/stickers/sticker_client_royal_canin.svg" alt="Royal Canin" width="266" height="91" /></span>
+            <ul class="lp-kiosk__metrics" aria-label="Chiffres clés Royal Canin">
+              <li class="olin-metric-card">
+                <span class="olin-metric-card__value">&lt; 90 s</span>
+                <span class="olin-metric-card__label">pour une recommandation nutritionnelle personnalisée</span>
+              </li>
+              <li class="olin-metric-card">
+                <span class="olin-metric-card__value">200+</span>
+                <span class="olin-metric-card__label">références rendues lisibles au pied du rayon</span>
+              </li>
+              <li class="olin-metric-card">
+                <span class="olin-metric-card__value">5 j</span>
+                <span class="olin-metric-card__label">de Design Sprint avec les vétérinaires nutritionnistes</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="lp-floor__pitch">
+          <span class="olin-tag olin-tag--neutral olin-tag--tag">Design de service phygital</span>
+          <h3 id="lp-royalcanin-title" class="lp-floor__title">Royal Canin <span>— Borne phygitale</span></h3>
+          <p class="lp-floor__lead">Vulgariser une science vétérinaire pointue pour délivrer une recommandation personnalisée en moins de 90 secondes, directement au pied du rayon.</p>
+          <p class="lp-floor__text">Face à un linéaire de 15 mètres et 200 sacs presque identiques, le client repartait sans acheter. Mystery shopping en animalerie, Design Sprint à distance et co-conception du meuble métallique avec le fabricant : l'interface tactile et l'ergonomie physique conçues ensemble.</p>
+
+          <div class="olin-sticky olin-sticky--pink">
+            <div class="olin-sticky__header"><span>Magasins pilotes</span><span>Venture</span></div>
+            <p>Concept validé en magasins pilotes : le prototype a débloqué le financement corporate venture de l'industrialisation.</p>
+            <p class="lp-floor__soon"><span class="olin-tag olin-tag--neutral olin-tag--pill">case study en préparation</span></p>
+            <a class="olin-sticky__action" href="mailto:olin.creativelab@gmail.com?subject=Cas%20Royal%20Canin">demander le cas complet ↗</a>
+          </div>
+        </div>
+      </article>
     </section>
 
     <!-- =======================================================================
-         E. SERVICES — Les ateliers de conception
+         E. L'ATELIER D'OLIN — mural de livrables réels + 3 post-its
+         (Figma « Frame 1 : Mes compétences » 4515:46096)
          ======================================================================= -->
-    <section id="services" class="lp-services" aria-labelledby="lp-services-title">
+    <section id="services" class="lp-atelier" aria-labelledby="lp-atelier-heading">
       <div class="lp-container">
         <header class="lp-section-head">
           <span class="lp-eyebrow">// Comment nous travaillons ensemble</span>
-          <h2 id="lp-services-title" class="lp-section-title">3 modes d'intervention modulables</h2>
+          <h2 id="lp-atelier-heading" class="lp-section-title">L'atelier : les preuves du travail</h2>
         </header>
+      </div>
 
-        <ol class="lp-services__grid">
-          <li class="lp-service">
-            <span class="lp-service__num">01</span>
-            <h3 class="lp-service__title">Cadrage stratégique &amp; Discovery</h3>
-            <p>Clarifier la direction à partir des enjeux business à moyen terme, puis matérialiser la nouvelle expérience client en prototypes interactifs pour aligner les équipes. Des ateliers de co-conception pour co-créer des solutions adaptées.</p>
-            <ul class="lp-service__tags">
-              <li class="olin-tag olin-tag--neutral olin-tag--tag">co-conception</li>
-              <li class="olin-tag olin-tag--neutral olin-tag--tag">recherche terrain</li>
-              <li class="olin-tag olin-tag--neutral olin-tag--tag">audit UI</li>
-              <li class="olin-tag olin-tag--neutral olin-tag--tag">facilitation</li>
-            </ul>
-            <a class="olin-link" href="#contact">discutons-en <span class="olin-link-arrow" aria-hidden="true">↗</span></a>
-          </li>
-          <li class="lp-service">
-            <span class="lp-service__num">02</span>
-            <h3 class="lp-service__title">Prototypage rapide &amp; MVP</h3>
-            <p>Fini la déperdition entre maquette et production : je livre des MVP et produits fonctionnels, testés avec de vraies APIs, en comprenant les contraintes d'architecture et des équipes tech.</p>
-            <ul class="lp-service__tags">
-              <li class="olin-tag olin-tag--neutral olin-tag--tag">PRD</li>
-              <li class="olin-tag olin-tag--neutral olin-tag--tag">architecture</li>
-              <li class="olin-tag olin-tag--neutral olin-tag--tag">MVP</li>
-              <li class="olin-tag olin-tag--neutral olin-tag--tag">intégration backend</li>
-            </ul>
-            <a class="olin-link" href="#contact">discutons-en <span class="olin-link-arrow" aria-hidden="true">↗</span></a>
-          </li>
-          <li class="lp-service">
-            <span class="lp-service__num">03</span>
-            <h3 class="lp-service__title">Architecture Design System &amp; Scale</h3>
-            <p>Structurer un design system partagé entre Figma et le code (tokens, composants, documentation) pour que le produit passe à l'échelle sans accumuler de dette d'interface.</p>
-            <ul class="lp-service__tags">
-              <li class="olin-tag olin-tag--neutral olin-tag--tag">tokens</li>
-              <li class="olin-tag olin-tag--neutral olin-tag--tag">composants</li>
-              <li class="olin-tag olin-tag--neutral olin-tag--tag">Figma ↔ code</li>
-              <li class="olin-tag olin-tag--neutral olin-tag--tag">documentation</li>
-            </ul>
-            <a class="olin-link" href="#contact">discutons-en <span class="olin-link-arrow" aria-hidden="true">↗</span></a>
-          </li>
-        </ol>
+      <div class="lp-container lp-atelier__wide">
+        <div class="olin-window lp-atelier__window">
+          <div class="olin-window__header"><span class="olin-window__title">Frame 1 : Mes compétences</span></div>
+          <div class="olin-window__body lp-atelier__viewport" data-atelier>
+            <div class="lp-atelier__stage">
+              <div class="lp-atelier__mural">
+              <img class="lp-atelier__piece" data-pillar="vision-produit" src="/assets/competences/web/mural_01_use_case_blueprint_top_left.webp" alt="Service blueprint « Use case : designing the before and after maintenance »" width="359" height="204" loading="lazy" decoding="async" style="--x: 33px; --y: 11px; --w: 359px; --from-x: -60px; --from-y: -40px; --rot: -3deg; --delay: 0.1s" />
+              <img class="lp-atelier__piece" data-pillar="vision-produit" src="/assets/competences/web/mural_02_ux_wireframes_mid_left.webp" alt="Wireframes UX et matrice de parcours" width="246" height="204" loading="lazy" decoding="async" style="--x: 0px; --y: 189px; --w: 246px; --from-x: -80px; --from-y: 0px; --rot: 2deg; --delay: 0.2s" />
+              <img class="lp-atelier__piece" data-pillar="vision-produit" src="/assets/competences/web/mural_03_research_matrix_center_left.webp" alt="Matrice de recherche utilisateur" width="245" height="325" loading="lazy" decoding="async" style="--x: 270px; --y: 229px; --w: 245px; --from-x: -40px; --from-y: 40px; --rot: -2deg; --delay: 0.3s" />
+              <img class="lp-atelier__piece" data-pillar="culture-builder" src="/assets/competences/web/mural_04_storyboard_flows_bottom_left.webp" alt="Storyboard et flows de l'expérience" width="284" height="204" loading="lazy" decoding="async" style="--x: 41px; --y: 373px; --w: 284px; --from-x: -50px; --from-y: 60px; --rot: 1.5deg; --delay: 0.4s" />
+              <img class="lp-atelier__piece" data-pillar="ateliers" src="/assets/competences/web/mural_05_figjam_board_top_center.webp" alt="Board FigJam d'atelier de co-conception" width="324" height="204" loading="lazy" decoding="async" style="--x: 557px; --y: -7px; --w: 324px; --from-x: 0px; --from-y: -60px; --rot: -1.5deg; --delay: 0.15s" />
+              <img class="lp-atelier__piece" data-pillar="ateliers" src="/assets/competences/web/mural_06_user_test_doc_mid_center.webp" alt="Compte rendu de test utilisateurs avec Forum Études" width="161" height="206" loading="lazy" decoding="async" style="--x: 763px; --y: 183px; --w: 161px; --from-x: 20px; --from-y: -20px; --rot: 2.5deg; --delay: 0.25s" />
+              <img class="lp-atelier__piece" data-pillar="ateliers" src="/assets/competences/web/mural_07_workshop_visio_bottom_center.webp" alt="Atelier collaboratif en visio avec les équipes" width="323" height="204" loading="lazy" decoding="async" style="--x: 603px; --y: 429px; --w: 323px; --from-x: 0px; --from-y: 70px; --rot: -2deg; --delay: 0.35s" />
+              <img class="lp-atelier__piece" data-pillar="culture-builder" src="/assets/competences/web/mural_08_architecture_canvas_mid_bottom.webp" alt="Canvas d'architecture produit" width="350" height="204" loading="lazy" decoding="async" style="--x: 349px; --y: 484px; --w: 350px; --from-x: 30px; --from-y: 60px; --rot: 1deg; --delay: 0.45s" />
+              <img class="lp-atelier__piece" data-pillar="culture-builder" src="/assets/competences/web/mural_09_mobile_screens_flow_top_right.webp" alt="Flow d'écrans mobiles de l'application" width="441" height="204" loading="lazy" decoding="async" style="--x: 853px; --y: 45px; --w: 441px; --from-x: 80px; --from-y: -40px; --rot: 2deg; --delay: 0.2s" />
+              </div>
+            <article class="lp-atelier__card" data-pillar="vision-produit" style="--x: 159px; --y: 76px; --w: 290px" aria-labelledby="lp-atelier-card-1">
+              <h3 id="lp-atelier-card-1" class="lp-atelier__title">DONNER LE CAP : VISION PRODUIT &amp; PROTOTYPAGE STRATÉGIQUE</h3>
+              <p class="lp-atelier__text">Clarifier la direction basé sur les enjeux business à moyen terme et matérialiser la nouvelle expérience client sous forme de prototypes interactifs pour aligner les équipes.</p>
+              <ul class="lp-atelier__tags" aria-label="Savoir-faire">
+                <li>co-conception</li>
+                <li>figjam</li>
+                <li>facilitation</li>
+              </ul>
+              <a class="lp-atelier__link" href="#contact">plus de détails <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="lp-atelier__card" data-pillar="ateliers" style="--x: 513px; --y: 141px; --w: 290px" aria-labelledby="lp-atelier-card-2">
+              <h3 id="lp-atelier-card-2" class="lp-atelier__title">ATELIERS COLLABORATIFS POUR CO-CRÉER DES SOLUTIONS ADAPTÉES À VOS BESOINS.</h3>
+              <p class="lp-atelier__text">Mes ateliers favorisent l'innovation et l'engagement des équipes.</p>
+              <ul class="lp-atelier__tags" aria-label="Savoir-faire">
+                <li>audit ui</li>
+                <li>recherche terrain</li>
+                <li>parcours</li>
+                <li>wireframes</li>
+              </ul>
+              <a class="lp-atelier__link" href="#contact">plus de détails <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="lp-atelier__card" data-pillar="culture-builder" style="--x: 971px; --y: 284px; --w: 290px" aria-labelledby="lp-atelier-card-3">
+              <h3 id="lp-atelier-card-3" class="lp-atelier__title">CULTURE BUILDER &amp; PROTOTYPAGE FONCTIONNEL</h3>
+              <p class="lp-atelier__text">Fini la déperdition entre maquette et production. Je livre des MVP et produits fonctionnels, teste avec de vraies APIs, comprends les contraintes d'architecture et des équipes techs.</p>
+              <ul class="lp-atelier__tags" aria-label="Savoir-faire">
+                <li>PRD</li>
+                <li>architecture</li>
+                <li>MVP</li>
+                <li>integration backend</li>
+              </ul>
+              <a class="lp-atelier__link" href="#contact">plus de détails <span aria-hidden="true">↗</span></a>
+            </article>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 

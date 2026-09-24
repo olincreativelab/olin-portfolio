@@ -155,12 +155,12 @@
 
 .lp-hero__line--right {
   justify-self: end;
-  font-family: 'Instrument Serif', Georgia, serif;
-  font-style: italic;
-  font-weight: 400;
-  font-size: clamp(44px, 6.6vw, 100px);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(34px, 5.4vw, 80px);
   line-height: 0.95;
-  letter-spacing: -1px;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
   text-align: right;
   text-wrap: balance;
   color: var(--lp-ink);
@@ -211,87 +211,6 @@
   100% { opacity: 1; transform: translate(0, 0); }
 }
 
-/* Cartouche OS Terminal */
-.lp-terminal__body {
-  display: grid;
-  gap: 18px;
-}
-
-.lp-terminal__id {
-  display: grid;
-  grid-template-columns: 96px minmax(0, 1fr);
-  gap: 16px;
-  align-items: center;
-}
-
-.lp-terminal__photo {
-  width: 96px;
-}
-
-.lp-terminal__photo .olin-photo-duotone {
-  aspect-ratio: 1;
-}
-
-.lp-terminal__photo img {
-  object-position: center top;
-}
-
-.lp-terminal__name {
-  font-family: var(--font-tech);
-  font-size: 14px;
-  color: var(--lp-midnight);
-}
-
-.lp-terminal__role {
-  margin-top: 4px;
-  font-family: var(--font-display);
-  font-size: clamp(22px, 2.1vw, 28px);
-  font-weight: 800;
-  line-height: 1.05;
-  text-transform: uppercase;
-  color: var(--lp-midnight);
-}
-
-.lp-terminal__school {
-  margin-top: 6px;
-  font-size: 13px;
-  color: var(--lp-muted);
-}
-
-.lp-terminal__prompt {
-  padding: 16px;
-  background: var(--lp-midnight);
-  border-radius: 4px;
-  font-family: var(--font-tech);
-  font-size: 12.5px;
-  line-height: 1.55;
-  color: #E5EDFF;
-}
-
-.lp-terminal__prompt-head {
-  margin-bottom: 10px;
-  color: #00F5A0;
-}
-
-.lp-terminal__prompt dl {
-  display: grid;
-  gap: 8px;
-}
-
-.lp-terminal__prompt dt {
-  display: inline;
-  color: #00F5A0;
-}
-
-.lp-terminal__prompt dd {
-  display: inline;
-}
-
-.lp-terminal__cta {
-  justify-self: start;
-  min-width: 208px;
-}
-
 /* --------------------------------------------------------------------------
    C. STICKERS — board FigJam (rotations et décalages désordonnés)
    -------------------------------------------------------------------------- */
@@ -328,12 +247,198 @@
 }
 
 /* --------------------------------------------------------------------------
-   CARTOUCHE OS TERMINAL (sous le board)
+   IDENTITÉ — PopUp Olin.md + PopUp profil-pic.png (Figma 4515:46030)
+   Desk de 897px : Olin.md 720px, photo 330px qui chevauche en bas à droite.
    -------------------------------------------------------------------------- */
 .lp-identity {
-  max-width: 920px;
   padding-top: 24px;
   padding-bottom: 32px;
+}
+
+.lp-identity__desk {
+  position: relative;
+  max-width: 897px;
+  margin: 0 auto;
+  padding-bottom: 167px;
+}
+
+.lp-olinmd {
+  width: 80.27%;
+}
+
+.lp-olinmd__icon {
+  margin-right: 6px;
+  font-size: 9px;
+  letter-spacing: -1px;
+}
+
+.lp-olinmd__body {
+  display: grid;
+  gap: 12px;
+  padding: 12px;
+}
+
+.lp-olinmd__name {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  color: var(--lp-midnight);
+}
+
+.lp-olinmd__role {
+  max-width: 13em;
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3vw, 32px);
+  font-weight: 800;
+  line-height: 1.05;
+  text-transform: uppercase;
+  color: var(--lp-midnight);
+}
+
+.lp-olinmd__prompt {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 12px 20px 16px;
+  background: #2B2F3A;
+  border-radius: 4px;
+  font-family: var(--font-tech);
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: #E5EDFF;
+}
+
+.lp-olinmd__prompt-head,
+.lp-olinmd__key,
+.lp-olinmd__prompt dt {
+  color: #00F5A0;
+}
+
+.lp-olinmd__prompt dl {
+  max-width: 400px;
+  display: grid;
+  gap: 8px;
+}
+
+.lp-olinmd__prompt dt,
+.lp-olinmd__prompt dd {
+  display: inline;
+}
+
+.lp-olinmd__link {
+  justify-self: start;
+  margin-left: -14px;
+}
+
+/* Fenêtre photo : bouton qui ouvre la lightbox */
+.lp-profile {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 36.79%;
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: inherit;
+  cursor: zoom-in;
+  transition: transform 0.25s var(--lp-ease);
+}
+
+.lp-profile:hover,
+.lp-profile:focus-visible {
+  transform: translate(-2px, -2px);
+}
+
+.lp-profile .olin-popup__header {
+  display: flex;
+}
+
+/* Composition Figma 328 × 287 (unité --u = 1px Figma, via container query) */
+.lp-profile__canvas {
+  --u: calc(100cqw / 328);
+  position: relative;
+  display: block;
+  container-type: inline-size;
+  aspect-ratio: 328 / 287;
+  overflow: hidden;
+  background-color: #4B4BFF;
+  border: 1px solid #01050F;
+  border-top: 0;
+  border-radius: 0 0 2px 2px;
+}
+
+/* Trame de carrés 4px au pas de 24px (pattern Figma), à l'échelle de la fenêtre */
+.lp-profile__dots {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Crect width='4' height='4' fill='%23DDDDDE'/%3E%3C/svg%3E");
+  background-position: calc(19 * var(--u)) calc(21 * var(--u));
+  background-size: calc(24 * var(--u)) calc(24 * var(--u));
+}
+
+.lp-profile__frame,
+.lp-profile__portrait {
+  position: absolute;
+  max-width: none;
+}
+
+.lp-profile__frame {
+  left: calc(53 * var(--u));
+  top: calc(31 * var(--u));
+  width: calc(227 * var(--u));
+  height: auto;
+}
+
+.lp-profile__portrait {
+  left: calc(77.55 * var(--u));
+  top: calc(18.33 * var(--u));
+  width: calc(162.8 * var(--u));
+  height: calc(203.94 * var(--u));
+  transform: rotate(-11deg);
+}
+
+.lp-profile__grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Lightbox */
+.lp-lightbox {
+  width: min(660px, calc(100vw - 32px));
+  max-width: none;
+  margin: auto;
+  padding: 0;
+  overflow: visible;
+  background: none;
+  border: 0;
+}
+
+.lp-lightbox::backdrop {
+  background: rgba(1, 5, 15, 0.72);
+}
+
+.lp-lightbox__window {
+  box-shadow: 3px 3px 0px #01050F;
+}
+
+.lp-lightbox__close {
+  position: absolute;
+  top: -52px;
+  right: 0;
+  min-width: 44px;
+  min-height: 44px;
+  background: #FFFFFF;
+  border: 1px solid #01050F;
+  border-radius: 8px;
+  box-shadow: 2px 2px 0px #01050F;
+  font-size: 18px;
+  color: #01050F;
+  cursor: pointer;
 }
 
 /* --------------------------------------------------------------------------
@@ -422,6 +527,30 @@
 .lp-sticky--solar .olin-sticky__header,
 .lp-sticky--solar .olin-sticky__action {
   color: #01050F;
+}
+
+.lp-floor__soon {
+  margin-top: 4px;
+}
+
+/* Royal Canin : pas encore d'illustration, la fenêtre porte le logo et les preuves */
+.lp-kiosk {
+  display: grid;
+  gap: 20px;
+  justify-items: center;
+  padding: 32px 24px;
+}
+
+.lp-kiosk__logo {
+  height: 64px;
+}
+
+.lp-kiosk__metrics {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
 }
 
 /* Moodboard d'ingénierie Excibat */
@@ -537,63 +666,172 @@
 }
 
 /* --------------------------------------------------------------------------
-   E. SERVICES — fond blueprint, bordures franches
+   E. L'ATELIER D'OLIN — mural de livrables réels + post-its bleu ardoise
+   (Figma « Frame 1 : Mes compétences » 4515:46096 — scène de 1294 × 696)
    -------------------------------------------------------------------------- */
-.lp-services {
+.lp-atelier {
   padding: 96px 0;
-  background: #EDF2F9;
-  border-top: 1.5px solid var(--lp-ink);
-  border-bottom: 1.5px solid var(--lp-ink);
 }
 
-.lp-services__grid {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+/* La scène Figma fait 1294px : le conteneur s'élargit pour l'afficher à 100% */
+.lp-atelier__wide {
+  max-width: 1440px;
 }
 
-.lp-service {
+.lp-atelier__window {
+  --lp-atelier-w: 1294px;
+  --lp-atelier-h: 696px;
+}
+
+.lp-atelier__viewport {
+  position: relative;
+  flex: none;
+  padding: 24px;
+  overflow: hidden;
+}
+
+/* Scène à l'échelle Figma, réduite par JS (--lp-atelier-scale) si la
+   fenêtre est plus étroite que 1294px. */
+.lp-atelier__stage {
+  position: relative;
+  width: var(--lp-atelier-w);
+  height: var(--lp-atelier-h);
+  transform: scale(var(--lp-atelier-scale, 1));
+  transform-origin: top left;
+}
+
+.lp-atelier__mural {
+  position: absolute;
+  inset: 0;
+}
+
+.lp-atelier__piece {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--w);
+  height: auto;
+  background: #FFFFFF;
+  box-shadow: 0 1px 8px rgba(1, 5, 15, 0.08);
+  transition:
+    opacity 0.35s var(--lp-ease),
+    transform 0.35s var(--lp-ease);
+}
+
+/* Arrivée progressive au scroll : chaque planche glisse depuis son offset */
+.lp-atelier__stage.is-armed .lp-atelier__piece {
+  opacity: 0;
+  transform: translate(var(--from-x), var(--from-y)) rotate(var(--rot));
+}
+
+.lp-atelier__stage.is-armed.is-in .lp-atelier__piece {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.7s var(--lp-ease) var(--delay),
+    transform 0.9s var(--lp-ease) var(--delay);
+}
+
+/* Spotlight : le post-it survolé met en avant ses 3 planches */
+.lp-atelier__stage[data-focus] .lp-atelier__piece {
+  opacity: 0.4;
+}
+
+.lp-atelier__stage[data-focus="vision-produit"] .lp-atelier__piece[data-pillar="vision-produit"],
+.lp-atelier__stage[data-focus="ateliers"] .lp-atelier__piece[data-pillar="ateliers"],
+.lp-atelier__stage[data-focus="culture-builder"] .lp-atelier__piece[data-pillar="culture-builder"] {
+  z-index: 1;
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+.lp-atelier__card {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  z-index: 10;
+  width: var(--w);
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  padding: 28px 24px 20px;
-  background: #FFFFFF;
-  border: 1px solid var(--lp-ink);
-  border-radius: 8px;
-  box-shadow: 3px 3px 0px var(--lp-ink);
+  gap: 16px;
+  padding: 24px;
+  background: #A2B5DA;
+  border-radius: 2px;
+  box-shadow: 2px 2px 0px #000000;
+  color: var(--lp-ink);
+}
+
+.lp-atelier__title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 1.15;
+  text-transform: uppercase;
+  color: var(--lp-ink);
+}
+
+.lp-atelier__text {
   font-size: 15px;
   line-height: 1.6;
-  color: var(--lp-body);
 }
 
-.lp-service__num {
+.lp-atelier__tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.lp-atelier__tags li {
+  padding: 5px 8px;
+  background: #FFFFFF;
+  border-radius: 2px;
   font-family: var(--font-tech);
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 1;
-  color: var(--lp-blue);
-}
-
-.lp-service__title {
-  font-family: var(--font-display);
-  font-size: 21px;
-  font-weight: 800;
+  font-size: 11px;
   line-height: 1.2;
   color: var(--lp-ink);
 }
 
-.lp-service__tags {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
+.lp-atelier__link {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
   gap: 6px;
+  min-height: 44px;
+  margin-top: auto;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--lp-ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s var(--lp-ease);
 }
 
-.lp-service .olin-link {
-  align-self: flex-start;
-  margin-top: auto;
-  margin-left: -14px;
+.lp-atelier__link:hover,
+.lp-atelier__link:focus-visible {
+  color: var(--lp-blue);
+}
+
+/* < 1024px : pas de mural, les 3 post-its s'empilent */
+@media (max-width: 1023.98px) {
+  .lp-atelier__stage {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    transform: none;
+  }
+
+  .lp-atelier__mural {
+    display: none;
+  }
+
+  .lp-atelier__card {
+    position: static;
+    width: auto;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -662,10 +900,6 @@
   .lp-stickers__board {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-
-  .lp-services__grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
 }
 
 @media (max-width: 768px) {
@@ -687,16 +921,23 @@
     width: 100%;
   }
 
-  .lp-terminal__id {
-    grid-template-columns: 72px minmax(0, 1fr);
+  .lp-identity__desk {
+    padding-bottom: 0;
   }
 
-  .lp-terminal__photo {
-    width: 72px;
+  .lp-kiosk__metrics {
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  .lp-terminal__cta {
-    justify-self: stretch;
+  .lp-olinmd {
+    width: 100%;
+  }
+
+  .lp-profile {
+    position: relative;
+    display: block;
+    width: min(300px, 82%);
+    margin: -12px 0 0 auto;
   }
 
   .lp-stickers__board {
@@ -735,8 +976,12 @@
     order: -1;
   }
 
-  .lp-services {
+  .lp-atelier {
     padding: 72px 0;
+  }
+
+  .lp-atelier__viewport {
+    padding: 16px;
   }
 
   .lp-contact__body {
@@ -761,5 +1006,10 @@
 
   .lp-hero__cursor {
     animation: none;
+  }
+
+  .lp-atelier__piece,
+  .lp-atelier__stage.is-armed.is-in .lp-atelier__piece {
+    transition: opacity 0.2s linear;
   }
 }
