@@ -4,7 +4,10 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "sync:readme": "node ../scripts/sync_portfolio_readme.js",
+    "predev": "npm run sync:readme",
     "dev": "vite",
+    "prebuild": "npm run sync:readme",
     "build": "vite build",
     "preview": "vite preview"
   },
