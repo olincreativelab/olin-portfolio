@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DataCity — Paris For You (Ville de Paris × Mastercard) | Olin.os</title>
+  <meta name="description" content="Case study DataCity Paris For You : webapp de flux touristiques personnalisés pour désengorger les sites saturés grâce à la data Open Data et transactionnelle. Récompensé par un IIID Silver Award 2020." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300..900&family=Kode+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/src/styles/tokens.css" />
+  <link rel="stylesheet" href="/src/styles/base.css" />
+  <link rel="stylesheet" href="/src/styles/components.css" />
+  <link rel="stylesheet" href="/src/styles/case-study.css" />
+  <!-- Masque le titre avant l'effet machine à écrire (pas de flash), sauf reduced-motion -->
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-typing');
+    }
+  </script>
+</head>
+<body class="cs-page">
+
+  <!-- Trame d'atelier interactive (fallback CSS statique si reduced-motion / tactile) -->
+  <canvas id="canvas-dot-grid" aria-hidden="true"></canvas>
+
+  <a class="cs-skip-link" href="#main">Aller au contenu</a>
+
+  <!-- =========================================================================
+       TOP MENUBAR — OLIN.OS / case-studies / datacity.paris-for-you
+       ========================================================================= -->
+  <header class="cs-menubar">
+    <nav class="cs-menubar__path" aria-label="Fil d'Ariane">
+      <a href="/" class="cs-menubar__home">
+        <img src="/assets/olin_logo_icon.svg" alt="Olin.os — retour à l'accueil" width="36" height="36" />
+      </a>
+      <span class="cs-menubar__crumbs">/ <a href="/#projets">case-studies</a> / <strong>datacity.paris-for-you</strong></span>
+    </nav>
+    <div class="cs-menubar__right">
+      <span class="olin-tag olin-tag--green olin-tag--pill cs-menubar__status">
+        <span class="olin-tag__dot" aria-hidden="true"></span>Disponible Q3/Q4
+      </span>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- =======================================================================
+         NIVEAU 1 — EXECUTIVE CARD (Scan 90s)
+         ======================================================================= -->
+    <section class="cs-hero cs-container" aria-labelledby="cs-title">
+      <span class="olin-tag olin-tag--blue olin-tag--tag cs-hero__chip">Case study // Smart City &amp; Data</span>
+
+      <div class="cs-hero__grid">
+        <div class="cs-hero__content">
+          <h1 id="cs-title" class="cs-hero__title" aria-label="Paris For You"><span class="cs-typewriter" aria-hidden="true" data-typewriter>Paris For You</span><span class="cs-caret" aria-hidden="true">_</span></h1>
+          <p class="cs-hero__lead">
+            Webapp de flux touristiques personnalisés : désengorger les sites saturés grâce à la data transactionnelle et géographique.
+          </p>
+
+          <!-- Cartouche projet -->
+          <dl class="cs-cartouche" aria-label="Cartouche projet">
+            <div><dt>Client</dt><dd>Ville de Paris • Mastercard • NUMA • Office du Tourisme (OTCP) • APUR</dd></div>
+            <div><dt>Rôle</dt><dd>Lead Product Designer &amp; UX Researcher (MFG Labs × ekino)</dd></div>
+            <div><dt>Squad</dt><dd>Lead Design (Josselin) • 1 Data Scientist • 1 Data Engineer • 2 Devs Front-End • 1 PM</dd></div>
+            <div><dt>Durée</dt><dd>4 mois • février → juin 2019 (Demoday 12 juin 2019)</dd></div>
+            <div><dt>Stack</dt><dd>Mapbox GL • Open Data Paris • Algorithmes de clustering • Tests In-Situ 2h</dd></div>
+          </dl>
+
+          <ul class="cs-badges" aria-label="Preuves d'impact">
+            <li><span class="olin-tag olin-tag--purple olin-tag--pill"><span class="olin-tag__dot" aria-hidden="true"></span>Silver Award IIID 2020 (Data &amp; Design)</span></li>
+            <li><span class="olin-tag olin-tag--green olin-tag--pill"><span class="olin-tag__dot" aria-hidden="true"></span>Présenté à l'Hôtel de Ville de Paris</span></li>
+            <li><span class="olin-tag olin-tag--blue olin-tag--pill"><span class="olin-tag__dot" aria-hidden="true"></span>Version Beta sur parisinfo.com</span></li>
+          </ul>
+
+          <!-- MOMENT CTA 1 — Triage -->
+          <div class="cs-cta-row" role="group" aria-label="Choisir sa lecture">
+            <a class="olin-btn olin-btn--primary" href="#synthese">⚡ Scanner la synthèse 90s <span aria-hidden="true">↓</span></a>
+            <button type="button" class="olin-btn olin-btn--secondary" data-action="print-onepager">📥 One-Pager PDF</button>
+          </div>
+        </div>
+
+        <!-- Hero mockup — Webapp Mapbox -->
+        <figure class="cs-hero__visual">
+          <div class="olin-window">
+            <div class="olin-window__header">
+              <span class="olin-window__title">paris-for-you.mapbox</span>
+              <span aria-hidden="true">Webapp</span>
+            </div>
+            <div class="olin-window__body cs-cockpit">
+              <a class="olin-picture-frame cs-cockpit__slot" href="/assets/datacity/p08_wireframes_ui_cible.png" target="_blank" rel="noopener" aria-label="Ouvrir la maquette Paris For You en pleine résolution (nouvel onglet)">
+                <div class="olin-photo-duotone">
+                  <img
+                    src="/assets/datacity/p08_wireframes_ui_cible.png"
+                    width="1440" height="900"
+                    alt="Interface de l'application Paris For You : sélection du profil et itinéraire de découverte sur carte Mapbox."
+                    fetchpriority="high" />
+                  <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <img class="cs-hero__sticker" src="/assets/stickers/sticker_client_numa.svg" width="160" height="53" alt="Partenaire : DataCity NUMA" />
+          <figcaption class="cs-caption">↳ Paris For You : la complexité algorithmique masquée derrière une interface épurée à 3 paramètres simples.</figcaption>
+        </figure>
+      </div>
+
+      <!-- Matrice 3x3 — Scan exécutif 90s -->
+      <div id="synthese" class="cs-synthese" aria-labelledby="synthese-title">
+        <div class="cs-section-header">
+          <span class="olin-tag olin-tag--blue olin-tag--pill cs-section-tag">SCAN EXÉCUTIF // 90 SECONDES</span>
+          <h2 id="synthese-title" class="cs-section-title">Synthèse de la mission &amp; impact</h2>
+        </div>
+        <div class="cs-matrix">
+          <article class="olin-window cs-matrix__col">
+            <div class="olin-window__header"><span class="olin-window__title">01 // Les challenges</span></div>
+            <ul class="olin-window__body cs-bullets">
+              <li><strong>Exploitation de données massives.</strong> Traduire des millions de données transactionnelles (Mastercard) et géographiques (APUR, Ville de Paris) sans submerger l'utilisateur sous des graphiques indigestes.</li>
+              <li><strong>Saturation des flux urbains.</strong> Rediriger une partie des flux touristiques (80% concentrés sur seulement 5 sites majeurs) vers des quartiers alternatifs et le commerce de proximité.</li>
+              <li><strong>Faisabilité technique &amp; délais.</strong> Concilier un algorithme de clustering complexe avec les quotas d'appels et la latence d'affichage de Mapbox, sous une contrainte stricte de 4 mois.</li>
+            </ul>
+          </article>
+          <article class="olin-window cs-matrix__col">
+            <div class="olin-window__header"><span class="olin-window__title">02 // L'approche</span></div>
+            <ul class="olin-window__body cs-bullets">
+              <li><strong>Recherche &amp; persona.</strong> Immersion de 5 jours d'entretiens auprès de concierges d'hôtels et de touristes américains pour modéliser le persona de synthèse <em>Jeff</em>.</li>
+              <li><strong>Scoping &amp; dialogue data science.</strong> Co-conception au sein d'une squad hybride (Design × Data Science chez MFG Labs) pour limiter l'interface à 3 filtres intuitifs (départ, temps, envies).</li>
+              <li><strong>Prototypage &amp; test in-situ.</strong> Conception d'un UI Kit Mapbox épuré et déploiement d'un protocole de test en conditions réelles (marche autonome de 2h dans Paris).</li>
+            </ul>
+          </article>
+          <article class="olin-window cs-matrix__col">
+            <div class="olin-window__header"><span class="olin-window__title">03 // Le résultat</span></div>
+            <ul class="olin-window__body cs-bullets">
+              <li><strong>Reconnaissance Internationale.</strong> Récompensé par un <strong>Silver Award de l'International Institute for Information Design (IIID)</strong> en 2020 pour l'alliance data science &amp; design d'information.</li>
+              <li><strong>Validation institutionnelle.</strong> Démonstration en direct lors du Demoday officiel à l'Hôtel de Ville de Paris (12 juin 2019) devant les élus de la Ville et la direction de Mastercard.</li>
+              <li><strong>Mise en ligne concrète.</strong> Release de la version Beta hébergée directement sur le portail officiel de l'Office de Tourisme (<em>parisinfo.com</em>).</li>
+            </ul>
+          </article>
+        </div>
+
+        <ul class="cs-metrics" aria-label="Chiffres clés">
+          <li class="olin-metric-card">
+            <span class="olin-metric-card__value">4 mois</span>
+            <span class="olin-metric-card__label">du cadrage amont au Demoday officiel à l'Hôtel de Ville</span>
+          </li>
+          <li class="olin-metric-card">
+            <span class="olin-metric-card__value">2 h</span>
+            <span class="olin-metric-card__label">de marche in-situ dans les rues de Paris par chaque testeur</span>
+          </li>
+          <li class="olin-metric-card">
+            <span class="olin-metric-card__value">9</span>
+            <span class="olin-metric-card__label">frictions réelles cartographiées pour piloter le backlog PM</span>
+          </li>
+          <li class="olin-metric-card">
+            <span class="olin-metric-card__value">Silver</span>
+            <span class="olin-metric-card__label">IIID Award 2020 distinguant l'alliance data &amp; information design</span>
+          </li>
+        </ul>
+
+        <!-- MOMENT CTA 2 — Carrefour décisionnel -->
+        <div class="cs-crossroads">
+          <p class="cs-crossroads__label">Vous avez l'essentiel. Deux chemins :</p>
+          <div class="cs-cta-row">
+            <a class="olin-btn olin-btn--primary" href="mailto:josselin.hillion@gmail.com?subject=Discuter%20du%20projet%20DataCity%20Paris%20For%20You%20(15%20min)">Discuter de ce projet avec Josselin (15 min) <span aria-hidden="true">↗</span></a>
+            <a class="olin-link" href="#contexte">Découvrir le cadrage &amp; les 4 étapes <span class="olin-link-arrow" aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         CADRAGE STRATÉGIQUE — L'ENJEU DATACITY (CONTEXTE & TENSION)
+         ======================================================================= -->
+    <section id="contexte" class="cs-context cs-container" aria-labelledby="context-title">
+      <div class="cs-section-header">
+        <span class="olin-tag olin-tag--blue olin-tag--pill cs-section-tag">01 // CADRAGE STRATÉGIQUE</span>
+        <h2 id="context-title" class="cs-section-title">Mise en situation : Le défi d'innovation ouverte DataCity</h2>
+        <p class="cs-section-subtitle">
+          Transformer des données transactionnelles et urbaines hétérogènes en un service public de désengorgement touristique.
+        </p>
+      </div>
+
+      <div class="cs-context__grid">
+        <!-- Narratif & 3 Mandats Stratégiques -->
+        <div class="cs-context__text">
+          <p class="cs-prose cs-prose--lead">
+            Dans le cadre du programme d'innovation urbaine DataCity (NUMA × Ville de Paris), Mastercard et la Ville de Paris souhaitaient réconcilier afflux touristique et qualité de vie des riverains. 80% des 30 millions de visiteurs annuels se concentrent sur seulement 5 sites historiques. Le challenge : concevoir un service prédictif personnalisé incitant les visiteurs à explorer des quartiers moins fréquentés tout en soutenant le commerce de proximité.
+          </p>
+
+          <div class="cs-missions-card">
+            <h3 class="cs-missions-title">Les 3 mandats de la mission design :</h3>
+            <ol class="cs-missions">
+              <li>
+                <span class="cs-mission-badge">01</span>
+                <div>
+                  <strong>Rendre la donnée actionnable.</strong> Traduire des millions de transactions bancaires et des polygones Open Data en recommandations de balades immédiates et désirables.
+                </div>
+              </li>
+              <li>
+                <span class="cs-mission-badge">02</span>
+                <div>
+                  <strong>Masquer la tuyauterie algorithmique.</strong> Refuser les tableaux de bord à 48 coefficients : proposer une interface légère tenant sous la seconde d'affichage Mapbox.
+                </div>
+              </li>
+              <li>
+                <span class="cs-mission-badge">03</span>
+                <div>
+                  <strong>Éprouver sur le pavé parisien.</strong> Sortir des laboratoires climatisés : tester le service en marche autonome de 2 heures dans les rues avec de vrais touristes.
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Photographie Hôtel de Ville & Citation Clé -->
+        <aside class="cs-context__media">
+          <div class="olin-window cs-context-figure">
+            <div class="olin-window__header">
+              <span class="olin-window__title">demoday-hotel-de-ville.paris</span>
+              <span class="olin-tag olin-tag--blue olin-tag--pill cs-window-tag">DEMODAY</span>
+            </div>
+            <div class="olin-window__body cs-context-body">
+              <a class="olin-picture-frame" href="/assets/datacity/p15_demoday_hotel_de_ville.png" target="_blank" rel="noopener" aria-label="Agrandir la photo du Demoday à l'Hôtel de Ville de Paris (nouvel onglet)">
+                <div class="cs-context-photo-wrap olin-photo-duotone">
+                  <img
+                    src="/assets/datacity/p15_demoday_hotel_de_ville.png"
+                    alt="Présentation officielle de Paris For You lors du Demoday à l'Hôtel de Ville de Paris le 12 juin 2019."
+                    width="1280" height="720"
+                    loading="lazy"
+                    class="cs-context-photo" />
+                  <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+                </div>
+                <div class="olin-picture-frame__caption">
+                  <div class="olin-picture-frame__text">
+                    <span class="olin-picture-frame__title">Demoday Officiel // 12 Juin 2019</span>
+                    <span>Hôtel de Ville de Paris — Restitution devant les élus et Mastercard.</span>
+                  </div>
+                  <span class="olin-picture-frame__zoom">zoom ↗</span>
+                </div>
+              </a>
+              <div class="cs-context-quote">
+                <blockquote>
+                  « L'enjeu n'est pas de collecter plus de données, mais de donner le pouvoir aux visiteurs et aux citoyens de s'approprier la ville de façon responsable. »
+                </blockquote>
+                <cite>— <strong>Restitution officielle DataCity</strong>, Hôtel de Ville de Paris</cite>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Carte Contexte : La Squad Hybride MFG Labs -->
+      <div class="cs-squad-card" aria-labelledby="squad-title">
+        <div class="cs-squad-card__header">
+          <span class="olin-tag olin-tag--blue olin-tag--pill" style="align-self: flex-start;">ORGANISATION &amp; GOUVERNANCE</span>
+          <h3 id="squad-title" class="cs-squad-card__title">La Squad Hybride MFG Labs : Data Science × Design d'Interaction</h3>
+        </div>
+        <div class="cs-squad-card__grid">
+          <div class="cs-squad-col">
+            <span class="cs-squad-col__tag">LEAD DESIGN &amp; RESEARCH</span>
+            <p><strong>Josselin Hillion</strong> (ekino × MFG Labs) : Immersion terrain, persona Jeff, UI Kit Mapbox, protocole in-situ 3 étapes et matrice de priorisation produit.</p>
+          </div>
+          <div class="cs-squad-col">
+            <span class="cs-squad-col__tag">DATA SCIENCE &amp; ENGINEERING</span>
+            <p>1 Data Scientist et 1 Data Engineer chez <strong>MFG Labs</strong> : Agrégation des données Mastercard, APUR, métriques de distance et modèle de clustering des POIs.</p>
+          </div>
+          <div class="cs-squad-col">
+            <span class="cs-squad-col__tag">FRONT-END &amp; DELIVERY</span>
+            <p>2 Développeurs Front-End et 1 Product Manager : Intégration Mapbox GL, optimisation des requêtes API, scoping Lean MVP et release Beta sur <strong>parisinfo.com</strong>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         NIVEAU 2 — STEPPER D'AIGUILLAGE NARRATIF (STICKY MOBILE & DESKTOP)
+         ======================================================================= -->
+    <nav class="cs-stepper-bar" aria-label="Progression du deep dive en 4 actes" data-stepper-bar>
+      <!-- Mobile : accordéon compact affichant l'étape en cours -->
+      <button type="button" class="cs-stepper-toggle" aria-expanded="false" aria-controls="cs-stepper-list" data-stepper-toggle>
+        <span class="cs-stepper-toggle__count"><span class="cs-sr-only">Étape en cours : </span><span data-stepper-count>01</span>/04</span>
+        <span class="cs-stepper-toggle__label" data-stepper-label>Immersion terrain</span>
+        <span class="cs-stepper-toggle__chevron" aria-hidden="true">▾</span>
+      </button>
+      <ol id="cs-stepper-list" class="olin-stepper cs-container" data-stepper>
+        <li><a class="olin-stepper__item olin-stepper__item--active" href="#acte-01" aria-current="step"><span class="olin-stepper__num">01 • Fév. 2019</span><span class="olin-stepper__label">Immersion terrain</span></a></li>
+        <li><a class="olin-stepper__item" href="#acte-02"><span class="olin-stepper__num">02 • Mars 2019</span><span class="olin-stepper__label">UI Kit &amp; Scoping MVP</span></a></li>
+        <li><a class="olin-stepper__item" href="#acte-03"><span class="olin-stepper__num">03 • Avril–Mai 2019</span><span class="olin-stepper__label">Tests In-Situ 2h</span></a></li>
+        <li><a class="olin-stepper__item" href="#acte-04"><span class="olin-stepper__num">04 • Juin 2019 &amp; 2020</span><span class="olin-stepper__label">Demoday &amp; Award</span></a></li>
+      </ol>
+    </nav>
+
+    <!-- =======================================================================
+         NIVEAU 3 — LE DEEP DIVE EN 4 ACTES (Modular Storyboard)
+         ======================================================================= -->
+    <div id="deep-dive" class="cs-deep-dive">
+
+      <!-- ACTE 01 -->
+      <section id="acte-01" class="cs-act cs-container" data-act aria-labelledby="acte-01-title">
+        <header class="cs-act__header">
+          <div class="cs-act__pill-group">
+            <span class="cs-pill cs-pill--blue">ACTE 01 // FÉVRIER 2019</span>
+            <span class="cs-pill cs-pill--dark">PHASE 1/4</span>
+          </div>
+          <h2 id="acte-01-title" class="cs-act__title">Immersion terrain &amp; Storyboard « Jeff came to Paris »</h2>
+          <p class="cs-act__thesis">Identifier les freins réels à la mobilité touristique auprès de concierges d'hôtels et de visiteurs internationaux.</p>
+        </header>
+        <div class="cs-act__body">
+          <div class="cs-prose">
+            <p>Face à des partenaires disposant de millions de données transactionnelles anonymisées, la tentation initiale était de concevoir un produit technique axé sur la statistique pure. Notre priorité de design a été d'aller immédiatement sur le terrain : 5 jours d'immersion et d'entretiens qualitatifs auprès de concierges d'hôtels et de touristes américains.</p>
+            <p>Cette recherche a révélé un paradoxe : les visiteurs ont une envie sincère de sortir des sentiers battus, mais craignent de perdre leur temps ou de se retrouver dans des zones sans charme. Nous avons modélisé le persona de synthèse <strong>Jeff</strong> et formalisé le storyboard narratif complet <em>« Jeff came to Paris »</em>, alignant partenaires institutionnels et équipe technique.</p>
+          </div>
+          <ul class="cs-deliverables" aria-label="Livrables clés">
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">5 jours d'immersion terrain</li>
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Persona Jeff</li>
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Storyboard Jeff came to Paris</li>
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Cartographie des freins</li>
+          </ul>
+        </div>
+        <figure class="cs-artifact">
+          <a class="olin-picture-frame" href="/assets/datacity/p10_mvp_scoping.png" target="_blank" rel="noopener" aria-label="Agrandir la planche de scoping MVP en haute résolution (nouvel onglet)">
+            <div class="olin-photo-duotone">
+              <img src="/assets/datacity/p10_mvp_scoping.png" width="1440" height="900" loading="lazy" alt="Planche de scoping MVP : arbitrage entre fonctionnalités souhaitées et faisabilité dans le sprint de 4 mois." />
+              <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+            </div>
+            <div class="olin-picture-frame__caption">
+              <div class="olin-picture-frame__text">
+                <span class="olin-picture-frame__title">Scoping Lean MVP // Arbitrage Délais &amp; Latence</span>
+                <span>Élagage des panneaux lourds pour focaliser sur l'itinéraire clé.</span>
+              </div>
+              <span class="olin-picture-frame__zoom">zoom ↗</span>
+            </div>
+          </a>
+          <figcaption class="cs-caption">Arbitrage pragmatique : simplifier les fonctionnalités pour garantir un affichage sous la seconde.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ACTE 02 -->
+      <section id="acte-02" class="cs-act cs-container" data-act aria-labelledby="acte-02-title">
+        <header class="cs-act__header">
+          <div class="cs-act__pill-group">
+            <span class="cs-pill cs-pill--blue">ACTE 02 // MARS 2019</span>
+            <span class="cs-pill cs-pill--dark">PHASE 2/4</span>
+          </div>
+          <h2 id="acte-02-title" class="cs-act__title">Conception UX/UI &amp; Dialogue avec la Data Science</h2>
+          <p class="cs-act__thesis">Réduire la complexité algorithmique à 3 filtres simples et construire un UI Kit cartographique Mapbox ultra-réactif.</p>
+        </header>
+        <div class="cs-act__body">
+          <div class="cs-prose">
+            <p>En collaboration étroite avec les Data Scientists de MFG Labs, nous avons défini les règles de traduction visuelle de la donnée transactionnelle. Alors que les ingénieurs envisageaient d'exposer de multiples curseurs et coefficients, j'ai posé un arbitrage ergonomique radical : limiter la configuration utilisateur à <strong>3 filtres simples</strong> : le point de départ, le temps disponible et les centres d'intérêt.</p>
+            <p>En parallèle, nous avons conçu un UI Kit sur-mesure intégré au moteur cartographique Mapbox : styles de cartes épurés, micro-interactions fluides et fiches de points d'intérêt légères pour garantir un affichage instantané sous le seuil critique d'une seconde.</p>
+          </div>
+          <aside class="olin-sticky olin-sticky--yellow cs-note" aria-label="Note de terrain d'atelier">
+            <div class="olin-sticky__header">
+              <span>📌 NOTE D'ATELIER</span>
+              <span>MFG LABS // SPRINT 02</span>
+            </div>
+            <blockquote>
+              « Quand vous enfermez trois Data Scientists brillants dans une pièce, le premier réflexe est de vouloir afficher 48 coefficients d'attractivité et un diagramme en radar. Notre rôle a été de leur rappeler que Jeff, touriste texan à Paris, veut juste trouver une bonne boulangerie sans faire 45 minutes de queue. »
+            </blockquote>
+            <div class="cs-note__sign">— Josselin Hillion // Lead Product Designer</div>
+            <a href="#acte-03" class="olin-sticky__action">découvrir le protocole in-situ ↗</a>
+          </aside>
+        </div>
+        <figure class="cs-artifact">
+          <a class="olin-picture-frame" href="/assets/datacity/p08_wireframes_ui_cible.png" target="_blank" rel="noopener" aria-label="Agrandir la comparaison Wireframes vs UI Cible en haute résolution (nouvel onglet)">
+            <div class="olin-photo-duotone">
+              <img src="/assets/datacity/p08_wireframes_ui_cible.png" width="1440" height="900" loading="lazy" alt="Planche comparative : Wireframes fonctionnels vs Maquettes UI Cibles de Paris For You." />
+              <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+            </div>
+            <div class="olin-picture-frame__caption">
+              <div class="olin-picture-frame__text">
+                <span class="olin-picture-frame__title">Wireframes vs UI Cible // Mapbox &amp; Cards</span>
+                <span>Conception de l'architecture d'information et des composants d'itinéraire.</span>
+              </div>
+              <span class="olin-picture-frame__zoom">zoom ↗</span>
+            </div>
+          </a>
+          <figcaption class="cs-caption">De la structure filaire à l'interface épurée Mapbox connectée aux clusters de POIs.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ACTE 03 -->
+      <section id="acte-03" class="cs-act cs-container" data-act aria-labelledby="acte-03-title">
+        <header class="cs-act__header">
+          <div class="cs-act__pill-group">
+            <span class="cs-pill cs-pill--blue">ACTE 03 // AVRIL–MAI 2019</span>
+            <span class="cs-pill cs-pill--dark">PHASE 3/4</span>
+          </div>
+          <h2 id="acte-03-title" class="cs-act__title">Reality Check in-situ : 2 heures de marche dans Paris</h2>
+          <p class="cs-act__thesis">Éprouver l'algorithme sur le pavé parisien via un protocole en 3 temps (40 min labo + 2h visite réelle + 20 min débrief).</p>
+        </header>
+        <div class="cs-act__body">
+          <div class="cs-prose">
+            <p>Nous avons conçu et déployé un protocole de test in-situ inédit auprès d'un panel de 10 résidents américains : prise en main initiale de 40 minutes, suivie de <strong>deux heures de marche réelle et autonome</strong> dans Paris guidée par la webapp, puis débriefing téléphonique à chaud de 20 minutes.</p>
+            <p>Ce Reality Check a révélé des enseignements capitaux : la confiance des utilisateurs ne dépendait pas de la crainte de surveillance (aucun rejet de données personnelles), mais d'un besoin d'<strong>explicabilité</strong> (<em>« Pourquoi ce lieu m'est proposé à moi ? »</em>) et surtout d'<strong>informations qualitatives fiables</strong> (horaires réels, prix, photos, transports). C'est également ce test qui a inspiré la création de la fonctionnalité refuge : le carnet de route PDF léger téléchargeable 100% hors-ligne pour parer aux forfaits roaming 4G coûteux.</p>
+          </div>
+          <aside class="olin-sticky olin-sticky--yellow cs-note" aria-label="Insight de la rue">
+            <div class="olin-sticky__header">
+              <span>📱 INSIGHT DE LA RUE</span>
+              <span>TEST IN-SITU // PARIS 11e</span>
+            </div>
+            <blockquote>
+              « En atelier, on teste en fibre optique à 1 Gb/s. Dans le 11e arrondissement avec un forfait roaming étranger à 15$ le mégaoctet, le touriste coupe la 4G plus vite que son ombre. Le meilleur design a été un bon vieux carnet de route PDF hors-ligne. »
+            </blockquote>
+            <div class="cs-note__sign">— Synthèse terrain (10 résidents américains)</div>
+            <a href="#drawers-title" class="olin-sticky__action">voir la matrice des 9 frictions ↗</a>
+          </aside>
+        </div>
+        <figure class="cs-artifact">
+          <a class="olin-picture-frame" href="/assets/datacity/p13_tests_in_situ_3_etapes.png" target="_blank" rel="noopener" aria-label="Agrandir le schéma du protocole de test in-situ en haute résolution (nouvel onglet)">
+            <div class="olin-photo-duotone">
+              <img src="/assets/datacity/p13_tests_in_situ_3_etapes.png" width="1440" height="900" loading="lazy" alt="Schéma du protocole de test in-situ en 3 étapes : manipulation, balade réelle de 2h et débrief téléphonique." />
+              <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+            </div>
+            <div class="olin-picture-frame__caption">
+              <div class="olin-picture-frame__text">
+                <span class="olin-picture-frame__title">Protocole de Test In-Situ // 3 Étapes</span>
+                <span>40 min test prototype → 2h visite réelle dans Paris → 20 min débrief téléphonique.</span>
+              </div>
+              <span class="olin-picture-frame__zoom">zoom ↗</span>
+            </div>
+          </a>
+          <figcaption class="cs-caption">Le protocole de test in-situ ayant alimenté la matrice des 9 frictions réelles.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ACTE 04 -->
+      <section id="acte-04" class="cs-act cs-container" data-act aria-labelledby="acte-04-title">
+        <header class="cs-act__header">
+          <div class="cs-act__pill-group">
+            <span class="cs-pill cs-pill--blue">ACTE 04 // JUIN 2019 &amp; 2020</span>
+            <span class="cs-pill cs-pill--dark">PHASE 4/4</span>
+          </div>
+          <h2 id="acte-04-title" class="cs-act__title">Restitution Hôtel de Ville &amp; Consécration IIID Award</h2>
+          <p class="cs-act__thesis">Valider l'impact auprès des partenaires institutionnels et faire reconnaître l'alliance entre Data Science et Design de l'information.</p>
+        </header>
+        <div class="cs-act__body">
+          <div class="cs-prose">
+            <p>Le projet s'est conclu par la démonstration en direct du service fonctionnel lors du <strong>Demoday officiel à l'Hôtel de Ville de Paris</strong> le 12 juin 2019, devant les élus de la Ville, la direction de Mastercard et l'écosystème NUMA. La clarté des recommandations et la sobriété de l'interface ont emporté l'adhésion immédiate.</p>
+            <p>La webapp a ensuite été mise en ligne en version Beta sur le portail officiel de l'Office de Tourisme (<em>parisinfo.com</em>). En juin 2020, le projet a reçu une consécration internationale : le <strong>Silver Award de l'International Institute for Information Design (IIID)</strong>, récompensant une articulation exemplaire entre recherche utilisateur, données massives et design d'interaction.</p>
+          </div>
+          <ul class="cs-deliverables" aria-label="Livrables clés">
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Démonstration live au Demoday</li>
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Matrice de priorisation PM</li>
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Mise en ligne Beta parisinfo.com</li>
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Silver Award IIID 2020</li>
+          </ul>
+        </div>
+        <figure class="cs-artifact">
+          <a class="olin-picture-frame" href="/assets/datacity/p15_demoday_hotel_de_ville.png" target="_blank" rel="noopener" aria-label="Agrandir la photo de la présentation au Demoday de l'Hôtel de Ville (nouvel onglet)">
+            <div class="olin-photo-duotone">
+              <img src="/assets/datacity/p15_demoday_hotel_de_ville.png" width="1440" height="900" loading="lazy" alt="Présentation officielle de Paris For You sous les lustres dorés de l'Hôtel de Ville de Paris." />
+              <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+            </div>
+            <div class="olin-picture-frame__caption">
+              <div class="olin-picture-frame__text">
+                <span class="olin-picture-frame__title">Demoday Hôtel de Ville // 12 Juin 2019</span>
+                <span>Restitution publique et validation institutionnelle du service.</span>
+              </div>
+              <span class="olin-picture-frame__zoom">zoom ↗</span>
+            </div>
+          </a>
+          <figcaption class="cs-caption">Présentation officielle de Paris For You sous les ors de l'Hôtel de Ville de Paris.</figcaption>
+        </figure>
+
+        <!-- MOMENT CTA 3 — Micro-preuves -->
+        <div class="cs-proof-cta">
+          <p class="cs-proof-cta__label">Voir les preuves de plus près :</p>
+          <div class="cs-cta-row">
+            <a class="olin-btn olin-btn--secondary" href="/assets/datacity/p08_wireframes_ui_cible.png" target="_blank" rel="noopener">Ouvrir la maquette Mapbox en pleine résolution <span aria-hidden="true">↗</span></a>
+            <a class="olin-link" href="mailto:josselin.hillion@gmail.com?subject=Acc%C3%A8s%20au%20dossier%20DataCity%20Paris%20For%20You">Demander le deck complet DataCity (PDF) <span class="olin-link-arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- =======================================================================
+         NIVEAU 4 — TIROIRS DE MAÎTRISE SENIOR & CONVERSION FINALE
+         ======================================================================= -->
+    <section class="cs-drawers cs-container" aria-labelledby="drawers-title">
+      <header class="cs-act__header">
+        <span class="cs-act__num">Niveau 4 // Maîtrise senior</span>
+        <h2 id="drawers-title" class="cs-act__title">Les 4 tiroirs</h2>
+      </header>
+
+      <div class="olin-drawers-grid">
+        <details class="olin-drawer" data-drawer>
+          <summary class="olin-drawer__title cs-drawer__summary">
+            <span class="cs-drawer__head">
+              <span class="olin-tag olin-tag--blue olin-tag--tag">❖ Data &amp; UX</span>
+              <span class="cs-drawer__name">Dialogue Design × Data Science</span>
+              <span class="cs-drawer__teaser">Arbitrage 3 filtres, co-définition des métriques de distance et seuils de latence Mapbox</span>
+            </span>
+            <span class="cs-drawer__icon" aria-hidden="true"><span class="cs-drawer__glyph">+</span></span>
+          </summary>
+          <div class="olin-drawer__content">
+            <ul class="cs-bullets">
+              <li><strong>Simplification radicale.</strong> Arbitrage d'UX : ne laisser visibles que 3 filtres au lieu des dizaines de coefficients mathématiques que les data scientists souhaitaient exposer.</li>
+              <li><strong>Co-définition des métriques.</strong> Travail main dans la main avec l'équipe data pour fixer des seuils de distance cohérents avec un rythme piéton de flânerie urbaine.</li>
+              <li><strong>Gestion de la latence.</strong> Plafonnement des temps de réponse de l'API Mapbox sous la barre d'une seconde pour éviter les abandons en situation de mobilité.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="olin-drawer" data-drawer>
+          <summary class="olin-drawer__title cs-drawer__summary">
+            <span class="cs-drawer__head">
+              <span class="olin-tag olin-tag--purple olin-tag--tag">❖ Scoping Lean</span>
+              <span class="cs-drawer__name">Scoping MVP &amp; Dette Technique</span>
+              <span class="cs-drawer__teaser">Élagage du calcul piéton pas-à-pas pour tenir la date butoir du Demoday</span>
+            </span>
+            <span class="cs-drawer__icon" aria-hidden="true"><span class="cs-drawer__glyph">+</span></span>
+          </summary>
+          <div class="olin-drawer__content">
+            <ul class="cs-bullets">
+              <li><strong>Élagage pragmatique.</strong> Pour tenir la date butoir du 12 juin à l'Hôtel de Ville, abandon temporaire du calcul piéton rue par rue trop gourmand en requêtes API.</li>
+              <li><strong>Priorité à la valeur centrale.</strong> Concentration des efforts sur la recommandation de grappes de quartiers et de fiches de points d'intérêt authentiques.</li>
+              <li><strong>Délivrer à l'heure.</strong> Présentation d'un démonstrateur 100% stable et fonctionnel le jour J devant le COMEX et les élus.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="olin-drawer" data-drawer>
+          <summary class="olin-drawer__title cs-drawer__summary">
+            <span class="cs-drawer__head">
+              <span class="olin-tag olin-tag--green olin-tag--tag">❖ Reality Check</span>
+              <span class="cs-drawer__name">Vérité terrain &amp; Explicabilité</span>
+              <span class="cs-drawer__teaser">9 frictions cartographiées : l'enjeu n'est pas la privacy mais l'explicabilité et la réassurance</span>
+            </span>
+            <span class="cs-drawer__icon" aria-hidden="true"><span class="cs-drawer__glyph">+</span></span>
+          </summary>
+          <div class="olin-drawer__content">
+            <ul class="cs-bullets">
+              <li><strong>L'explicabilité avant tout.</strong> L'épreuve de la rue a prouvé que le premier frein n'est pas la surveillance mais l'incompréhension : <em>« Pourquoi ce lieu m'est proposé à moi ? »</em>.</li>
+              <li><strong>Réassurance qualitative bloquante.</strong> Sans horaires d'ouverture fiables, photos, tarifs et affluence, la recommandation algorithmique reste lettre morte (friction majeure).</li>
+              <li><strong>Fonctionnalité refuge hors-ligne.</strong> Création d'un carnet de route PDF léger pour répondre aux coupures 4G immédiates des visiteurs étrangers.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="olin-drawer" data-drawer>
+          <summary class="olin-drawer__title cs-drawer__summary">
+            <span class="cs-drawer__head">
+              <span class="olin-tag olin-tag--neutral olin-tag--tag">❖ Recul critique</span>
+              <span class="cs-drawer__name">Ce que je ferais autrement</span>
+              <span class="cs-drawer__teaser">Structurer plus tôt les contrats d'interface Data Science × Devs Front-End</span>
+            </span>
+            <span class="cs-drawer__icon" aria-hidden="true"><span class="cs-drawer__glyph">+</span></span>
+          </summary>
+          <div class="olin-drawer__content">
+            <p>Dans un projet d'innovation associant data scientists et développeurs front, la transmission des schémas de données a parfois généré des frictions de format. Avec le recul, j'aurais instauré dès le sprint 1 des <strong>contrats d'interface OpenAPI stricts</strong> et des revues de synchronisation bi-hebdomadaires pour fluidifier l'intégration des clusters dans Mapbox.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- Transposition & Enseignements Transverses -->
+      <aside class="olin-window cs-sowhat" aria-labelledby="sowhat-title">
+        <div class="olin-window__header">
+          <span class="olin-window__title" id="sowhat-title">🎯 The so what? // Ce que ce cas démontre pour vos produits</span>
+        </div>
+        <div class="olin-window__body cs-sowhat__body">
+          <div class="cs-sowhat__item">
+            <span class="cs-sowhat__tag">01 // HAUTE DENSITÉ DE DONNÉES</span>
+            <h3 class="cs-sowhat__heading">Traduire des flux massifs en décisions simples</h3>
+            <p>Capacité éprouvée à collaborer avec des ingénieurs data et backend pour transformer des volumes massifs d'événements et de statistiques en une interface claire, réactive et sans latence perceptible.</p>
+          </div>
+          <div class="cs-sowhat__item">
+            <span class="cs-sowhat__tag">02 // PRAGMATISME DE DELIVERY &amp; MVP</span>
+            <h3 class="cs-sowhat__heading">Tailler pour tester plutôt que s'enfermer</h3>
+            <p>Savoir élaguer la vision cible pour livrer un MVP opérationnel dans des délais très courts (4 mois), permettant de tester sur le pavé avant d'engager des développements lourds.</p>
+          </div>
+          <div class="cs-sowhat__item">
+            <span class="cs-sowhat__tag">03 // L'EXPLICABILITÉ DU SYSTÈME</span>
+            <h3 class="cs-sowhat__heading">Rendre compréhensible l'intelligence invisible</h3>
+            <p>La performance brute d'un algorithme ne suffit pas : pour qu'un utilisateur agisse, le système doit rendre ses critères lisibles et lui donner les preuves nécessaires pour décider en toute confiance.</p>
+          </div>
+        </div>
+      </aside>
+
+      <!-- MOMENT CTA 4 — Conversion finale -->
+      <div class="cs-final-cta">
+        <p class="cs-final-cta__title">Prêt à clarifier vos architectures de données ou applications cartographiques ?</p>
+        <div class="cs-cta-row">
+          <a class="olin-btn olin-btn--primary" href="mailto:josselin.hillion@gmail.com?subject=Call%20d%C3%A9couverte%20(15%20min)">Planifier un call découverte (15 min) <span aria-hidden="true">↗</span></a>
+          <a class="olin-link" href="/renault-moments.html">Explorer le cas suivant : Renault Moments <span class="olin-link-arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer sur le motif Olin (Figma BG 4314:138629) -->
+  <footer class="cs-footer">
+    <div class="cs-footer__inner cs-container">
+      <p class="cs-footer__mantra"><span>La tête dans les nuages,<br />les mains dans le concret.</span></p>
+      <nav class="cs-footer__nav" aria-label="Liens de pied de page">
+        <a href="#main">↑ Haut de page</a>
+        <a href="/#projets">Tous les projets</a>
+        <a href="https://www.linkedin.com/in/josselinhillion/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="mailto:josselin.hillion@gmail.com">Email ↗</a>
+      </nav>
+    </div>
+    <div class="cs-footer__legal cs-container">
+      <span>© 2026 Josselin Hillion • Olin.os</span>
+      <span>Case study // DataCity — Paris For You</span>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/case-study.js"></script>
+</body>
+</html>
