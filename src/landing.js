@@ -1,12 +1,13 @@
 /**
  * OLIN.OS — LANDING PAGE
- * Header transverse (menu + Brain.fm), trame interactive, accroche à graisse
- * progressive et chute tapée à la machine.
+ * Header transverse, mini-player Brain.fm (chargé à la première intention),
+ * trame interactive, accroche à graisse progressive et chute tapée à la machine.
  */
 
 import { initSiteHeader } from './site-header.js';
 import { initTypewriter } from './typewriter.js';
 import { initDotGrid } from './dot-grid.js';
+import { initLazyBrainFmPlayers } from './brainfm-youtube-player.js';
 
 // Amorce : graisse Geologica croissante lettre par lettre (300 → 900).
 // Le texte reste dans le DOM (aria-hidden, le h1 porte un aria-label).
@@ -33,6 +34,7 @@ function initWeightRamp() {
 }
 
 initSiteHeader();
+initLazyBrainFmPlayers();
 initWeightRamp();
 initTypewriter({ startDelay: 600 });
 initDotGrid(document.getElementById('canvas-dot-grid'));

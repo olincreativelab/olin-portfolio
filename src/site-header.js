@@ -1,11 +1,7 @@
 /**
  * OLIN.OS — HEADER TRANSVERSE (.olin-header)
- * Menu mobile (bouton « Menu workshop ») et mini-player Brain.fm.
- * Le SDK YouTube n'est chargé qu'au premier clic sur Play : aucune requête
- * tierce au chargement de la page.
+ * Menu mobile (bouton « Menu workshop »).
  */
-
-import { BrainFmPlayerController } from './brainfm-youtube-player.js';
 
 function initMenu(header) {
   const toggle = header.querySelector('[data-menu-toggle]');
@@ -36,26 +32,8 @@ function initMenu(header) {
   });
 }
 
-function initLazyPlayers(header) {
-  header.querySelectorAll('[data-brainfm-player]').forEach((element) => {
-    const play = element.querySelector('.olin-brainfm-player__btn-play');
-    if (!play) return;
-    // Le contrôleur (et le SDK YouTube) naît au premier clic, puis gère seul
-    // les clics suivants.
-    play.addEventListener(
-      'click',
-      () => {
-        const controller = new BrainFmPlayerController({ element });
-        controller.toggle();
-      },
-      { once: true }
-    );
-  });
-}
-
 export function initSiteHeader() {
   const header = document.querySelector('[data-site-header]');
   if (!header) return;
   initMenu(header);
-  initLazyPlayers(header);
 }

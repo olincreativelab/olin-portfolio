@@ -136,31 +136,37 @@ export class BrainFmPlayerController {
   async _initPlayer() {
     await loadYouTubeIframeApi();
 
-    // Conteneur caché hors-champ pour l'IFrame YouTube
-    let container = document.getElementById("olin-brainfm-yt-container");
-    if (!container) {
-      container = document.createElement("div");
-      container.id = "olin-brainfm-yt-container";
-      container.setAttribute("aria-hidden", "true");
-      container.style.cssText = `
+    // Conteneur hors-champ. YouTube exige un lecteur d'au moins 200×200 px
+    // pour lire une vidéo intégrée : on le garde à cette taille, invisible.
+    // L'API remplace la cible par l'iframe : la cible est un enfant du
+    // conteneur, qui garde ainsi son positionnement.
+    let host = document.getElementById("olin-brainfm-yt-host");
+    if (!host) {
+      host = document.createElement("div");
+      host.id = "olin-brainfm-yt-host";
+      host.setAttribute("aria-hidden", "true");
+      host.style.cssText = `
         position: fixed;
-        bottom: -9999px;
-        left: -9999px;
-        width: 1px;
-        height: 1px;
-        opacity: 0.001;
+        left: -10000px;
+        bottom: 0;
+        width: 200px;
+        height: 200px;
+        opacity: 0.01;
         pointer-events: none;
         overflow: hidden;
-        z-index: -100;
       `;
-      document.body.appendChild(container);
+      const target = document.createElement("div");
+      target.id = "olin-brainfm-yt-target";
+      host.appendChild(target);
+      document.body.appendChild(host);
     }
 
     const videoId = BRAIN_FM_TRACKS[this.currentState]?.id || BRAIN_FM_TRACKS.focus.id;
+    this.failedIds = new Set();
 
-    this.player = new window.YT.Player("olin-brainfm-yt-container", {
-      height: "1",
-      width: "1",
+    this.player = new window.YT.Player("olin-brainfm-yt-target", {
+      height: "200",
+      width: "200",
       videoId: videoId,
       playerVars: {
         autoplay: 0,
@@ -171,7 +177,7 @@ export class BrainFmPlayerController {
         modestbranding: 1,
         playsinline: 1,
         rel: 0,
-        loop: 1
+        origin: window.location.origin
       },
       events: {
         onReady: (event) => {
@@ -187,10 +193,38 @@ export class BrainFmPlayerController {
           this._handleStateChange(event.data);
         },
         onError: (err) => {
-          console.warn("[BrainFmPlayer] YouTube Player Error:", err);
+          this._handleError(err.data);
         }
       }
     });
+  }
+
+  /**
+   * Vidéo supprimée, privée ou non intégrable : on passe au flux suivant,
+   * puis on signale l'échec si aucun ne fonctionne.
+   * @private
+   */
+  _handleError(code) {
+    console.warn("[BrainFmPlayer] YouTube Player Error:", code);
+    const current = BRAIN_FM_TRACKS[this.currentState];
+    if (current) this.failedIds.add(current.id);
+
+    const next = Object.keys(BRAIN_FM_TRACKS).find(
+      (key) => !this.failedIds.has(BRAIN_FM_TRACKS[key].id)
+    );
+
+    if (next) {
+      this.currentState = next;
+      this.updateTrackMeta(next);
+      this.player.loadVideoById(BRAIN_FM_TRACKS[next].id);
+      return;
+    }
+
+    this.isPlaying = false;
+    this.pendingPlay = false;
+    this.element.classList.remove("is-playing", "is-loading");
+    this.element.classList.add("is-error");
+    if (this.trackEl) this.trackEl.textContent = "Flux indisponible";
   }
 
   /**
@@ -289,4 +323,23 @@ export function initAutoBrainFmPlayers() {
     instances.push(new BrainFmPlayerController({ element: el }));
   });
   return instances;
+}
+
+/**
+ * Initialisation différée : le SDK YouTube n'est chargé qu'à la première
+ * intention (survol, focus ou toucher du player), jamais au chargement de la
+ * page. Le clic qui suit trouve ainsi un lecteur prêt et lance la lecture
+ * dans le geste de l'utilisateur ; s'il arrive avant, la lecture part dès
+ * que le lecteur est prêt.
+ */
+export function initLazyBrainFmPlayers(root = document) {
+  root.querySelectorAll("[data-brainfm-player]").forEach((element) => {
+    let controller = null;
+    const warmUp = () => {
+      if (!controller) controller = new BrainFmPlayerController({ element });
+    };
+    ["pointerenter", "focusin", "touchstart"].forEach((type) => {
+      element.addEventListener(type, warmUp, { once: true, passive: true });
+    });
+  });
 }

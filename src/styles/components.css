@@ -1921,19 +1921,15 @@ a.olin-picture-frame:hover .olin-photo-duotone > img {
 }
 
 /* ==========================================================================
-   18. STICKER VINYLE D'ATELIER (die-cut blanc 2.5px + ombre dure 3px)
+   18. STICKER VINYLE D'ATELIER (FIGMA section Stickers 4557:79075)
+   Les SVG Figma portent déjà leur découpe blanche et leur ombre bleue.
+   --cut recrée cette découpe en CSS pour un logo livré sans contour.
    ========================================================================== */
 .olin-sticker {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   transform: rotate(var(--olin-sticker-tilt, -2deg));
-  filter:
-    drop-shadow(2.5px 0 0 #FFFFFF)
-    drop-shadow(-2.5px 0 0 #FFFFFF)
-    drop-shadow(0 2.5px 0 #FFFFFF)
-    drop-shadow(0 -2.5px 0 #FFFFFF)
-    drop-shadow(3px 3px 0 #01050F);
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -1945,6 +1941,15 @@ a.olin-picture-frame:hover .olin-photo-duotone > img {
   display: block;
   height: 100%;
   width: auto;
+}
+
+.olin-sticker--cut img {
+  filter:
+    drop-shadow(3px 0 0 #FAFAFA)
+    drop-shadow(-3px 0 0 #FAFAFA)
+    drop-shadow(0 3px 0 #FAFAFA)
+    drop-shadow(0 -3px 0 #FAFAFA)
+    drop-shadow(2px 3px 0 #0028FF);
 }
 
 /* ==========================================================================

@@ -14,9 +14,14 @@
   --lp-gradient: linear-gradient(124.44deg, #A100FF 7%, #0028FF 118%);
   --lp-ease: cubic-bezier(0.16, 1, 0.3, 1);
 
+  /* Fond identique aux case studies (.cs-page) : trame statique de secours,
+     remplacée par la trame interactive (canvas) quand elle est active */
   background-color: #FDFAFE;
-  background-image: radial-gradient(circle, rgba(122, 122, 255, 0.35) 1.2px, transparent 1.2px);
-  background-size: 28px 28px;
+  background-image:
+    radial-gradient(circle, rgba(122, 122, 255, 0.35) 1.2px, transparent 1.2px),
+    url('/assets/motif_canvas.svg');
+  background-size: 28px 28px, 400px 400px;
+  background-repeat: repeat;
   color: var(--lp-ink);
 }
 
@@ -96,26 +101,23 @@
 }
 
 /* --------------------------------------------------------------------------
-   B. HERO — 60 / 40
+   B. HERO — promesse + mascotte, puis CTA et ambiance Brain.fm
    -------------------------------------------------------------------------- */
 .lp-hero {
-  padding-top: 56px;
-  padding-bottom: 96px;
+  padding-top: 72px;
+  padding-bottom: 112px;
 }
 
-.lp-hero__grid {
+.lp-hero__inner {
+  max-width: 1080px;
   display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-  gap: 56px;
-  align-items: center;
-}
-
-.lp-hero__stage {
-  position: relative;
+  justify-items: center;
+  gap: 40px;
 }
 
 /* Amorce (gauche) · mascotte (centre) · chute (droite) */
 .lp-hero__title {
+  width: 100%;
   display: grid;
   gap: 12px;
   margin: 0;
@@ -128,7 +130,7 @@
 .lp-hero__line--left {
   justify-self: start;
   font-family: var(--font-display);
-  font-size: clamp(38px, 5.4vw, 80px);
+  font-size: clamp(38px, 6vw, 88px);
   font-weight: 900;
   line-height: 0.95;
   letter-spacing: -1.5px;
@@ -141,7 +143,7 @@
 
 .lp-hero__mascot {
   justify-self: center;
-  width: clamp(112px, 13vw, 190px);
+  width: clamp(112px, 14vw, 200px);
   height: auto;
   transform: rotate(-8deg);
   transition: transform 0.4s var(--lp-ease);
@@ -153,14 +155,14 @@
 
 .lp-hero__line--right {
   justify-self: end;
-  text-wrap: balance;
   font-family: 'Instrument Serif', Georgia, serif;
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(44px, 6vw, 92px);
+  font-size: clamp(44px, 6.6vw, 100px);
   line-height: 0.95;
   letter-spacing: -1px;
   text-align: right;
+  text-wrap: balance;
   color: var(--lp-ink);
 }
 
@@ -175,13 +177,38 @@
   50% { opacity: 0; }
 }
 
-.lp-hero__cursor {
-  left: 60%;
-  top: 44%;
+.lp-hero__actions {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  width: min(360px, 100%);
 }
 
-.lp-hero__actions {
-  margin-top: 32px;
+.lp-hero__cta {
+  width: 100%;
+}
+
+/* Ambiance : le player, et le curseur FigJam qui vient le survoler */
+.lp-hero__ambience {
+  position: relative;
+  display: inline-flex;
+}
+
+.lp-hero__cursor {
+  /* pointe de la main posée sur le bouton Play (sans cliquer) */
+  left: 8px;
+  top: 14px;
+  animation:
+    lp-cursor-approach 1.6s var(--lp-ease) 1.6s both,
+    olinCursorFloat 6s ease-in-out 3.4s infinite;
+}
+
+@keyframes lp-cursor-approach {
+  0% { opacity: 0; transform: translate(180px, 110px); }
+  15% { opacity: 1; }
+  78% { transform: translate(-3px, -2px); }
+  90% { transform: translate(2px, 2px); }
+  100% { opacity: 1; transform: translate(0, 0); }
 }
 
 /* Cartouche OS Terminal */
@@ -266,25 +293,47 @@
 }
 
 /* --------------------------------------------------------------------------
-   C. STICKERS VINYLES
+   C. STICKERS — board FigJam (rotations et décalages désordonnés)
    -------------------------------------------------------------------------- */
 .lp-stickers {
-  padding: 48px 0;
-  border-top: 1px dashed rgba(1, 5, 15, 0.18);
-  border-bottom: 1px dashed rgba(1, 5, 15, 0.18);
+  padding: 56px 0 64px;
 }
 
-.lp-stickers__list {
+.lp-stickers__board {
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: center;
-  justify-content: center;
-  gap: 32px 56px;
+  justify-items: center;
+  gap: 36px 24px;
 }
 
-.lp-stickers__list .olin-sticker {
+.lp-stickers__board .olin-sticker {
+  position: relative;
+  height: 72px;
+  transform: translate(var(--lp-dx, 0), var(--lp-dy, 0)) rotate(var(--olin-sticker-tilt, 0deg));
+}
+
+.lp-stickers__board .olin-sticker:hover {
+  z-index: 2;
+  transform: translate(var(--lp-dx, 0), var(--lp-dy, 0)) rotate(0deg) scale(1.08);
+}
+
+.lp-stickers__board .lp-sticker--wide {
   height: 64px;
+}
+
+.lp-stickers__board .lp-sticker--round {
+  height: 92px;
+}
+
+/* --------------------------------------------------------------------------
+   CARTOUCHE OS TERMINAL (sous le board)
+   -------------------------------------------------------------------------- */
+.lp-identity {
+  max-width: 920px;
+  padding-top: 24px;
+  padding-bottom: 32px;
 }
 
 /* --------------------------------------------------------------------------
@@ -610,9 +659,8 @@
     padding-right: 24px;
   }
 
-  .lp-hero__grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 48px;
+  .lp-stickers__board {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .lp-services__grid {
@@ -631,10 +679,12 @@
     padding-bottom: 64px;
   }
 
-  .lp-hero__cursor {
-    left: auto;
-    right: 4%;
-    top: 36%;
+  .lp-hero__inner {
+    gap: 32px;
+  }
+
+  .lp-hero__actions {
+    width: 100%;
   }
 
   .lp-terminal__id {
@@ -649,12 +699,21 @@
     justify-self: stretch;
   }
 
-  .lp-stickers__list {
-    gap: 24px 32px;
+  .lp-stickers__board {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 12px;
   }
 
-  .lp-stickers__list .olin-sticker {
+  .lp-stickers__board .olin-sticker {
+    height: 52px;
+  }
+
+  .lp-stickers__board .lp-sticker--wide {
     height: 44px;
+  }
+
+  .lp-stickers__board .lp-sticker--round {
+    height: 68px;
   }
 
   .lp-projects {
@@ -698,5 +757,9 @@
   .lp-hero__mascot,
   .lp-page .olin-sticker {
     transition: none;
+  }
+
+  .lp-hero__cursor {
+    animation: none;
   }
 }

@@ -44,22 +44,6 @@
       <a href="/#contact">Contact</a>
     </nav>
     <div class="olin-header__right">
-      <div class="olin-brainfm-player olin-brainfm-player--pill" data-brainfm-player>
-        <button type="button" class="olin-brainfm-player__btn-play" aria-pressed="false" aria-label="Lancer ou mettre en pause la musique de concentration Brain.fm">
-          <svg class="olin-brainfm-player__icon--play" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.8v8.4L10 6 3 1.8Z" fill="currentColor" /></svg>
-          <svg class="olin-brainfm-player__icon--pause" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 1.5h2.5v9H2.5zM7 1.5h2.5v9H7z" fill="currentColor" /></svg>
-        </button>
-        <span class="olin-brainfm-equalizer" aria-hidden="true">
-          <span class="olin-brainfm-equalizer__bar"></span>
-          <span class="olin-brainfm-equalizer__bar"></span>
-          <span class="olin-brainfm-equalizer__bar"></span>
-          <span class="olin-brainfm-equalizer__bar"></span>
-        </span>
-        <span class="olin-brainfm-player__meta">
-          <span class="olin-brainfm-player__badge">FOCUS</span>
-          <span class="olin-brainfm-player__track">Kyoto // 40Hz Beta Flow</span>
-        </span>
-      </div>
       <span class="olin-status-tag"><span class="olin-status-tag__dot" aria-hidden="true"></span>DISPONIBLE // OCTOBRE 2026</span>
       <button type="button" class="olin-menu-btn" aria-expanded="false" aria-controls="olin-menu-panel" aria-label="Ouvrir le menu" data-menu-toggle>
         <span class="olin-menu-btn__face">
@@ -82,58 +66,45 @@
          B. HERO ZONE (60 / 40) — Accroche asymétrique + mascotte + cartouche OS
          ======================================================================= -->
     <section id="hero" class="lp-hero" aria-labelledby="lp-title">
-      <div class="lp-container lp-hero__grid">
+      <div class="lp-container lp-hero__inner">
+        <h1 id="lp-title" class="lp-hero__title" aria-label="Transformons vos produits en expériences client uniques !">
+          <span class="lp-hero__line lp-hero__line--left" aria-hidden="true" data-weight-ramp>Transformons vos produits</span>
+          <!-- Mascotte « Fenêtre Souriante » : passerelle entre l'amorce et la chute -->
+          <img class="lp-hero__mascot" src="/assets/olin_logo_icon.svg" alt="" width="220" height="220" />
+          <span class="lp-hero__line lp-hero__line--right" aria-hidden="true"><span data-typewriter>en expériences client uniques !</span><span class="lp-caret" data-typewriter-caret>_</span></span>
+        </h1>
 
-        <div class="lp-hero__stage">
-          <h1 id="lp-title" class="lp-hero__title" aria-label="Transformons vos produits en expériences client uniques !">
-            <span class="lp-hero__line lp-hero__line--left" aria-hidden="true" data-weight-ramp>Transformons vos produits</span>
-            <!-- Mascotte « Fenêtre Souriante » : passerelle entre l'amorce et la chute -->
-            <img class="lp-hero__mascot" src="/assets/olin_logo_icon.svg" alt="" width="220" height="220" />
-            <span class="lp-hero__line lp-hero__line--right" aria-hidden="true"><span data-typewriter>en expériences client uniques !</span><span class="lp-caret" data-typewriter-caret>_</span></span>
-          </h1>
+        <div class="lp-hero__actions">
+          <a class="olin-btn olin-btn--primary lp-hero__cta" href="#contact">
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.2 1.5 5.6 1l1.3 3.1-1.5 1.1a8 8 0 0 0 5.4 5.4l1.1-1.5 3.1 1.3-.5 2.4c-.1.6-.6 1-1.2 1C6.8 13.8 2.2 9.2 2.2 2.7c0-.6.4-1.1 1-1.2Z" fill="currentColor" /></svg>
+            on en discute ?
+          </a>
+          <a class="olin-link" href="#projets">explorez les projets <span class="olin-link-arrow" aria-hidden="true">↓</span></a>
+        </div>
 
-          <!-- Pointeur multijoueur FigJam -->
+        <!-- Mini-player Brain.fm sous les CTA, avec le curseur FigJam qui vient le survoler -->
+        <div class="lp-hero__ambience">
+          <div class="olin-brainfm-player olin-brainfm-player--pill" data-brainfm-player>
+            <button type="button" class="olin-brainfm-player__btn-play" aria-pressed="false" aria-label="Lancer ou mettre en pause la musique de concentration Brain.fm">
+              <svg class="olin-brainfm-player__icon--play" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.8v8.4L10 6 3 1.8Z" fill="currentColor" /></svg>
+              <svg class="olin-brainfm-player__icon--pause" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 1.5h2.5v9H2.5zM7 1.5h2.5v9H7z" fill="currentColor" /></svg>
+            </button>
+            <span class="olin-brainfm-equalizer" aria-hidden="true">
+              <span class="olin-brainfm-equalizer__bar"></span>
+              <span class="olin-brainfm-equalizer__bar"></span>
+              <span class="olin-brainfm-equalizer__bar"></span>
+              <span class="olin-brainfm-equalizer__bar"></span>
+            </span>
+            <span class="olin-brainfm-player__meta">
+              <span class="olin-brainfm-player__badge">FOCUS</span>
+              <span class="olin-brainfm-player__track">Kyoto // 40Hz Beta Flow</span>
+            </span>
+          </div>
           <div class="olin-cursor-figjam lp-hero__cursor" aria-hidden="true">
             <svg class="olin-cursor-figjam__hand" viewBox="0 0 26 26" fill="none"><path d="M10.3955 5.40039C11.2789 5.40052 11.9951 6.11637 11.9951 7V9.22559C12.268 8.73334 12.7928 8.40039 13.3955 8.40039C14.0848 8.40049 14.6695 8.83703 14.8945 9.44824C15.1199 8.83759 15.7066 8.40234 16.3955 8.40234C17.2789 8.40248 17.9951 9.11835 17.9951 10.002V10.2256C18.268 9.73334 18.7928 9.40039 19.3955 9.40039C20.2789 9.40052 20.9951 10.1164 20.9951 11V17C20.9951 20.0927 18.4882 22.5995 15.3955 22.5996H14.3955C12.6758 22.5996 11.1376 21.8231 10.1113 20.6045L10.0195 20.5254L5.01465 15.8193C4.26656 15.116 4.19111 13.9365 4.84473 13.1445C5.48236 12.3725 6.59821 12.2326 7.4043 12.8281L8.79492 13.8555V7C8.79492 6.11633 9.51184 5.40039 10.3955 5.40039Z" fill="#FAFAFA" stroke="#242237" stroke-width="1.2" /></svg>
             <span class="olin-cursor-figjam__tag">Josselin Hillion</span>
           </div>
-
-          <div class="lp-hero__actions">
-            <a class="olin-link" href="#projets">explorez les projets <span class="olin-link-arrow" aria-hidden="true">↓</span></a>
-          </div>
         </div>
-
-        <!-- Cartouche OS Terminal -->
-        <aside class="olin-window lp-terminal" aria-labelledby="lp-terminal-title">
-          <div class="olin-window__header"><span class="olin-window__title">olin.md</span></div>
-          <div class="olin-window__body lp-terminal__body">
-            <div class="lp-terminal__id">
-              <a class="olin-picture-frame lp-terminal__photo" href="#contact" aria-label="Contacter Josselin Hillion">
-                <div class="olin-photo-duotone">
-                  <img src="/assets/josselin_avatar_clean.png" alt="Portrait de Josselin Hillion" width="116" height="106" />
-                  <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
-                </div>
-              </a>
-              <div>
-                <p class="lp-terminal__name">Josselin Hillion</p>
-                <h2 id="lp-terminal-title" class="lp-terminal__role">Senior Product Designer &amp; Builder</h2>
-                <p class="lp-terminal__school">Double diplôme EDNA × ENSAM Arts et Métiers</p>
-              </div>
-            </div>
-
-            <div class="lp-terminal__prompt">
-              <p class="lp-terminal__prompt-head">→ Master_Prompt</p>
-              <dl>
-                <div><dt>RÔLE :</dt><dd>En tant que designer produit senior, j'allie UX strat, CX et intelligence artificielle pour transformer vos défis en solutions créatives.</dd></div>
-                <div><dt>APPROCHE :</dt><dd>Lean UX, Design thinking, Agile</dd></div>
-                <div><dt>OUTILS :</dt><dd>Figma / FigJam, Antigravity, n8n, Bubble</dd></div>
-                <div><dt>SECTEURS :</dt><dd>SaaS B2B, Industrie 4.0, Construction, Mobilité, Finance, Retail</dd></div>
-              </dl>
-            </div>
-
-            <a class="olin-btn olin-btn--primary lp-terminal__cta" href="#contact">Discuter de votre produit <span aria-hidden="true">↗</span></a>
-          </div>
-        </aside>
       </div>
     </section>
 
@@ -142,14 +113,52 @@
          ======================================================================= -->
     <section class="lp-stickers" aria-labelledby="lp-stickers-title">
       <h2 id="lp-stickers-title" class="lp-sr-only">Ils m'ont fait confiance</h2>
-      <ul class="lp-container lp-stickers__list">
-        <li class="olin-sticker" style="--olin-sticker-tilt: -3deg"><img src="/assets/stickers/sticker_client_renault_group.svg" alt="Renault Group" width="282" height="128" /></li>
-        <li class="olin-sticker" style="--olin-sticker-tilt: 2deg"><img src="/assets/stickers/sticker_client_royal_canin.svg" alt="Royal Canin" width="266" height="91" /></li>
-        <li class="olin-sticker" style="--olin-sticker-tilt: -1.5deg"><img src="/assets/stickers/sticker_client_bollore_logistics.svg" alt="Bolloré Logistics" width="252" height="120" /></li>
-        <li class="olin-sticker" style="--olin-sticker-tilt: 4deg"><img src="/assets/stickers/sticker_joujou_riso.svg" alt="JOUJOU" width="137" height="109" /></li>
-        <li class="olin-sticker" style="--olin-sticker-tilt: -2.5deg"><img src="/assets/stickers/sticker_client_om.svg" alt="Olympique de Marseille" width="132" height="131" /></li>
-        <li class="olin-sticker" style="--olin-sticker-tilt: 3deg"><img src="/assets/stickers/sticker_client_numa.svg" alt="Numa" width="239" height="79" /></li>
+      <ul class="lp-container lp-stickers__board">
+        <li class="olin-sticker lp-sticker--wide" style="--olin-sticker-tilt: -4deg; --lp-dx: 0px; --lp-dy: 6px"><img src="/assets/stickers/sticker_client_excibat.svg" alt="Excibat" width="670" height="208" /></li>
+        <li class="olin-sticker" style="--olin-sticker-tilt: 5deg; --lp-dx: -4px; --lp-dy: -14px"><img src="/assets/stickers/sticker_client_renault_group.svg" alt="Renault Group" width="282" height="128" /></li>
+        <li class="olin-sticker lp-sticker--round" style="--olin-sticker-tilt: -8deg; --lp-dx: 10px; --lp-dy: 18px"><img src="/assets/stickers/sticker_client_om.svg" alt="Olympique de Marseille" width="202" height="200" /></li>
+        <li class="olin-sticker olin-sticker--cut" style="--olin-sticker-tilt: 3deg; --lp-dx: -6px; --lp-dy: -4px"><img src="/assets/stickers/sticker_client_royal_canin.svg" alt="Royal Canin" width="266" height="91" /></li>
+        <li class="olin-sticker lp-sticker--round" style="--olin-sticker-tilt: 7deg; --lp-dx: 4px; --lp-dy: 14px"><img src="/assets/stickers/sticker_client_mastercard.svg" alt="Mastercard" width="283" height="200" /></li>
+        <li class="olin-sticker" style="--olin-sticker-tilt: -3deg; --lp-dx: 0px; --lp-dy: -10px"><img src="/assets/stickers/sticker_client_numa.svg" alt="Numa" width="604" height="200" /></li>
+        <li class="olin-sticker lp-sticker--round" style="--olin-sticker-tilt: -6deg; --lp-dx: 8px; --lp-dy: 8px"><img src="/assets/stickers/sticker_joujou_riso.svg" alt="JOUJOU" width="137" height="109" /></li>
+        <li class="olin-sticker" style="--olin-sticker-tilt: 4deg; --lp-dx: -8px; --lp-dy: -6px"><img src="/assets/stickers/sticker_client_bollore_logistics.svg" alt="Bolloré Logistics" width="252" height="120" /></li>
       </ul>
+    </section>
+
+    <!-- =======================================================================
+         CARTOUCHE OS TERMINAL (Figma « Me and My compt »)
+         ======================================================================= -->
+    <section class="lp-identity lp-container" aria-labelledby="lp-terminal-title">
+      <div class="olin-window lp-terminal">
+        <div class="olin-window__header"><span class="olin-window__title">olin.md</span></div>
+        <div class="olin-window__body lp-terminal__body">
+          <div class="lp-terminal__id">
+            <a class="olin-picture-frame lp-terminal__photo" href="#contact" aria-label="Contacter Josselin Hillion">
+              <div class="olin-photo-duotone">
+                <img src="/assets/josselin_avatar_clean.png" alt="Portrait de Josselin Hillion" width="116" height="106" />
+                <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+              </div>
+            </a>
+            <div>
+              <p class="lp-terminal__name">Josselin Hillion</p>
+              <h2 id="lp-terminal-title" class="lp-terminal__role">Senior Product Designer &amp; Builder</h2>
+              <p class="lp-terminal__school">Double diplôme EDNA × ENSAM Arts et Métiers</p>
+            </div>
+          </div>
+
+          <div class="lp-terminal__prompt">
+            <p class="lp-terminal__prompt-head">→ Master_Prompt</p>
+            <dl>
+              <div><dt>RÔLE :</dt><dd>En tant que designer produit senior, j'allie UX strat, CX et intelligence artificielle pour transformer vos défis en solutions créatives.</dd></div>
+              <div><dt>APPROCHE :</dt><dd>Lean UX, Design thinking, Agile</dd></div>
+              <div><dt>OUTILS :</dt><dd>Figma / FigJam, Antigravity, n8n, Bubble</dd></div>
+              <div><dt>SECTEURS :</dt><dd>SaaS B2B, Industrie 4.0, Construction, Mobilité, Finance, Retail</dd></div>
+            </dl>
+          </div>
+
+          <a class="olin-btn olin-btn--primary lp-terminal__cta" href="#contact">Discuter de votre produit <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
     </section>
 
     <!-- =======================================================================
