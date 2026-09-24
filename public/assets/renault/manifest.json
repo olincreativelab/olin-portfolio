@@ -8,6 +8,14 @@
     "journey_illustrations": "slot_journey_illustrations.png",
     "mockup_app_mobile": "slot_mockup_app_mobile.png",
     "persona_tom": "sticker_persona_tom.png",
-    "logo_renault": "slot_logo_renault.png"
+    "logo_renault": "slot_logo_renault.png",
+    "exploration_screens": [
+      "image 264.png",
+      "image 264-1.png",
+      "image 264-2.png",
+      "image 264-3.png",
+      "image 266.png",
+      "image 267.png"
+    ]
   }
 }
