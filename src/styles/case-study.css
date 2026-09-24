@@ -1068,7 +1068,8 @@
   color: var(--cs-ink);
 }
 
-/* Lien dans l'onglet-pilule : cible 44px via marges négatives (pilule inchangée) */
+/* Lien dans l'onglet-pilule : zone tactile 44px invisible (marges négatives),
+   le survol ne change que le texte pour ne jamais déborder de la pilule */
 .olin-window__action {
   display: inline-flex;
   align-items: center;
@@ -1080,20 +1081,25 @@
   font-weight: 700;
   color: var(--cs-blue);
   text-decoration: underline;
+  text-decoration-thickness: 1px;
   text-underline-offset: 3px;
-  border-radius: 20px;
   white-space: nowrap;
-  transition: background-color 0.2s ease;
+  transition: color 0.15s ease, text-decoration-thickness 0.15s ease;
+}
+
+.olin-window__action:hover {
+  color: var(--cs-ink);
+  text-decoration-thickness: 2px;
+}
+
+.olin-window__action:focus-visible {
+  outline-offset: -8px;
 }
 
 .cs-window-tag {
   height: 20px;
   padding: 1px 8px;
   font-size: 10px;
-}
-
-.olin-window__action:hover {
-  background: rgba(0, 40, 255, 0.08);
 }
 
 .cs-final-cta {

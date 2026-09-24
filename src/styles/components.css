@@ -1382,11 +1382,12 @@ a.olin-picture-frame:focus-visible .olin-photo-duotone::before {
 }
 
 /* Légende overlay floutée révélée au survol */
+/* Posée à l'intérieur du passe-partout (3px) : ne recouvre jamais le cadre blanc */
 .olin-picture-frame__caption {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  bottom: 3px;
+  left: 3px;
+  right: 3px;
   padding: 14px 18px;
   background: rgba(1, 5, 15, 0.78);
   backdrop-filter: blur(8px);
