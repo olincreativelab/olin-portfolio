@@ -676,6 +676,158 @@ Voici la matérialisation visuelle exacte des écrans et des 4 moments de conver
 
 ---
 
+### 🐕 CAS N°4 : ROYAL CANIN — BORNE PHYGITALE RETAIL & PRESCRIPTION NUTRITIONNELLE
+*Design de service phygital : réconcilier prescription experte et conversion en animalerie*
+
+#### A. Temps 1 : Le Scan Exécutif 90s (One-Pager de Synthèse)
+
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│  ROYAL CANIN : LE PHYGITAL RETAIL SANS FRICTION                                        │
+│                                                                                        │
+│  [SITUATION]   Digitalisation du point de vente en animaleries spécialisées            │
+│  [CHALLENGE]   Convertir en linéaire face à une prescription nutritionnelle complexe   │
+│  [ACTION]      Mystery shopping • Design Sprints à distance • Ergonomie meuble physique │
+│  [RÉSULTAT]    Concept validé en magasins pilotes • Déblocage fonds venture interne    │
+│                                                                                        │
+│  💡 APPRENTISSAGE CLÉ : Co-concevoir l'interface logicielle ET l'ergonomie physique    │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+##### 1. Cartouche d'Identité du Projet
+* **Client :** Royal Canin *(Groupe Mars)*
+* **Rôle de Josselin :** `Lead UX/UI & Service Designer (ekino x MFG Labs)`
+* **Période :** `2021` (Cadrage, Design Sprints et Prototypage Industriel)
+* **Typologie :** Design de Service Phygital • Borne Tactile Interactive Kiosk • Ergonomie Matérielle Retail
+* **Squad & Écosystème :** Lead UX/UI & Service Designer (Josselin Hillion), Fabricant de mobilier métallique / Designers Industriels, Équipe Produit & Vétérinaires Nutritionnistes Royal Canin, Développeurs embarqués.
+
+##### 2. Titre & Positionnement Stratégique
+* **Titre Affiché :** **Royal Canin — Borne Phygitale & Prescription Nutritionnelle**
+* **Sous-titre / Accroche :** *Digitaliser le linéaire d'une animalerie spécialisée sans créer de gadget inutile : vulgariser une science vétérinaire pointue pour délivrer une recommandation personnalisée en moins de 90 secondes directement au pied du rayon.*
+
+##### 3. La Matrice Bento 3x3 Puces (Scan Exécutif 90s)
+
+| 01 // LES CHALLENGES (Problem Statement) | 02 // L'APPROCHE & STRATÉGIE (Process) | 03 // LE RÉSULTAT & IMPACT (Preuve) |
+| :--- | :--- | :--- |
+| **Le Mur de 15 Mètres Intimidant :** Plus de 200 références de croquettes hyper-spécifiques (race, âge, profil métabolique) créant un paradoxe du choix et un sentiment d'incompétence chez le client moyen. | **Immersion & Mystery Shopping :** Enquêtes in-situ en animalerie pour observer les hésitations réelles, la lecture laborieuse des petits caractères et les abandons d'achat sans conseil. | **Validation Magasins Pilotes :** Démonstrateur tactile plébiscité par les clients et immédiatement adopté par les vendeurs comme un outil d'aide à la vente non menaçant. |
+| **Perte de Conversion en Linéaire :** En cas d'indisponibilité ou d'occupation du conseiller de vente, le client quitte le rayon bredouille ou se reporte par défaut sur une marque d'entrée de gamme. | **Design Sprint Collaboratif (5 jours) :** Alignement à distance des scientifiques vétérinaires, marketeurs et designers pour réduire un arbre biochimique complexe à un tunnel en 3 questions. | **Déblocage Fonds Venture Interne :** Présentation probante du prototype ayant permis d'obtenir l'arbitrage favorable et le financement corporate venture pour l'industrialisation. |
+| **Ergonomie Kiosk en Environnement Hostile :** Concevoir une dalle tactile accessible à tous (normes PMR) et lisible sous les reflets agressifs des néons industriels des hangars d'animalerie. | **Co-conception Matérielle & Meuble Métal :** Travail direct avec le fabricant de mobilier (hauteur d'écran 24-32", angle d'inclinaison antireflet, contrastes élevés et touch-targets larges). | **Socle de Delivery Industriel :** Livrables UI haute-fidélité, spécifications ergonomiques meuble et parcours utilisateurs transmis clés en main aux équipes de build. |
+
+##### 4. Métriques Clés & Impact Vérifiable
+
+| Métrique | Valeur / Indicateur | Rôle dans l'Argumentation de Josselin |
+| :--- | :--- | :--- |
+| **Temps de Diagnostic** | `< 90 secondes` | Preuve d'un élagage UX drastique : passer d'un traité vétérinaire indigeste à une recommandation instantanée. |
+| **Gamme Couverte** | `200+ références` | Maîtrise de la complexité de l'offre rendue intelligible pour le grand public sans perte de rigueur scientifique. |
+| **Adoption Pilote** | `100% Validé Terrain` | Validation empirique en animaleries réelles auprès des propriétaires d'animaux et des vendeurs partenaires. |
+| **Financement Obtenu** | `Fonds Corporate Venture` | Impact direct sur la prise de décision stratégique : le prototype a débloqué le budget d'industrialisation nationale. |
+
+---
+
+#### B. Temps 2 : L'Exploration Approfondie & Storyboard Séquentiel (Deep Dive en 4 Étapes)
+
+##### 📖 Le Contexte & Le Reality Check
+Royal Canin possède une réputation scientifique d'excellence mondiale auprès des éleveurs et des vétérinaires. Cependant, sur le point de vente physique (animaleries spécialisées de périphérie), cette expertise se retourne contre la marque : un linéaire massif de 15 mètres de long exposant plus de 200 sacs aux emballages presque identiques. Si le vendeur de l'animalerie est occupé en caisse ou en conseil ailleurs, le client, submergé par des termes biochimiques hermétiques (L.I.P., hydrolysat de protéines, teneur en phosphore), hésite quelques instants et quitte le rayon sans acheter, ou se rabat sur un produit basique.
+La mission confiée à ekino x MFG Labs sous le lead de Josselin : concevoir le service phygital et l'interface tactile intégrée au mobilier pour convertir les visiteurs hésitants en linéaire sans cannibaliser le rôle du vendeur.
+
+---
+
+##### 📍 Étape 01 : Immersion Terrain & Mystery Shopping en Animalerie
+
+> **Le Propos Stratégique :**
+> Sortir des hypothèses de bureau pour éprouver la réalité physique des clients en situation d'achat : observer les gestes, chronométrer l'hésitation et cartographier les moments précis de rupture de conversion devant le linéaire.
+
+**Texte Rédigé pour le Site / Portfolio :**
+> On ne conçoit pas un dispositif phygital dans le calme aseptisé d'une agence parisienne. J'ai conduit une phase d'immersion anonyme (*mystery shopping*) dans plusieurs animaleries de grande surface pour observer les comportements réels. 
+> Le constat a été sans appel : face au mur de croquettes, le temps moyen d'hésitation avant abandon était inférieur à deux minutes. Les clients prenaient les paquets, plissaient les yeux pour déchiffrer des pavés de texte minuscules au dos, puis reposaient le sac par peur de commettre une erreur nutritionnelle fatale pour leur animal. Quant aux vendeurs du magasin, ils percevaient souvent les initiatives digitales précédentes comme des gadgets concurrents menaçant leur statut de prescripteur. Cette immersion a posé notre cahier des charges : le dispositif devait agir comme un guide express ultra-bienveillant, et valoriser le vendeur plutôt que de chercher à le remplacer.
+
+* **Livrables Clés de l'Étape :** Cartographie du parcours client en animalerie (Customer Journey Map in-situ), Matrice des points de friction en linéaire, Synthèse d'observation terrain et verbatim vendeurs.
+* **Artefact Preuve en Regard :** Schéma du parcours physique en magasin (Zone d'hésitation ➔ Déclencheur tactile ➔ Localisation en rayon).
+
+---
+
+##### 📍 Étape 02 : Alignement Multidisciplinaire & Design Sprint à Distance (5 Jours)
+
+> **Le Propos Stratégique :**
+> Réconcilier la rigueur des vétérinaires scientifiques avec les impératifs de conversion marketing dans un format condensé à distance pour forcer des arbitrages radicaux sur le moteur de diagnostic.
+
+**Texte Rédigé pour le Site / Portfolio :**
+> Le principal écueil d'une marque scientifique comme Royal Canin est de vouloir poser 25 questions cliniques avant de recommander un sac. J'ai cadré et animé un **Design Sprint à distance de 5 jours** réunissant autour de la même table virtuelle les vétérinaires nutritionnistes, les directeurs marketing et les développeurs.
+> Notre challenge d'atelier : élaguer impitoyablement l'arbre décisionnel pour aboutir à un diagnostic fiable en 3 étapes clés et moins de 90 secondes.
+> 1. *Qui est l'animal ?* (Chien / Chat, race spécifique ou type morphologique).
+> 2. *Quel est son stade de vie ?* (Chiot / Chaton, Adulte, Senior).
+> 3. *Quels sont ses besoins particuliers ?* (Stérilisation, sensibilité digestive, gestion du poids, pelage).
+> En formalisant cet entonnoir, nous avons prouvé aux scientifiques qu'un filtrage progressif en 3 clics permettait d'isoler la formule idéale parmi 200 références sans compromettre la sécurité médicale de l'animal.
+
+* **Livrables Clés de l'Étape :** Arbre de décision nutritionnel simplifié, Protocole d'atelier Design Sprint Miro, User Flows validés par le collège scientifique Royal Canin.
+* **Artefact Preuve en Regard :** Matrice de l'arbre de décision en entonnoir (Race ➔ Âge ➔ Sensibilité ➔ Produit Cible).
+
+---
+
+##### 📍 Étape 03 : Co-conception Matérielle & Ergonomie de Borne Publique
+
+> **Le Propos Stratégique :**
+> Travailler main dans la main avec le fabricant du mobilier en tôle d'acier pour que l'interface tactile et le meuble physique ne fassent qu'un, en respectant les contraintes sévères d'éclairage néon et d'accessibilité PMR.
+
+**Texte Rédigé pour le Site / Portfolio :**
+> La force de mon profil hybride (Design UX $\times$ Ingénierie Arts et Métiers) a pris tout son sens lors du dialogue avec les designers industriels et les fabricants du meuble métallique. Une borne en magasin subit des contraintes physiques violentes : les tubes fluorescents industriels au plafond génèrent des reflets aveuglants sur les écrans plats, et la diversité des usagers impose une conformité totale avec les normes PMR (accessibilité en fauteuil roulant et debout).
+> J'ai prescrit l'angle d'inclinaison optimal de la dalle tactile 24–32 pouces pour neutraliser la réverbération lumineuse, dimensionné des zones de frappe tactiles généreuses (> 48 px) pour compenser les touchers hésitants, et calibré une palette d'interface à fort contraste répondant aux critères WCAG AA sous forte intensité lumineuse.
+> Enfin, la chute du parcours logiciel a été connectée à la réalité du linéaire : l'écran n'indique pas seulement la référence, il affiche une représentation visuelle du rayon signalant par une zone lumineuse l'étagère exacte où trouver le paquet à portée de main.
+
+* **Livrables Clés de l'Étape :** Spécifications ergonomiques conjointes logiciel/mobilier, Kit UI tactile haute visibilité (touch targets larges, contrastes néons), Maquettes haute-fidélité des écrans de diagnostic et de guidage en rayon.
+* **Artefact Preuve en Regard :** Vue de l'écran tactile intégré au meuble et schéma de guidage lumineux vers l'étagère physique.
+
+---
+
+##### 📍 Étape 04 : Expérimentation en Magasins Pilotes & Levée de Fonds Venture Interne
+
+> **Le Propos Stratégique :**
+> Démontrer l'efficacité opérationnelle du dispositif sur le terrain réel pour débloquer le financement d'un fonds d'investissement corporate venture dédié au déploiement industriel national.
+
+**Texte Rédigé pour le Site / Portfolio :**
+> Le prototype complet (meuble physique fonctionnel + interface logicielle interactive) a été déployé en conditions réelles dans un panel d'animaleries pilotes. 
+> Les retours qualitatifs et quantitatifs ont immédiatement validé la thèse de départ : le temps de parcours moyen s'est stabilisé sous la barre des 90 secondes, les abandons de rayon ont chuté drastiquement sur les gammes expertes, et les vendeurs ont spontanément utilisé la borne comme support pour guider les clients indécis sans avoir à mémoriser les 200 fiches techniques.
+> La restitution de ce démonstrateur auprès du management exécutif et des investisseurs internes du groupe a été le levier décisif : le projet a décroché le financement d'un **fonds corporate venture interne**, octroyant le budget nécessaire pour lancer l'industrialisation à grande échelle du réseau de distribution.
+
+* **Livrables Clés de l'Étape :** Bilan qualitatif des tests in-situ en magasins pilotes, Rapport d'arbitrage ROI pour le COMEX, Kit de passage de témoin aux équipes d'industrialisation matérielle et logicielle.
+* **Artefact Preuve en Regard :** Badge d'homologation du prototype pilote et cartouche des métriques de validation terrain.
+
+---
+
+#### C. Les 4 Tiroirs de Maîtrise Produit (Senior Depth)
+
+* **Tiroir 1 : Ergonomie Phygitale & Éclairage Hostile**
+  Compréhension poussée de l'ergonomie physique d'un kiosk public : angle de regard, hauteur d'implantation pour accessibilité universelle (PMR / fauteuil roulant), compensation des reflets néons par l'orientation de la dalle et choix d'une typographie lisible à 1,50 mètre de distance.
+* **Tiroir 2 : Vulgarisation Scientifique & Moteur d'Aide au Choix**
+  Capacité à dialoguer avec des spécialistes médicaux et nutritionnistes pour désosser un corpus de données denses et en extraire un tunnel de prescription ultra-fluide sans dénaturer la précision de la recommandation.
+* **Tiroir 3 : Synergie Distributeurs & Conduite du Changement**
+  Penser le produit digital non pas comme un substitut déshumanisant, mais comme un assistant bienveillant qui valorise les équipes de vente sur le terrain et désamorce les craintes de cannibalisation de l'emploi en magasin.
+* **Tiroir 4 : Recul Critique de Senior & Scalabilité**
+  Anticipation des écueils de la maintenance opérationnelle d'un parc de bornes : prévoir un mode dégradé hors-ligne en cas de coupure Wi-Fi du hangar, un système d'alerte sur les ruptures de stock en rayon, et une interface d'administration ultra-simple pour la mise à jour des packagings.
+
+---
+
+#### D. La Transposition Métier (« The So What? »)
+
+* **Résonance Directe avec le Hardware Connecté & le Retail POS :**
+  - **Pour Koralplay :** Maîtrise identique des contraintes d'interfaces tactiles d'équipements publics ou semi-publics (terminaux mobiles Android POS durcis Sunmi/Pax, bornes en kiosque de rue, utilisation sous soleil direct ou lumière agressive, rapidité d'exécution sans friction pour des usagers pressés).
+  - **Pour les acteurs IoT & Hardware (Atlantic, Beem Energy, Horanet, LivingPackets) :** Preuve tangible d'une capacité à co-concevoir l'expérience globale avec les ingénieurs hardware et les designers de produit physique sans cloisonnement logiciel/matériel.
+
+---
+
+#### E. Cartographie & Inventaire des Visuels Clés — Royal Canin
+
+| Moment du Récit | Visuel Recommandé en Regard | Statut & Source | Action / Suggestion à Josselin |
+| :--- | :--- | :--- | :--- |
+| **Hero / Scan (Temps 1)** | Photo ou rendu 3D de la borne intégrée dans le meuble métallique en animalerie | `[DISPONIBLE EN DOCUMENTATION]` 🟡 | Présent dans les archives du projet Royal Canin. |
+| **Marque & Identité** | Sticker officiel Royal Canin découpé vinyle | `[DISPONIBLE & EXTRAIT]` ✅ | `Portfolio/code/public/assets/stickers/sticker_client_royal_canin.svg` |
+| **Méthodologie (Étape 1)** | Schéma du parcours d'achat en linéaire (Hésitation ➔ Borne ➔ Rayon) | `[FORMALISÉ DANS LE CADRE]` ✅ | Diagramme vectoriel stylisé Olin.os. |
+| **Design Sprint (Étape 2)** | Entonnoir décisionnel 3 étapes (Race ➔ Âge ➔ Sensibilité) | `[SPÉCIFIÉ]` ✅ | Schéma conceptuel du moteur de recommandation. |
+| **Ergonomie (Étape 3)** | Wireframe de l'écran tactile Kiosk (touch-targets larges, contraste élevé) | `[DISPONIBLE EN ARCHIVES]` 🟡 | Extraits des maquettes UI de la borne. |
+| **Validation (Étape 4)** | Badge d'homologation pilote & validation du fonds corporate venture | `[INTÉGRÉ DANS LE STAR]` ✅ | Composant d'impact dans le Master Deck. |
+
+---
+
 ## 🎯 Synthèse de Posture pour l'Entretien avec Peter
 
 * **Posture :** **Senior Product Designer & Builder** (Double diplôme EDNA MDes UX $\times$ ENSAM Ingénierie, 7 ans d'expérience grands comptes ekino x MFG Labs $+$ culture entrepreneuriale de livraison rapide).
