@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "sync:readme": "node ../scripts/sync_portfolio_readme.js",
+    "sync:readme": "node -e \"import('fs').then(fs => { if (fs.existsSync('../scripts/sync_portfolio_readme.js')) import('child_process').then(cp => cp.execSync('node ../scripts/sync_portfolio_readme.js', { stdio: 'inherit' })); else console.log('ℹ️ sync:readme skipped (standalone clone)'); });\"",
     "predev": "npm run sync:readme",
     "dev": "vite",
     "prebuild": "npm run sync:readme",
