@@ -493,6 +493,14 @@
   margin-top: 4px;
 }
 
+/* Lien « Explorer le case study → » dans les post-its projets */
+.lp-floor__case-link {
+  align-self: flex-start;
+  margin-left: -14px;
+  font-weight: 600;
+  color: inherit;
+}
+
 /* Royal Canin : pas encore d'illustration, la fenêtre porte le logo et les preuves */
 .lp-kiosk {
   display: grid;

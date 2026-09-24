@@ -288,6 +288,9 @@ export class BrainFmSynthController {
   }
 
   async play() {
+    // iPhone : sans ce réglage, Safari coupe le son Web Audio quand le
+    // téléphone est en mode silencieux (Safari 16.4+)
+    if (navigator.audioSession) navigator.audioSession.type = 'playback';
     if (!this.ctx) this._build();
     await this.ctx.resume();
     const now = this.ctx.currentTime;

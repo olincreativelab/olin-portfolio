@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Royal Canin — Borne Phygitale &amp; Prescription Retail | Olin.os</title>
+  <meta name="description" content="Case study Royal Canin : design de service phygital et borne interactive en animalerie pour vulgariser une prescription nutritionnelle experte en moins de 90 secondes." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300..900&family=Kode+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/src/styles/tokens.css" />
+  <link rel="stylesheet" href="/src/styles/base.css" />
+  <link rel="stylesheet" href="/src/styles/components.css" />
+  <link rel="stylesheet" href="/src/styles/case-study.css" />
+  <!-- Masque le titre avant l'effet machine à écrire (pas de flash), sauf reduced-motion -->
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-typing');
+    }
+  </script>
+</head>
+<body class="cs-page">
+
+  <!-- Trame d'atelier interactive (fallback CSS statique si reduced-motion / tactile) -->
+  <canvas id="canvas-dot-grid" aria-hidden="true"></canvas>
+
+  <a class="cs-skip-link" href="#main">Aller au contenu</a>
+
+  <header class="olin-header" data-site-header>
+    <div class="olin-header__right">
+      <span class="olin-status-tag"><span class="olin-status-tag__dot" aria-hidden="true"></span>DISPONIBLE • Q3/Q4 2026</span>
+      <button type="button" class="olin-menu-btn" aria-expanded="false" aria-controls="olin-menu-panel" aria-label="Ouvrir le menu" data-menu-toggle>
+        <span class="olin-menu-btn__face">
+          <svg width="15" height="15" viewBox="0 0 15 15" aria-hidden="true"><path d="M0 6.66667V0H6.66667V6.66667H0ZM0 15V8.33333H6.66667V15H0ZM8.33333 6.66667V0H15V6.66667H8.33333ZM8.33333 15V8.33333H15V15H8.33333ZM1.66667 5H5V1.66667H1.66667V5ZM10 5H13.3333V1.66667H10V5ZM10 13.3333H13.3333V10H10V13.3333ZM1.66667 13.3333H5V10H1.66667V13.3333Z" fill="#242237" /></svg>
+        </span>
+      </button>
+    </div>
+    <nav class="olin-header__panel" id="olin-menu-panel" aria-label="Navigation principale" data-menu-panel>
+      <a href="/#hero">Bureau</a>
+      <a href="/#projets">Projets</a>
+      <a href="/#services">Atelier</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- =======================================================================
+         NIVEAU 1 — EXECUTIVE CARD (Scan 90s — Aligné Verbatim sur le One-Pager)
+         ======================================================================= -->
+    <section class="cs-hero cs-container" aria-labelledby="cs-title">
+      <span class="olin-tag olin-tag--blue olin-tag--tag cs-hero__chip">Case study // Phygital Retail • Kiosk Hardware</span>
+
+      <div class="cs-hero__grid">
+        <div class="cs-hero__content">
+          <h1 id="cs-title" class="cs-hero__title" aria-label="Royal Canin"><span class="cs-typewriter" aria-hidden="true" data-typewriter>Royal Canin</span><span class="cs-caret" aria-hidden="true" data-typewriter-caret>_</span></h1>
+          <p class="cs-hero__lead">
+            Borne PHYGITALE • Design de service phygital : réconcilier prescription experte et conversion en animalerie spécialisée.
+          </p>
+
+          <!-- Cartouche projet -->
+          <dl class="cs-cartouche" aria-label="Cartouche projet">
+            <div><dt>Client</dt><dd>Royal Canin • Groupe Mars</dd></div>
+            <div><dt>Rôle</dt><dd>Lead UX/UI &amp; Service Designer (ekino × MFG Labs)</dd></div>
+            <div><dt>Squad</dt><dd>Lead Service Designer (Josselin) • Fabricant mobilier métallique • Nutritionnistes vétérinaires • Devs embarqués</dd></div>
+            <div><dt>Durée</dt><dd>2021 • Cadrage, Design Sprints 5j &amp; prototypage industriel</dd></div>
+            <div><dt>Stack</dt><dd>Borne tactile 24-32" • Normes PMR • Moteur de prescription 3 questions • Design Sprints Figma</dd></div>
+          </dl>
+
+          <ul class="cs-badges" aria-label="Preuves d'impact">
+            <li><span class="olin-tag olin-tag--green olin-tag--pill"><span class="olin-tag__dot" aria-hidden="true"></span>Validation en magasins pilotes</span></li>
+            <li><span class="olin-tag olin-tag--purple olin-tag--pill"><span class="olin-tag__dot" aria-hidden="true"></span>Déblocage fonds corporate venture</span></li>
+            <li><span class="olin-tag olin-tag--blue olin-tag--pill"><span class="olin-tag__dot" aria-hidden="true"></span>Copilote de vente adopté en animalerie</span></li>
+          </ul>
+
+          <!-- MOMENT CTA 1 — Triage -->
+          <div class="cs-cta-row" role="group" aria-label="Choisir sa lecture">
+            <a class="olin-btn olin-btn--primary" href="#synthese">⚡ Scanner la synthèse 90s <span aria-hidden="true">↓</span></a>
+            <button type="button" class="olin-btn olin-btn--secondary" data-action="print-onepager">📥 One-Pager PDF</button>
+          </div>
+        </div>
+
+        <!-- Hero mockup — Borne Phygitale Hardware Master -->
+        <figure class="cs-hero__visual">
+          <div class="olin-window">
+            <div class="olin-window__header">
+              <span class="olin-window__title">royal-canin-kiosk.hardware</span>
+              <span aria-hidden="true">Borne 24-32"</span>
+            </div>
+            <div class="olin-window__body cs-cockpit">
+              <a class="olin-picture-frame cs-cockpit__slot" href="/assets/royal_canin/BorneRC.png" target="_blank" rel="noopener" aria-label="Ouvrir la borne Royal Canin en pleine résolution (nouvel onglet)">
+                <div class="olin-photo-duotone">
+                  <img
+                    src="/assets/royal_canin/BorneRC.png"
+                    width="1440" height="900"
+                    alt="Rendu physique de la borne phygitale Royal Canin en meuble métallique pour animaleries."
+                    fetchpriority="high" />
+                  <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <figcaption class="cs-caption">↳ Prototype industriel de la borne tactile : dalle antireflet inclinée, norme PMR et guidage visuel vers le linéaire.</figcaption>
+        </figure>
+      </div>
+
+      <!-- Matrice 3x3 — Scan exécutif 90s (Alignée sur le One-Pager relu P.6) -->
+      <div id="synthese" class="cs-synthese" aria-labelledby="synthese-title">
+        <div class="cs-section-header">
+          <span class="olin-tag olin-tag--blue olin-tag--pill cs-section-tag">SCAN EXÉCUTIF // 90 SECONDES</span>
+          <h2 id="synthese-title" class="cs-section-title">Synthèse de la mission &amp; impact</h2>
+        </div>
+        <div class="cs-matrix">
+          <article class="olin-window cs-matrix__col">
+            <div class="olin-window__header"><span class="olin-window__title">01 // Les challenges</span></div>
+            <ul class="olin-window__body cs-bullets">
+              <li><strong>Prescription.</strong> Rendre l'expertise scientifique compréhensible et activable en magasin face à un mur de plus de 200 références hyper-spécifiques.</li>
+              <li><strong>Conversion directe.</strong> Capter l'achat en linéaire, guider vers le bon sac et optimiser les stocks pour éviter les abandons d'achat sans conseil.</li>
+              <li><strong>Alliance distributeurs.</strong> Digitaliser le point de vente sans court-circuiter les partenaires animaliers ni menacer le rôle des conseillers de vente.</li>
+            </ul>
+          </article>
+          <article class="olin-window cs-matrix__col">
+            <div class="olin-window__header"><span class="olin-window__title">02 // L'approche</span></div>
+            <ul class="olin-window__body cs-bullets">
+              <li><strong>Immersion retail.</strong> Observations « mystery shopper », interviews clients in situ et retours terrain des conseillers en animalerie.</li>
+              <li><strong>Design Sprints à distance.</strong> Co-construction du service en 5 jours pour réduire un arbre biochimique complexe à un tunnel en 3 questions.</li>
+              <li><strong>Cadrage MVP &amp; meuble métal.</strong> Travail d'ergonomie et d'intégration physique avec le fabricant mobilier (dalle 24-32", normes PMR, reflets néons).</li>
+            </ul>
+          </article>
+          <article class="olin-window cs-matrix__col">
+            <div class="olin-window__header"><span class="olin-window__title">03 // Le résultat</span></div>
+            <ul class="olin-window__body cs-bullets">
+              <li><strong>Vision d'expérience validée.</strong> Démonstrateur probant ayant servi de support décisif à la levée d'un fonds corporate venture interne Mars.</li>
+              <li><strong>Cadrage MVP opérationnel.</strong> Cartographie et priorisation des opportunités de conversion testées et plébiscitées en magasins pilotes.</li>
+              <li><strong>Socle de delivery industriel.</strong> Parcours, écrans tactiles et spécifications ergonomiques validés et transmis pour le prototypage.</li>
+            </ul>
+          </article>
+        </div>
+
+        <ul class="cs-metrics" aria-label="Chiffres clés">
+          <li class="olin-metric-card">
+            <span class="olin-metric-card__value">&lt; 90 s</span>
+            <span class="olin-metric-card__label">diagnostic nutritionnel express délivré directement au pied du rayon</span>
+          </li>
+          <li class="olin-metric-card">
+            <span class="olin-metric-card__value">200+</span>
+            <span class="olin-metric-card__label">références scientifiques élaguées en un tunnel fluide de 3 questions</span>
+          </li>
+          <li class="olin-metric-card">
+            <span class="olin-metric-card__value">100%</span>
+            <span class="olin-metric-card__label">validé terrain en magasins pilotes et adopté comme copilote de vente</span>
+          </li>
+          <li class="olin-metric-card">
+            <span class="olin-metric-card__value">Venture</span>
+            <span class="olin-metric-card__label">fonds corporate venture interne débloqué pour financer l'industrialisation</span>
+          </li>
+        </ul>
+
+        <!-- MOMENT CTA 2 — Carrefour décisionnel -->
+        <div class="cs-crossroads">
+          <p class="cs-crossroads__label">Vous avez l'essentiel. Deux chemins :</p>
+          <div class="cs-cta-row">
+            <a class="olin-btn olin-btn--primary" href="https://cal.com/contact-excibat-z152ts/15min" target="_blank" rel="noopener">Discuter de ce projet avec Josselin (15 min) <span aria-hidden="true">↗</span></a>
+            <a class="olin-link" href="#contexte">Découvrir le cadrage &amp; les 4 étapes <span class="olin-link-arrow" aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         CADRAGE STRATÉGIQUE — FRICTION DU LINÉAIRE & ALIGNEMENT MULTI-ACTEURS
+         ======================================================================= -->
+    <section id="contexte" class="cs-context cs-container" aria-labelledby="context-title">
+      <div class="cs-section-header">
+        <span class="olin-tag olin-tag--blue olin-tag--pill cs-section-tag">01 // CADRAGE STRATÉGIQUE</span>
+        <h2 id="context-title" class="cs-section-title">Mise en situation : Le mur de 15 mètres &amp; le paradoxe du choix</h2>
+        <p class="cs-section-subtitle">
+          Comment digitaliser le point de vente sans gadget inutile : vulgariser une science vétérinaire pointue pour délivrer une recommandation personnalisée en moins de 90 secondes.
+        </p>
+      </div>
+
+      <div class="cs-context__grid">
+        <!-- Narratif & 3 Mandats Stratégiques -->
+        <div class="cs-context__text">
+          <p class="cs-prose cs-prose--lead">
+            En animalerie spécialisée, le client se retrouve face à un « mur de croquettes » intimidant de 15 mètres de long : plus de 200 références déclinées par race, taille, âge, mode de vie et sensibilités médicales. Si aucun vendeur n'est immédiatement disponible, le sentiment d'incompétence s'installe, menant soit à l'abandon d'achat, soit au repli sur une marque standard.
+          </p>
+
+          <div class="cs-missions-card">
+            <h3 class="cs-missions-title">Les 3 mandats de la mission design :</h3>
+            <ol class="cs-missions">
+              <li>
+                <span class="cs-mission-badge">01</span>
+                <div>
+                  <strong>Vulgariser sans dénaturer.</strong> Traduire les arbres décisionnels complexes des nutritionnistes Royal Canin en un questionnaire tactile instinctif en 3 étapes.
+                </div>
+              </li>
+              <li>
+                <span class="cs-mission-badge">02</span>
+                <div>
+                  <strong>Co-concevoir le mobilier physique.</strong> Travailler main dans la main avec le fabricant de meuble métal pour concevoir une borne robuste, antireflet et accessible aux personnes à mobilité réduite (PMR).
+                </div>
+              </li>
+              <li>
+                <span class="cs-mission-badge">03</span>
+                <div>
+                  <strong>Fédérer les distributeurs.</strong> Positionner la borne non pas comme un automate remplaçant le personnel, mais comme un copilote d'aide à la vente valorisant le conseil humain.
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Média de Contexte : Empathy Map Client In-Store -->
+        <aside class="cs-context__media">
+          <div class="olin-window cs-context-figure">
+            <div class="olin-window__header">
+              <span class="olin-window__title">empathy-map-client.png</span>
+              <span class="olin-tag olin-tag--blue olin-tag--pill cs-window-tag">IN-STORE RESEARCH</span>
+            </div>
+            <div class="olin-window__body cs-context-body">
+              <a class="olin-picture-frame" href="/assets/royal_canin/EmpathyMapClient.png" target="_blank" rel="noopener" aria-label="Voir l'Empathy Map client Royal Canin en pleine résolution (nouvel onglet)">
+                <div class="cs-context-photo-wrap olin-photo-duotone">
+                  <img
+                    src="/assets/royal_canin/EmpathyMapClient.png"
+                    alt="Cartographie d'empathie client en animalerie : hésitations, points de friction et lecture des étiquettes"
+                    width="1200" height="800"
+                    loading="lazy"
+                    class="cs-context-photo" />
+                  <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+                </div>
+                <div class="olin-picture-frame__caption">
+                  <div class="olin-picture-frame__text">
+                    <span class="olin-picture-frame__title">Empathy Map // Mystery Shopping</span>
+                    <span>Analyse des hésitations et des besoins de réassurance au pied du linéaire.</span>
+                  </div>
+                  <span class="olin-picture-frame__zoom">zoom ↗</span>
+                </div>
+              </a>
+              <div class="cs-context-quote">
+                <blockquote>
+                  « Quand un maître se retrouve devant 200 références de croquettes, il a peur d'empoisonner son chien avec la mauvaise recette. Notre borne ne devait pas être un écran publicitaire, mais un médecin nutritionniste bienveillant qui rassure en 3 questions. »
+                </blockquote>
+                <cite>— <strong>Josselin Hillion</strong>, Lead Service Designer</cite>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Carte Contexte : L'Équipe & Mode de Collaboration -->
+      <div class="cs-squad-card" aria-labelledby="squad-title">
+        <div class="cs-squad-card__header">
+          <span class="olin-tag olin-tag--blue olin-tag--pill" style="align-self: flex-start;">ORGANISATION &amp; GOUVERNANCE</span>
+          <h3 id="squad-title" class="cs-squad-card__title">Une synergie triangulaire : Design × Science Vétérinaire × Industrie Matérielle</h3>
+        </div>
+        <div class="cs-squad-card__grid">
+          <div class="cs-squad-col">
+            <span class="cs-squad-col__tag">LEAD SERVICE DESIGN</span>
+            <p><strong>Josselin Hillion</strong> (ekino × MFG Labs) : immersion terrain, animation des Design Sprints 5j, ergonomie d'interaction logicielle et physique.</p>
+          </div>
+          <div class="cs-squad-col">
+            <span class="cs-squad-col__tag">SCIENCE ROYAL CANIN</span>
+            <p>Vétérinaires et experts nutritionnels du Groupe Mars : validation de la rigueur scientifique des arbres diagnostiques et des recommandations.</p>
+          </div>
+          <div class="cs-squad-col">
+            <span class="cs-squad-col__tag">FABRICANT MEUBLE MÉTAL</span>
+            <p>Designers industriels et fabricants de mobilier métallique : contraintes d'usine, encombrement au sol, résistance aux chocs et normes PMR.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         NIVEAU 2 — STEPPER D'AIGUILLAGE NARRATIF (STICKY MOBILE & DESKTOP)
+         ======================================================================= -->
+    <nav class="cs-stepper-bar" aria-label="Progression du deep dive en 4 actes" data-stepper-bar>
+      <button type="button" class="cs-stepper-toggle" aria-expanded="false" aria-controls="cs-stepper-list" data-stepper-toggle>
+        <span class="cs-stepper-toggle__count"><span class="cs-sr-only">Étape en cours : </span><span data-stepper-count>01</span>/04</span>
+        <span class="cs-stepper-toggle__label" data-stepper-label>Immersion Retail</span>
+        <span class="cs-stepper-toggle__chevron" aria-hidden="true">▾</span>
+      </button>
+      <ol id="cs-stepper-list" class="olin-stepper cs-container" data-stepper>
+        <li><a class="olin-stepper__item olin-stepper__item--active" href="#acte-01" aria-current="step"><span class="olin-stepper__num">01 • Immersion</span><span class="olin-stepper__label">Mystery Shopping</span></a></li>
+        <li><a class="olin-stepper__item" href="#acte-02"><span class="olin-stepper__num">02 • Co-conception</span><span class="olin-stepper__label">Design Sprint 5j</span></a></li>
+        <li><a class="olin-stepper__item" href="#acte-03"><span class="olin-stepper__num">03 • Hardware</span><span class="olin-stepper__label">Meuble Métal &amp; Dalle</span></a></li>
+        <li><a class="olin-stepper__item" href="#acte-04"><span class="olin-stepper__num">04 • Impact</span><span class="olin-stepper__label">Pilotes &amp; Venture</span></a></li>
+      </ol>
+    </nav>
+
+    <!-- =======================================================================
+         NIVEAU 3 — LE DEEP DIVE EN 4 ACTES (Modular Storyboard)
+         ======================================================================= -->
+    <div id="deep-dive" class="cs-deep-dive">
+
+      <!-- ACTE 01 -->
+      <section id="acte-01" class="cs-act cs-container" data-act aria-labelledby="acte-01-title">
+        <header class="cs-act__header">
+          <div class="cs-act__pill-group">
+            <span class="cs-pill cs-pill--blue">ACTE 01 // IMMERSION TERRAIN</span>
+            <span class="cs-pill cs-pill--dark">PHASE 1/4</span>
+          </div>
+          <h2 id="acte-01-title" class="cs-act__title">Observations « Mystery Shopper » &amp; vérité du linéaire</h2>
+          <p class="cs-act__thesis">Quitter la tour de verre pour observer les hésitations réelles au pied du rayon : lecture à la loupe des petits caractères et perte de conversion sans vendeur.</p>
+        </header>
+        <div class="cs-act__body">
+          <div class="cs-prose">
+            <p>La mission s'est ouverte par une série d'immersions in situ sous forme de sessions de <em>mystery shopping</em> dans plusieurs animaleries et jardineries spécialisées. L'objectif : observer le comportement non biaisé des propriétaires de chiens et chats face au rayon Royal Canin.</p>
+            <p>Le constat terrain a été sans appel : la grande majorité des clients passe plus de 4 minutes à scruter les paquets en plissant les yeux pour tenter de déchiffrer la posologie et les ingrédients. Lorsque les vendeurs sont occupés en caisse ou en conseil, l'abandon d'achat atteint des sommets. Plus critique encore : les vendeurs confiaient redouter de recommander une référence inadaptée faute d'outils d'aide au diagnostic rapide.</p>
+          </div>
+          <ul class="cs-deliverables" aria-label="Livrables clés">
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Rapport d'immersion mystery shopper</li>
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Cartographie des frictions linéaires</li>
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Interviews vendeurs &amp; clients</li>
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Empathy Map acheteurs/compagnons</li>
+          </ul>
+        </div>
+        <figure class="cs-artifact">
+          <a class="olin-picture-frame" href="/assets/royal_canin/retail_scene_photo.png" target="_blank" rel="noopener" aria-label="Agrandir la scène d'immersion en magasin (nouvel onglet)">
+            <div class="olin-photo-duotone">
+              <img src="/assets/royal_canin/retail_scene_photo.png" width="1440" height="900" loading="lazy" alt="Immersion terrain en animalerie spécialisée au pied du rayon nutrition féline et canine." />
+              <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+            </div>
+            <div class="olin-picture-frame__caption">
+              <div class="olin-picture-frame__text">
+                <span class="olin-picture-frame__title">Immersion In-Situ // Animaleries Spécialisées</span>
+                <span>Analyse du parcours physique et des points d'hésitation dans le rayon.</span>
+              </div>
+              <span class="olin-picture-frame__zoom">zoom ↗</span>
+            </div>
+          </a>
+          <figcaption class="cs-caption">Observation en conditions réelles : confrontation directe avec l'éclairage néon agressif et la surcharge cognitive du linéaire.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ACTE 02 -->
+      <section id="acte-02" class="cs-act cs-container" data-act aria-labelledby="acte-02-title">
+        <header class="cs-act__header">
+          <div class="cs-act__pill-group">
+            <span class="cs-pill cs-pill--blue">ACTE 02 // DESIGN SPRINT 5 JOURS</span>
+            <span class="cs-pill cs-pill--dark">PHASE 2/4</span>
+          </div>
+          <h2 id="acte-02-title" class="cs-act__title">Le Design Sprint à distance : du traité vétérinaire à 3 questions</h2>
+          <p class="cs-act__thesis">Aligner à distance vétérinaires, marketeurs et designers pour réduire un arbre biochimique complexe à un tunnel d'interaction fluide en moins de 90 secondes.</p>
+        </header>
+        <div class="cs-act__body">
+          <div class="cs-prose">
+            <p>Pour dépasser les clivages internes entre la rigueur clinique des nutritionnistes et les impératifs de conversion marketing, nous avons orchestré un **Design Sprint collaboratif de 5 jours à distance**. Chaque jour a permis de franchir un cap décisif : de la cartographie de l'arbre diagnostique au prototypage interactif sous Figma.</p>
+            <p>Le tour de force a consisté à élaguer l'arbre de décision en **3 questions clés universelles** : <em>1. Profil de l'animal (Race, âge, poids) ➔ 2. Style de vie &amp; stérilisation ➔ 3. Sensibilité spécifique (digestion, pelage, articulations)</em>. En moins de 90 secondes, le moteur délivre la recommandation exacte, assortie d'un indice de correspondance et de la localisation précise du paquet sur l'étagère adjacente.</p>
+          </div>
+          <ul class="cs-deliverables" aria-label="Livrables clés">
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Design Sprint 5j documenté</li>
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Grille de personas magasins</li>
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Arbre diagnostique simplifié</li>
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Prototype interactif Figma</li>
+          </ul>
+        </div>
+        <figure class="cs-artifact">
+          <a class="olin-picture-frame" href="/assets/royal_canin/grid_of_personas.png" target="_blank" rel="noopener" aria-label="Agrandir la grille de personas Royal Canin (nouvel onglet)">
+            <div class="olin-photo-duotone">
+              <img src="/assets/royal_canin/grid_of_personas.png" width="1440" height="900" loading="lazy" alt="Grille d'analyse des personas acheteurs et profils d'animaux pour le moteur de recommandation." />
+              <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+            </div>
+            <div class="olin-picture-frame__caption">
+              <div class="olin-picture-frame__text">
+                <span class="olin-picture-frame__title">Grille de Personas // Profils Acheteurs &amp; Animaux</span>
+                <span>Modélisation des archétypes de propriétaires : novices, anxieux et experts exigeants.</span>
+              </div>
+              <span class="olin-picture-frame__zoom">zoom ↗</span>
+            </div>
+          </a>
+          <figcaption class="cs-caption">Segmentation croisée : adapter le niveau d'explication pédagogique selon l'autonomie et les attentes du propriétaire.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ACTE 03 -->
+      <section id="acte-03" class="cs-act cs-container" data-act aria-labelledby="acte-03-title">
+        <header class="cs-act__header">
+          <div class="cs-act__pill-group">
+            <span class="cs-pill cs-pill--blue">ACTE 03 // HARDWARE &amp; ERGONOMIE PHYSIQUE</span>
+            <span class="cs-pill cs-pill--dark">PHASE 3/4</span>
+          </div>
+          <h2 id="acte-03-title" class="cs-act__title">Co-conception matérielle avec le fabricant de meuble métal</h2>
+          <p class="cs-act__thesis">Concevoir l'objet physique et son interface comme un tout indissociable : angles antireflet sous néons, normes PMR et robustesse d'atelier.</p>
+        </header>
+        <div class="cs-act__body">
+          <div class="cs-prose">
+            <p>Une borne interactive en animalerie ne se résume pas à poser un écran d'ordinateur sur une colonne. En partenariat direct avec le fabricant de mobilier métallique industriel, nous avons co-conçu l'ergonomie physique du meuble pour répondre aux contraintes sévères du retail :</p>
+            <ul class="cs-bullets">
+              <li><strong>Reflets d'éclairage néon :</strong> Détermination de l'angle d'inclinaison optimal de la dalle (24 à 32 pouces) pour neutraliser les reflets parasites des plafonniers d'entrepôt.</li>
+              <li><strong>Accessibilité universelle PMR :</strong> Respect strict des hauteurs d'interaction et dégagement sous meuble pour permettre l'usage par des personnes en fauteuil roulant.</li>
+              <li><strong>Touch-targets généreux (&ge; 48px) :</strong> Boutons massifs et espacés pour une utilisation sans frustration, même avec des gants ou dans la précipitation.</li>
+              <li><strong>Guidage étagère :</strong> Affichage d'un repère visuel lumineux ou graphique pointant le rayonnage physique exact où se trouve la référence prescrite.</li>
+            </ul>
+          </div>
+          <ul class="cs-deliverables" aria-label="Livrables clés">
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Spécifications ergonomiques meuble</li>
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Plans de cotes et normes PMR</li>
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">UI Kit tactile grand format</li>
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Guidage visuel vers le rayon</li>
+          </ul>
+        </div>
+        <figure class="cs-artifact">
+          <a class="olin-picture-frame" href="/assets/royal_canin/store_persona_analysis.png" target="_blank" rel="noopener" aria-label="Agrandir l'analyse d'usage en magasin (nouvel onglet)">
+            <div class="olin-photo-duotone">
+              <img src="/assets/royal_canin/store_persona_analysis.png" width="1440" height="900" loading="lazy" alt="Analyse des flux de circulation et d'interaction autour de la borne phygitale en magasin." />
+              <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+            </div>
+            <div class="olin-picture-frame__caption">
+              <div class="olin-picture-frame__text">
+                <span class="olin-picture-frame__title">Flux de Circulation // Implantation Magasin</span>
+                <span>Positionnement stratégique en tête de gondole pour intercepter le flux sans gêner le passage.</span>
+              </div>
+              <span class="olin-picture-frame__zoom">zoom ↗</span>
+            </div>
+          </a>
+          <figcaption class="cs-caption">Implantation spatiale : la borne agit comme un repère visuel chaleureux et un point d'entrée naturel dans le linéaire.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ACTE 04 -->
+      <section id="acte-04" class="cs-act cs-container" data-act aria-labelledby="acte-04-title">
+        <header class="cs-act__header">
+          <div class="cs-act__pill-group">
+            <span class="cs-pill cs-pill--blue">ACTE 04 // PILOTES &amp; VALORISATION VENTURE</span>
+            <span class="cs-pill cs-pill--dark">PHASE 4/4</span>
+          </div>
+          <h2 id="acte-04-title" class="cs-act__title">Validation en magasins pilotes &amp; déblocage du corporate venture</h2>
+          <p class="cs-act__thesis">Prouver l'adoption par les vendeurs et obtenir l'arbitrage financier de la direction du Groupe Mars pour passer à l'industrialisation.</p>
+        </header>
+        <div class="cs-act__body">
+          <div class="cs-prose">
+            <p>Le prototype industriel a été déployé en phase de test dans plusieurs magasins pilotes partenaires. Les résultats ont immédiatement dépassé les attentes : loin de rejeter l'automate, les conseillers de vente s'en sont emparés comme d'un **copilote d'aide à la vente**. Ils s'appuient sur l'écran pour rassurer le client, appuyer leur recommandation sur la rigueur de la marque et conclure la vente sans hésitation.</p>
+            <p>Cette preuve par l'usage terrain a constitué l'argument massue lors de la soutenance devant le comité d'investissement interne de Mars. La clarté du prototype et les retours enthousiastes des distributeurs ont déclenché l'arbitrage favorable et le **déblocage du fonds corporate venture** pour lancer la phase d'industrialisation et de déploiement réseau.</p>
+          </div>
+          <aside class="olin-sticky cs-note olin-sticky--mint" aria-label="Verbatim vendeur animalerie">
+            <div class="cs-note__pin" aria-hidden="true"></div>
+            <div class="cs-note__header">
+              <span class="cs-note__tag">RETEX VENDEUR // ANIMALERIE PILOTE</span>
+            </div>
+            <blockquote class="cs-note__quote">
+              « Avant, quand un client me demandait la différence entre deux sacs spécifiques pour chat stérilisé d'intérieur, je devais relire le dos du paquet avec lui. Avec la borne, on tape 3 critères ensemble, l'écran valide mon conseil et le client repart convaincu. C'est devenu mon meilleur allié en rayon. »
+            </blockquote>
+            <div class="cs-note__sign">— Conseiller de vente, Animalerie Pilote (2021)</div>
+            <a href="#drawers-title" class="olin-sticky__action">voir les 4 tiroirs de maîtrise ↗</a>
+          </aside>
+        </div>
+        <figure class="cs-artifact">
+          <a class="olin-picture-frame" href="/assets/royal_canin/user_journey_map.png" target="_blank" rel="noopener" aria-label="Agrandir le parcours utilisateur phygital (nouvel onglet)">
+            <div class="olin-photo-duotone">
+              <img src="/assets/royal_canin/user_journey_map.png" width="1440" height="900" loading="lazy" alt="User Journey Map : parcours de conversion phygitale de l'entrée en magasin au passage en caisse." />
+              <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+            </div>
+            <div class="olin-picture-frame__caption">
+              <div class="olin-picture-frame__text">
+                <span class="olin-picture-frame__title">User Journey Map // Phygital Experience</span>
+                <span>Continuité du geste : du diagnostic sur écran au retrait physique du sac en rayon.</span>
+              </div>
+              <span class="olin-picture-frame__zoom">zoom ↗</span>
+            </div>
+          </a>
+          <figcaption class="cs-caption">Parcours phygital sans rupture : réconciliation de l'expertise digitale et de l'acte d'achat physique immédiat.</figcaption>
+        </figure>
+
+        <!-- MOMENT CTA 3 — Micro-preuves -->
+        <div class="cs-proof-cta">
+          <p class="cs-proof-cta__label">Voir les preuves industrielles :</p>
+          <div class="cs-cta-row">
+            <a class="olin-btn olin-btn--secondary" href="/assets/royal_canin/BorneRC.png" target="_blank" rel="noopener">Ouvrir le rendu 3D de la borne en haute résolution <span aria-hidden="true">↗</span></a>
+            <a class="olin-link" href="mailto:josselin.hillion@gmail.com?subject=Discussion%20borne%20phygitale%20Royal%20Canin">Échanger sur l'ergonomie phygitale retail <span class="olin-link-arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- =======================================================================
+         NIVEAU 4 — TIROIRS DE MAÎTRISE SENIOR & CONVERSION FINALE
+         ======================================================================= -->
+    <section class="cs-drawers cs-container" aria-labelledby="drawers-title">
+      <header class="cs-act__header">
+        <span class="cs-act__num">Niveau 4 // Maîtrise senior</span>
+        <h2 id="drawers-title" class="cs-act__title">Les 4 tiroirs</h2>
+      </header>
+
+      <div class="olin-drawers-grid">
+        <details class="olin-drawer" data-drawer>
+          <summary class="olin-drawer__title cs-drawer__summary">
+            <span class="cs-drawer__head">
+              <span class="olin-tag olin-tag--blue olin-tag--tag">❖ Ergonomie Kiosk</span>
+              <span class="cs-drawer__name">Ergonomie phygitale sous éclairage hostile</span>
+              <span class="cs-drawer__teaser">Normes PMR, inclinaison antireflet sous néons et touch-targets &ge; 48px</span>
+            </span>
+            <span class="cs-drawer__icon" aria-hidden="true"><span class="cs-drawer__glyph">+</span></span>
+          </summary>
+          <div class="olin-drawer__content">
+            <p>Concevoir pour le monde physique impose de s'affranchir du confort d'un bureau de designer. En animalerie, l'éclairage zénithal néon crée des reflets aveuglants sur les écrans plats verticaux. Nous avons calculé avec le fabricant métallique un angle d'inclinaison brisant la réverbération, calibré des contrastes visuels très élevés et ménagé un accès en fauteuil roulant conforme aux normes PMR.</p>
+          </div>
+        </details>
+        <details class="olin-drawer" data-drawer>
+          <summary class="olin-drawer__title cs-drawer__summary">
+            <span class="cs-drawer__head">
+              <span class="olin-tag olin-tag--purple olin-tag--tag">❖ Vulgarisation IA</span>
+              <span class="cs-drawer__name">Vulgarisation scientifique &amp; arbre décisionnel</span>
+              <span class="cs-drawer__teaser">Traduire la science clinique en un tunnel limpide en 3 étapes sans jargon</span>
+            </span>
+            <span class="cs-drawer__icon" aria-hidden="true"><span class="cs-drawer__glyph">+</span></span>
+          </summary>
+          <div class="olin-drawer__content">
+            <p>Le piège récurrent des marques scientifiques est de noyer le client sous des données biochimiques indigestes. Notre rôle a été d'élaguer les questions secondaires pour isoler les 3 variables déterminantes (morphologie, mode de vie, pathologie déclarée) et formuler un résultat compréhensible en moins de 90 secondes, assorti d'un score de pertinence rassurant.</p>
+          </div>
+        </details>
+        <details class="olin-drawer" data-drawer>
+          <summary class="olin-drawer__title cs-drawer__summary">
+            <span class="cs-drawer__head">
+              <span class="olin-tag olin-tag--green olin-tag--tag">❖ Alliance Retail</span>
+              <span class="cs-drawer__name">Synergie distributeurs &amp; valorisation vendeur</span>
+              <span class="cs-drawer__teaser">Ne jamais court-circuiter le personnel : la borne comme outil copilote</span>
+            </span>
+            <span class="cs-drawer__icon" aria-hidden="true"><span class="cs-drawer__glyph">+</span></span>
+          </summary>
+          <div class="olin-drawer__content">
+            <p>Un projet phygital échoue presque toujours par rejet des équipes de vente s'il est perçu comme une menace de remplacement. En co-construisant les scénarios avec les vendeurs, la borne a été positionnée comme un <strong>copilote d'aide à la vente</strong>. Elle soulage le personnel lors des pics d'affluence et valide leurs arguments face aux clients sceptiques.</p>
+          </div>
+        </details>
+        <details class="olin-drawer" data-drawer>
+          <summary class="olin-drawer__title cs-drawer__summary">
+            <span class="cs-drawer__head">
+              <span class="olin-tag olin-tag--neutral olin-tag--tag">❖ Recul Critique</span>
+              <span class="cs-drawer__name">Ce que je ferais autrement</span>
+              <span class="cs-drawer__teaser">Synchronisation IoT temps réel avec les stocks physiques de chaque magasin</span>
+            </span>
+            <span class="cs-drawer__icon" aria-hidden="true"><span class="cs-drawer__glyph">+</span></span>
+          </summary>
+          <div class="olin-drawer__content">
+            <p>Dans le prototype initial, la recommandation supposait que le produit était en rayon. Avec l'outillage moderne et les APIs d'inventaire, j'intégrerais **une synchronisation IoT en temps réel avec le stock du magasin** : si la référence idéale est en rupture temporaire, la borne propose immédiatement l'alternative équivalente disponible ou permet la commande en click-and-collect au comptoir.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- Transposition & Enseignements Transverses -->
+      <aside class="olin-window cs-sowhat" aria-labelledby="sowhat-title">
+        <div class="olin-window__header">
+          <span class="olin-window__title" id="sowhat-title">🎯 The so what? // Ce que ce cas démontre pour vos produits</span>
+        </div>
+        <div class="olin-window__body cs-sowhat__grid">
+          <div class="cs-sowhat__col">
+            <h3 class="cs-sowhat__title">01 // Terminaux durcis POS &amp; environnements exigeants (Koralplay)</h3>
+            <p>Résonance directe avec les terminaux tactiles de prise de paris durcis (Sunmi, Pax, bornes retail). Savoir concevoir pour des conditions lumineuses difficiles, des écrans tactiles sous forte affluence et des gestes d'achat ultra-rapides.</p>
+          </div>
+          <div class="cs-sowhat__col">
+            <h3 class="cs-sowhat__title">02 // Vulgarisation de moteurs de règles complexes</h3>
+            <p>Capacité démontrée à absorber des règles métiers intriquées (arbres biochimiques, algorithmes de scoring, cotes sportives) pour délivrer une interface limpide permettant une prise de décision en moins de 90 secondes.</p>
+          </div>
+          <div class="cs-sowhat__col">
+            <h3 class="cs-sowhat__title">03 // Synergie hardware &amp; logiciel</h3>
+            <p>Compréhension intime des contraintes de fabrication industrielle (tôlerie, angle d'écran, normes PMR) pour livrer un objet fini cohérent où le hardware et l'interface numérique se renforcent mutuellement.</p>
+          </div>
+        </div>
+      </aside>
+
+      <!-- MOMENT CTA 4 — Conversion finale -->
+      <div class="cs-final-cta">
+        <p class="cs-final-cta__title">Prêt à digitaliser vos points de contact physiques ou terminaux spécialisés ?</p>
+        <div class="cs-cta-row">
+          <a class="olin-btn olin-btn--primary" href="https://cal.com/contact-excibat-z152ts/15min" target="_blank" rel="noopener">Planifier un call découverte (15 min) <span aria-hidden="true">↗</span></a>
+          <a class="olin-link" href="/excibat.html">Explorer le cas suivant : Excibat BTP <span class="olin-link-arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer sur le motif Olin -->
+  <footer class="olin-footer">
+    <div class="olin-footer__inner">
+      <p class="olin-footer__mantra"><span>La tête dans les nuages,<br />les mains dans le concret.</span></p>
+      <nav class="olin-footer__nav" aria-label="Liens de pied de page">
+        <a href="#main">↑ Haut de page</a>
+        <a href="/#projets">Tous les projets</a>
+        <a href="https://www.linkedin.com/in/josselinhillion/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="mailto:olin.creativelab@gmail.com">Email ↗</a>
+      </nav>
+    </div>
+    <div class="olin-footer__legal">
+      <span>© 2026 Josselin Hillion • Olin.os — La tête dans les nuages, les mains dans le concret.</span>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/case-study.js"></script>
+</body>
+</html>

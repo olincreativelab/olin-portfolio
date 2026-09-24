@@ -7,7 +7,9 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         renault_moments: resolve(__dirname, 'renault-moments.html'),
-        datacity_paris_for_you: resolve(__dirname, 'datacity-paris-for-you.html')
+        datacity_paris_for_you: resolve(__dirname, 'datacity-paris-for-you.html'),
+        excibat: resolve(__dirname, 'excibat.html'),
+        royal_canin: resolve(__dirname, 'royal-canin.html')
       }
     }
   }
