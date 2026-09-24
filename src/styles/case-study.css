@@ -239,6 +239,31 @@
   animation: cs-blink 1.1s steps(1) infinite;
 }
 
+/* Titre machine à écrire : caractères masqués mais qui gardent leur place */
+.js-typing .cs-typewriter {
+  visibility: hidden;
+  /* Filet de sécurité si le script ne s'exécute pas */
+  animation: cs-type-failsafe 0s 3s forwards;
+}
+
+@keyframes cs-type-failsafe {
+  to { visibility: visible; }
+}
+
+.cs-type-char {
+  visibility: hidden;
+}
+
+.cs-type-char.is-typed {
+  visibility: visible;
+}
+
+/* Pendant la frappe, le curseur est fixe ; il garde sa largeur pour que la
+   largeur totale du titre (et donc ses retours à la ligne) ne change jamais */
+.cs-hero__title.is-typing .cs-caret {
+  animation: none;
+}
+
 @keyframes cs-blink {
   50% { opacity: 0; }
 }
@@ -1079,7 +1104,7 @@
   font-family: var(--font-tech, 'Kode Mono', monospace);
   font-size: 11px;
   font-weight: 700;
-  color: var(--cs-blue);
+  color: #242237;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
@@ -1087,8 +1112,9 @@
   transition: color 0.15s ease, text-decoration-thickness 0.15s ease;
 }
 
+/* Même logique que .olin-link (Figma 4327:152330) : noir → bleu au survol */
 .olin-window__action:hover {
-  color: var(--cs-ink);
+  color: var(--cs-blue);
   text-decoration-thickness: 2px;
 }
 
@@ -1307,6 +1333,12 @@
   }
 
   /* Masquer tout ce qui est hors du One-Pager synthétique */
+  .cs-type-char,
+  .js-typing .cs-typewriter {
+    visibility: visible !important;
+    animation: none !important;
+  }
+
   #canvas-dot-grid,
   .cs-menubar,
   .cs-skip-link,

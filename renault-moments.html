@@ -14,6 +14,12 @@
   <link rel="stylesheet" href="/src/styles/base.css" />
   <link rel="stylesheet" href="/src/styles/components.css" />
   <link rel="stylesheet" href="/src/styles/case-study.css" />
+  <!-- Masque le titre avant l'effet machine à écrire (pas de flash), sauf reduced-motion -->
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-typing');
+    }
+  </script>
 </head>
 <body class="cs-page">
 
@@ -49,7 +55,7 @@
 
       <div class="cs-hero__grid">
         <div class="cs-hero__content">
-          <h1 id="cs-title" class="cs-hero__title">Renault Moments<span class="cs-caret" aria-hidden="true">_</span></h1>
+          <h1 id="cs-title" class="cs-hero__title" aria-label="Renault Moments"><span class="cs-typewriter" aria-hidden="true" data-typewriter>Renault Moments</span><span class="cs-caret" aria-hidden="true">_</span></h1>
           <p class="cs-hero__lead">
             Design de service &amp; prospective : projeter l'expérience client à l'ère des services connectés et de la Renaulution.
           </p>
