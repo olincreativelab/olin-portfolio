@@ -259,7 +259,7 @@
   position: relative;
   max-width: 897px;
   margin: 0 auto;
-  padding-bottom: 167px;
+  padding-bottom: 211px;
 }
 
 .lp-olinmd {
@@ -354,57 +354,15 @@
   display: flex;
 }
 
-/* Composition Figma 328 × 287 (unité --u = 1px Figma, via container query) */
-.lp-profile__canvas {
-  --u: calc(100cqw / 328);
-  position: relative;
+/* Photo de profil (Figma ProfilPic/BGBleu+whiteScreen2 4178:48571) */
+.lp-profile__img {
   display: block;
-  container-type: inline-size;
-  aspect-ratio: 328 / 287;
-  overflow: hidden;
-  background-color: #4B4BFF;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
   border: 1px solid #01050F;
   border-top: 0;
   border-radius: 0 0 2px 2px;
-}
-
-/* Trame de carrés 4px au pas de 24px (pattern Figma), à l'échelle de la fenêtre */
-.lp-profile__dots {
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Crect width='4' height='4' fill='%23DDDDDE'/%3E%3C/svg%3E");
-  background-position: calc(19 * var(--u)) calc(21 * var(--u));
-  background-size: calc(24 * var(--u)) calc(24 * var(--u));
-}
-
-.lp-profile__frame,
-.lp-profile__portrait {
-  position: absolute;
-  max-width: none;
-}
-
-.lp-profile__frame {
-  left: calc(53 * var(--u));
-  top: calc(31 * var(--u));
-  width: calc(227 * var(--u));
-  height: auto;
-}
-
-.lp-profile__portrait {
-  left: calc(77.55 * var(--u));
-  top: calc(18.33 * var(--u));
-  width: calc(162.8 * var(--u));
-  height: calc(203.94 * var(--u));
-  transform: rotate(-11deg);
-}
-
-.lp-profile__grain {
-  position: absolute;
-  inset: 0;
-  opacity: 0.18;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  pointer-events: none;
 }
 
 /* Lightbox */
@@ -710,12 +668,33 @@
   left: var(--x);
   top: var(--y);
   width: var(--w);
-  height: auto;
-  background: #FFFFFF;
+  margin: 0;
   box-shadow: 0 1px 8px rgba(1, 5, 15, 0.08);
   transition:
     opacity 0.35s var(--lp-ease),
     transform 0.35s var(--lp-ease);
+}
+
+.lp-atelier__piece img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Photos (visio, webcams) : le slot révèle la couleur quand son post-it est actif */
+.lp-atelier__stage[data-focus="vision-produit"] .lp-atelier__piece[data-pillar="vision-produit"] .olin-photo-duotone > img,
+.lp-atelier__stage[data-focus="ateliers"] .lp-atelier__piece[data-pillar="ateliers"] .olin-photo-duotone > img {
+  filter: grayscale(20%) contrast(1.04);
+}
+
+.lp-atelier__stage[data-focus="vision-produit"] .lp-atelier__piece[data-pillar="vision-produit"] .olin-photo-duotone::before,
+.lp-atelier__stage[data-focus="ateliers"] .lp-atelier__piece[data-pillar="ateliers"] .olin-photo-duotone::before {
+  opacity: 0.35;
+}
+
+.lp-atelier__stage[data-focus="vision-produit"] .lp-atelier__piece[data-pillar="vision-produit"] .olin-photo-duotone::after,
+.lp-atelier__stage[data-focus="ateliers"] .lp-atelier__piece[data-pillar="ateliers"] .olin-photo-duotone::after {
+  opacity: 0.25;
 }
 
 /* Arrivée progressive au scroll : chaque planche glisse depuis son offset */

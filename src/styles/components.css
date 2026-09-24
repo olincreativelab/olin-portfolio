@@ -1681,7 +1681,8 @@ a.olin-picture-frame:hover .olin-photo-duotone > img {
 /* ==========================================================================
    16. OS HEADER TRANSVERSE (FIGMA Header 4515:45981)
    Barre de 64px sans fond plein : ombre 0 1px 8px rgba(0,0,0,.04) + flou.
-   Logo · navigation d'atelier · mini-player Brain.fm · statut · menu mobile.
+   À droite uniquement : tag de statut + bouton « Menu workshop » qui ouvre
+   la navigation (panneau déroulant, sur toutes les largeurs).
    ========================================================================== */
 .olin-header {
   position: sticky;
@@ -1690,58 +1691,12 @@ a.olin-picture-frame:hover .olin-photo-duotone > img {
   height: 64px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  justify-content: flex-end;
   padding: 0 60px;
   background: rgba(253, 250, 254, 0.72);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
-}
-
-.olin-header__brand {
-  display: inline-flex;
-  align-items: center;
-  flex-shrink: 0;
-  min-width: 44px;
-  min-height: 44px;
-}
-
-.olin-header__brand img {
-  width: 36px;
-  height: 36px;
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.olin-header__brand:hover img {
-  transform: rotate(-6deg) scale(1.06);
-}
-
-.olin-header__nav {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  margin-right: auto;
-  font-family: var(--font-tech, 'Kode Mono', monospace);
-  font-size: 13px;
-}
-
-.olin-header__nav a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  padding: 0 12px;
-  color: #242237;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: color 0.15s ease;
-}
-
-.olin-header__nav a:hover,
-.olin-header__nav a[aria-current="page"] {
-  color: #0028FF;
-  text-decoration: underline;
-  text-underline-offset: 4px;
 }
 
 .olin-header__right {
@@ -1777,7 +1732,7 @@ a.olin-picture-frame:hover .olin-photo-duotone > img {
 
 /* Bouton « Menu workshop » (Figma 40×40, cible tactile portée à 44px) */
 .olin-menu-btn {
-  display: none;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 44px;
@@ -1807,70 +1762,53 @@ a.olin-picture-frame:hover .olin-photo-duotone > img {
   transform: translateY(-1px);
 }
 
+/* Panneau de navigation */
 .olin-header__panel {
   display: none;
+}
+
+.olin-header__panel.is-open {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: absolute;
+  top: 64px;
+  right: 60px;
+  width: 260px;
+  padding: 12px;
+  background: #FFFFFF;
+  border: 1px solid #01050F;
+  border-radius: 8px;
+  box-shadow: 3px 3px 0px #01050F;
+}
+
+.olin-header__panel a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 12px;
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  font-size: 15px;
+  color: #242237;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.olin-header__panel a:hover,
+.olin-header__panel a:focus-visible {
+  background: #EEF2FF;
+  color: #0028FF;
 }
 
 @media (max-width: 1024px) {
   .olin-header {
     padding: 0 20px;
-    gap: 12px;
   }
 
-  .olin-header__nav,
-  .olin-header__right .olin-status-tag {
-    display: none;
-  }
-
-  .olin-menu-btn {
-    display: inline-flex;
-  }
-
-  .olin-header .olin-brainfm-player {
-    margin-left: auto;
-  }
-
-  /* Panneau déroulant mobile : navigation + statut */
   .olin-header__panel.is-open {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    position: absolute;
-    top: 64px;
     right: 12px;
     left: 12px;
-    padding: 12px;
-    background: #FFFFFF;
-    border: 1px solid #01050F;
-    border-radius: 8px;
-    box-shadow: 3px 3px 0px #01050F;
-  }
-
-  .olin-header__panel a {
-    display: flex;
-    align-items: center;
-    min-height: 44px;
-    padding: 0 12px;
-    font-family: var(--font-tech, 'Kode Mono', monospace);
-    font-size: 15px;
-    color: #242237;
-    border-radius: 6px;
-  }
-
-  .olin-header__panel a:hover {
-    background: #EEF2FF;
-    color: #0028FF;
-  }
-
-  .olin-header__panel .olin-status-tag {
-    align-self: flex-start;
-    margin: 8px 12px 4px;
-  }
-}
-
-@media (max-width: 480px) {
-  .olin-header .olin-brainfm-player__track {
-    display: none;
+    width: auto;
   }
 }
 

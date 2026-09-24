@@ -34,30 +34,20 @@
        Même balisage sur toutes les pages du site
        ========================================================================= -->
   <header class="olin-header" data-site-header>
-    <a class="olin-header__brand" href="/">
-      <img src="/assets/olin_logo_icon.svg" alt="Olin.os — accueil" width="36" height="36" />
-    </a>
-    <nav class="olin-header__nav" aria-label="Navigation principale">
-      <a href="/#hero">Bureau</a>
-      <a href="/#projets">Projets</a>
-      <a href="/#services">Services</a>
-      <a href="/#contact">Contact</a>
-    </nav>
     <div class="olin-header__right">
-      <span class="olin-status-tag"><span class="olin-status-tag__dot" aria-hidden="true"></span>DISPONIBLE // OCTOBRE 2026</span>
+      <span class="olin-status-tag"><span class="olin-status-tag__dot" aria-hidden="true"></span>DISPONIBLE • Q3/Q4 2026</span>
       <button type="button" class="olin-menu-btn" aria-expanded="false" aria-controls="olin-menu-panel" aria-label="Ouvrir le menu" data-menu-toggle>
         <span class="olin-menu-btn__face">
           <svg width="15" height="15" viewBox="0 0 15 15" aria-hidden="true"><path d="M0 6.66667V0H6.66667V6.66667H0ZM0 15V8.33333H6.66667V15H0ZM8.33333 6.66667V0H15V6.66667H8.33333ZM8.33333 15V8.33333H15V15H8.33333ZM1.66667 5H5V1.66667H1.66667V5ZM10 5H13.3333V1.66667H10V5ZM10 13.3333H13.3333V10H10V13.3333ZM1.66667 13.3333H5V10H1.66667V13.3333Z" fill="#242237" /></svg>
         </span>
       </button>
     </div>
-    <div class="olin-header__panel" id="olin-menu-panel" data-menu-panel>
+    <nav class="olin-header__panel" id="olin-menu-panel" aria-label="Navigation principale" data-menu-panel>
       <a href="/#hero">Bureau</a>
       <a href="/#projets">Projets</a>
-      <a href="/#services">Services</a>
+      <a href="/#services">Atelier</a>
       <a href="/#contact">Contact</a>
-      <span class="olin-status-tag"><span class="olin-status-tag__dot" aria-hidden="true"></span>DISPONIBLE // OCTOBRE 2026</span>
-    </div>
+    </nav>
   </header>
 
   <main id="main">
@@ -154,24 +144,14 @@
 
         <button type="button" class="olin-popup lp-profile" data-profile-open aria-haspopup="dialog" aria-label="Agrandir la photo de profil de Josselin Hillion">
           <span class="olin-popup__header">profil-pic.png</span>
-          <span class="lp-profile__canvas" aria-hidden="true">
-            <span class="lp-profile__dots"></span>
-            <img class="lp-profile__frame" src="/assets/profile/profil_window_frame.svg" alt="" width="227" height="227" />
-            <img class="lp-profile__portrait" src="/assets/josselin_portrait_vector_window.svg" alt="" width="163" height="204" decoding="async" />
-            <span class="lp-profile__grain"></span>
-          </span>
+          <img class="lp-profile__img" src="/assets/general/profil_pic_660.webp" srcset="/assets/general/profil_pic_660.webp 660w, /assets/general/profil_pic_1320.webp 1320w" sizes="330px" alt="" width="660" height="660" loading="lazy" decoding="async" />
         </button>
       </div>
 
       <dialog class="lp-lightbox" data-profile-dialog aria-label="Photo de profil de Josselin Hillion">
         <div class="olin-popup lp-lightbox__window">
           <div class="olin-popup__header">profil-pic.png</div>
-          <div class="lp-profile__canvas">
-            <span class="lp-profile__dots" aria-hidden="true"></span>
-            <img class="lp-profile__frame" src="/assets/profile/profil_window_frame.svg" alt="" width="227" height="227" />
-            <img class="lp-profile__portrait" src="/assets/josselin_portrait_vector_window.svg" alt="Portrait de Josselin Hillion, souriant, lunettes bleues, dans une fenêtre Olin.os" width="163" height="204" />
-            <span class="lp-profile__grain" aria-hidden="true"></span>
-          </div>
+          <img class="lp-profile__img" src="/assets/general/profil_pic_1320.webp" alt="Portrait de Josselin Hillion, souriant, lunettes bleues, dans une fenêtre Olin.os sur fond de motif Olin" width="1320" height="1320" loading="lazy" decoding="async" />
         </div>
         <form method="dialog">
           <button class="lp-lightbox__close" type="submit" aria-label="Fermer la photo agrandie">✕</button>
@@ -405,15 +385,53 @@
           <div class="olin-window__body lp-atelier__viewport" data-atelier>
             <div class="lp-atelier__stage">
               <div class="lp-atelier__mural">
-              <img class="lp-atelier__piece" data-pillar="vision-produit" src="/assets/competences/web/mural_01_use_case_blueprint_top_left.webp" alt="Service blueprint « Use case : designing the before and after maintenance »" width="359" height="204" loading="lazy" decoding="async" style="--x: 33px; --y: 11px; --w: 359px; --from-x: -60px; --from-y: -40px; --rot: -3deg; --delay: 0.1s" />
-              <img class="lp-atelier__piece" data-pillar="vision-produit" src="/assets/competences/web/mural_02_ux_wireframes_mid_left.webp" alt="Wireframes UX et matrice de parcours" width="246" height="204" loading="lazy" decoding="async" style="--x: 0px; --y: 189px; --w: 246px; --from-x: -80px; --from-y: 0px; --rot: 2deg; --delay: 0.2s" />
-              <img class="lp-atelier__piece" data-pillar="vision-produit" src="/assets/competences/web/mural_03_research_matrix_center_left.webp" alt="Matrice de recherche utilisateur" width="245" height="325" loading="lazy" decoding="async" style="--x: 270px; --y: 229px; --w: 245px; --from-x: -40px; --from-y: 40px; --rot: -2deg; --delay: 0.3s" />
-              <img class="lp-atelier__piece" data-pillar="culture-builder" src="/assets/competences/web/mural_04_storyboard_flows_bottom_left.webp" alt="Storyboard et flows de l'expérience" width="284" height="204" loading="lazy" decoding="async" style="--x: 41px; --y: 373px; --w: 284px; --from-x: -50px; --from-y: 60px; --rot: 1.5deg; --delay: 0.4s" />
-              <img class="lp-atelier__piece" data-pillar="ateliers" src="/assets/competences/web/mural_05_figjam_board_top_center.webp" alt="Board FigJam d'atelier de co-conception" width="324" height="204" loading="lazy" decoding="async" style="--x: 557px; --y: -7px; --w: 324px; --from-x: 0px; --from-y: -60px; --rot: -1.5deg; --delay: 0.15s" />
-              <img class="lp-atelier__piece" data-pillar="ateliers" src="/assets/competences/web/mural_06_user_test_doc_mid_center.webp" alt="Compte rendu de test utilisateurs avec Forum Études" width="161" height="206" loading="lazy" decoding="async" style="--x: 763px; --y: 183px; --w: 161px; --from-x: 20px; --from-y: -20px; --rot: 2.5deg; --delay: 0.25s" />
-              <img class="lp-atelier__piece" data-pillar="ateliers" src="/assets/competences/web/mural_07_workshop_visio_bottom_center.webp" alt="Atelier collaboratif en visio avec les équipes" width="323" height="204" loading="lazy" decoding="async" style="--x: 603px; --y: 429px; --w: 323px; --from-x: 0px; --from-y: 70px; --rot: -2deg; --delay: 0.35s" />
-              <img class="lp-atelier__piece" data-pillar="culture-builder" src="/assets/competences/web/mural_08_architecture_canvas_mid_bottom.webp" alt="Canvas d'architecture produit" width="350" height="204" loading="lazy" decoding="async" style="--x: 349px; --y: 484px; --w: 350px; --from-x: 30px; --from-y: 60px; --rot: 1deg; --delay: 0.45s" />
-              <img class="lp-atelier__piece" data-pillar="culture-builder" src="/assets/competences/web/mural_09_mobile_screens_flow_top_right.webp" alt="Flow d'écrans mobiles de l'application" width="441" height="204" loading="lazy" decoding="async" style="--x: 853px; --y: 45px; --w: 441px; --from-x: 80px; --from-y: -40px; --rot: 2deg; --delay: 0.2s" />
+              <figure class="olin-picture-frame lp-atelier__piece" data-pillar="vision-produit" style="--x: 33px; --y: 11px; --w: 359px; --from-x: -60px; --from-y: -40px; --rot: -3deg; --delay: 0.1s">
+                <div class="lp-atelier__shot">
+                  <img src="/assets/competences/web/mural_01_use_case_blueprint_top_left.webp" alt="Service blueprint « Use case : designing the before and after maintenance »" width="359" height="204" loading="lazy" decoding="async" />
+                </div>
+              </figure>
+              <figure class="olin-picture-frame lp-atelier__piece" data-pillar="ateliers" style="--x: 0px; --y: 189px; --w: 246px; --from-x: -80px; --from-y: 0px; --rot: 2deg; --delay: 0.2s">
+                <div class="lp-atelier__shot">
+                  <img src="/assets/competences/web/mural_02_ux_wireframes_mid_left.webp" alt="Wireframes UX et matrice de parcours" width="246" height="204" loading="lazy" decoding="async" />
+                </div>
+              </figure>
+              <figure class="olin-picture-frame lp-atelier__piece" data-pillar="vision-produit" style="--x: 270px; --y: 229px; --w: 245px; --from-x: -40px; --from-y: 40px; --rot: -2deg; --delay: 0.3s">
+                <div class="lp-atelier__shot">
+                  <img src="/assets/competences/web/mural_03_research_matrix_center_left.webp" alt="Matrice de recherche utilisateur" width="245" height="325" loading="lazy" decoding="async" />
+                </div>
+              </figure>
+              <figure class="olin-picture-frame lp-atelier__piece" data-pillar="culture-builder" style="--x: 41px; --y: 373px; --w: 284px; --from-x: -50px; --from-y: 60px; --rot: 1.5deg; --delay: 0.4s">
+                <div class="lp-atelier__shot">
+                  <img src="/assets/competences/web/mural_04_storyboard_flows_bottom_left.webp" alt="Storyboard et flows de l'expérience" width="284" height="204" loading="lazy" decoding="async" />
+                </div>
+              </figure>
+              <figure class="olin-picture-frame lp-atelier__piece" data-pillar="ateliers" style="--x: 557px; --y: -7px; --w: 324px; --from-x: 0px; --from-y: -60px; --rot: -1.5deg; --delay: 0.15s">
+                <div class="olin-photo-duotone">
+                  <img src="/assets/competences/web/mural_05_figjam_board_top_center.webp" alt="Board FigJam d'atelier de co-conception" width="324" height="204" loading="lazy" decoding="async" />
+                  <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+                </div>
+              </figure>
+              <figure class="olin-picture-frame lp-atelier__piece" data-pillar="ateliers" style="--x: 763px; --y: 183px; --w: 161px; --from-x: 20px; --from-y: -20px; --rot: 2.5deg; --delay: 0.25s">
+                <div class="lp-atelier__shot">
+                  <img src="/assets/competences/web/mural_06_user_test_doc_mid_center.webp" alt="Compte rendu de test utilisateurs avec Forum Études" width="161" height="206" loading="lazy" decoding="async" />
+                </div>
+              </figure>
+              <figure class="olin-picture-frame lp-atelier__piece" data-pillar="vision-produit" style="--x: 603px; --y: 429px; --w: 323px; --from-x: 0px; --from-y: 70px; --rot: -2deg; --delay: 0.35s">
+                <div class="olin-photo-duotone">
+                  <img src="/assets/competences/web/mural_07_workshop_visio_bottom_center.webp" alt="Atelier collaboratif en visio avec les équipes" width="323" height="204" loading="lazy" decoding="async" />
+                  <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+                </div>
+              </figure>
+              <figure class="olin-picture-frame lp-atelier__piece" data-pillar="culture-builder" style="--x: 349px; --y: 484px; --w: 350px; --from-x: 30px; --from-y: 60px; --rot: 1deg; --delay: 0.45s">
+                <div class="lp-atelier__shot">
+                  <img src="/assets/competences/web/mural_08_architecture_canvas_mid_bottom.webp" alt="Canvas d'architecture produit" width="350" height="204" loading="lazy" decoding="async" />
+                </div>
+              </figure>
+              <figure class="olin-picture-frame lp-atelier__piece" data-pillar="culture-builder" style="--x: 853px; --y: 45px; --w: 441px; --from-x: 80px; --from-y: -40px; --rot: 2deg; --delay: 0.2s">
+                <div class="lp-atelier__shot">
+                  <img src="/assets/competences/web/mural_09_mobile_screens_flow_top_right.webp" alt="Flow d'écrans mobiles de l'application" width="441" height="204" loading="lazy" decoding="async" />
+                </div>
+              </figure>
               </div>
             <article class="lp-atelier__card" data-pillar="vision-produit" style="--x: 159px; --y: 76px; --w: 290px" aria-labelledby="lp-atelier-card-1">
               <h3 id="lp-atelier-card-1" class="lp-atelier__title">DONNER LE CAP : VISION PRODUIT &amp; PROTOTYPAGE STRATÉGIQUE</h3>
