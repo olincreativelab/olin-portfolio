@@ -1225,51 +1225,11 @@
 
 .cs-footer__inner {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   gap: 40px;
   padding-top: 64px;
   padding-bottom: 56px;
-}
-
-.cs-footer__brand {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.cs-footer__logo {
-  display: inline-flex;
-  flex-shrink: 0;
-  min-width: 44px;
-  min-height: 44px;
-}
-
-.cs-footer__logo img {
-  width: 56px;
-  height: 56px;
-  transition: transform 0.2s var(--cs-ease);
-}
-
-.cs-footer__logo:hover img {
-  transform: rotate(-6deg) scale(1.06);
-}
-
-.cs-footer__name {
-  font-family: var(--font-display);
-  font-size: 22px;
-  font-weight: 800;
-  line-height: 1.2;
-  color: #FFFFFF;
-}
-
-.cs-footer__role {
-  margin-top: 2px;
-  font-family: var(--font-tech);
-  font-size: 12px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  color: #EAEEFF;
 }
 
 .cs-footer__mantra {
@@ -1323,9 +1283,6 @@
 }
 
 /* Découpes du bleu de fond sous le texte : le motif reste autour, jamais dessous */
-.cs-footer__logo,
-.cs-footer__name,
-.cs-footer__role,
 .cs-footer__mantra span,
 .cs-footer__nav a,
 .cs-footer__legal span {
@@ -1334,8 +1291,6 @@
   box-decoration-break: clone;
 }
 
-.cs-footer__name,
-.cs-footer__role,
 .cs-footer__mantra span,
 .cs-footer__legal span {
   display: inline;
@@ -1343,26 +1298,9 @@
   margin-left: -8px;
 }
 
-.cs-footer__name,
-.cs-footer__role {
-  display: table;
-}
-
-/* Nom + rôle : une seule découpe, sans interligne où le motif affleure */
-.cs-footer__brand > div {
-  padding: 6px 0;
-  background-color: #231FFF;
-}
-
 .cs-footer__nav a {
   padding: 0 8px;
   margin-left: -8px;
-}
-
-.cs-footer__logo {
-  padding: 4px;
-  margin: -4px;
-  border-radius: 8px;
 }
 
 .cs-footer__legal span:last-child {
