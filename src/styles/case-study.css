@@ -1,0 +1,890 @@
+/* ==========================================================================
+   OLIN.OS — CASE STUDY LAYOUT (Progressive Disclosure)
+   Mise en page uniquement : les composants viennent de components.css
+   (.olin-btn, .olin-link, .olin-tag, .olin-window, .olin-sticky,
+   .olin-metric-card, .olin-stepper, .olin-drawer).
+   ========================================================================== */
+
+.cs-page {
+  --cs-ink: #01050F;
+  --cs-midnight: #242237;
+  --cs-canvas: #F8FAFC;
+  --cs-blue: #0028FF;
+  --cs-body: #334155;
+  --cs-muted: #475569;
+  --cs-cockpit: #0F0C20;
+  --cs-shadow: 3px 3px 0px #01050F;
+  --cs-menubar-h: 60px;
+  --cs-ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  background-color: var(--cs-canvas);
+  color: var(--cs-ink);
+  overflow-x: hidden;
+}
+
+.cs-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.cs-mono {
+  font-family: var(--font-tech);
+  letter-spacing: 0.5px;
+}
+
+.cs-eyebrow {
+  font-family: var(--font-tech);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--cs-blue);
+  margin-bottom: 20px;
+}
+
+.cs-skip-link {
+  position: absolute;
+  left: 16px;
+  top: -100px;
+  z-index: 1000;
+  background: var(--cs-ink);
+  color: #FAFAFA;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-family: var(--font-tech);
+}
+
+.cs-skip-link:focus {
+  top: 8px;
+}
+
+:where(.cs-page) a:focus-visible,
+:where(.cs-page) button:focus-visible,
+:where(.cs-page) summary:focus-visible {
+  outline: 2px solid var(--cs-blue);
+  outline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   TOP MENUBAR
+   -------------------------------------------------------------------------- */
+.cs-menubar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--cs-menubar-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 24px;
+  background: #FAFAFA;
+  border-bottom: 1px solid var(--cs-ink);
+  font-family: var(--font-tech);
+  font-size: 13px;
+}
+
+.cs-menubar__path {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.cs-menubar__home {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.cs-menubar__home img {
+  height: 30px;
+  width: auto;
+}
+
+.cs-menubar__crumbs {
+  color: var(--cs-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cs-menubar__crumbs {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cs-menubar__crumbs a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 4px;
+}
+
+.cs-menubar__crumbs a:hover {
+  color: var(--cs-blue);
+}
+
+.cs-menubar__crumbs strong {
+  color: var(--cs-ink);
+  font-weight: 600;
+}
+
+.cs-menubar__right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.cs-menubar__right .olin-link {
+  font-size: 14px;
+  padding: 12px 8px;
+}
+
+/* --------------------------------------------------------------------------
+   NIVEAU 1 — HERO / EXECUTIVE CARD
+   -------------------------------------------------------------------------- */
+.cs-hero {
+  padding-top: 56px;
+  padding-bottom: 96px;
+}
+
+.cs-hero__chip {
+  margin-bottom: 24px;
+}
+
+.cs-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 56px;
+  align-items: start;
+}
+
+.cs-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+  color: var(--cs-ink);
+}
+
+.cs-caret {
+  color: var(--cs-blue);
+  animation: cs-blink 1.1s steps(1) infinite;
+}
+
+@keyframes cs-blink {
+  50% { opacity: 0; }
+}
+
+.cs-hero__lead {
+  margin-top: 20px;
+  max-width: 620px;
+  font-size: clamp(17px, 1.6vw, 20px);
+  line-height: 1.5;
+  color: var(--cs-body);
+}
+
+/* Cartouche projet (Kode Mono) */
+.cs-cartouche {
+  margin-top: 32px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--cs-ink);
+  border-radius: 8px;
+  box-shadow: 2px 2px 0px var(--cs-ink);
+  display: grid;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.cs-cartouche > div {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  gap: 16px;
+}
+
+.cs-cartouche dt {
+  font-family: var(--font-tech);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--cs-blue);
+  padding-top: 2px;
+}
+
+.cs-cartouche dd {
+  color: var(--cs-ink);
+  overflow-wrap: break-word;
+}
+
+.cs-badges {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.cs-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+/* Hero visual */
+.cs-hero__visual {
+  position: relative;
+  margin: 0;
+}
+
+.cs-cockpit {
+  background: var(--cs-cockpit);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.cs-cockpit img {
+  display: block;
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  border-radius: 16px;
+}
+
+.cs-hero__sticker {
+  position: absolute;
+  top: -22px;
+  right: -18px;
+  width: 150px;
+  height: auto;
+  transform: rotate(6deg);
+  pointer-events: none;
+}
+
+.cs-caption {
+  margin-top: 14px;
+  font-family: var(--font-tech);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--cs-muted);
+}
+
+/* Synthèse 3x3 */
+.cs-synthese {
+  margin-top: 88px;
+  scroll-margin-top: calc(var(--cs-menubar-h) + 24px);
+}
+
+.cs-matrix {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.cs-matrix__col .olin-window__title {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cs-bullets {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--cs-body);
+}
+
+.cs-bullets li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.cs-bullets li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--cs-blue);
+  font-family: var(--font-tech);
+}
+
+.cs-bullets strong {
+  color: var(--cs-ink);
+}
+
+.cs-metrics {
+  list-style: none;
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.cs-metrics .olin-metric-card__label {
+  color: var(--cs-muted);
+}
+
+.cs-crossroads {
+  margin-top: 40px;
+  padding: 28px 32px;
+  background: #FFFFFF;
+  border: 1px dashed var(--cs-ink);
+  border-radius: 8px;
+}
+
+.cs-crossroads__label,
+.cs-proof-cta__label {
+  font-family: var(--font-tech);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--cs-muted);
+}
+
+.cs-crossroads .cs-cta-row {
+  margin-top: 16px;
+}
+
+/* --------------------------------------------------------------------------
+   NIVEAU 2 — STEPPER STICKY
+   -------------------------------------------------------------------------- */
+.cs-stepper-bar {
+  position: sticky;
+  top: var(--cs-menubar-h);
+  z-index: 90;
+  background: rgba(248, 250, 252, 0.97);
+  border-top: 1px solid var(--cs-ink);
+  border-bottom: 1px solid var(--cs-ink);
+}
+
+.cs-stepper-bar .olin-stepper {
+  list-style: none;
+  margin: 0 auto;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.cs-stepper-bar .olin-stepper__item {
+  min-height: 44px;
+  height: 100%;
+  color: inherit;
+}
+
+.cs-stepper-bar .olin-stepper__item:hover {
+  border-color: var(--cs-ink);
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   NIVEAU 3 — DEEP DIVE PLEIN ÉTAGE
+   -------------------------------------------------------------------------- */
+.cs-deep-dive {
+  scroll-margin-top: var(--cs-menubar-h);
+}
+
+.cs-context {
+  padding-top: 88px;
+  padding-bottom: 24px;
+}
+
+.cs-context__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 48px;
+}
+
+.cs-prose {
+  display: grid;
+  gap: 16px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--cs-body);
+  max-width: 68ch;
+}
+
+.cs-prose strong {
+  color: var(--cs-ink);
+}
+
+.cs-prose--lead {
+  font-size: clamp(19px, 1.8vw, 22px);
+  line-height: 1.55;
+  color: var(--cs-ink);
+}
+
+.cs-missions {
+  list-style: none;
+  display: grid;
+  gap: 16px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--cs-body);
+}
+
+.cs-missions li {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #CBD5E1;
+}
+
+.cs-missions .cs-mono {
+  color: var(--cs-blue);
+  font-weight: 600;
+}
+
+.cs-missions strong {
+  color: var(--cs-ink);
+}
+
+.cs-act {
+  padding-top: 96px;
+  padding-bottom: 32px;
+  /* menubar + stepper sticky */
+  scroll-margin-top: calc(var(--cs-menubar-h) + 100px);
+}
+
+.cs-act__header {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 36px;
+  max-width: 880px;
+}
+
+.cs-act__num {
+  font-family: var(--font-tech);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--cs-blue);
+}
+
+.cs-act__title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.6vw, 44px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  color: var(--cs-ink);
+}
+
+.cs-act__thesis {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--cs-muted);
+  font-style: italic;
+}
+
+.cs-act__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 56px;
+  align-items: start;
+}
+
+.cs-deliverables {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-content: start;
+}
+
+.cs-deliverables .olin-tag {
+  white-space: normal;
+  height: auto;
+  min-height: 28px;
+}
+
+.cs-note {
+  max-width: 400px;
+  margin-top: 12px;
+}
+
+.cs-note blockquote p {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.cs-note__sign {
+  font-family: var(--font-tech);
+  font-size: 12px;
+}
+
+.cs-grammar {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  counter-reset: none;
+}
+
+.cs-grammar li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 16px;
+  background: #FFFFFF;
+  border: 1px solid var(--cs-ink);
+  border-radius: 8px;
+  box-shadow: 2px 2px 0px var(--cs-ink);
+  font-weight: 600;
+}
+
+.cs-grammar .cs-mono {
+  font-size: 12px;
+  color: var(--cs-blue);
+}
+
+/* Artefact visuel pleine largeur */
+.cs-artifact {
+  margin: 48px 0 0;
+}
+
+.cs-artifact__link {
+  display: flex;
+  color: inherit;
+  transition: transform 0.15s var(--cs-ease), box-shadow 0.15s var(--cs-ease);
+}
+
+.cs-artifact__link:hover {
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 0px var(--cs-ink);
+}
+
+.cs-artifact__link:active {
+  transform: translateY(1px);
+  box-shadow: 0px 0px 0px transparent;
+}
+
+.cs-artifact__link img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #FFFFFF;
+}
+
+.cs-proof-cta {
+  margin-top: 48px;
+  padding-top: 28px;
+  border-top: 1px dashed var(--cs-ink);
+}
+
+.cs-proof-cta .cs-cta-row {
+  margin-top: 16px;
+}
+
+/* --------------------------------------------------------------------------
+   NIVEAU 4 — TIROIRS & CONVERSION
+   -------------------------------------------------------------------------- */
+.cs-drawers {
+  padding-top: 112px;
+  padding-bottom: 96px;
+}
+
+.cs-drawers .olin-drawer__title {
+  min-height: 44px;
+  cursor: pointer;
+  list-style: none;
+  gap: 12px;
+}
+
+.cs-drawers .olin-drawer:not([open]) {
+  gap: 0;
+}
+
+.cs-drawers .olin-drawer__title::-webkit-details-marker {
+  display: none;
+}
+
+.cs-drawer__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border: 1px solid var(--cs-ink);
+  border-radius: 4px;
+  transition: transform 0.2s var(--cs-ease);
+}
+
+.olin-drawer[open] .cs-drawer__icon {
+  transform: rotate(45deg);
+}
+
+.cs-drawers .olin-drawer__content {
+  display: grid;
+  gap: 12px;
+}
+
+.cs-drawers .olin-drawer__content .cs-bullets {
+  font-size: 14px;
+  gap: 10px;
+}
+
+.cs-sowhat {
+  margin-top: 40px;
+}
+
+.cs-sowhat__body {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--cs-body);
+}
+
+.cs-sowhat__heading {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--cs-ink);
+  margin-bottom: 8px;
+}
+
+.cs-final-cta {
+  margin-top: 56px;
+  padding: 48px 40px;
+  background: #FFFFFF;
+  border: 1px solid var(--cs-ink);
+  border-radius: 8px;
+  box-shadow: var(--cs-shadow);
+  text-align: center;
+}
+
+.cs-final-cta__title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.6vw, 32px);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--cs-ink);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.cs-final-cta .cs-cta-row {
+  justify-content: center;
+}
+
+.cs-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 32px;
+  padding-bottom: 40px;
+  border-top: 1px solid var(--cs-ink);
+  font-size: 12px;
+  color: var(--cs-muted);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .cs-container {
+    padding: 0 24px;
+  }
+
+  .cs-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cs-matrix {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .cs-page {
+    --cs-menubar-h: 56px;
+  }
+
+  .cs-container {
+    padding: 0 16px;
+  }
+
+  .cs-menubar {
+    padding: 0 12px;
+  }
+
+  .cs-menubar__crumbs,
+  .cs-menubar__status {
+    display: none;
+  }
+
+  .cs-hero {
+    padding-top: 32px;
+    padding-bottom: 64px;
+  }
+
+  /* Mobile : visuel cockpit en tête, puis cartouche */
+  .cs-hero__grid,
+  .cs-context__grid,
+  .cs-act__body,
+  .cs-sowhat__body {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  /* Mobile : titre + promesse, puis visuel cockpit, puis cartouche */
+  .cs-hero__grid {
+    gap: 0;
+  }
+
+  .cs-hero__content {
+    display: contents;
+  }
+
+  .cs-hero__content > * {
+    order: 2;
+  }
+
+  .cs-hero__title,
+  .cs-hero__lead {
+    order: 0;
+  }
+
+  .cs-hero__visual {
+    order: 1;
+    margin: 28px 8px 0 0;
+  }
+
+  .cs-cockpit img {
+    max-width: 220px;
+  }
+
+  .cs-hero__sticker {
+    width: 110px;
+    top: -16px;
+    right: -8px;
+  }
+
+  .cs-cartouche > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+  }
+
+  .cs-cta-row > .olin-btn {
+    width: 100%;
+  }
+
+  .cs-synthese {
+    margin-top: 56px;
+  }
+
+  .cs-metrics {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cs-crossroads {
+    padding: 20px;
+  }
+
+  /* Stepper empilé : plus sticky pour ne pas masquer l'écran */
+  .cs-stepper-bar {
+    position: static;
+  }
+
+  .cs-act {
+    padding-top: 64px;
+    scroll-margin-top: calc(var(--cs-menubar-h) + 16px);
+  }
+
+  .cs-prose {
+    font-size: 16px;
+  }
+
+  .cs-note {
+    max-width: none;
+    margin: 12px 4px 0;
+  }
+
+  .cs-drawers {
+    padding-top: 72px;
+  }
+
+  .cs-final-cta {
+    padding: 32px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .cs-caret,
+  .cs-page .olin-tag__dot {
+    animation: none;
+  }
+
+  .cs-page *,
+  .cs-page *::before {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   PRINT — One-Pager PDF (Niveau 1 uniquement)
+   -------------------------------------------------------------------------- */
+@media print {
+  .cs-page {
+    background: #FFFFFF;
+    background-image: none;
+  }
+
+  .cs-menubar,
+  .cs-skip-link,
+  .cs-cta-row,
+  .cs-crossroads,
+  .cs-stepper-bar,
+  .cs-deep-dive,
+  .cs-drawers,
+  .cs-footer,
+  .cs-hero__sticker {
+    display: none !important;
+  }
+
+  .cs-hero {
+    padding: 0;
+  }
+
+  .cs-hero__grid {
+    grid-template-columns: 3fr 2fr;
+    gap: 24px;
+  }
+
+  .cs-synthese {
+    margin-top: 24px;
+  }
+
+  .cs-matrix {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cs-metrics {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .olin-window,
+  .olin-metric-card {
+    break-inside: avoid;
+  }
+}
