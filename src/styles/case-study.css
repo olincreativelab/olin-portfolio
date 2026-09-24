@@ -1213,16 +1213,187 @@
   justify-content: center;
 }
 
+/* Footer : bandeau pleine largeur sur le motif Olin (Figma BG 4314:138629) */
 .cs-footer {
+  background-color: #231FFF;
+  background-image: url('/assets/motif_olin_tile.svg');
+  background-size: 400px 400px;
+  background-repeat: repeat;
+  border-top: 1.5px solid var(--cs-ink);
+  color: #EAEEFF;
+}
+
+.cs-footer__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 40px;
+  padding-top: 64px;
+  padding-bottom: 56px;
+}
+
+.cs-footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cs-footer__logo {
+  display: inline-flex;
+  flex-shrink: 0;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.cs-footer__logo img {
+  width: 56px;
+  height: 56px;
+  transition: transform 0.2s var(--cs-ease);
+}
+
+.cs-footer__logo:hover img {
+  transform: rotate(-6deg) scale(1.06);
+}
+
+.cs-footer__name {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #FFFFFF;
+}
+
+.cs-footer__role {
+  margin-top: 2px;
+  font-family: var(--font-tech);
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #EAEEFF;
+}
+
+.cs-footer__mantra {
+  font-family: var(--font-tech);
+  font-size: 15px;
+  line-height: 1.5;
+  color: #FFFFFF;
+}
+
+.cs-footer__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cs-footer__nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--font-tech);
+  font-size: 14px;
+  font-weight: 500;
+  color: #EAEEFF;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: color 0.15s ease, text-decoration-thickness 0.15s ease;
+}
+
+/* Sur fond bleu, le survol passe au jaune atelier (le bleu DS serait illisible) */
+.cs-footer__nav a:hover {
+  color: #FFE500;
+  text-decoration-thickness: 2px;
+}
+
+.cs-footer a:focus-visible {
+  outline-color: #FFE500;
+}
+
+.cs-footer__legal {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 12px;
-  padding-top: 32px;
-  padding-bottom: 40px;
-  border-top: 1px solid var(--cs-ink);
+  gap: 8px 24px;
+  padding-top: 18px;
+  padding-bottom: 24px;
+  border-top: 1px solid rgba(234, 238, 255, 0.3);
+  font-family: var(--font-tech);
   font-size: 12px;
-  color: var(--cs-muted);
+  color: #EAEEFF;
+}
+
+/* Découpes du bleu de fond sous le texte : le motif reste autour, jamais dessous */
+.cs-footer__logo,
+.cs-footer__name,
+.cs-footer__role,
+.cs-footer__mantra span,
+.cs-footer__nav a,
+.cs-footer__legal span {
+  background-color: #231FFF;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.cs-footer__name,
+.cs-footer__role,
+.cs-footer__mantra span,
+.cs-footer__legal span {
+  display: inline;
+  padding: 5px 8px;
+  margin-left: -8px;
+}
+
+.cs-footer__name,
+.cs-footer__role {
+  display: table;
+}
+
+/* Nom + rôle : une seule découpe, sans interligne où le motif affleure */
+.cs-footer__brand > div {
+  padding: 6px 0;
+  background-color: #231FFF;
+}
+
+.cs-footer__nav a {
+  padding: 0 8px;
+  margin-left: -8px;
+}
+
+.cs-footer__logo {
+  padding: 4px;
+  margin: -4px;
+  border-radius: 8px;
+}
+
+.cs-footer__legal span:last-child {
+  margin-left: 0;
+  margin-right: -8px;
+}
+
+@media (max-width: 900px) {
+  .cs-footer__inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    padding-top: 48px;
+    padding-bottom: 40px;
+  }
+
+  .cs-footer__nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 20px;
+  }
+
+  /* Légal empilé : même alignement à gauche pour les deux lignes */
+  .cs-footer__legal {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cs-footer__legal span:last-child {
+    margin-left: -8px;
+    margin-right: 0;
+  }
 }
 
 /* --------------------------------------------------------------------------
