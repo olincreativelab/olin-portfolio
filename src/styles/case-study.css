@@ -517,10 +517,6 @@
   transition: transform 0.4s var(--cs-ease);
 }
 
-.cs-context-figure:hover .cs-context-photo {
-  transform: scale(1.02);
-}
-
 .cs-context-quote {
   padding: 4px 4px 0;
 }
