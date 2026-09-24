@@ -1,0 +1,11 @@
+<svg width="106" height="106" viewBox="0 0 106 106" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="3" y="3" width="100" height="100" rx="20" fill="#01050F" opacity="0.08" />
+  <rect x="0" y="0" width="100" height="100" rx="20" fill="#FFFFFF" stroke="#01050F" stroke-width="2.5" />
+  <g transform="translate(25, 26)">
+    <rect x="0" y="0" width="50" height="46" rx="6" fill="#F3F5FB" stroke="#4E4BF5" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <rect x="7" y="9" width="15" height="28" rx="3" fill="#5B50F6" stroke="#01050F" stroke-width="1.5"/>
+    <rect x="28" y="9" width="15" height="28" rx="3" fill="#00F5A0" stroke="#01050F" stroke-width="1.5"/>
+    <path d="M 22 23 L 28 23" stroke="#01050F" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  <text x="50" y="90" font-family="monospace" font-size="8.5" font-weight="bold" fill="#626D82" text-anchor="middle" letter-spacing="1">LAYOUT</text>
+</svg>
