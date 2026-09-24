@@ -106,6 +106,8 @@
 .lp-hero {
   padding-top: 72px;
   padding-bottom: 112px;
+  /* le curseur FigJam arrive depuis la droite : pas de scroll horizontal */
+  overflow-x: clip;
 }
 
 .lp-hero__inner {
