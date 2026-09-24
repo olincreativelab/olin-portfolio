@@ -103,6 +103,39 @@ const CASE_STUDIES = {
         desc: "Outil adopté par plusieurs agglomérations pour coordonner la régulation du trafic et détecter les surconsommations électriques en quelques secondes au lieu de plusieurs heures d'audit manuel."
       }
     ]
+  },
+  royalcanin: {
+    sector: "PHYGITAL RETAIL & KIOSK UX",
+    role: "Lead Product Designer & UX Researcher",
+    title: "Royal Canin : Borne Phygitale Retail & Prescription Alimentaire",
+    subtitle: "Digitaliser la recommandation nutritionnelle vétérinaire au point de vente physique (animaleries).",
+    metrics: [
+      { val: "< 90s", lbl: "Temps de diagnostic en rayon" },
+      { val: "200+", lbl: "Races & pathologies couvertes" },
+      { val: "100%", lbl: "Alignement marque / distributeurs" }
+    ],
+    star: [
+      {
+        tag: "SITUATION & CONTEXTE",
+        title: "Un linéaire dense et anxiogène pour le propriétaire",
+        desc: "Plus de 80 références au packaging scientifique similaire dans les rayons d'animalerie. Les clients abandonnaient souvent leur panier par doute ou absence de vendeur conseil."
+      },
+      {
+        tag: "MISSION & OBJECTIFS",
+        title: "Guider sans désintermédier l'animalerie partenaire",
+        desc: "Concevoir un dispositif tactile en libre-service capable d'orienter le client vers le sac adéquat en moins de 90 secondes, tout en préservant le passage en caisse du magasin."
+      },
+      {
+        tag: "APPROCHE & EXÉCUTION",
+        title: "Immersion retail, Design Sprints 5j & prototypage meuble métal",
+        desc: "• Immersion in-situ chez Jardiland et Truffaut pour cartographier les freins et postures de vente.\n• Design Sprints 5 jours pour modéliser le moteur de recommandation étape par étape.\n• Cadrage hardware et ergonomie tactile (hauteur PMR, contrastes éclairage néon retail)."
+      },
+      {
+        tag: "RÉSULTATS & IMPACT",
+        title: "Dossier de delivery industriel et adoption validée",
+        desc: "Dossier de spécifications UX complet et prototypes interactifs validés avec les équipes merchandising et techniques pour le déploiement du réseau."
+      }
+    ]
   }
 };
 

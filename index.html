@@ -435,17 +435,54 @@
 
               <div>
                 <div class="finder-group-title">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-                  <span>Archives &amp; Labs</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                  <span>En Production // Hardware Dédié</span>
                 </div>
                 <div class="finder-folder-list">
-                  <div class="finder-folder-item" style="opacity: 0.65; cursor: default;">
+                  <!-- Folder 1: Excibat (Active by default) -->
+                  <div class="finder-folder-item active" data-finder-target="excibat">
+                    <div class="finder-folder-left">
+                      <span>📱</span>
+                      <span>01_Excibat_BTP.app</span>
+                    </div>
+                    <span class="finder-badge">TABLETTE</span>
+                  </div>
+
+                  <!-- Folder 2: Renault Moments -->
+                  <div class="finder-folder-item" data-finder-target="renault">
+                    <div class="finder-folder-left">
+                      <span>🏎️</span>
+                      <span>02_Renault_Moments.hmi</span>
+                    </div>
+                    <span class="finder-badge">SHOWROOM</span>
+                  </div>
+
+                  <!-- Folder 3: DataCity Paris -->
+                  <div class="finder-folder-item" data-finder-target="datacity">
+                    <div class="finder-folder-left">
+                      <span>📊</span>
+                      <span>03_DataCity_Paris.sig</span>
+                    </div>
+                    <span class="finder-badge">CONSOLE</span>
+                  </div>
+
+                  <!-- Folder 4: Royal Canin (Active) -->
+                  <div class="finder-folder-item" data-finder-target="royalcanin">
                     <div class="finder-folder-left">
                       <span>🐕</span>
                       <span>04_Royal_Canin_Retail.app</span>
                     </div>
-                    <span class="finder-badge" style="font-size: 8.5px;">BORNE PHYGITALE</span>
+                    <span class="finder-badge">BORNE RETAIL</span>
                   </div>
+                </div>
+              </div>
+
+              <div>
+                <div class="finder-group-title">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                  <span>Archives &amp; Labs</span>
+                </div>
+                <div class="finder-folder-list">
                   <div class="finder-folder-item" style="opacity: 0.65; cursor: default;">
                     <div class="finder-folder-left">
                       <span>🏁</span>
@@ -490,6 +527,11 @@
                         <p>
                           Refonte ergonomique de l'application de pilotage et d'estimation de chantiers pour artisans et conducteurs de travaux. Architecture modulaire, synchronisation locale offline-first et contrastes renforcés en plein soleil.
                         </p>
+                        
+                        <a href="/excibat.html" style="display: block; margin: 14px 0; border-radius: 8px; overflow: hidden; border: 1.5px solid #CBD5E1; box-shadow: 0 4px 16px rgba(0,0,0,0.06); transition: transform 0.2s ease;">
+                          <img src="/assets/excibat/Excibat_DashboardGestionnaire.png" alt="Dashboard Excibat Platform BTP" style="width: 100%; height: auto; max-height: 220px; object-fit: cover; object-position: top; display: block;" loading="lazy" />
+                        </a>
+
                         <div class="project-os-metrics-row">
                           <span class="metric-chip">+35% gain d'efficacité terrain</span>
                           <span class="metric-chip">-60% erreurs de devis</span>
@@ -500,9 +542,12 @@
                         </div>
                       </div>
                       <div class="project-os-actions">
-                        <button class="project-btn" data-project="excibat" style="width: 100%;">
-                          <span>Ouvrir l'étude STAR complète</span>
+                        <a href="/excibat.html" class="project-btn" style="width: 100%; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--color-electric-blue); color: #fff; border-color: var(--color-electric-blue); margin-bottom: 8px;">
+                          <span>Explorer le case study</span>
                           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                        </a>
+                        <button class="project-btn" data-project="excibat" style="width: 100%; background: #F8FAFC; color: var(--color-slate-800); border: 1px solid #CBD5E1; margin-bottom: 8px;">
+                          <span>Synthèse STAR rapide</span>
                         </button>
                         <span style="font-family: var(--font-tech); font-size: 10.5px; color: var(--color-muted-blueprint);">SaaS B2B • BTP &amp; GED</span>
                       </div>
@@ -541,6 +586,11 @@
                         <p>
                           Expérience interactive sur iPad en concession automobile. Accompagnement sur-mesure du client, rendu 3D des teintes et finitions en temps réel, et signature numérique immédiate.
                         </p>
+
+                        <a href="/renault-moments.html" style="display: block; margin: 14px 0; border-radius: 8px; overflow: hidden; border: 1.5px solid #CBD5E1; box-shadow: 0 4px 16px rgba(0,0,0,0.06); transition: transform 0.2s ease;">
+                          <img src="/assets/renault/image 264.png" alt="Renault Moments - Écrans showroom et cockpit" style="width: 100%; height: auto; max-height: 220px; object-fit: cover; object-position: top; display: block;" loading="lazy" />
+                        </a>
+
                         <div class="project-os-metrics-row">
                           <span class="metric-chip">100% réseau France</span>
                           <span class="metric-chip">&lt; 2s temps de réponse 3D</span>
@@ -551,9 +601,12 @@
                         </div>
                       </div>
                       <div class="project-os-actions">
-                        <button class="project-btn" data-project="renault" style="width: 100%;">
-                          <span>Ouvrir l'étude STAR complète</span>
+                        <a href="/renault-moments.html" class="project-btn" style="width: 100%; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--color-electric-blue); color: #fff; border-color: var(--color-electric-blue); margin-bottom: 8px;">
+                          <span>Explorer le case study</span>
                           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                        </a>
+                        <button class="project-btn" data-project="renault" style="width: 100%; background: #F8FAFC; color: var(--color-slate-800); border: 1px solid #CBD5E1; margin-bottom: 8px;">
+                          <span>Synthèse STAR rapide</span>
                         </button>
                         <span style="font-family: var(--font-tech); font-size: 10.5px; color: var(--color-muted-blueprint);">Automobile • Retail</span>
                       </div>
@@ -592,6 +645,11 @@
                         <p>
                           Cockpit cartographique SIG pour analyser et réguler les flux de mobilité urbaine et d'énergie. Traduction de millions de points de données spatio-temporels en alertes d'action limpides.
                         </p>
+
+                        <a href="/datacity-paris-for-you.html" style="display: block; margin: 14px 0; border-radius: 8px; overflow: hidden; border: 1.5px solid #CBD5E1; box-shadow: 0 4px 16px rgba(0,0,0,0.06); transition: transform 0.2s ease;">
+                          <img src="/assets/datacity/p08_wireframes_ui_cible.png" alt="DataCity Paris - Console de supervision flux" style="width: 100%; height: auto; max-height: 220px; object-fit: cover; object-position: top; display: block;" loading="lazy" />
+                        </a>
+
                         <div class="project-os-metrics-row">
                           <span class="metric-chip">1M+ événements/jour</span>
                           <span class="metric-chip">Cartographie temps réel</span>
@@ -602,11 +660,73 @@
                         </div>
                       </div>
                       <div class="project-os-actions">
-                        <button class="project-btn" data-project="datacity" style="width: 100%;">
-                          <span>Ouvrir l'étude STAR complète</span>
+                        <a href="/datacity-paris-for-you.html" class="project-btn" style="width: 100%; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--color-electric-blue); color: #fff; border-color: var(--color-electric-blue); margin-bottom: 8px;">
+                          <span>Explorer le case study</span>
                           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                        </a>
+                        <button class="project-btn" data-project="datacity" style="width: 100%; background: #F8FAFC; color: var(--color-slate-800); border: 1px solid #CBD5E1; margin-bottom: 8px;">
+                          <span>Synthèse STAR rapide</span>
                         </button>
                         <span style="font-family: var(--font-tech); font-size: 10.5px; color: var(--color-muted-blueprint);">DataViz • Smart City</span>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 4: Royal Canin (Borne Phygitale) -->
+              <div class="finder-project-card" data-finder-id="royalcanin">
+                <div class="project-computer-screen" style="border: 1.5px solid #CBD5E1; box-shadow: 0 10px 28px rgba(0,0,0,0.06); margin-bottom: 0;">
+                  <div class="screen-chrome-bar">
+                    <div class="screen-dots">
+                      <span class="os-dot close"></span>
+                      <span class="os-dot min"></span>
+                      <span class="os-dot max"></span>
+                    </div>
+                    <div class="screen-url-badge">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
+                      <span>kiosk://royal-canin/prescription-nutrition</span>
+                    </div>
+                    <div class="screen-status-badge">BORNE TACTILE // MEUBLE MÉTAL RETAIL</div>
+                  </div>
+                  <div class="screen-viewport">
+                    <article class="project-os-card" style="border: none; padding: 0; box-shadow: none; margin: 0;">
+                      <div class="project-os-icon">
+                        <svg class="pixel-icon-svg" viewBox="0 0 24 24" fill="#E11D48">
+                          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9v-2h2v2zm0-4H9V7h2v5zm4 4h-2v-2h2v2zm0-4h-2V7h2v5z"/>
+                        </svg>
+                      </div>
+                      <div class="project-os-content">
+                        <h4>
+                          <span>Royal Canin : Borne Phygitale Retail &amp; Prescription</span>
+                          <span class="figjam-sticker yellow" style="font-size: 9.5px; padding: 2px 8px;">🐕 TESTS IN-SITU</span>
+                        </h4>
+                        <p>
+                          Borne interactive tactile d'orientation et de recommandation nutritionnelle vétérinaire en libre-service dans les animaleries partenaires (Jardiland, Truffaut). Réconciliation omnicanale et dérisquage MVP meuble métal.
+                        </p>
+
+                        <a href="/royal-canin.html" style="display: block; margin: 14px 0; border-radius: 8px; overflow: hidden; border: 1.5px solid #CBD5E1; box-shadow: 0 4px 16px rgba(0,0,0,0.06); transition: transform 0.2s ease; background: #F8FAFC; text-align: center;">
+                          <img src="/assets/royal_canin/BorneRC.png" alt="Borne tactile Royal Canin" style="width: 100%; height: auto; max-height: 220px; object-fit: contain; display: block; margin: 0 auto;" loading="lazy" />
+                        </a>
+
+                        <div class="project-os-metrics-row">
+                          <span class="metric-chip">&lt; 90s temps de diagnostic</span>
+                          <span class="metric-chip">200+ races félines &amp; canines</span>
+                          <span class="metric-chip">100% alignement retail</span>
+                        </div>
+                        <div class="builder-reveal-layer">
+                          <code>// RETAIL ENGINE: Borne Kiosk Tactile • Hauteur PMR • Synchronisation stocks magasin</code>
+                        </div>
+                      </div>
+                      <div class="project-os-actions">
+                        <a href="/royal-canin.html" class="project-btn" style="width: 100%; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--color-electric-blue); color: #fff; border-color: var(--color-electric-blue); margin-bottom: 8px;">
+                          <span>Explorer le case study</span>
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                        </a>
+                        <button class="project-btn" data-project="royalcanin" style="width: 100%; background: #F8FAFC; color: var(--color-slate-800); border: 1px solid #CBD5E1; margin-bottom: 8px;">
+                          <span>Synthèse STAR rapide</span>
+                        </button>
+                        <span style="font-family: var(--font-tech); font-size: 10.5px; color: var(--color-muted-blueprint);">Retail • Phygital Kiosk</span>
                       </div>
                     </article>
                   </div>
