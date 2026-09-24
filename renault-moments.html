@@ -103,7 +103,10 @@
 
       <!-- Matrice 3x3 — Scan exécutif 90s -->
       <div id="synthese" class="cs-synthese" aria-labelledby="synthese-title">
-        <h2 id="synthese-title" class="cs-eyebrow">// Synthèse exécutive — 90 secondes</h2>
+        <div class="cs-section-header">
+          <span class="olin-tag olin-tag--blue olin-tag--pill cs-section-tag">SCAN EXÉCUTIF // 90 SECONDES</span>
+          <h2 id="synthese-title" class="cs-section-title">Synthèse de la mission &amp; impact</h2>
+        </div>
         <div class="cs-matrix">
           <article class="olin-window cs-matrix__col">
             <div class="olin-window__header"><span class="olin-window__title">01 // Les challenges</span></div>
@@ -155,14 +158,91 @@
           <p class="cs-crossroads__label">Vous avez l'essentiel. Deux chemins :</p>
           <div class="cs-cta-row">
             <a class="olin-btn olin-btn--primary" href="mailto:josselin.hillion@gmail.com?subject=Discuter%20du%20projet%20Renault%20Moments%20(15%20min)">Discuter de ce projet avec Josselin (15 min) <span aria-hidden="true">↗</span></a>
-            <a class="olin-link" href="#deep-dive">Découvrir les 4 étapes &amp; arbitrages <span class="olin-link-arrow" aria-hidden="true">↓</span></a>
+            <a class="olin-link" href="#contexte">Découvrir le cadrage &amp; les 4 étapes <span class="olin-link-arrow" aria-hidden="true">↓</span></a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- =======================================================================
-         NIVEAU 2 — STEPPER D'AIGUILLAGE NARRATIF
+         CADRAGE STRATÉGIQUE — L'ENJEU RENAULUTION (CONTEXTE & TENSION)
+         Placé AVANT les 4 étapes pour asseoir la légitimité et la vision
+         ======================================================================= -->
+    <section id="contexte" class="cs-context cs-container" aria-labelledby="context-title">
+      <div class="cs-section-header">
+        <span class="olin-tag olin-tag--blue olin-tag--pill cs-section-tag">01 // CADRAGE STRATÉGIQUE</span>
+        <h2 id="context-title" class="cs-section-title">Mise en situation : L'enjeu de la Renaulution</h2>
+        <p class="cs-section-subtitle">
+          Faire basculer un constructeur automobile centenaire de la vente de tôle vers l'écosystème de services connectés OpenR.
+        </p>
+      </div>
+
+      <div class="cs-context__grid">
+        <!-- Narratif & 3 Mandats Stratégiques -->
+        <div class="cs-context__text">
+          <p class="cs-prose cs-prose--lead">
+            Dans le plan de redressement impulsé par Luca de Meo, Renault devait impérativement passer de constructeur de tôle à opérateur de mobilités connectées. Le risque majeur : transformer l'écran OpenR en tablette Android générique, saturée de widgets disjoints, sans ergonomie automobile ni signature de marque.
+          </p>
+
+          <div class="cs-missions-card">
+            <h3 class="cs-missions-title">Les 3 mandats de la mission design :</h3>
+            <ol class="cs-missions">
+              <li>
+                <span class="cs-mission-badge">01</span>
+                <div>
+                  <strong>Éclairer le cap (5 à 10 ans).</strong> Sortir des cycles industriels lents (3 à 5 ans pour concevoir un véhicule) pour projeter en amont les usages réels du véhicule connecté et de l'électromobilité.
+                </div>
+              </li>
+              <li>
+                <span class="cs-mission-badge">02</span>
+                <div>
+                  <strong>Définir la posture de marque.</strong> Refuser le catalogue d'ingénieurs pour créer une relation client signature, propre à l'ADN Renault Group face aux super-performers technologiques.
+                </div>
+              </li>
+              <li>
+                <span class="cs-mission-badge">03</span>
+                <div>
+                  <strong>Dérisquer le delivery.</strong> Tester les hypothèses auprès de vrais conducteurs et transmettre un Concept Model robuste aux Product Owners de la squad SAFe.
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Photographie Réelle Luca de Meo & Citation Clé -->
+        <aside class="cs-context__media">
+          <div class="olin-window cs-context-figure">
+            <div class="olin-window__header">
+              <div class="olin-window__dots" aria-hidden="true">
+                <span class="olin-window__dot olin-window__dot--red"></span>
+                <span class="olin-window__dot olin-window__dot--yellow"></span>
+                <span class="olin-window__dot olin-window__dot--green"></span>
+              </div>
+              <span class="olin-window__title">luca-de-meo_renaulution.jpg</span>
+              <span class="olin-tag olin-tag--blue olin-tag--pill" style="font-size: 10px; padding: 1px 8px;">KEYNOTE RENAULUTION</span>
+            </div>
+            <div class="cs-context-photo-wrap">
+              <img 
+                src="/assets/renault/luca_de_meo_renaulution.jpg" 
+                alt="Luca de Meo, CEO de Renault Group, lors de la présentation du plan stratégique Renaulution" 
+                width="800" height="550" 
+                loading="lazy" 
+                class="cs-context-photo" />
+            </div>
+            <div class="cs-context-quote">
+              <blockquote>
+                « Nous allons passer d'une entreprise automobile travaillant avec de la technologie à une entreprise technologique travaillant avec des voitures. »
+              </blockquote>
+              <cite>— <strong>Luca de Meo</strong>, CEO Renault Group (Lancement du plan Renaulution)</cite>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         NIVEAU 2 — STEPPER D'AIGUILLAGE NARRATIF (STICKY MOBILE & DESKTOP)
+         Apparaît APRES le contexte pour guider l'exploration des 4 actes
          ======================================================================= -->
     <nav class="cs-stepper-bar" aria-label="Progression du deep dive en 4 actes">
       <ol class="olin-stepper cs-container" data-stepper>
@@ -174,28 +254,17 @@
     </nav>
 
     <!-- =======================================================================
-         NIVEAU 3 — DEEP DIVE PLEINE LARGEUR (Modular Storyboard)
+         NIVEAU 3 — LE DEEP DIVE EN 4 ACTES (Modular Storyboard)
          ======================================================================= -->
     <div id="deep-dive" class="cs-deep-dive">
-
-      <section class="cs-context cs-container" aria-labelledby="context-title">
-        <h2 id="context-title" class="cs-eyebrow">// Mise en situation — l'enjeu Renaulution</h2>
-        <div class="cs-context__grid">
-          <p class="cs-prose cs-prose--lead">
-            Dans le plan de redressement de Luca de Meo, Renault devait passer de constructeur de tôle à opérateur de mobilités connectées. Le risque majeur : transformer l'écran OpenR en tablette Android générique, saturée de widgets disjoints et sans identité propre.
-          </p>
-          <ol class="cs-missions">
-            <li><span class="cs-mono">01</span><div><strong>Éclairer le cap (5-10 ans).</strong> Sortir des cycles industriels lents — 3 à 5 ans pour concevoir un véhicule — pour projeter en amont les usages du véhicule connecté et de l'électromobilité.</div></li>
-            <li><span class="cs-mono">02</span><div><strong>Définir la posture de marque.</strong> Refuser le catalogue d'ingénieurs pour créer une relation client signature, propre à l'ADN Renault Group face aux super-performers technologiques.</div></li>
-            <li><span class="cs-mono">03</span><div><strong>Dérisquer le delivery.</strong> Tester les hypothèses auprès de vrais conducteurs et transmettre un Concept Model robuste aux Product Owners.</div></li>
-          </ol>
-        </div>
-      </section>
 
       <!-- ACTE 01 -->
       <section id="acte-01" class="cs-act cs-container" data-act aria-labelledby="acte-01-title">
         <header class="cs-act__header">
-          <span class="cs-act__num">Acte 01 // Juillet 2021</span>
+          <div class="cs-act__tag-bar">
+            <span class="olin-tag olin-tag--blue olin-tag--tag">ACTE 01 // JUILLET 2021</span>
+            <span class="olin-tag olin-tag--neutral olin-tag--tag">PHASE 1/4</span>
+          </div>
           <h2 id="acte-01-title" class="cs-act__title">Poser le concept &amp; storyboard préliminaire</h2>
           <p class="cs-act__thesis">Court-circuiter l'abstraction des cahiers des charges en matérialisant les initiatives dans une friction du quotidien : le trajet domicile-travail sous tension (<em>Commute in a rush</em>).</p>
         </header>
@@ -227,7 +296,10 @@
       <!-- ACTE 02 -->
       <section id="acte-02" class="cs-act cs-container" data-act aria-labelledby="acte-02-title">
         <header class="cs-act__header">
-          <span class="cs-act__num">Acte 02 // Automne 2021</span>
+          <div class="cs-act__tag-bar">
+            <span class="olin-tag olin-tag--blue olin-tag--tag">ACTE 02 // AUTOMNE 2021</span>
+            <span class="olin-tag olin-tag--neutral olin-tag--tag">PHASE 2/4</span>
+          </div>
           <h2 id="acte-02-title" class="cs-act__title">Développer la posture &amp; le Concept Model</h2>
           <p class="cs-act__thesis">Transformer une intuition de design en doctrine industrielle, adoptable par les marques du groupe (Renault, Dacia, Alpine) et intelligible par les équipes logicielles.</p>
         </header>
@@ -237,6 +309,13 @@
             <p>C'est ici que s'opère le saut conceptuel fondateur : <strong>« Sortir de la structure widget »</strong>. Plutôt que de forcer le conducteur à chercher une application dans un menu déroulant, nous avons conçu un <strong>OS Moment</strong> qui orchestre les services autour d'un fil directeur unique — la <strong>Timeline d'Expérience</strong> — pour faire remonter l'information au moment exact où elle devient actionnable.</p>
           </div>
           <aside class="olin-sticky olin-sticky--yellow olin-sticky--tilted cs-note" aria-label="Note de terrain d'atelier">
+            <!-- FigJam Collaborative Cursor Animation -->
+            <div class="cs-collab-cursor" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M5.65376 12.3673H5.46026L5.31717 12.4976L0.500002 16.8829L0.500002 1.19841L11.7841 12.3673H5.65376Z" fill="#8718DC" stroke="#FFFFFF" stroke-width="1.5"/>
+              </svg>
+              <span class="cs-cursor-tag cs-cursor-tag--purple">Josselin (Lead UX)</span>
+            </div>
             <div class="olin-sticky__header"><span>📌 Note d'atelier</span><span>Memo #48</span></div>
             <blockquote>
               <p>« En comité de direction, dès qu'un combiné d'instruments fait 12 pouces, la tentation naturelle est d'y loger 14 widgets, dont deux horloges et la météo de Reykjavik. Notre plus grand acte d'UX n'a pas été d'empiler des fonctions, mais de désamorcer l'effet sapin de Noël. »</p>
@@ -260,7 +339,10 @@
       <!-- ACTE 03 -->
       <section id="acte-03" class="cs-act cs-container" data-act aria-labelledby="acte-03-title">
         <header class="cs-act__header">
-          <span class="cs-act__num">Acte 03 // Décembre 2021</span>
+          <div class="cs-act__tag-bar">
+            <span class="olin-tag olin-tag--blue olin-tag--tag">ACTE 03 // DÉCEMBRE 2021</span>
+            <span class="olin-tag olin-tag--neutral olin-tag--tag">PHASE 3/4</span>
+          </div>
           <h2 id="acte-03-title" class="cs-act__title">Raconter le service &amp; créer les marqueurs UX</h2>
           <p class="cs-act__thesis">Rendre l'expérience désirable et tangible — identité visuelle et sonore signature — tout en garantissant la continuité entre smartphone et écran vertical OpenR.</p>
         </header>
@@ -293,7 +375,10 @@
       <!-- ACTE 04 -->
       <section id="acte-04" class="cs-act cs-container" data-act aria-labelledby="acte-04-title">
         <header class="cs-act__header">
-          <span class="cs-act__num">Acte 04 // Janvier → mars 2022</span>
+          <div class="cs-act__tag-bar">
+            <span class="olin-tag olin-tag--blue olin-tag--tag">ACTE 04 // JANVIER → MARS 2022</span>
+            <span class="olin-tag olin-tag--neutral olin-tag--tag">PHASE 4/4</span>
+          </div>
           <h2 id="acte-04-title" class="cs-act__title">Tester, éprouver &amp; arbitrer</h2>
           <p class="cs-act__thesis">Confronter la vision prospective au réel pour la dérisquer avant toute mise en production industrielle.</p>
         </header>
