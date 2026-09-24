@@ -43,7 +43,7 @@ Voici la matérialisation visuelle exacte des écrans et des 4 moments de conver
   │ client à l'ère des services connectés et de la Renaulution. │ │                                     │ │
   │                                                             │ │ [Instrument Cluster] [Center Screen]│ │
   │ ┌─────────────────────────────────────────────────────────┐ │ │  112 km/h - ADAS     Navigation    │ │
-  │ │ [CARTOUCHE] CLIENT: Renault Group • RÔLE: Lead UX Strat │ │ │  Zéro distraction     Ionity +240km │ │
+  │ │ [CARTOUCHE] CLIENT: Renault Group • RÔLE: Sr UX Strat   │ │ │  Zéro distraction     Ionity +240km │ │
   │ │ SQUAD: UX+UI+Lab • DURÉE: 9 mois • STATUT: VALIDÉ COMEX │ │ └─────────────────────────────────────┘ │
   │ └─────────────────────────────────────────────────────────┘ │  ↳ Note : Mode Bimodal Roulage vs Arrêt │
   │                                                             │                                         │
@@ -143,7 +143,7 @@ Voici la matérialisation visuelle exacte des écrans et des 4 moments de conver
  ┌─────────────────────────────────────┐
  │ // CARTOUCHE PROJET                 │
  │ Client : Renault Group (DCX)        │
- │ Rôle   : Lead UX Strategist         │
+ │ Rôle   : Senior UX Strategist       │
  │ Statut : 🟢 VALIDÉ PAR LE COMEX     │
  └─────────────────────────────────────┘
 
