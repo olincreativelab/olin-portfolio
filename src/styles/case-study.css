@@ -14,7 +14,7 @@
   --cs-muted: #475569;
   --cs-cockpit: #0F0C20;
   --cs-shadow: 3px 3px 0px #01050F;
-  --cs-menubar-h: 52px;
+  --cs-menubar-h: 64px;
   --cs-ease: cubic-bezier(0.16, 1, 0.3, 1);
 
   background-color: var(--cs-canvas);
@@ -123,25 +123,26 @@
 }
 
 /* --------------------------------------------------------------------------
-   TOP MENUBAR — TOTALEMENT ÉPURÉE (ZÉRO BANDEAU BLANC OPAQUE)
+   TOP MENUBAR — STICKY, TRANSLUCIDE (ZÉRO BANDEAU BLANC OPAQUE)
+   Pleine largeur pour masquer proprement le contenu qui défile dessous,
+   contenu aligné sur la grille .cs-container (1160px utiles).
    -------------------------------------------------------------------------- */
 .cs-menubar {
-  position: relative;
-  height: auto;
-  min-height: var(--cs-menubar-h);
+  position: sticky;
+  top: 0;
+  z-index: 110;
+  height: var(--cs-menubar-h);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 20px 40px;
-  background: transparent;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+  padding: 0 max(40px, calc((100% - 1160px) / 2));
+  background: rgba(253, 250, 254, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(1, 5, 15, 0.07);
   font-family: var(--font-tech);
   font-size: 13px;
-  max-width: 1240px;
-  margin: 0 auto;
 }
 
 .cs-menubar__path {
@@ -159,8 +160,13 @@
 }
 
 .cs-menubar__home img {
-  height: 30px;
-  width: auto;
+  width: 36px;
+  height: 36px;
+  transition: transform 0.2s var(--cs-ease);
+}
+
+.cs-menubar__home:hover img {
+  transform: rotate(-6deg) scale(1.06);
 }
 
 .cs-menubar__crumbs {
@@ -197,11 +203,6 @@
   align-items: center;
   gap: 8px;
   flex-shrink: 0;
-}
-
-.cs-menubar__right .olin-link {
-  font-size: 14px;
-  padding: 12px 8px;
 }
 
 /* --------------------------------------------------------------------------
@@ -424,7 +425,7 @@
    -------------------------------------------------------------------------- */
 .cs-stepper-bar {
   position: sticky;
-  top: 0;
+  top: var(--cs-menubar-h);
   z-index: 100;
   background: rgba(253, 250, 254, 0.94);
   backdrop-filter: blur(12px);
@@ -437,7 +438,7 @@
 @media (max-width: 768px) {
   .cs-stepper-bar {
     position: sticky;
-    top: 0;
+    top: var(--cs-menubar-h);
     z-index: 100;
     overflow-x: auto;
     padding: 8px 16px;
@@ -483,7 +484,7 @@
    NIVEAU 3 — CONTEXTE RENAULUTION & DEEP DIVE PLEIN ÉTAGE
    -------------------------------------------------------------------------- */
 .cs-deep-dive {
-  scroll-margin-top: 60px;
+  scroll-margin-top: var(--cs-menubar-h);
 }
 
 .cs-context {
@@ -630,7 +631,8 @@
 .cs-act {
   padding-top: 80px;
   padding-bottom: 32px;
-  scroll-margin-top: 70px;
+  /* header sticky + stepper sticky */
+  scroll-margin-top: calc(var(--cs-menubar-h) + 100px);
 }
 
 .cs-act__header {
@@ -1005,7 +1007,7 @@
   }
 
   .cs-menubar {
-    padding: 0 12px;
+    padding: 0 16px;
   }
 
   .cs-menubar__crumbs,
@@ -1084,13 +1086,13 @@
   /* Stepper sticky fluide sur mobile */
   .cs-stepper-bar {
     position: sticky;
-    top: 0;
+    top: var(--cs-menubar-h);
     z-index: 100;
   }
 
   .cs-act {
     padding-top: 64px;
-    scroll-margin-top: 64px;
+    scroll-margin-top: calc(var(--cs-menubar-h) + 76px);
   }
 
   .cs-prose {
