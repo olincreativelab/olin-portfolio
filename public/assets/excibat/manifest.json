@@ -1,0 +1,18 @@
+{
+  "case": "Excibat",
+  "role": "Senior UX Designer & Builder",
+  "components": {
+    "mobile_illustration_342": "illu_excibat_mobile_342.png",
+    "backend_workflow": "slot_backend_workflows.png",
+    "backend_workflow_hd": "board_backend_workflows_hd.png",
+    "front_web": "slot_front_web.png",
+    "front_web_hd": "mockup_front_web_hd.png",
+    "logo_eb": "slot_logo_eb.png",
+    "logo_stripe": "sticker_logo_stripe.svg",
+    "logo_oodrive_sign": "sticker_logo_sign.svg",
+    "arrow_workflow": "arrow_backend_workflows.svg",
+    "arrow_apis_left": "arrow_apis_left.svg",
+    "arrow_apis_right": "arrow_apis_right.svg",
+    "arrow_front": "arrow_front.svg"
+  }
+}

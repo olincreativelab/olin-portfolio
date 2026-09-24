@@ -60,7 +60,7 @@ Pour garantir une consommation immédiate sur mobile comme sur desktop sans satu
   ```text
   // Cartouche Projet
   Client / Cadre   : Renault Group • Direction Digital Customer Experience (DCX)
-  Rôle             : Lead UX Designer & Strategist (ekino x MFG Labs)
+  Rôle             : Senior UX Strategist (ekino x MFG Labs), sous la direction du Lead Équipe Vision DCX
   Équipe           : 1 PM Renault, 4 Développeurs Embarqués AAOS, Experts Ergonomie HMI
   Typologie        : Design de Service Prospectif + MVP Embarqué Automobile
   Stack & Normes   : Android Automotive OS (AAOS), Écran OpenR, Driver Distraction Rules

@@ -1,0 +1,289 @@
+{
+  "generatedAt": "2026-09-24T20:36:55.750Z",
+  "sourceNodeId": "4515:46096",
+  "canvas": {
+    "width": 1294,
+    "height": 696,
+    "backgroundColor": "transparent"
+  },
+  "specs": {
+    "mobile": {
+      "behavior": "3 cartes Post-It pures en stack vertical (Zéro mural de fond)",
+      "cardsOnly": true
+    },
+    "desktop": {
+      "behavior": "Mural animé à 9 planches indépendantes s'assemblant au scroll + spotlight au survol des cartes",
+      "animationType": "staggered-float-in-assembly"
+    }
+  },
+  "pieces": [
+    {
+      "nodeId": "4515:46137",
+      "fileName": "mural_01_use_case_blueprint_top_left.png",
+      "label": "Service Blueprint & Process Map (Haut Gauche)",
+      "pillar": "vision-produit",
+      "coords": {
+        "x": 33,
+        "y": 11,
+        "width": 359,
+        "height": 204
+      },
+      "zIndex": 1,
+      "anim": {
+        "fromX": -60,
+        "fromY": -40,
+        "rotate": -3,
+        "delay": 0.1
+      },
+      "assetUrl": "http://localhost:3845/assets/e8ff6d5b5f251fc608e0a3739b4dc148d0adcf0e.png",
+      "relativePath": "public/assets/competences/mural_01_use_case_blueprint_top_left.png"
+    },
+    {
+      "nodeId": "4515:46159",
+      "fileName": "mural_02_ux_wireframes_mid_left.png",
+      "label": "Wireframes & Explorations UX (Milieu Gauche)",
+      "pillar": "vision-produit",
+      "coords": {
+        "x": 0,
+        "y": 189,
+        "width": 246,
+        "height": 204
+      },
+      "zIndex": 2,
+      "anim": {
+        "fromX": -80,
+        "fromY": 0,
+        "rotate": 2,
+        "delay": 0.2
+      },
+      "assetUrl": "http://localhost:3845/assets/8827b6b1b5b928f5eea4531da345aa73497f521d.png",
+      "relativePath": "public/assets/competences/mural_02_ux_wireframes_mid_left.png"
+    },
+    {
+      "nodeId": "4515:46102",
+      "fileName": "mural_03_research_matrix_center_left.png",
+      "label": "Matrice de Recherche & Insights (Centre Gauche)",
+      "pillar": "vision-produit",
+      "coords": {
+        "x": 270,
+        "y": 229,
+        "width": 245,
+        "height": 325
+      },
+      "zIndex": 1,
+      "anim": {
+        "fromX": -40,
+        "fromY": 40,
+        "rotate": -2,
+        "delay": 0.3
+      },
+      "assetUrl": "http://localhost:3845/assets/03573273137bfe3ceea06cef83873f103362ae28.png",
+      "relativePath": "public/assets/competences/mural_03_research_matrix_center_left.png"
+    },
+    {
+      "nodeId": "4515:46127",
+      "fileName": "mural_04_storyboard_flows_bottom_left.png",
+      "label": "Storyboard & Parcours Client (Bas Gauche)",
+      "pillar": "culture-builder",
+      "coords": {
+        "x": 41,
+        "y": 373,
+        "width": 284,
+        "height": 204
+      },
+      "zIndex": 2,
+      "anim": {
+        "fromX": -50,
+        "fromY": 60,
+        "rotate": 1.5,
+        "delay": 0.4
+      },
+      "assetUrl": "http://localhost:3845/assets/5c90834f6b43a21a3ffbb5f3cb3afd55a5de51bb.png",
+      "relativePath": "public/assets/competences/mural_04_storyboard_flows_bottom_left.png"
+    },
+    {
+      "nodeId": "4515:46122",
+      "fileName": "mural_05_figjam_board_top_center.png",
+      "label": "FigJam Board & Post-it Mapping (Haut Centre)",
+      "pillar": "ateliers",
+      "coords": {
+        "x": 557,
+        "y": -7,
+        "width": 324,
+        "height": 204
+      },
+      "zIndex": 1,
+      "anim": {
+        "fromX": 0,
+        "fromY": -60,
+        "rotate": -1.5,
+        "delay": 0.15
+      },
+      "assetUrl": "http://localhost:3845/assets/eabad22d70a44d5f60fc7c16f7421c8279a9b4eb.png",
+      "relativePath": "public/assets/competences/mural_05_figjam_board_top_center.png"
+    },
+    {
+      "nodeId": "4515:46132",
+      "fileName": "mural_06_user_test_doc_mid_center.png",
+      "label": "Synthèse Tests Utilisateurs & Verbatim (Centre)",
+      "pillar": "ateliers",
+      "coords": {
+        "x": 763,
+        "y": 183,
+        "width": 161,
+        "height": 206
+      },
+      "zIndex": 1,
+      "anim": {
+        "fromX": 20,
+        "fromY": -20,
+        "rotate": 2.5,
+        "delay": 0.25
+      },
+      "assetUrl": "http://localhost:3845/assets/16d7dd3fc99e3a6e4ee388ca34748f468e754e01.png",
+      "relativePath": "public/assets/competences/mural_06_user_test_doc_mid_center.png"
+    },
+    {
+      "nodeId": "4515:46112",
+      "fileName": "mural_07_workshop_visio_bottom_center.png",
+      "label": "Session Facilitation & Visio Équipe (Bas Centre)",
+      "pillar": "ateliers",
+      "coords": {
+        "x": 603,
+        "y": 429,
+        "width": 323,
+        "height": 204
+      },
+      "zIndex": 2,
+      "anim": {
+        "fromX": 0,
+        "fromY": 70,
+        "rotate": -2,
+        "delay": 0.35
+      },
+      "assetUrl": "http://localhost:3845/assets/d2ddfd4b3ce79cdebbcc2c17f34b8d113cce3646.png",
+      "relativePath": "public/assets/competences/mural_07_workshop_visio_bottom_center.png"
+    },
+    {
+      "nodeId": "4515:46107",
+      "fileName": "mural_08_architecture_canvas_mid_bottom.png",
+      "label": "Architecture Fonctionnelle & Canvas Produit (Bas Centre-Droit)",
+      "pillar": "culture-builder",
+      "coords": {
+        "x": 349,
+        "y": 484,
+        "width": 350,
+        "height": 204
+      },
+      "zIndex": 1,
+      "anim": {
+        "fromX": 30,
+        "fromY": 60,
+        "rotate": 1,
+        "delay": 0.45
+      },
+      "assetUrl": "http://localhost:3845/assets/187bbf958f0e15d94edb490650cbe5fb0f699335.png",
+      "relativePath": "public/assets/competences/mural_08_architecture_canvas_mid_bottom.png"
+    },
+    {
+      "nodeId": "4515:46117",
+      "fileName": "mural_09_mobile_screens_flow_top_right.png",
+      "label": "Flux d'Écrans Mobile & UI Flow (Haut Droite)",
+      "pillar": "culture-builder",
+      "coords": {
+        "x": 853,
+        "y": 45,
+        "width": 441,
+        "height": 204
+      },
+      "zIndex": 1,
+      "anim": {
+        "fromX": 80,
+        "fromY": -40,
+        "rotate": 2,
+        "delay": 0.2
+      },
+      "assetUrl": "http://localhost:3845/assets/2f258d5c68f9e9dac715939c10c0fc56d746b0df.png",
+      "relativePath": "public/assets/competences/mural_09_mobile_screens_flow_top_right.png"
+    }
+  ],
+  "cards": [
+    {
+      "id": "card_vision_produit",
+      "nodeId": "4515:46174",
+      "pillar": "vision-produit",
+      "coords": {
+        "x": 159,
+        "y": 76,
+        "width": 290,
+        "height": 413
+      },
+      "zIndex": 10,
+      "title": "DONNER LE CAP : VISION PRODUIT & PROTOTYPAGE STRATÉGIQUE",
+      "description": "Clarifier la direction basé sur les enjeux business à moyen terme et matérialiser la nouvelle expérience client sous forme de prototypes interactifs pour aligner les équipes.",
+      "tags": [
+        "co-conception",
+        "figjam",
+        "facilitation"
+      ],
+      "linkText": "plus de détails ↗",
+      "linkedPieces": [
+        "mural_01_use_case_blueprint_top_left.png",
+        "mural_02_ux_wireframes_mid_left.png",
+        "mural_03_research_matrix_center_left.png"
+      ]
+    },
+    {
+      "id": "card_ateliers",
+      "nodeId": "4515:46191",
+      "pillar": "ateliers",
+      "coords": {
+        "x": 513,
+        "y": 141,
+        "width": 290,
+        "height": 354
+      },
+      "zIndex": 10,
+      "title": "ATELIERS COLLABORATIFS POUR CO-CRÉER DES SOLUTIONS ADAPTÉES À VOS BESOINS.",
+      "description": "Mes ateliers favorisent l'innovation et l'engagement des équipes.",
+      "tags": [
+        "audit ui",
+        "recherche terrain",
+        "parcours",
+        "wireframes"
+      ],
+      "linkText": "plus de détails ↗",
+      "linkedPieces": [
+        "mural_05_figjam_board_top_center.png",
+        "mural_06_user_test_doc_mid_center.png",
+        "mural_07_workshop_visio_bottom_center.png"
+      ]
+    },
+    {
+      "id": "card_culture_builder",
+      "nodeId": "4515:46154",
+      "pillar": "culture-builder",
+      "coords": {
+        "x": 971,
+        "y": 284,
+        "width": 290,
+        "height": 420
+      },
+      "zIndex": 10,
+      "title": "CULTURE BUILDER & PROTOTYPAGE FONCTIONNEL",
+      "description": "Fini la déperdition entre maquette et production. Je livre des MVP et produits fonctionnels, teste avec de vraies APIs, comprends les contraintes d'architecture et des équipes techs.",
+      "tags": [
+        "PRD",
+        "architecture",
+        "MVP",
+        "integration backend"
+      ],
+      "linkText": "plus de détails ↗",
+      "linkedPieces": [
+        "mural_04_storyboard_flows_bottom_left.png",
+        "mural_08_architecture_canvas_mid_bottom.png",
+        "mural_09_mobile_screens_flow_top_right.png"
+      ]
+    }
+  ]
+}

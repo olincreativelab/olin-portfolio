@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Renault Moments — Case Study Renault Group (DCX) | Olin.os</title>
+  <meta name="description" content="Case study Renault Moments : design de service & prospective pour projeter l'expérience client à l'ère des services connectés et de la Renaulution. Validé par le COMEX Renault Group." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300..900&family=Kode+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/src/styles/tokens.css" />
+  <link rel="stylesheet" href="/src/styles/base.css" />
+  <link rel="stylesheet" href="/src/styles/components.css" />
+  <link rel="stylesheet" href="/src/styles/case-study.css" />
+  <!-- Masque le titre avant l'effet machine à écrire (pas de flash), sauf reduced-motion -->
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-typing');
+    }
+  </script>
+</head>
+<body class="cs-page">
+
+  <!-- Trame d'atelier interactive (fallback CSS statique si reduced-motion / tactile) -->
+  <canvas id="canvas-dot-grid" aria-hidden="true"></canvas>
+
+  <a class="cs-skip-link" href="#main">Aller au contenu</a>
+
+  <!-- =========================================================================
+       HEADER OS TRANSVERSE (.olin-header — Figma Header 4515:45981)
+       Même balisage sur toutes les pages du site
+       ========================================================================= -->
+  <header class="olin-header" data-site-header>
+    <a class="olin-header__brand" href="/">
+      <img src="/assets/olin_logo_icon.svg" alt="Olin.os — accueil" width="36" height="36" />
+    </a>
+    <nav class="olin-header__nav" aria-label="Navigation principale">
+      <a href="/#hero">Bureau</a>
+      <a href="/#projets">Projets</a>
+      <a href="/#services">Services</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="olin-header__right">
+      <span class="olin-status-tag"><span class="olin-status-tag__dot" aria-hidden="true"></span>DISPONIBLE // OCTOBRE 2026</span>
+      <button type="button" class="olin-menu-btn" aria-expanded="false" aria-controls="olin-menu-panel" aria-label="Ouvrir le menu" data-menu-toggle>
+        <span class="olin-menu-btn__face">
+          <svg width="15" height="15" viewBox="0 0 15 15" aria-hidden="true"><path d="M0 6.66667V0H6.66667V6.66667H0ZM0 15V8.33333H6.66667V15H0ZM8.33333 6.66667V0H15V6.66667H8.33333ZM8.33333 15V8.33333H15V15H8.33333ZM1.66667 5H5V1.66667H1.66667V5ZM10 5H13.3333V1.66667H10V5ZM10 13.3333H13.3333V10H10V13.3333ZM1.66667 13.3333H5V10H1.66667V13.3333Z" fill="#242237" /></svg>
+        </span>
+      </button>
+    </div>
+    <div class="olin-header__panel" id="olin-menu-panel" data-menu-panel>
+      <a href="/#hero">Bureau</a>
+      <a href="/#projets">Projets</a>
+      <a href="/#services">Services</a>
+      <a href="/#contact">Contact</a>
+      <span class="olin-status-tag"><span class="olin-status-tag__dot" aria-hidden="true"></span>DISPONIBLE // OCTOBRE 2026</span>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- =======================================================================
+         NIVEAU 1 — EXECUTIVE CARD (Scan 90s)
+         ======================================================================= -->
+    <section class="cs-hero cs-container" aria-labelledby="cs-title">
+      <span class="olin-tag olin-tag--blue olin-tag--tag cs-hero__chip">Case study // Automotive OS</span>
+
+      <div class="cs-hero__grid">
+        <div class="cs-hero__content">
+          <h1 id="cs-title" class="cs-hero__title" aria-label="Renault Moments"><span class="cs-typewriter" aria-hidden="true" data-typewriter>Renault Moments</span><span class="cs-caret" aria-hidden="true" data-typewriter-caret>_</span></h1>
+          <p class="cs-hero__lead">
+            Design de service &amp; prospective : projeter l'expérience client à l'ère des services connectés et de la Renaulution.
+          </p>
+
+          <!-- Cartouche projet -->
+          <dl class="cs-cartouche" aria-label="Cartouche projet">
+            <div><dt>Client</dt><dd>Renault Group • Direction Digital Customer Experience (DCX)</dd></div>
+            <div><dt>Rôle</dt><dd>Senior UX Strategist (ekino × MFG Labs)</dd></div>
+            <div><dt>Squad</dt><dd>Lead Équipe Vision DCX • UX Strat (Josselin) + Creative UI (Pauline) • Product Owners SAFe</dd></div>
+            <div><dt>Durée</dt><dd>9 mois • juillet 2021 → mars 2022</dd></div>
+            <div><dt>Stack</dt><dd>Android Automotive OS (AAOS) • Écran OpenR • Figma • Driver Distraction Rules</dd></div>
+          </dl>
+
+          <ul class="cs-badges" aria-label="Preuves d'impact">
+            <li><span class="olin-tag olin-tag--green olin-tag--pill"><span class="olin-tag__dot" aria-hidden="true"></span>Validé par le COMEX Renault Group</span></li>
+            <li><span class="olin-tag olin-tag--purple olin-tag--pill"><span class="olin-tag__dot" aria-hidden="true"></span>Testé sur véhicule prototype</span></li>
+            <li><span class="olin-tag olin-tag--blue olin-tag--pill"><span class="olin-tag__dot" aria-hidden="true"></span>Standard d'interaction OpenR</span></li>
+          </ul>
+
+          <!-- MOMENT CTA 1 — Triage -->
+          <div class="cs-cta-row" role="group" aria-label="Choisir sa lecture">
+            <a class="olin-btn olin-btn--primary" href="#synthese">⚡ Scanner la synthèse 90s <span aria-hidden="true">↓</span></a>
+            <button type="button" class="olin-btn olin-btn--secondary" data-action="print-onepager">📥 One-Pager PDF</button>
+          </div>
+        </div>
+
+        <!-- Hero mockup — Cockpit OpenR -->
+        <figure class="cs-hero__visual">
+          <div class="olin-window">
+            <div class="olin-window__header">
+              <span class="olin-window__title">cockpit-openr.aaos</span>
+              <span aria-hidden="true">12"</span>
+            </div>
+            <div class="olin-window__body cs-cockpit">
+              <a class="olin-picture-frame cs-cockpit__slot" href="/assets/renault/extracted/p242_img4.png" target="_blank" rel="noopener" aria-label="Ouvrir l'écran cockpit OpenR en pleine résolution (nouvel onglet)">
+                <div class="olin-photo-duotone">
+                  <img
+                    src="/assets/renault/extracted/p242_img4.png"
+                    width="912" height="1368"
+                    alt="Écran central OpenR sous Moment OS : guidage « 3 km — Aire de la Sarthe », carte sombre et Timeline « voyage à Nantes » de 10:37 à 12:26."
+                    fetchpriority="high" />
+                  <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <img class="cs-hero__sticker" src="/assets/stickers/sticker_client_renault_group.svg" width="160" height="53" alt="Client : Renault Group" />
+          <figcaption class="cs-caption">↳ Moment OS en mode Roulage : la Timeline d'expérience remplace l'empilement de widgets.</figcaption>
+        </figure>
+      </div>
+
+      <!-- Matrice 3x3 — Scan exécutif 90s -->
+      <div id="synthese" class="cs-synthese" aria-labelledby="synthese-title">
+        <div class="cs-section-header">
+          <span class="olin-tag olin-tag--blue olin-tag--pill cs-section-tag">SCAN EXÉCUTIF // 90 SECONDES</span>
+          <h2 id="synthese-title" class="cs-section-title">Synthèse de la mission &amp; impact</h2>
+        </div>
+        <div class="cs-matrix">
+          <article class="olin-window cs-matrix__col">
+            <div class="olin-window__header"><span class="olin-window__title">01 // Les challenges</span></div>
+            <ul class="olin-window__body cs-bullets">
+              <li><strong>Identité de marque.</strong> Transformer un empilement purement fonctionnel en une expérience client signature intégrée au cockpit.</li>
+              <li><strong>Prospective 5 à 10 ans.</strong> Aligner dirigeants et directions métiers autour d'une vision de marque commune et désirable.</li>
+              <li><strong>Arbitrages stratégiques.</strong> Délivrer des scénarios viables en gardant le cap de la vision face aux contraintes industrielles.</li>
+            </ul>
+          </article>
+          <article class="olin-window cs-matrix__col">
+            <div class="olin-window__header"><span class="olin-window__title">02 // L'approche</span></div>
+            <ul class="olin-window__body cs-bullets">
+              <li><strong>Veille &amp; concept vision.</strong> Tendances hors-automobile et archétypes relationnels par marque du groupe.</li>
+              <li><strong>Scénarisation CX.</strong> Storyboard narratif et flux de vie <span class="cs-mono">Home-to-car → On-the-road → Smart Charge</span>.</li>
+              <li><strong>Prototypage &amp; arbitrage.</strong> Maquettes Figma sous AAOS, tests utilisateurs et démos décisionnelles COMEX.</li>
+            </ul>
+          </article>
+          <article class="olin-window cs-matrix__col">
+            <div class="olin-window__header"><span class="olin-window__title">03 // Le résultat</span></div>
+            <ul class="olin-window__body cs-bullets">
+              <li><strong>Validation stratégique.</strong> Le COMEX arbitre l'opportunité business et valide officiellement la vision « Renault Moments ».</li>
+              <li><strong>Impact opérationnel.</strong> Commande et développement immédiats du MVP embarqué <em>Collections</em>.</li>
+              <li><strong>Socle pérenne.</strong> Principes d'interaction et dashboard connecté standardisés pour la plateforme OpenR.</li>
+            </ul>
+          </article>
+        </div>
+
+        <ul class="cs-metrics" aria-label="Chiffres clés">
+          <li class="olin-metric-card">
+            <span class="olin-metric-card__value">15</span>
+            <span class="olin-metric-card__label">conducteurs testés en 2 vagues (Lot 2 Test Drive • Lot 3 Commute)</span>
+          </li>
+          <li class="olin-metric-card">
+            <span class="olin-metric-card__value">6/7</span>
+            <span class="olin-metric-card__label">testeurs favorables au partage de données, sous transparence préalable</span>
+          </li>
+          <li class="olin-metric-card">
+            <span class="olin-metric-card__value">2 s</span>
+            <span class="olin-metric-card__label">de regard cumulé max. en conduite (Driver Distraction Rules)</span>
+          </li>
+          <li class="olin-metric-card">
+            <span class="olin-metric-card__value">≥ 12 mm</span>
+            <span class="olin-metric-card__label">cibles tactiles cockpit, zéro menu déroulant profond</span>
+          </li>
+        </ul>
+
+        <!-- MOMENT CTA 2 — Carrefour décisionnel -->
+        <div class="cs-crossroads">
+          <p class="cs-crossroads__label">Vous avez l'essentiel. Deux chemins :</p>
+          <div class="cs-cta-row">
+            <a class="olin-btn olin-btn--primary" href="mailto:josselin.hillion@gmail.com?subject=Discuter%20du%20projet%20Renault%20Moments%20(15%20min)">Discuter de ce projet avec Josselin (15 min) <span aria-hidden="true">↗</span></a>
+            <a class="olin-link" href="#contexte">Découvrir le cadrage &amp; les 4 étapes <span class="olin-link-arrow" aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         CADRAGE STRATÉGIQUE — L'ENJEU RENAULUTION (CONTEXTE & TENSION)
+         Placé AVANT les 4 étapes pour asseoir la légitimité et la vision
+         ======================================================================= -->
+    <section id="contexte" class="cs-context cs-container" aria-labelledby="context-title">
+      <div class="cs-section-header">
+        <span class="olin-tag olin-tag--blue olin-tag--pill cs-section-tag">01 // CADRAGE STRATÉGIQUE</span>
+        <h2 id="context-title" class="cs-section-title">Mise en situation : L'enjeu de la Renaulution</h2>
+        <p class="cs-section-subtitle">
+          Faire basculer un constructeur automobile centenaire de la vente de tôle vers l'écosystème de services connectés OpenR.
+        </p>
+      </div>
+
+      <div class="cs-context__grid">
+        <!-- Narratif & 3 Mandats Stratégiques -->
+        <div class="cs-context__text">
+          <p class="cs-prose cs-prose--lead">
+            Dans le plan de redressement impulsé par Luca de Meo, Renault devait impérativement passer de constructeur de tôle à opérateur de mobilités connectées. Le risque majeur : transformer l'écran OpenR en tablette Android générique, saturée de widgets disjoints, sans ergonomie automobile ni signature de marque.
+          </p>
+
+          <div class="cs-missions-card">
+            <h3 class="cs-missions-title">Les 3 mandats de la mission design :</h3>
+            <ol class="cs-missions">
+              <li>
+                <span class="cs-mission-badge">01</span>
+                <div>
+                  <strong>Éclairer le cap (5 à 10 ans).</strong> Sortir des cycles industriels lents (3 à 5 ans pour concevoir un véhicule) pour projeter en amont les usages réels du véhicule connecté et de l'électromobilité.
+                </div>
+              </li>
+              <li>
+                <span class="cs-mission-badge">02</span>
+                <div>
+                  <strong>Définir la posture de marque.</strong> Refuser le catalogue d'ingénieurs pour créer une relation client signature, propre à l'ADN Renault Group face aux super-performers technologiques.
+                </div>
+              </li>
+              <li>
+                <span class="cs-mission-badge">03</span>
+                <div>
+                  <strong>Dérisquer le delivery.</strong> Tester les hypothèses auprès de vrais conducteurs et transmettre un Concept Model robuste aux Product Owners de la squad SAFe.
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Photographie Réelle Luca de Meo & Citation Clé -->
+        <aside class="cs-context__media">
+          <div class="olin-window cs-context-figure">
+            <div class="olin-window__header">
+              <span class="olin-window__title">luca-de-meo_renaulution.jpg</span>
+              <span class="olin-tag olin-tag--blue olin-tag--pill cs-window-tag">KEYNOTE</span>
+              <a href="https://www.youtube.com/watch?v=68E6y6F_g2o" target="_blank" rel="noopener" class="olin-window__action" aria-label="Voir la keynote Renaulution sur YouTube (nouvel onglet)">Conférence ↗</a>
+            </div>
+            <div class="olin-window__body cs-context-body">
+            <a class="olin-picture-frame" href="https://www.youtube.com/watch?v=68E6y6F_g2o" target="_blank" rel="noopener" aria-label="Voir la keynote Renaulution de Luca de Meo sur YouTube (nouvel onglet)">
+              <div class="cs-context-photo-wrap olin-photo-duotone">
+                <img
+                  src="/assets/renault/luca_de_meo_renaulution.jpg"
+                  alt="Luca de Meo, CEO de Renault Group, lors de la présentation du plan stratégique Renaulution"
+                  width="1199" height="1200"
+                  loading="lazy"
+                  class="cs-context-photo" />
+                <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+              </div>
+              <div class="olin-picture-frame__caption">
+                <div class="olin-picture-frame__text">
+                  <span class="olin-picture-frame__title">Keynote Renaulution // Luca de Meo</span>
+                  <span>Voir la conférence de lancement du plan.</span>
+                </div>
+                <span class="olin-picture-frame__zoom">▶ YouTube ↗</span>
+              </div>
+            </a>
+            <div class="cs-context-quote">
+              <blockquote>
+                « Nous allons passer d'une entreprise automobile travaillant avec de la technologie à une entreprise technologique travaillant avec des voitures. »
+              </blockquote>
+              <cite>— <strong>Luca de Meo</strong>, CEO Renault Group (Lancement du plan Renaulution)</cite>
+            </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Carte Contexte : L'Équipe Renault Vision DCX -->
+      <div class="cs-squad-card" aria-labelledby="squad-title">
+        <div class="cs-squad-card__header">
+          <span class="olin-tag olin-tag--blue olin-tag--pill" style="align-self: flex-start;">ORGANISATION &amp; GOUVERNANCE</span>
+          <h3 id="squad-title" class="cs-squad-card__title">L'Équipe Vision DCX : une cellule amont au cœur de la Renaulution</h3>
+        </div>
+        <div class="cs-squad-card__grid">
+          <div class="cs-squad-col">
+            <span class="cs-squad-col__tag">PILOTAGE DE LA VISION</span>
+            <p>Un <strong>Lead Équipe Vision DCX</strong> orchestrait les projets, validait les pistes stratégiques et animait les équipes.</p>
+          </div>
+          <div class="cs-squad-col">
+            <span class="cs-squad-col__tag">UX STRATÉGIE</span>
+            <p><strong>Josselin Hillion</strong> (Senior UX Strategist) en binôme avec <strong>Pauline</strong> (Creative UI Designer) pour ekino × MFG Labs : Concept Model, principes directeurs, parcours et prototypes.</p>
+          </div>
+          <div class="cs-squad-col">
+            <span class="cs-squad-col__tag">PONT VERS LE DELIVERY</span>
+            <p>Articulation entre prospective 5-10 ans et sprints à 2 semaines : transmission des Concept Models et règles HMI aux <strong>Product Owners des trains SAFe</strong>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         NIVEAU 2 — STEPPER D'AIGUILLAGE NARRATIF (STICKY MOBILE & DESKTOP)
+         Apparaît APRES le contexte pour guider l'exploration des 4 actes
+         ======================================================================= -->
+    <nav class="cs-stepper-bar" aria-label="Progression du deep dive en 4 actes" data-stepper-bar>
+      <!-- Mobile : accordéon compact affichant l'étape en cours -->
+      <button type="button" class="cs-stepper-toggle" aria-expanded="false" aria-controls="cs-stepper-list" data-stepper-toggle>
+        <span class="cs-stepper-toggle__count"><span class="cs-sr-only">Étape en cours : </span><span data-stepper-count>01</span>/04</span>
+        <span class="cs-stepper-toggle__label" data-stepper-label>Poser le concept</span>
+        <span class="cs-stepper-toggle__chevron" aria-hidden="true">▾</span>
+      </button>
+      <ol id="cs-stepper-list" class="olin-stepper cs-container" data-stepper>
+        <li><a class="olin-stepper__item olin-stepper__item--active" href="#acte-01" aria-current="step"><span class="olin-stepper__num">01 • Juil. 2021</span><span class="olin-stepper__label">Poser le concept</span></a></li>
+        <li><a class="olin-stepper__item" href="#acte-02"><span class="olin-stepper__num">02 • Automne 2021</span><span class="olin-stepper__label">Développer la posture</span></a></li>
+        <li><a class="olin-stepper__item" href="#acte-03"><span class="olin-stepper__num">03 • Déc. 2021</span><span class="olin-stepper__label">Raconter le service</span></a></li>
+        <li><a class="olin-stepper__item" href="#acte-04"><span class="olin-stepper__num">04 • Janv.–mars 2022</span><span class="olin-stepper__label">Tester &amp; arbitrer</span></a></li>
+      </ol>
+    </nav>
+
+    <!-- =======================================================================
+         NIVEAU 3 — LE DEEP DIVE EN 4 ACTES (Modular Storyboard)
+         ======================================================================= -->
+    <div id="deep-dive" class="cs-deep-dive">
+
+      <!-- ACTE 01 -->
+      <section id="acte-01" class="cs-act cs-container" data-act aria-labelledby="acte-01-title">
+        <header class="cs-act__header">
+          <div class="cs-act__pill-group">
+            <span class="cs-pill cs-pill--blue">ACTE 01 // JUILLET 2021</span>
+            <span class="cs-pill cs-pill--dark">PHASE 1/4</span>
+          </div>
+          <h2 id="acte-01-title" class="cs-act__title">Poser le concept &amp; storyboard préliminaire</h2>
+          <p class="cs-act__thesis">Court-circuiter l'abstraction des cahiers des charges en matérialisant les initiatives dans une friction du quotidien : le trajet domicile-travail sous tension (<em>Commute in a rush</em>).</p>
+        </header>
+        <div class="cs-act__body">
+          <div class="cs-prose">
+            <p>Dès la prise de brief, nous avons cherché à dépasser le catalogue technique des services connectés pour donner aux décideurs un support concret d'arbitrage. En nous appuyant sur les études de segmentation marché et les personas <strong>SIGMA</strong> de Renault, nous avons structuré un storyboard immersif mettant en scène des profils réels confrontés aux aléas de la mobilité quotidienne : départs précipités, retards imprévus et gestion prédictive de la recharge.</p>
+            <p>Accompagné de premiers écrans exploratoires du combiné de bord, ce storyboard a permis aux dirigeants de s'approprier le concept : la valeur des services connectés réside dans leur <strong>orchestration</strong>, et dans une posture relationnelle unique au groupe Renault.</p>
+          </div>
+          <ul class="cs-deliverables" aria-label="Livrables clés">
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Benchmark sectoriel</li>
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Personas SIGMA</li>
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Storyboard Commute in a rush</li>
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">1ers écrans cockpit</li>
+          </ul>
+        </div>
+        <figure class="cs-artifact">
+          <a class="olin-picture-frame" href="/assets/renault/p106_scenarios_julia_marc.png" target="_blank" rel="noopener" aria-label="Agrandir le storyboard Julia &amp; Marc (nouvel onglet)">
+            <div class="olin-photo-duotone">
+              <img src="/assets/renault/p106_scenarios_julia_marc.png" width="1440" height="900" loading="lazy" alt="Planche « Contextualiser » : scénarios Travel et Commute Julia &amp; Marc avec la timeline macro-étapes, triggers, actions et écrans." />
+              <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+            </div>
+            <div class="olin-picture-frame__caption">
+              <div class="olin-picture-frame__text">
+                <span class="olin-picture-frame__title">Storyboard SIGMA // Julia &amp; Marc</span>
+                <span>Récits, triggers et écrans reliés sur une même timeline.</span>
+              </div>
+              <span class="olin-picture-frame__zoom">zoom ↗</span>
+            </div>
+          </a>
+          <figcaption class="cs-caption">Scénarios SIGMA Julia &amp; Marc : récits, triggers et écrans reliés sur une même timeline.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ACTE 02 -->
+      <section id="acte-02" class="cs-act cs-container" data-act aria-labelledby="acte-02-title">
+        <header class="cs-act__header">
+          <div class="cs-act__pill-group">
+            <span class="cs-pill cs-pill--blue">ACTE 02 // AUTOMNE 2021</span>
+            <span class="cs-pill cs-pill--dark">PHASE 2/4</span>
+          </div>
+          <h2 id="acte-02-title" class="cs-act__title">Développer la posture &amp; le Concept Model</h2>
+          <p class="cs-act__thesis">Transformer une intuition de design en doctrine industrielle, adoptable par les marques du groupe (Renault, Dacia, Alpine) et intelligible par les équipes logicielles.</p>
+        </header>
+        <div class="cs-act__body">
+          <div class="cs-prose">
+            <p>Nous avons modélisé la posture de service autour de trois piliers : le <strong>Dialogue Continu</strong> (qui anticipe sans harceler), la <strong>Zone de Confort Étendue</strong> (qui harmonise l'habitacle selon l'humeur et la météo) et l'<strong>Utilisateur Souverain</strong> (qui garde la maîtrise de ses données et de ses choix).</p>
+            <p>C'est ici que s'opère le saut conceptuel fondateur : <strong>« Sortir de la structure widget »</strong>. Plutôt que de forcer le conducteur à chercher une application dans un menu déroulant, nous avons conçu un <strong>OS Moment</strong> qui orchestre les services autour d'un fil directeur unique — la <strong>Timeline d'Expérience</strong> — pour faire remonter l'information au moment exact où elle devient actionnable.</p>
+          </div>
+          <aside class="olin-sticky olin-sticky--yellow cs-note" aria-label="Note de terrain d'atelier">
+            <div class="olin-sticky__header">
+              <span>📌 NOTE D'ATELIER</span>
+              <span>MEMO #48 // TECHNOCENTRE</span>
+            </div>
+            <blockquote>
+              « En comité de direction, dès qu'un combiné d'instruments fait 12 pouces, la tentation naturelle est d'y loger 14 widgets, dont deux horloges et la météo de Reykjavik. Notre plus grand acte d'UX n'a pas été d'empiler des fonctions, mais de désamorcer l'effet sapin de Noël. »
+            </blockquote>
+            <div class="cs-note__sign">— Josselin Hillion // Direction Vision DCX</div>
+            <a href="#acte-03" class="olin-sticky__action">découvrir la timeline d'expérience ↗</a>
+          </aside>
+        </div>
+        <figure class="cs-artifact">
+          <a class="olin-picture-frame" href="/assets/renault/p242_moment_os_vs_widget.png" target="_blank" rel="noopener" aria-label="Agrandir la comparaison Android vs OS Moment en haute résolution (nouvel onglet)">
+            <div class="olin-photo-duotone">
+              <img src="/assets/renault/p242_moment_os_vs_widget.png" width="1440" height="900" loading="lazy" alt="Slide « Sortir de la structure widget » : à gauche l'interface Android actuelle, à droite l'interface Moment OS où la marque est au cœur des interactions." />
+              <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+            </div>
+            <div class="olin-picture-frame__caption">
+              <div class="olin-picture-frame__text">
+                <span class="olin-picture-frame__title">Concept Model // Sortir de la structure widget</span>
+                <span>Android générique vs OS Moment : la marque passe du widget au fil conducteur.</span>
+              </div>
+              <span class="olin-picture-frame__zoom">zoom ↗</span>
+            </div>
+          </a>
+          <figcaption class="cs-caption">Android générique vs OS Moment : la marque passe du widget au fil conducteur du trajet.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ACTE 03 -->
+      <section id="acte-03" class="cs-act cs-container" data-act aria-labelledby="acte-03-title">
+        <header class="cs-act__header">
+          <div class="cs-act__pill-group">
+            <span class="cs-pill cs-pill--blue">ACTE 03 // DÉCEMBRE 2021</span>
+            <span class="cs-pill cs-pill--dark">PHASE 3/4</span>
+          </div>
+          <h2 id="acte-03-title" class="cs-act__title">Raconter le service &amp; créer les marqueurs UX</h2>
+          <p class="cs-act__thesis">Rendre l'expérience désirable et tangible — identité visuelle et sonore signature — tout en garantissant la continuité entre smartphone et écran vertical OpenR.</p>
+        </header>
+        <div class="cs-act__body">
+          <div class="cs-prose">
+            <p>Nous avons formalisé les <strong>Moments Principles</strong> et une grammaire d'interaction rythmée en cinq temps universels. Chaque état du véhicule déclenche une adaptation automatique du combiné d'instruments et de l'écran central.</p>
+            <p>La collection des <strong>Moods adaptatifs</strong> combine paysages sonores, éclairages LED et playlists dédiées, avec les marqueurs signatures du service : <strong>Timeline contextuelle</strong>, <strong>Safe Zone visuelle</strong> et <strong>Célébrations d'étapes</strong>. Le mobile devient la télécommande amont qui prépare le trajet ; OpenR prend le relais dès l'ouverture des portières.</p>
+          </div>
+          <ol class="cs-grammar" aria-label="Grammaire d'interaction en 5 temps">
+            <li><span class="cs-mono">T1</span>Welcome</li>
+            <li><span class="cs-mono">T2</span>Run</li>
+            <li><span class="cs-mono">T3</span>Wait</li>
+            <li><span class="cs-mono">T4</span>Pause</li>
+            <li><span class="cs-mono">T5</span>Goodbye</li>
+          </ol>
+        </div>
+        <figure class="cs-artifact">
+          <a class="olin-picture-frame" href="/assets/renault/p244_marqueurs_timeline.png" target="_blank" rel="noopener" aria-label="Agrandir la planche des marqueurs d'expérience en haute résolution (nouvel onglet)">
+            <div class="olin-photo-duotone">
+              <img src="/assets/renault/p244_marqueurs_timeline.png" width="1440" height="900" loading="lazy" alt="Planche « Illustrer les piliers via des marqueurs » : quatre écrans du compagnon de mobilité — Safe zone, Caring environnement, Timeline et Gamification." />
+              <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+            </div>
+            <div class="olin-picture-frame__caption">
+              <div class="olin-picture-frame__text">
+                <span class="olin-picture-frame__title">Marqueurs Signature // OpenR Cockpit</span>
+                <span>4 marqueurs signature : Safe zone, Caring environnement, Timeline, Gamification.</span>
+              </div>
+              <span class="olin-picture-frame__zoom">zoom ↗</span>
+            </div>
+          </a>
+          <figcaption class="cs-caption">4 marqueurs signature : Safe zone, Caring environnement, Timeline, Gamification.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ACTE 04 -->
+      <section id="acte-04" class="cs-act cs-container" data-act aria-labelledby="acte-04-title">
+        <header class="cs-act__header">
+          <div class="cs-act__pill-group">
+            <span class="cs-pill cs-pill--blue">ACTE 04 // JANV. → MARS 2022</span>
+            <span class="cs-pill cs-pill--dark">PHASE 4/4</span>
+          </div>
+          <h2 id="acte-04-title" class="cs-act__title">Tester, éprouver &amp; arbitrer</h2>
+          <p class="cs-act__thesis">Confronter la vision prospective au réel pour la dérisquer avant toute mise en production industrielle.</p>
+        </header>
+        <div class="cs-act__body">
+          <div class="cs-prose">
+            <p>Plutôt que de présenter des maquettes statiques au comité de direction, nous avons déployé deux vagues de tests qualitatifs sur des prototypes Figma haute fidélité : le <strong>Lot 2 (Test Drive)</strong> auprès de 8 participants et le <strong>Lot 3 (Commute quotidien)</strong> auprès de 7 conducteurs réguliers.</p>
+            <p>Ces tests ont éprouvé la charge cognitive en conduite simulée : le décompte temps réel a été supprimé, jugé anxiogène, au profit d'alertes préventives discrètes. Fort de ces enseignements, le dossier a été présenté au <strong>COMEX de Renault Group</strong>, qui a validé la vision et acté le lancement du premier MVP opérationnel : l'application embarquée <em>Collections</em>.</p>
+          </div>
+          <aside class="olin-sticky olin-sticky--yellow cs-note" aria-label="Retour terrain tests utilisateurs">
+            <div class="olin-sticky__header">
+              <span>⏱️ RETOUR TERRAIN</span>
+              <span>LOT 3 // COMMUTE</span>
+            </div>
+            <blockquote>
+              « Pour la première fois, la voiture ne ressemble pas à une tablette avec 50 applications qu'on n'ouvrira jamais en conduisant. Tout s'aligne sur notre journée : elle anticipe la pause, propose la bonne action au bon moment, puis s'efface. C'est un compagnon de route, plus un catalogue d'ingénieurs. »
+            </blockquote>
+            <div class="cs-note__sign">— Synthèse des tests utilisateurs (15 conducteurs)</div>
+            <a href="#drawers-title" class="olin-sticky__action">voir les enseignements terrain ↗</a>
+          </aside>
+        </div>
+        <figure class="cs-artifact">
+          <a class="olin-picture-frame" href="/assets/renault/p248_attention_gradient.png" target="_blank" rel="noopener" aria-label="Agrandir le gradient d'attention HMI en haute résolution (nouvel onglet)">
+            <div class="olin-photo-duotone">
+              <img src="/assets/renault/p248_attention_gradient.png" width="1440" height="900" loading="lazy" alt="Slide « Différents états d'interaction » : gradient d'attention de Car stop à Slow down puis On the road." />
+              <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+            </div>
+            <div class="olin-picture-frame__caption">
+              <div class="olin-picture-frame__text">
+                <span class="olin-picture-frame__title">Gradient d'Attention HMI // Driver Distraction</span>
+                <span>Plus la vitesse monte, plus l'interface s'efface au profit de la voix.</span>
+              </div>
+              <span class="olin-picture-frame__zoom">zoom ↗</span>
+            </div>
+          </a>
+          <figcaption class="cs-caption">Gradient d'attention HMI : plus la vitesse monte, plus l'interface s'efface au profit de la voix.</figcaption>
+        </figure>
+
+        <!-- MOMENT CTA 3 — Micro-preuves -->
+        <div class="cs-proof-cta">
+          <p class="cs-proof-cta__label">Voir les preuves de plus près :</p>
+          <div class="cs-cta-row">
+            <a class="olin-btn olin-btn--secondary" href="/assets/renault/extracted/p242_img4.png" target="_blank" rel="noopener">Ouvrir l'écran cockpit en pleine résolution <span aria-hidden="true">↗</span></a>
+            <a class="olin-link" href="mailto:josselin.hillion@gmail.com?subject=Acc%C3%A8s%20au%20board%20Figma%20Renault%20Moments">Demander l'accès au board de service Figma <span class="olin-link-arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- =======================================================================
+         NIVEAU 4 — TIROIRS DE MAÎTRISE SENIOR & CONVERSION FINALE
+         ======================================================================= -->
+    <section class="cs-drawers cs-container" aria-labelledby="drawers-title">
+      <header class="cs-act__header">
+        <span class="cs-act__num">Niveau 4 // Maîtrise senior</span>
+        <h2 id="drawers-title" class="cs-act__title">Les 4 tiroirs</h2>
+      </header>
+
+      <div class="olin-drawers-grid">
+        <details class="olin-drawer" data-drawer>
+          <summary class="olin-drawer__title cs-drawer__summary">
+            <span class="cs-drawer__head">
+              <span class="olin-tag olin-tag--blue olin-tag--tag">❖ Gouvernance</span>
+              <span class="cs-drawer__name">Gouvernance PM / Tech &amp; SAFe</span>
+              <span class="cs-drawer__teaser">Matrice DCX « Rend le cap » &amp; synchronisation des trains SAFe</span>
+            </span>
+            <span class="cs-drawer__icon" aria-hidden="true"><span class="cs-drawer__glyph">+</span></span>
+          </summary>
+          <div class="olin-drawer__content">
+            <p>Positionnement au niveau <strong>« Rend le cap »</strong> de la matrice DCX (entre « Range chambre » — stratégie — et « Lance cap » — pilotage) : traduire les orientations de l'équipe Vision en un Concept Model rigoureux, prototyper les parcours et transmettre un référentiel ergonomique clair aux Product Owners et aux trains SAFe.</p>
+            <p>Articulation fluide entre le temps long de la vision et le temps court des sprints.</p>
+          </div>
+        </details>
+        <details class="olin-drawer" data-drawer>
+          <summary class="olin-drawer__title cs-drawer__summary">
+            <span class="cs-drawer__head">
+              <span class="olin-tag olin-tag--purple olin-tag--tag">❖ HMI &amp; Ergonomie</span>
+              <span class="cs-drawer__name">Ergonomie HMI &amp; charge cognitive</span>
+              <span class="cs-drawer__teaser">Driver Distraction Rules, touch targets ≥ 12 mm &amp; gradient d'attention</span>
+            </span>
+            <span class="cs-drawer__icon" aria-hidden="true"><span class="cs-drawer__glyph">+</span></span>
+          </summary>
+          <div class="olin-drawer__content">
+            <p>Conception assujettie aux Driver Distraction Rules (touch targets ≥ 12 mm). Gradient d'attention à 3 niveaux :</p>
+            <ul class="cs-bullets">
+              <li><strong>Car Stop :</strong> consultation riche et configuration avancée.</li>
+              <li><strong>Slow Down :</strong> validation simplifiée par action unique.</li>
+              <li><strong>On the Road :</strong> charge visuelle drastiquement réduite, relais par la voix.</li>
+            </ul>
+          </div>
+        </details>
+        <details class="olin-drawer" data-drawer>
+          <summary class="olin-drawer__title cs-drawer__summary">
+            <span class="cs-drawer__head">
+              <span class="olin-tag olin-tag--green olin-tag--tag">❖ Reality Check</span>
+              <span class="cs-drawer__name">Vérité terrain &amp; enseignements</span>
+              <span class="cs-drawer__teaser">15 conducteurs testés : décompte anxiogène supprimé, 6/7 pour le partage de données</span>
+            </span>
+            <span class="cs-drawer__icon" aria-hidden="true"><span class="cs-drawer__glyph">+</span></span>
+          </summary>
+          <div class="olin-drawer__content">
+            <ul class="cs-bullets">
+              <li>La Timeline est plébiscitée pour l'anticipation utile (charge, météo, retards) ; le décompte temps réel est rejeté. Règle validée : <em>« Montrer ce qui est utile au bon moment, permettre une action, puis s'effacer. »</em></li>
+              <li>Pacte de confiance : 6 testeurs sur 7 favorables au partage de données, à condition d'une transparence préalable absolue — <em>« Pas de vendeur collant en passager clandestin. »</em></li>
+            </ul>
+          </div>
+        </details>
+        <details class="olin-drawer" data-drawer>
+          <summary class="olin-drawer__title cs-drawer__summary">
+            <span class="cs-drawer__head">
+              <span class="olin-tag olin-tag--neutral olin-tag--tag">❖ Recul critique</span>
+              <span class="cs-drawer__name">Ce que je ferais autrement</span>
+              <span class="cs-drawer__teaser">Un simulateur de volant branché en WebSocket dès la semaine 2</span>
+            </span>
+            <span class="cs-drawer__icon" aria-hidden="true"><span class="cs-drawer__glyph">+</span></span>
+          </summary>
+          <div class="olin-drawer__content">
+            <p>Dans le contexte politique lourd d'un grand constructeur, l'agilité a été poussée au maximum. Avec l'outillage moderne, j'aurais branché <strong>un simulateur de volant physique en WebSocket dès la semaine 2</strong> pour mesurer la charge motrice et la distraction visuelle avant même les premiers essais sur véhicule.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- Transposition & Enseignements Transverses -->
+      <aside class="olin-window cs-sowhat" aria-labelledby="sowhat-title">
+        <div class="olin-window__header">
+          <span class="olin-window__title" id="sowhat-title">🎯 The so what? // Ce que ce cas démontre pour vos produits</span>
+        </div>
+        <div class="olin-window__body cs-sowhat__body">
+          <div class="cs-sowhat__item">
+            <span class="cs-sowhat__tag">01 // ORCHESTRATION VS FEATURE CREEP</span>
+            <h3 class="cs-sowhat__heading">Tuer le réflexe d'empilement au profit d'un OS d'attention</h3>
+            <p>Dans tout produit complexe (SaaS B2B, fintech ou cockpit dense), le réflexe paresseux est d'empiler les fonctionnalités et les menus. Ce projet démontre ma capacité à désaturer la charge mentale : organiser le temps d'usage plutôt que l'espace écran, faire remonter la bonne décision au bon moment, puis s'effacer.</p>
+          </div>
+          <div class="cs-sowhat__item">
+            <span class="cs-sowhat__tag">02 // PROSPECTIVE PRAGMATIQUE</span>
+            <h3 class="cs-sowhat__heading">Du cap stratégique COMEX au premier sprint de code</h3>
+            <p>Sortir du piège de la prospective science-fiction non codable. Capacité à aligner une direction générale sur une vision inspirante à 5 ans, tout en sachant immédiatement découper et spécifier un premier MVP fonctionnel (le Concept Model) exploitable par les développeurs dès le sprint suivant.</p>
+          </div>
+          <div class="cs-sowhat__item">
+            <span class="cs-sowhat__tag">03 // DÉCIDER PAR LE RÉEL</span>
+            <h3 class="cs-sowhat__heading">Éprouver le système sur le terrain plutôt que par l'opinion</h3>
+            <p>Ne jamais engager des mois de développement sur de simples hypothèses de bureau. Tester les concepts sur des prototypes haute fidélité face à de vrais utilisateurs, écouter les signaux faibles, tuer les fausses bonnes idées sans ego (supprimer le décompte anxiogène) et bâtir un pacte de confiance transparent.</p>
+          </div>
+        </div>
+      </aside>
+
+      <!-- MOMENT CTA 4 — Conversion finale -->
+      <div class="cs-final-cta">
+        <p class="cs-final-cta__title">Prêt à clarifier vos architectures logicielles ou cockpits denses ?</p>
+        <div class="cs-cta-row">
+          <a class="olin-btn olin-btn--primary" href="mailto:josselin.hillion@gmail.com?subject=Call%20d%C3%A9couverte%20(15%20min)">Planifier un call découverte (15 min) <span aria-hidden="true">↗</span></a>
+          <a class="olin-link" href="/#projets">Explorer le cas suivant : Excibat BTP <span class="olin-link-arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer d'atelier sur le motif Olin (.olin-footer — Figma BG 4314:138629) -->
+  <footer class="olin-footer">
+    <div class="olin-footer__inner">
+      <p class="olin-footer__mantra"><span>La tête dans les nuages,<br />les mains dans le concret.</span></p>
+      <nav class="olin-footer__nav" aria-label="Liens de pied de page">
+        <a href="#main">↑ Haut de page</a>
+        <a href="/#projets">Tous les projets</a>
+        <a href="https://www.linkedin.com/in/josselinhillion/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="mailto:olin.creativelab@gmail.com">Email ↗</a>
+      </nav>
+    </div>
+    <div class="olin-footer__legal">
+      <span>© 2026 Josselin Hillion • Olin.os — La tête dans les nuages, les mains dans le concret.</span>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/case-study.js"></script>
+</body>
+</html>

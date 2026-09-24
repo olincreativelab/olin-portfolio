@@ -4,804 +4,499 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Josselin Hillion — Senior Product Designer &amp; Builder | Olin.os</title>
-  <meta name="description" content="Portfolio de Josselin Hillion : Senior Product Designer & Builder (ENSAM x EDNA). 10 ans d'expérience à relier vision prospective, ergonomie terrain et build fonctionnel." />
+  <meta name="description" content="Josselin Hillion, Senior Product Designer & Builder (double diplôme EDNA × ENSAM Arts et Métiers) : transformer vos produits en expériences client uniques, de la vision stratégique au MVP en production." />
 
-  <!-- Google Fonts: Instrument Serif, Geologica, Space Grotesk, Kode Mono, Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Geologica:ital,wght@0,300..900;1,700;1,800;1,900&family=Space+Grotesk:wght@500;600;700&family=Kode+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300..900&family=Kode+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Stylesheets -->
   <link rel="stylesheet" href="/src/styles/tokens.css" />
   <link rel="stylesheet" href="/src/styles/base.css" />
-  <link rel="stylesheet" href="/src/styles/hero.css" />
   <link rel="stylesheet" href="/src/styles/components.css" />
-  <link rel="stylesheet" href="/src/styles/os-theme.css" />
-  <link rel="stylesheet" href="/src/styles/direction-hero.css" />
+  <link rel="stylesheet" href="/src/styles/landing.css" />
+
+  <!-- Masque la chute du titre avant l'effet machine à écrire (pas de flash), sauf reduced-motion -->
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-typing');
+    }
+  </script>
 </head>
-<body>
+<body class="lp-page">
+
+  <!-- Trame d'atelier interactive (fallback CSS statique si reduced-motion / tactile) -->
+  <canvas id="canvas-dot-grid" aria-hidden="true"></canvas>
+
+  <a class="lp-skip-link" href="#main">Aller au contenu</a>
 
   <!-- =========================================================================
-       1. OS TOP MENUBAR (Retro-Modern Olin.os Header)
+       HEADER OS TRANSVERSE (.olin-header — Figma Header 4515:45981)
+       Même balisage sur toutes les pages du site
        ========================================================================= -->
-  <header class="os-menubar">
-    <div class="os-menu-left">
-      <a href="#hero" class="os-logo-brand" id="os-menu-home">
-        <img src="/assets/olin_logo_riso.png" alt="OLN Logo" class="os-logo-img os-logo-light" />
-        <img src="/assets/olin_logo_white.png" alt="OLN Logo" class="os-logo-img os-logo-dark" />
-        <div class="os-menubar-posture">
-          <span>PORTFOLIO // 2026</span> • <strong>SENIOR PRODUCT DESIGNER &amp; BUILDER</strong>
-        </div>
-      </a>
-      <ul class="os-menu-items">
-        <li><a href="#hero">Bureau</a></li>
-        <li><a href="#atelier">Atelier</a></li>
-        <li><a href="#projets">Projets</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="/proposition_2.html" style="background: #6900FF; color: #FFFFFF !important; padding: 3px 10px; border-radius: 9999px; font-weight: 700;">★ Proposition n°2</a></li>
-      </ul>
+  <header class="olin-header" data-site-header>
+    <a class="olin-header__brand" href="/">
+      <img src="/assets/olin_logo_icon.svg" alt="Olin.os — accueil" width="36" height="36" />
+    </a>
+    <nav class="olin-header__nav" aria-label="Navigation principale">
+      <a href="/#hero">Bureau</a>
+      <a href="/#projets">Projets</a>
+      <a href="/#services">Services</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="olin-header__right">
+      <span class="olin-status-tag"><span class="olin-status-tag__dot" aria-hidden="true"></span>DISPONIBLE // OCTOBRE 2026</span>
+      <button type="button" class="olin-menu-btn" aria-expanded="false" aria-controls="olin-menu-panel" aria-label="Ouvrir le menu" data-menu-toggle>
+        <span class="olin-menu-btn__face">
+          <svg width="15" height="15" viewBox="0 0 15 15" aria-hidden="true"><path d="M0 6.66667V0H6.66667V6.66667H0ZM0 15V8.33333H6.66667V15H0ZM8.33333 6.66667V0H15V6.66667H8.33333ZM8.33333 15V8.33333H15V15H8.33333ZM1.66667 5H5V1.66667H1.66667V5ZM10 5H13.3333V1.66667H10V5ZM10 13.3333H13.3333V10H10V13.3333ZM1.66667 13.3333H5V10H1.66667V13.3333Z" fill="#242237" /></svg>
+        </span>
+      </button>
     </div>
-
-    <div class="os-menu-right">
-      <!-- Signature Mode Switcher (Design ⟷ Builder) -->
-      <div class="os-mode-switch" id="os-mode-switch" role="group" aria-label="Mode Olin.os">
-        <button type="button" class="mode-btn active" id="btn-mode-design" data-mode="design" title="Mode Design : Vision, Stickers &amp; Storytelling">
-          <span>🎨</span> <span>Design</span>
-        </button>
-        <button type="button" class="mode-btn" id="btn-mode-builder" data-mode="builder" title="Mode Builder : Code, APIs &amp; Architecture">
-          <span>⚡️</span> <span>Builder</span>
-        </button>
-      </div>
-
-      <div class="os-status-pill">
-        <span class="os-status-dot"></span>
-        <span>DISPONIBLE • Q3/Q4 2026</span>
-      </div>
-      <div class="os-clock" id="os-live-clock">Montaigu 17:35:00</div>
+    <div class="olin-header__panel" id="olin-menu-panel" data-menu-panel>
+      <a href="/#hero">Bureau</a>
+      <a href="/#projets">Projets</a>
+      <a href="/#services">Services</a>
+      <a href="/#contact">Contact</a>
+      <span class="olin-status-tag"><span class="olin-status-tag__dot" aria-hidden="true"></span>DISPONIBLE // OCTOBRE 2026</span>
     </div>
   </header>
 
-  <!-- =========================================================================
-       MAIN DESKTOP CANVAS (Accessible, Airy & Poetic)
-       ========================================================================= -->
-  <main class="container" style="padding-top: 24px; padding-bottom: 80px;">
+  <main id="main">
 
-    <!-- -----------------------------------------------------------------------
-         ACTE 1: LE HERO CANVAS OUVERT (Inspiration UMI)
-         ----------------------------------------------------------------------- -->
-    <!-- -----------------------------------------------------------------------
-         ACTE 1: LE HERO CANVAS DIRECTION (Inspiration Figma Olin)
-         ----------------------------------------------------------------------- -->
-    <div class="parallax-wrapper">
-      <section id="hero" class="direction-hero-section">
-        
-        <!-- Top bar floating stickers -->
-        <div class="direction-top-bar">
-          <div class="direction-sticker-brand">
-            <svg class="sticker-window-icon" width="44" height="44" viewBox="0 0 48 48" fill="none">
-              <rect x="6" y="8" width="34" height="30" rx="6" transform="rotate(-6 23 23)" fill="#FFFFFF" stroke="#0F0C20" stroke-width="2.5"/>
-              <rect x="6" y="8" width="34" height="8" rx="4" transform="rotate(-6 23 23)" fill="#0F0C20"/>
-              <circle cx="12" cy="12" r="1.5" transform="rotate(-6 23 23)" fill="#FFFFFF"/>
-              <circle cx="16" cy="12" r="1.5" transform="rotate(-6 23 23)" fill="#FFFFFF"/>
-              <path d="M14 26C16 29 22 30 26 25" transform="rotate(-6 23 23)" stroke="#0F0C20" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
+    <!-- =======================================================================
+         B. HERO ZONE (60 / 40) — Accroche asymétrique + mascotte + cartouche OS
+         ======================================================================= -->
+    <section id="hero" class="lp-hero" aria-labelledby="lp-title">
+      <div class="lp-container lp-hero__inner">
+        <h1 id="lp-title" class="lp-hero__title" aria-label="Transformons vos produits en expériences client uniques !">
+          <span class="lp-hero__line lp-hero__line--left" aria-hidden="true" data-weight-ramp>Transformons vos produits</span>
+          <!-- Mascotte « Fenêtre Souriante » : passerelle entre l'amorce et la chute -->
+          <img class="lp-hero__mascot" src="/assets/olin_logo_icon.svg" alt="" width="220" height="220" />
+          <span class="lp-hero__line lp-hero__line--right" aria-hidden="true"><span data-typewriter>en expériences client uniques !</span><span class="lp-caret" data-typewriter-caret>_</span></span>
+        </h1>
 
-          <div class="direction-pill-status">
-            <span class="status-pulse-green"></span>
-            <span class="status-text">DISPONIBLE · Q3/Q4 2026</span>
-          </div>
+        <div class="lp-hero__actions">
+          <a class="olin-btn olin-btn--primary lp-hero__cta" href="#contact">
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.2 1.5 5.6 1l1.3 3.1-1.5 1.1a8 8 0 0 0 5.4 5.4l1.1-1.5 3.1 1.3-.5 2.4c-.1.6-.6 1-1.2 1C6.8 13.8 2.2 9.2 2.2 2.7c0-.6.4-1.1 1-1.2Z" fill="currentColor" /></svg>
+            on en discute ?
+          </a>
+          <a class="olin-link" href="#projets">explorez les projets <span class="olin-link-arrow" aria-hidden="true">↓</span></a>
         </div>
 
-        <!-- Grand Titre Asymétrique Studio -->
-        <div class="direction-title-block">
-          <div class="title-row row-1">
-            <span class="font-serif-ital">TRANS</span><span class="font-sans-heavy-ital">FORMONS</span>
+        <!-- Mini-player Brain.fm sous les CTA, avec le curseur FigJam qui vient le survoler -->
+        <div class="lp-hero__ambience">
+          <div class="olin-brainfm-player olin-brainfm-player--pill" data-brainfm-player>
+            <button type="button" class="olin-brainfm-player__btn-play" aria-pressed="false" aria-label="Lancer ou mettre en pause la musique de concentration Brain.fm">
+              <svg class="olin-brainfm-player__icon--play" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.8v8.4L10 6 3 1.8Z" fill="currentColor" /></svg>
+              <svg class="olin-brainfm-player__icon--pause" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 1.5h2.5v9H2.5zM7 1.5h2.5v9H7z" fill="currentColor" /></svg>
+            </button>
+            <span class="olin-brainfm-equalizer" aria-hidden="true">
+              <span class="olin-brainfm-equalizer__bar"></span>
+              <span class="olin-brainfm-equalizer__bar"></span>
+              <span class="olin-brainfm-equalizer__bar"></span>
+              <span class="olin-brainfm-equalizer__bar"></span>
+            </span>
+            <span class="olin-brainfm-player__meta">
+              <span class="olin-brainfm-player__badge">FOCUS</span>
+              <span class="olin-brainfm-player__track">Kyoto // 40Hz Beta Flow</span>
+            </span>
           </div>
-          <div class="title-row row-2">
-            <span class="font-sans-heavy-ital">VOS SERVICES</span>
-          </div>
-          <div class="title-row row-3-purple">
-            <div class="purple-line-1">
-              <span class="font-sans-heavy-ital color-purple">EN EXPÉRIENCES</span>
-            </div>
-            <div class="purple-line-2">
-              <span class="font-sans-heavy-ital color-purple">CLIENT UNIQUES !</span><span class="cursor-blink">_</span>
-            </div>
+          <div class="olin-cursor-figjam lp-hero__cursor" aria-hidden="true">
+            <svg class="olin-cursor-figjam__hand" viewBox="0 0 26 26" fill="none"><path d="M10.3955 5.40039C11.2789 5.40052 11.9951 6.11637 11.9951 7V9.22559C12.268 8.73334 12.7928 8.40039 13.3955 8.40039C14.0848 8.40049 14.6695 8.83703 14.8945 9.44824C15.1199 8.83759 15.7066 8.40234 16.3955 8.40234C17.2789 8.40248 17.9951 9.11835 17.9951 10.002V10.2256C18.268 9.73334 18.7928 9.40039 19.3955 9.40039C20.2789 9.40052 20.9951 10.1164 20.9951 11V17C20.9951 20.0927 18.4882 22.5995 15.3955 22.5996H14.3955C12.6758 22.5996 11.1376 21.8231 10.1113 20.6045L10.0195 20.5254L5.01465 15.8193C4.26656 15.116 4.19111 13.9365 4.84473 13.1445C5.48236 12.3725 6.59821 12.2326 7.4043 12.8281L8.79492 13.8555V7C8.79492 6.11633 9.51184 5.40039 10.3955 5.40039Z" fill="#FAFAFA" stroke="#242237" stroke-width="1.2" /></svg>
+            <span class="olin-cursor-figjam__tag">Josselin Hillion</span>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Zone inférieure du Viewport 1 (Terminal Readme à gauche + Nav Canvas à droite) -->
-        <div class="direction-viewport-lower">
-          
-          <!-- Terminal Readme.md -->
-          <div class="direction-readme-card" id="readme-terminal">
-            <div class="readme-header">
-              <div class="readme-dots">
-                <span></span><span></span><span></span>
-              </div>
-              <div class="readme-title">Readme.md</div>
-            </div>
-            <div class="readme-body">
-              <p>En tant que designer de services, j'allie UX strat, CX et intelligence artificielle pour transformer vos défis en solutions créatives.</p>
+    <!-- =======================================================================
+         C. PACK DE STICKERS VINYLES D'ATELIER
+         ======================================================================= -->
+    <section class="lp-stickers" aria-labelledby="lp-stickers-title">
+      <h2 id="lp-stickers-title" class="lp-sr-only">Ils m'ont fait confiance</h2>
+      <ul class="lp-container lp-stickers__board">
+        <li class="olin-sticker lp-sticker--wide" style="--olin-sticker-tilt: -4deg; --lp-dx: 0px; --lp-dy: 6px"><img src="/assets/stickers/sticker_client_excibat.svg" alt="Excibat" width="670" height="208" /></li>
+        <li class="olin-sticker" style="--olin-sticker-tilt: 5deg; --lp-dx: -4px; --lp-dy: -14px"><img src="/assets/stickers/sticker_client_renault_group.svg" alt="Renault Group" width="282" height="128" /></li>
+        <li class="olin-sticker lp-sticker--round" style="--olin-sticker-tilt: -8deg; --lp-dx: 10px; --lp-dy: 18px"><img src="/assets/stickers/sticker_client_om.svg" alt="Olympique de Marseille" width="202" height="200" /></li>
+        <li class="olin-sticker olin-sticker--cut" style="--olin-sticker-tilt: 3deg; --lp-dx: -6px; --lp-dy: -4px"><img src="/assets/stickers/sticker_client_royal_canin.svg" alt="Royal Canin" width="266" height="91" /></li>
+        <li class="olin-sticker lp-sticker--round" style="--olin-sticker-tilt: 7deg; --lp-dx: 4px; --lp-dy: 14px"><img src="/assets/stickers/sticker_client_mastercard.svg" alt="Mastercard" width="283" height="200" /></li>
+        <li class="olin-sticker" style="--olin-sticker-tilt: -3deg; --lp-dx: 0px; --lp-dy: -10px"><img src="/assets/stickers/sticker_client_numa.svg" alt="Numa" width="604" height="200" /></li>
+        <li class="olin-sticker lp-sticker--round" style="--olin-sticker-tilt: -6deg; --lp-dx: 8px; --lp-dy: 8px"><img src="/assets/stickers/sticker_joujou_riso.svg" alt="JOUJOU" width="137" height="109" /></li>
+        <li class="olin-sticker" style="--olin-sticker-tilt: 4deg; --lp-dx: -8px; --lp-dy: -6px"><img src="/assets/stickers/sticker_client_bollore_logistics.svg" alt="Bolloré Logistics" width="252" height="120" /></li>
+      </ul>
+    </section>
+
+    <!-- =======================================================================
+         IDENTITÉ — PopUp « Olin.md » + PopUp « profil-pic.png »
+         (Figma 4515:46078 et 4515:46095, la photo chevauche en bas à droite)
+         ======================================================================= -->
+    <section class="lp-identity lp-container" aria-labelledby="lp-olinmd-title">
+      <div class="lp-identity__desk">
+        <div class="olin-popup lp-olinmd">
+          <div class="olin-popup__header"><span class="lp-olinmd__icon" aria-hidden="true">&gt;_</span>Olin.md</div>
+          <div class="olin-popup__body lp-olinmd__body">
+            <p class="lp-olinmd__name">Josselin Hillion</p>
+            <h2 id="lp-olinmd-title" class="lp-olinmd__role">Senior Product Designer &amp; Builder</h2>
+
+            <div class="lp-olinmd__prompt">
+              <p class="lp-olinmd__prompt-head">→ Master_Prompt</p>
+              <p><span class="lp-olinmd__key">RÔLE :</span> En tant que designer produit senior, j'allie UX strat, CX et intelligence artificielle pour transformer vos défis en solutions créatives.</p>
               <p>Mon approche centrée sur l'utilisateur garantit une expérience fluide et engageante, tout en optimisant les processus métiers.</p>
-              <div class="readme-actions">
-                <a href="#projets" class="btn-readme-primary">
-                  <span>explorez les projets</span>
-                  <span class="btn-arrow">↓</span>
-                </a>
-                <a href="#contact" class="btn-readme-link">
-                  <span>discutons</span>
-                  <span class="btn-arrow">↗</span>
-                </a>
-              </div>
+              <dl>
+                <div><dt>APPROCHE :</dt> <dd>Lean UX, Design thinking, Agile</dd></div>
+                <div><dt>OUTILS :</dt> <dd>Figma/FigJam, Antigravity, n8n, Bubble</dd></div>
+                <div><dt>SECTEURS :</dt> <dd>SaaS B2B, Industrie 4.0, Construction, Mobilité, Finance, Retail</dd></div>
+              </dl>
             </div>
-          </div>
 
-          <!-- Nav Canvas Flottante (Angle Droit) -->
-          <div class="direction-canvas-panel">
-            <div class="canvas-panel-header">OLIN.OS CANVAS <span id="canvas-scroll-pct">0%</span></div>
-            <nav class="canvas-panel-nav">
-              <a href="#hero" class="canvas-nav-item active">BUREAU</a>
-              <a href="#atelier" class="canvas-nav-item">ATELIER</a>
-              <a href="#projets" class="canvas-nav-item">PROJETS</a>
-              <a href="#contact" class="canvas-nav-item highlight">DISCUTONS !</a>
-            </nav>
-          </div>
-
-        </div>
-
-        <!-- Carte About this person (À cheval sur le pli 810px) -->
-        <div class="direction-about-person-card" id="about-person-window">
-          <div class="about-window-header">
-            <div class="about-window-dots">
-              <span></span><span></span><span></span>
-            </div>
-            <div class="about-window-title">About this person</div>
-          </div>
-          <div class="about-window-body">
-            <div class="about-avatar-wrapper">
-              <div class="about-avatar-bg">
-                <img src="/assets/motif_patries_olin.svg" alt="" class="about-avatar-pattern" />
-                <img src="/assets/josselin_avatar_clean.png" alt="Josselin Hillion" class="about-avatar-photo" />
-              </div>
-            </div>
-            <h3 class="about-person-role">SENIOR PRODUCT<br />DESIGNER &amp; BUILDER</h3>
-            <div class="about-person-brand">OLIN</div>
-            <div class="about-person-name">name <strong>Josselin Hillion</strong></div>
-            <a href="#atelier" class="about-person-link">en savoir plus ↗</a>
+            <a class="olin-link lp-olinmd__link" href="#projets">plus de détails <span class="olin-link-arrow" aria-hidden="true">↗</span></a>
           </div>
         </div>
 
-        <!-- Quick alias anchor -->
-        <span id="bureau" style="display: block; position: relative; top: -100px; visibility: hidden;"></span>
-
-      </section>
-    </div>
-
-    <!-- Connector Acte 1 ➔ Acte 2 -->
-    <div class="svg-flow-connector">
-      <svg viewBox="0 0 480 64" preserveAspectRatio="none">
-        <path class="connector-line" d="M 240,0 C 240,32 240,32 240,64" />
-      </svg>
-      <span class="connector-tag">Acte 1 ➔ Acte 2 : De l'intention à l'atelier collaboratif</span>
-    </div>
-
-    <!-- -----------------------------------------------------------------------
-         ACTE 2: LE GRAND BOARD FIGJAM COLLABORATIF (Inspiration BOARDMIX)
-         ----------------------------------------------------------------------- -->
-    <div class="parallax-wrapper">
-      <div class="parallax-side-anchor left" style="top: 100px;">
-        <div class="parallax-card accent-purple">
-          📐 <strong>Design System</strong><br />
-          <span style="font-size: 10px; opacity: 0.85;">120+ tokens W3C</span>
-        </div>
-      </div>
-      <div class="parallax-side-anchor right" style="top: 140px;">
-        <div class="parallax-card accent-mint">
-          ⚡️ <strong>No-Code &amp; APIs</strong><br />
-          <span style="font-size: 10px; opacity: 0.85;">Prototypage fonctionnel</span>
-        </div>
+        <button type="button" class="olin-popup lp-profile" data-profile-open aria-haspopup="dialog" aria-label="Agrandir la photo de profil de Josselin Hillion">
+          <span class="olin-popup__header">profil-pic.png</span>
+          <span class="lp-profile__canvas" aria-hidden="true">
+            <span class="lp-profile__dots"></span>
+            <img class="lp-profile__frame" src="/assets/profile/profil_window_frame.svg" alt="" width="227" height="227" />
+            <img class="lp-profile__portrait" src="/assets/josselin_portrait_vector_window.svg" alt="" width="163" height="204" decoding="async" />
+            <span class="lp-profile__grain"></span>
+          </span>
+        </button>
       </div>
 
-      <!-- Quick alias anchors for minimap backward compatibility -->
-      <span id="profil" style="display: block; position: relative; top: -100px; visibility: hidden;"></span>
-      <span id="services" style="display: block; position: relative; top: -100px; visibility: hidden;"></span>
-
-      <section id="atelier" class="canvas-section">
-        <div class="canvas-section-header" style="margin-bottom: 24px;">
-          <div class="canvas-frame-tag" style="border-color: #8718DC; color: #8718DC; background: rgba(135, 24, 220, 0.08);">
-            <span>Frame: 02_Atelier // Posture, Méthode &amp; Systèmes Produit</span>
-            <span class="canvas-tag-meta">COLLABORATIF &amp; VIVANT</span>
-          </div>
-          <h2 class="canvas-section-title">L'ATELIER DES SUPERPOUVOIRS</h2>
-          <p class="canvas-section-sub">
-            Le board de travail partagé avec les équipes produit : post-its de cadrage, bulles de retours d'usage et code sans déperdition.
-          </p>
-        </div>
-
-        <!-- Master FigJam Board Component -->
-        <div class="figjam-unified-board">
-          <div class="figjam-board-header">
-            <div class="figjam-header-left">
-              <span class="figjam-board-dot"></span>
-              <span>FigJam Board // Discovery, Systems &amp; Delivery</span>
-              <span class="figjam-sticker yellow" style="font-size: 9.5px; padding: 2px 8px; margin-left: 8px;">BOARD LIVE</span>
-            </div>
-            <div class="figjam-avatars-row">
-              <span style="font-size: 10.5px; opacity: 0.9; margin-right: 6px;">Collaborateurs :</span>
-              <div class="figjam-mini-avatar" title="Josselin (Owner)">JH</div>
-              <div class="figjam-mini-avatar purple" title="Product Manager">PM</div>
-              <div class="figjam-mini-avatar mint" title="Lead Dev">DV</div>
-            </div>
-          </div>
-
-          <div class="figjam-board-body">
-            <div class="figjam-unified-grid">
-              
-              <!-- Sticky 1: Discovery & Terrain (Jaune) -->
-              <div class="figjam-sticky-note yellow">
-                <div class="figjam-washi"></div>
-                <div class="sticky-top-meta">
-                  <span class="sticky-cat">01 / DISCOVERY</span>
-                  <span class="figjam-sticker yellow" style="font-size: 9px; padding: 1px 6px;">🎯 FOCUS</span>
-                </div>
-                <h3>IMMERSION SANS FILTRE</h3>
-                <p>
-                  Cartographie des irritants réels. Observer les gestes métiers là où ils se déroulent : sur les chantiers poussiéreux, en concession ou dans les cockpits de supervision.
-                </p>
-                <div class="sticky-author-bar">
-                  <span>✍️ Josselin (Product)</span>
-                  <span>15j sur chantiers</span>
-                </div>
-
-                <!-- Real Attached Comment Thread -->
-                <div class="figjam-comment-card">
-                  <div class="figjam-comment-header">
-                    <span style="color: #8718DC; font-weight: 800;">💬 Josselin Hillion</span>
-                    <span>• il y a 2h</span>
-                  </div>
-                  <div class="figjam-comment-body">
-                    « Sur le chantier BTP, les artisans avaient les doigts sales et portaient des gants. C'est là qu'on a décidé des boutons géants de 56px et du mode hors-ligne absolu. »
-                  </div>
-                  <div class="figjam-reaction-cluster">
-                    <span class="figjam-reaction-chip">👍 12</span>
-                    <span class="figjam-reaction-chip">💯 8</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Sticky 2: Code & Production (Menthe) -->
-              <div class="figjam-sticky-note mint">
-                <div class="figjam-washi"></div>
-                <div class="sticky-top-meta">
-                  <span class="sticky-cat">02 / CODE &amp; PROD</span>
-                  <span class="figjam-sticker mint" style="font-size: 9px; padding: 1px 6px;">⚡️ SHIPPED</span>
-                </div>
-                <h3>DU CONCEPT AU COMMIT</h3>
-                <p>
-                  Zéro déperdition d'intention. Maîtrise des composants React, HTML/CSS au cordeau, APIs et Webhooks. Ce qui est maquetté est exactement ce qui tourne en production.
-                </p>
-                <div class="sticky-author-bar">
-                  <span>⚡️ Josselin (Builder)</span>
-                  <span>100% Code Prod</span>
-                </div>
-
-                <!-- Real Attached Comment Thread -->
-                <div class="figjam-comment-card">
-                  <div class="figjam-comment-header">
-                    <span style="color: #059669; font-weight: 800;">💬 Tech Lead Ekino</span>
-                    <span>• validé</span>
-                  </div>
-                  <div class="figjam-comment-body">
-                    « Travailler avec Josselin fait gagner un sprint complet par release : pas de handoff opaque, les tokens et les composants sont déjà prêts pour l'intégration. »
-                  </div>
-                  <div class="figjam-reaction-cluster">
-                    <span class="figjam-reaction-chip">🚀 15</span>
-                    <span class="figjam-reaction-chip">🔥 9</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Sticky 3: Scalabilité & Design Systems (Lavande) -->
-              <div class="figjam-sticky-note purple">
-                <div class="figjam-washi"></div>
-                <div class="sticky-top-meta">
-                  <span class="sticky-cat">03 / SCALABILITÉ</span>
-                  <span class="figjam-sticker purple" style="font-size: 9px; padding: 1px 6px;">📐 SYSTÈMES</span>
-                </div>
-                <h3>SYSTÈMES VIVANTS</h3>
-                <p>
-                  Standardisation rigoureuse des bibliothèques de composants, documentation interactive et tokens partagés entre design et engineering (W3C, WCAG AAA).
-                </p>
-                <div class="sticky-author-bar">
-                  <span>📐 Josselin (System)</span>
-                  <span>120+ Tokens</span>
-                </div>
-
-                <!-- Real Attached Comment Thread -->
-                <div class="figjam-comment-card">
-                  <div class="figjam-comment-header">
-                    <span style="color: #8718DC; font-weight: 800;">💬 Direction Design</span>
-                    <span>• approuvé</span>
-                  </div>
-                  <div class="figjam-comment-body">
-                    « Un Design System n'est pas un musée de boutons, c'est le langage commun qui permet à l'équipe de concevoir 3x plus vite sans jamais régresser. »
-                  </div>
-                  <div class="figjam-reaction-cluster">
-                    <span class="figjam-reaction-chip">❤️ 11</span>
-                    <span class="figjam-reaction-chip">🎯 7</span>
-                  </div>
-                </div>
-              </div>
-
-            </div>
+      <dialog class="lp-lightbox" data-profile-dialog aria-label="Photo de profil de Josselin Hillion">
+        <div class="olin-popup lp-lightbox__window">
+          <div class="olin-popup__header">profil-pic.png</div>
+          <div class="lp-profile__canvas">
+            <span class="lp-profile__dots" aria-hidden="true"></span>
+            <img class="lp-profile__frame" src="/assets/profile/profil_window_frame.svg" alt="" width="227" height="227" />
+            <img class="lp-profile__portrait" src="/assets/josselin_portrait_vector_window.svg" alt="Portrait de Josselin Hillion, souriant, lunettes bleues, dans une fenêtre Olin.os" width="163" height="204" />
+            <span class="lp-profile__grain" aria-hidden="true"></span>
           </div>
         </div>
-      </section>
-    </div>
+        <form method="dialog">
+          <button class="lp-lightbox__close" type="submit" aria-label="Fermer la photo agrandie">✕</button>
+        </form>
+      </dialog>
+    </section>
 
-    <!-- Connector Acte 2 ➔ Acte 3 -->
-    <div class="svg-flow-connector">
-      <svg viewBox="0 0 480 64" preserveAspectRatio="none">
-        <path class="connector-line" d="M 240,0 C 240,32 240,32 240,64" />
-      </svg>
-      <span class="connector-tag">Acte 2 ➔ Acte 3 : De l'atelier aux preuves réelles</span>
-    </div>
-
-    <!-- -----------------------------------------------------------------------
-         ACTE 3: LE FINDER DE PROJETS AVEC SIDE-PANEL (Inspiration RETRO DESKTOP / SLACK)
-         ----------------------------------------------------------------------- -->
-    <div class="parallax-wrapper">
-      <div class="parallax-side-anchor left" style="top: 80px;">
-        <div class="parallax-card accent-yellow">
-          🏗️ <strong>Terrain BTP</strong><br />
-          <span style="font-size: 10px; opacity: 0.85;">Testé sous la pluie</span>
-        </div>
-      </div>
-      <div class="parallax-side-anchor right" style="top: 120px;">
-        <div class="parallax-card accent-blue">
-          🏎️ <strong>Retail Renault</strong><br />
-          <span style="font-size: 10px; opacity: 0.85;">Validation COMEX</span>
-        </div>
+    <!-- =======================================================================
+         D. PROJETS — 1 étage pleine largeur par projet
+         ======================================================================= -->
+    <section id="projets" class="lp-projects" aria-labelledby="lp-projects-title">
+      <div class="lp-container">
+        <header class="lp-section-head">
+          <span class="lp-eyebrow">// Frame 02 : mes derniers projets</span>
+          <h2 id="lp-projects-title" class="lp-section-title">Projets</h2>
+        </header>
       </div>
 
-      <section id="projets" class="canvas-section">
-        <div class="canvas-section-header">
-          <div class="canvas-frame-tag" style="border-color: #38BDF8; color: #0369A1; background: rgba(56, 189, 248, 0.08);">
-            <span>Frame: 03_Cas_D_Etudes // Preuves en Production &amp; Hardware</span>
-            <span class="canvas-tag-meta">FINDER DÉTAILLÉ</span>
-          </div>
-          <h2 class="canvas-section-title">LES DOSSIERS DE PROJETS EN PRODUCTION</h2>
-          <p class="canvas-section-sub">
-            Chaque cas est incarné dans son terminal métier réel. Sélectionnez un dossier dans la colonne de gauche pour explorer la solution.
-          </p>
-        </div>
+      <!-- Étage 1 — EXCIBAT -->
+      <article class="lp-floor lp-container" aria-labelledby="lp-excibat-title">
+        <div class="lp-floor__pitch">
+          <span class="olin-tag olin-tag--neutral olin-tag--tag">B2B SaaS / Proptech</span>
+          <h3 id="lp-excibat-title" class="lp-floor__title">Excibat <span>(SaaS BTP)</span></h3>
+          <p class="lp-floor__lead">De la dette technique à la production : restructuration produit &amp; intégrations APIs pour une webapp scalable.</p>
+          <p class="lp-floor__text">Un fondateur bloqué par une architecture SaaS instable, un métier BTP dense (PV de réception, réserves d'artisans, délais légaux GPA) et un besoin impératif de signatures certifiées et de facturation automatisée. J'ai simplifié les parcours promoteurs, conducteurs de travaux et acquéreurs, puis branché la maquette fonctionnelle directement sur le backend et ses webhooks.</p>
 
-        <!-- Master-Detail Finder Window Component -->
-        <div class="finder-window">
-          <!-- Chrome Bar with Mac Dots and Folder Path -->
-          <div class="finder-chrome-bar">
-            <div class="screen-dots">
-              <span class="os-dot close"></span>
-              <span class="os-dot min"></span>
-              <span class="os-dot max"></span>
-            </div>
-            <div class="finder-path-badge">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-              <span>Olin.os / 📁 Projets_Production / 2026_Case_Studies</span>
-            </div>
-            <div class="screen-status-badge">3 ÉTUDES STAR VÉRIFIÉES</div>
-          </div>
+          <ul class="lp-floor__metrics" aria-label="Chiffres clés Excibat">
+            <li class="olin-metric-card">
+              <span class="olin-metric-card__value">4.8/5</span>
+              <span class="olin-metric-card__label">satisfaction des utilisateurs</span>
+            </li>
+            <li class="olin-metric-card">
+              <span class="olin-metric-card__value">45 j</span>
+              <span class="olin-metric-card__label">de cycle de développement</span>
+            </li>
+          </ul>
 
-          <!-- Split View: Sidebar + Stage -->
-          <div class="finder-split-view">
-            <!-- Left Sidebar Navigation -->
-            <aside class="finder-sidebar">
-              <div>
-                <div class="finder-group-title">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-                  <span>En Production // Hardware Dédié</span>
-                </div>
-                <div class="finder-folder-list">
-                  <!-- Folder 1: Excibat (Active by default) -->
-                  <div class="finder-folder-item active" data-finder-target="excibat">
-                    <div class="finder-folder-left">
-                      <span>📱</span>
-                      <span>01_Excibat_BTP.app</span>
-                    </div>
-                    <span class="finder-badge">TABLETTE</span>
-                  </div>
+          <ul class="lp-floor__tags" aria-label="Stack technique">
+            <li class="olin-tag olin-tag--blue olin-tag--pill">Bubble</li>
+            <li class="olin-tag olin-tag--blue olin-tag--pill">Stripe</li>
+            <li class="olin-tag olin-tag--blue olin-tag--pill">Oodrive</li>
+          </ul>
 
-                  <!-- Folder 2: Renault Moments -->
-                  <div class="finder-folder-item" data-finder-target="renault">
-                    <div class="finder-folder-left">
-                      <span>🏎️</span>
-                      <span>02_Renault_Moments.hmi</span>
-                    </div>
-                    <span class="finder-badge">SHOWROOM</span>
-                  </div>
-
-                  <!-- Folder 3: DataCity Paris -->
-                  <div class="finder-folder-item" data-finder-target="datacity">
-                    <div class="finder-folder-left">
-                      <span>📊</span>
-                      <span>03_DataCity_Paris.sig</span>
-                    </div>
-                    <span class="finder-badge">CONSOLE</span>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <div class="finder-group-title">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-                  <span>Archives &amp; Labs</span>
-                </div>
-                <div class="finder-folder-list">
-                  <div class="finder-folder-item" style="opacity: 0.65; cursor: default;">
-                    <div class="finder-folder-left">
-                      <span>🐕</span>
-                      <span>04_Royal_Canin_Retail.app</span>
-                    </div>
-                    <span class="finder-badge" style="font-size: 8.5px;">BORNE PHYGITALE</span>
-                  </div>
-                  <div class="finder-folder-item" style="opacity: 0.65; cursor: default;">
-                    <div class="finder-folder-left">
-                      <span>🏁</span>
-                      <span>05_Alpine_A290_Cockpit.hmi</span>
-                    </div>
-                    <span class="finder-badge" style="font-size: 8.5px;">PROTOTYPE</span>
-                  </div>
-                </div>
-              </div>
-            </aside>
-
-            <!-- Right Stage: Active Project Viewer -->
-            <div class="finder-stage">
-
-              <!-- Project 1: Excibat Platform (Active) -->
-              <div class="finder-project-card active" data-finder-id="excibat">
-                <div class="project-computer-screen" style="border: 1.5px solid #CBD5E1; box-shadow: 0 10px 28px rgba(0,0,0,0.06); margin-bottom: 0;">
-                  <div class="screen-chrome-bar">
-                    <div class="screen-dots">
-                      <span class="os-dot close"></span>
-                      <span class="os-dot min"></span>
-                      <span class="os-dot max"></span>
-                    </div>
-                    <div class="screen-url-badge">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                      <span>https://excibat.app/chantier-loire-atlantique</span>
-                    </div>
-                    <div class="screen-status-badge">TABLETTE CHANTIER // OFFLINE-FIRST</div>
-                  </div>
-                  <div class="screen-viewport">
-                    <article class="project-os-card" style="border: none; padding: 0; box-shadow: none; margin: 0;">
-                      <div class="project-os-icon">
-                        <svg class="pixel-icon-svg" viewBox="0 0 24 24" fill="#4353FF">
-                          <path d="M4 4h16v2H4V4zm0 4h10v2H4V8zm0 4h16v2H4v-2zm0 4h12v2H4v-2zm0 4h7v2H4v-2z"/>
-                        </svg>
-                      </div>
-                      <div class="project-os-content">
-                        <h4>
-                          <span>Excibat Platform : SaaS GED pour le BTP</span>
-                          <span class="figjam-sticker yellow" style="font-size: 9.5px; padding: 2px 8px;">🏗️ TESTÉ SUR CHANTIER</span>
-                        </h4>
-                        <p>
-                          Refonte ergonomique de l'application de pilotage et d'estimation de chantiers pour artisans et conducteurs de travaux. Architecture modulaire, synchronisation locale offline-first et contrastes renforcés en plein soleil.
-                        </p>
-                        <div class="project-os-metrics-row">
-                          <span class="metric-chip">+35% gain d'efficacité terrain</span>
-                          <span class="metric-chip">-60% erreurs de devis</span>
-                          <span class="metric-chip">10 000+ chantiers pilotés</span>
-                        </div>
-                        <div class="builder-reveal-layer">
-                          <code>// ARCHITECTURE: React • Tailwind • Sync SQLite offline-first • APIs Oodrive GED &amp; Stripe Billing</code>
-                        </div>
-                      </div>
-                      <div class="project-os-actions">
-                        <button class="project-btn" data-project="excibat" style="width: 100%;">
-                          <span>Ouvrir l'étude STAR complète</span>
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                        </button>
-                        <span style="font-family: var(--font-tech); font-size: 10.5px; color: var(--color-muted-blueprint);">SaaS B2B • BTP &amp; GED</span>
-                      </div>
-                    </article>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Project 2: Renault Moments -->
-              <div class="finder-project-card" data-finder-id="renault">
-                <div class="project-computer-screen" style="border: 1.5px solid #CBD5E1; box-shadow: 0 10px 28px rgba(0,0,0,0.06); margin-bottom: 0;">
-                  <div class="screen-chrome-bar">
-                    <div class="screen-dots">
-                      <span class="os-dot close"></span>
-                      <span class="os-dot min"></span>
-                      <span class="os-dot max"></span>
-                    </div>
-                    <div class="screen-url-badge">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
-                      <span>hmi://renault-moments/showroom-3d</span>
-                    </div>
-                    <div class="screen-status-badge">BORNE SHOWROOM // 100% RÉSEAU FRANCE</div>
-                  </div>
-                  <div class="screen-viewport">
-                    <article class="project-os-card" style="border: none; padding: 0; box-shadow: none; margin: 0;">
-                      <div class="project-os-icon">
-                        <svg class="pixel-icon-svg" viewBox="0 0 24 24" fill="#8718DC">
-                          <path d="M5 9h14v2h2v4h-2v2h-3v-2H8v2H5v-2H3v-4h2V9zm2 2v2h10v-2H7zm-1 5a1 1 0 100-2 1 1 0 000 2zm12 0a1 1 0 100-2 1 1 0 000 2z"/>
-                        </svg>
-                      </div>
-                      <div class="project-os-content">
-                        <h4>
-                          <span>Renault Moments : Vision DCX &amp; Retail Tablette</span>
-                          <span class="figjam-sticker purple" style="font-size: 9.5px; padding: 2px 8px;">🏎️ VALIDÉ COMEX</span>
-                        </h4>
-                        <p>
-                          Expérience interactive sur iPad en concession automobile. Accompagnement sur-mesure du client, rendu 3D des teintes et finitions en temps réel, et signature numérique immédiate.
-                        </p>
-                        <div class="project-os-metrics-row">
-                          <span class="metric-chip">100% réseau France</span>
-                          <span class="metric-chip">&lt; 2s temps de réponse 3D</span>
-                          <span class="metric-chip">+24% signatures en direct</span>
-                        </div>
-                        <div class="builder-reveal-layer">
-                          <code>// ENGINE: iPad Pro WebGL • Latence tactile &lt; 16ms • Déploiement 100% réseau France</code>
-                        </div>
-                      </div>
-                      <div class="project-os-actions">
-                        <button class="project-btn" data-project="renault" style="width: 100%;">
-                          <span>Ouvrir l'étude STAR complète</span>
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                        </button>
-                        <span style="font-family: var(--font-tech); font-size: 10.5px; color: var(--color-muted-blueprint);">Automobile • Retail</span>
-                      </div>
-                    </article>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Project 3: DataCity Paris -->
-              <div class="finder-project-card" data-finder-id="datacity">
-                <div class="project-computer-screen" style="border: 1.5px solid #CBD5E1; box-shadow: 0 10px 28px rgba(0,0,0,0.06); margin-bottom: 0;">
-                  <div class="screen-chrome-bar">
-                    <div class="screen-dots">
-                      <span class="os-dot close"></span>
-                      <span class="os-dot min"></span>
-                      <span class="os-dot max"></span>
-                    </div>
-                    <div class="screen-url-badge">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                      <span>https://datacity.paris/supervision-grid</span>
-                    </div>
-                    <div class="screen-status-badge">CONSOLE TEMPS RÉEL // 1M+ EVTS/JOUR</div>
-                  </div>
-                  <div class="screen-viewport">
-                    <article class="project-os-card" style="border: none; padding: 0; box-shadow: none; margin: 0;">
-                      <div class="project-os-icon">
-                        <svg class="pixel-icon-svg" viewBox="0 0 24 24" fill="#059669">
-                          <path d="M3 3h4v4H3V3zm7 0h4v4h-4V3zm7 0h4v4h-4V3zm-7 7h4v4h-4v-4zm-7 7h4v4H3v-4zm7 0h4v4h-4v-4zm7 0h4v4h-4v-4zM5 7v10h2V7H5zm7 7v3h2v-3h-2zm7-7v10h2V7h-2z"/>
-                        </svg>
-                      </div>
-                      <div class="project-os-content">
-                        <h4>
-                          <span>DataCity Paris : Supervision Territoriale &amp; Flux</span>
-                          <span class="figjam-sticker mint" style="font-size: 9.5px; padding: 2px 8px;">📊 DATA LIMPIDE</span>
-                        </h4>
-                        <p>
-                          Cockpit cartographique SIG pour analyser et réguler les flux de mobilité urbaine et d'énergie. Traduction de millions de points de données spatio-temporels en alertes d'action limpides.
-                        </p>
-                        <div class="project-os-metrics-row">
-                          <span class="metric-chip">1M+ événements/jour</span>
-                          <span class="metric-chip">Cartographie temps réel</span>
-                          <span class="metric-chip">Multi-collectivités</span>
-                        </div>
-                        <div class="builder-reveal-layer">
-                          <code>// DATA ENGINE: 1M+ événements/jour • Mapbox GL Vector Shaders • Filtres spatio-temporels</code>
-                        </div>
-                      </div>
-                      <div class="project-os-actions">
-                        <button class="project-btn" data-project="datacity" style="width: 100%;">
-                          <span>Ouvrir l'étude STAR complète</span>
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                        </button>
-                        <span style="font-family: var(--font-tech); font-size: 10.5px; color: var(--color-muted-blueprint);">DataViz • Smart City</span>
-                      </div>
-                    </article>
-                  </div>
-                </div>
-              </div>
-
-            </div>
+          <div class="olin-sticky lp-sticky--neon">
+            <div class="olin-sticky__header"><span>Le build comme preuve</span></div>
+            <p>Une webapp en production : facturation Stripe et signatures Oodrive certifiées, sans dette technique.</p>
+            <p class="lp-floor__soon"><span class="olin-tag olin-tag--neutral olin-tag--pill">case study en préparation</span></p>
+            <a class="olin-sticky__action" href="mailto:olin.creativelab@gmail.com?subject=Cas%20Excibat">demander le cas complet ↗</a>
           </div>
         </div>
-      </section>
-    </div>
 
-    <!-- Connector Acte 3 ➔ Acte 4 -->
-    <div class="svg-flow-connector">
-      <svg viewBox="0 0 480 64" preserveAspectRatio="none">
-        <path class="connector-line" d="M 240,0 C 240,32 240,32 240,64" />
-      </svg>
-      <span class="connector-tag">Acte 3 ➔ Acte 4 : Ciel crépusculaire &amp; Prise de contact</span>
-    </div>
+        <!-- Moodboard d'ingénierie : APIs ➔ Workflows ➔ Webapp -->
+        <div class="olin-window lp-floor__visual">
+          <div class="olin-window__header"><span class="olin-window__title">excibat.flow — APIs ➔ Workflows ➔ Webapp</span></div>
+          <ol class="olin-window__body lp-flow">
+            <li class="lp-flow__step">
+              <span class="lp-flow__num">01 // APIs</span>
+              <div class="lp-flow__apis">
+                <span class="olin-sticker" style="--olin-sticker-tilt: -3deg"><img src="/assets/stickers/sticker_stripe.svg" alt="Stripe Billing" width="91" height="91" /></span>
+                <span class="olin-sticker" style="--olin-sticker-tilt: 4deg"><img src="/assets/stickers/sticker_oodrive_sign.svg" alt="Oodrive Sign" width="91" height="91" /></span>
+              </div>
+              <p class="lp-flow__caption">Stripe Billing (abonnements) · Oodrive Sign (e-signatures légales)</p>
+            </li>
+            <li class="lp-flow__step">
+              <span class="lp-flow__num">02 // Workflows</span>
+              <pre class="lp-flow__code"><code><span class="lp-code-muted">// Automatisation métier événementielle</span>
+<span class="lp-code-accent">&gt;</span> POST /api/webhooks/stripe-checkout
+<span class="lp-code-accent">&gt;</span> TRIGGER oodrive.generateLegalSignaturePackage()
+<span class="lp-code-muted">&lt; HTTP 200 OK · token de signature généré</span></code></pre>
+            </li>
+            <li class="lp-flow__step">
+              <span class="lp-flow__num">03 // Webapp</span>
+              <a class="olin-picture-frame" href="/assets/excibat/excibat_dashboard.png" target="_blank" rel="noopener" aria-label="Agrandir le dashboard promoteur Excibat (nouvel onglet)">
+                <div class="olin-photo-duotone">
+                  <img class="lp-flow__shot" src="/assets/excibat/excibat_dashboard.png" width="956" height="423" loading="lazy" alt="Dashboard promoteur Excibat : 14 programmes actifs, 128 signatures Oodrive, 18,4 k€ de revenus Stripe récurrents et tableau des programmes immobiliers avec statut GPA, signatures et facturation." />
+                  <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+                </div>
+                <div class="olin-picture-frame__caption">
+                  <div class="olin-picture-frame__text">
+                    <span class="olin-picture-frame__title">Dashboard promoteur // Excibat</span>
+                    <span>Signatures Oodrive et facturation Stripe.</span>
+                  </div>
+                  <span class="olin-picture-frame__zoom">Agrandir ↗</span>
+                </div>
+              </a>
+            </li>
+          </ol>
+        </div>
+      </article>
 
-    <!-- -----------------------------------------------------------------------
-         ACTE 4: CIEL ONIRIQUE (Inspiration GOLDEN) & BENTO APPLE
-         ----------------------------------------------------------------------- -->
-    <div class="parallax-wrapper">
-      <div class="parallax-side-anchor left" style="top: 40px;">
-        <div class="parallax-card accent-yellow">
-          ☕️ <strong>Café à Nantes ou Montaigu</strong><br />
-          <span style="font-size: 10px; opacity: 0.85;">Échange informel</span>
+      <!-- Étage 2 — RENAULT MOMENTS (layout inversé) -->
+      <article class="lp-floor lp-floor--reverse lp-container" aria-labelledby="lp-renault-title">
+        <div class="olin-window lp-floor__visual">
+          <div class="olin-window__header"><span class="olin-window__title">cockpit-openr.aaos — bi-écran 12" + 12"</span></div>
+          <div class="olin-window__body lp-cockpit">
+            <a class="olin-picture-frame" href="/renault-moments.html" aria-label="Voir le case study Renault Moments">
+              <div class="olin-photo-duotone">
+                <img src="/assets/renault/extracted/p245_img6.png" width="826" height="1238" loading="lazy" alt="Écran OpenR Moment OS : suggestion de détour vers la cathédrale de Chartres, avec capsule audio à écouter." />
+                <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+              </div>
+            </a>
+            <a class="olin-picture-frame" href="/renault-moments.html" aria-label="Voir le case study Renault Moments">
+              <div class="olin-photo-duotone">
+                <img src="/assets/renault/extracted/p242_img4.png" width="912" height="1368" loading="lazy" alt="Écran OpenR Moment OS en mode roulage : guidage à 3 km et Timeline « voyage à Nantes »." />
+                <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+              </div>
+            </a>
+          </div>
         </div>
-      </div>
-      <div class="parallax-side-anchor right" style="top: 60px;">
-        <div class="parallax-card accent-mint">
-          📍 <strong>Disponibilité</strong><br />
-          <span style="font-size: 10px; opacity: 0.85;">Q3/Q4 2026</span>
+
+        <div class="lp-floor__pitch">
+          <span class="olin-tag olin-tag--neutral olin-tag--tag">Vision prospective DCX</span>
+          <h3 id="lp-renault-title" class="lp-floor__title">Renault Moments</h3>
+          <p class="lp-floor__lead">Design de service &amp; prospective : projeter l'expérience client à l'ère des services connectés et de la Renaulution.</p>
+          <p class="lp-floor__text">Plutôt que d'empiler des widgets dans une tablette Android, nous avons conçu un « OS Moment » qui orchestre les services autour d'une Timeline d'expérience, avec trois moments de vie charnières :</p>
+
+          <ol class="lp-moments">
+            <li><span class="lp-moments__num">01</span><div><strong>Home-to-car</strong> — l'anticipation : pré-conditionnement de l'habitacle et calcul de charge selon l'agenda du jour.</div></li>
+            <li><span class="lp-moments__num">02</span><div><strong>On-the-road</strong> — l'adaptation : une ambiance ajustée au contexte, sans surcharger le conducteur.</div></li>
+            <li><span class="lp-moments__num">03</span><div><strong>Smart Charge</strong> — la valeur du temps arrêté : 25 minutes de recharge transformées en bulle de productivité ou de détente.</div></li>
+          </ol>
+
+          <div class="olin-sticky lp-sticky--solar">
+            <div class="olin-sticky__header"><span>Renaulution</span><span>COMEX</span></div>
+            <p>Vision validée par le COMEX Renault Group et lancement immédiat du MVP embarqué <em>Collections</em>.</p>
+            <a class="olin-sticky__action" href="/renault-moments.html">découvrez ce projet ↗</a>
+          </div>
         </div>
+      </article>
+
+      <!-- Étage 3 — DATACITY PARIS FOR YOU -->
+      <article class="lp-floor lp-container" aria-labelledby="lp-datacity-title">
+        <div class="lp-floor__pitch">
+          <span class="olin-tag olin-tag--neutral olin-tag--tag">Smart City &amp; Data</span>
+          <h3 id="lp-datacity-title" class="lp-floor__title">DataCity <span>— Paris For You</span></h3>
+          <p class="lp-floor__lead">Webapp de flux touristiques personnalisés : désengorger les sites saturés grâce à la data transactionnelle et géographique.</p>
+          <p class="lp-floor__text">Ville de Paris, Mastercard, NUMA, l'Office du Tourisme et l'APUR autour d'une même question : comment répartir les visiteurs sans leur imposer de détour subi ? Une interface épurée à 3 paramètres, testée en marchant 2 h dans les rues de Paris.</p>
+
+          <ul class="lp-floor__metrics" aria-label="Chiffres clés DataCity">
+            <li class="olin-metric-card">
+              <span class="olin-metric-card__value">4 mois</span>
+              <span class="olin-metric-card__label">du cadrage au Demoday à l'Hôtel de Ville</span>
+            </li>
+            <li class="olin-metric-card">
+              <span class="olin-metric-card__value">Silver</span>
+              <span class="olin-metric-card__label">IIID Award 2020, data &amp; information design</span>
+            </li>
+          </ul>
+
+          <div class="olin-sticky olin-sticky--white">
+            <div class="olin-sticky__header"><span>Open Data</span><span>Mastercard</span></div>
+            <p>De la donnée transactionnelle à un parcours de visite que l'on a envie de suivre.</p>
+            <a class="olin-sticky__action" href="/datacity-paris-for-you.html">découvrez ce projet ↗</a>
+          </div>
+        </div>
+
+        <div class="olin-window lp-floor__visual">
+          <div class="olin-window__header"><span class="olin-window__title">paris-for-you.mapbox — webapp</span></div>
+          <div class="olin-window__body">
+            <a class="olin-picture-frame" href="/datacity-paris-for-you.html" aria-label="Voir le case study DataCity — Paris For You">
+              <div class="olin-photo-duotone">
+                <img src="/assets/datacity/p08_wireframes_ui_cible.png" width="960" height="540" loading="lazy" alt="Conception des écrans Paris For You : du wireframe à la maquette UI cible, carte de Paris et parcours personnalisé." />
+                <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+              </div>
+              <div class="olin-picture-frame__caption">
+                <div class="olin-picture-frame__text">
+                  <span class="olin-picture-frame__title">Wireframe ➔ UI cible</span>
+                  <span>La complexité algorithmique masquée derrière 3 paramètres.</span>
+                </div>
+                <span class="olin-picture-frame__zoom">Case study ↗</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Étage 4 — ROYAL CANIN (layout inversé, pas encore d'illustration) -->
+      <article class="lp-floor lp-floor--reverse lp-container" aria-labelledby="lp-royalcanin-title">
+        <div class="olin-window lp-floor__visual">
+          <div class="olin-window__header"><span class="olin-window__title">royal-canin.kiosk — borne phygitale</span></div>
+          <div class="olin-window__body lp-kiosk">
+            <span class="olin-sticker olin-sticker--cut lp-kiosk__logo" style="--olin-sticker-tilt: -3deg"><img src="/assets/stickers/sticker_client_royal_canin.svg" alt="Royal Canin" width="266" height="91" /></span>
+            <ul class="lp-kiosk__metrics" aria-label="Chiffres clés Royal Canin">
+              <li class="olin-metric-card">
+                <span class="olin-metric-card__value">&lt; 90 s</span>
+                <span class="olin-metric-card__label">pour une recommandation nutritionnelle personnalisée</span>
+              </li>
+              <li class="olin-metric-card">
+                <span class="olin-metric-card__value">200+</span>
+                <span class="olin-metric-card__label">références rendues lisibles au pied du rayon</span>
+              </li>
+              <li class="olin-metric-card">
+                <span class="olin-metric-card__value">5 j</span>
+                <span class="olin-metric-card__label">de Design Sprint avec les vétérinaires nutritionnistes</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="lp-floor__pitch">
+          <span class="olin-tag olin-tag--neutral olin-tag--tag">Design de service phygital</span>
+          <h3 id="lp-royalcanin-title" class="lp-floor__title">Royal Canin <span>— Borne phygitale</span></h3>
+          <p class="lp-floor__lead">Vulgariser une science vétérinaire pointue pour délivrer une recommandation personnalisée en moins de 90 secondes, directement au pied du rayon.</p>
+          <p class="lp-floor__text">Face à un linéaire de 15 mètres et 200 sacs presque identiques, le client repartait sans acheter. Mystery shopping en animalerie, Design Sprint à distance et co-conception du meuble métallique avec le fabricant : l'interface tactile et l'ergonomie physique conçues ensemble.</p>
+
+          <div class="olin-sticky olin-sticky--pink">
+            <div class="olin-sticky__header"><span>Magasins pilotes</span><span>Venture</span></div>
+            <p>Concept validé en magasins pilotes : le prototype a débloqué le financement corporate venture de l'industrialisation.</p>
+            <p class="lp-floor__soon"><span class="olin-tag olin-tag--neutral olin-tag--pill">case study en préparation</span></p>
+            <a class="olin-sticky__action" href="mailto:olin.creativelab@gmail.com?subject=Cas%20Royal%20Canin">demander le cas complet ↗</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- =======================================================================
+         E. L'ATELIER D'OLIN — mural de livrables réels + 3 post-its
+         (Figma « Frame 1 : Mes compétences » 4515:46096)
+         ======================================================================= -->
+    <section id="services" class="lp-atelier" aria-labelledby="lp-atelier-heading">
+      <div class="lp-container">
+        <header class="lp-section-head">
+          <span class="lp-eyebrow">// Comment nous travaillons ensemble</span>
+          <h2 id="lp-atelier-heading" class="lp-section-title">L'atelier : les preuves du travail</h2>
+        </header>
       </div>
 
-      <section id="contact" class="golden-sunset-wrapper">
-        <!-- Golden-style Twilight Clouds Banner -->
-        <div class="golden-banner">
-          <div class="golden-header-bar">
-            <span>Canvas Twilight // 04_Vision_Poetique_Et_Rencontre</span>
-            <span>MONTAIGU &amp; GRAND OUEST</span>
-          </div>
-
-          <!-- Poetic Clouds Diorama Artwork -->
-          <img src="/assets/olin_dreaming_ai_clouds.jpg" alt="IA Rêveuse dans les nuages Olin" class="golden-clouds-art" />
-
-          <div class="golden-quote-box">
-            <h2 class="golden-headline">FAÇONNONS ENSEMBLE DES EXPÉRIENCES ÉVIDENTES.</h2>
-            <p class="golden-sub">
-              « La tête dans les nuages pour imaginer les futurs possibles, les mains dans le concret pour forger le code de production. »
-            </p>
+      <div class="lp-container lp-atelier__wide">
+        <div class="olin-window lp-atelier__window">
+          <div class="olin-window__header"><span class="olin-window__title">Frame 1 : Mes compétences</span></div>
+          <div class="olin-window__body lp-atelier__viewport" data-atelier>
+            <div class="lp-atelier__stage">
+              <div class="lp-atelier__mural">
+              <img class="lp-atelier__piece" data-pillar="vision-produit" src="/assets/competences/web/mural_01_use_case_blueprint_top_left.webp" alt="Service blueprint « Use case : designing the before and after maintenance »" width="359" height="204" loading="lazy" decoding="async" style="--x: 33px; --y: 11px; --w: 359px; --from-x: -60px; --from-y: -40px; --rot: -3deg; --delay: 0.1s" />
+              <img class="lp-atelier__piece" data-pillar="vision-produit" src="/assets/competences/web/mural_02_ux_wireframes_mid_left.webp" alt="Wireframes UX et matrice de parcours" width="246" height="204" loading="lazy" decoding="async" style="--x: 0px; --y: 189px; --w: 246px; --from-x: -80px; --from-y: 0px; --rot: 2deg; --delay: 0.2s" />
+              <img class="lp-atelier__piece" data-pillar="vision-produit" src="/assets/competences/web/mural_03_research_matrix_center_left.webp" alt="Matrice de recherche utilisateur" width="245" height="325" loading="lazy" decoding="async" style="--x: 270px; --y: 229px; --w: 245px; --from-x: -40px; --from-y: 40px; --rot: -2deg; --delay: 0.3s" />
+              <img class="lp-atelier__piece" data-pillar="culture-builder" src="/assets/competences/web/mural_04_storyboard_flows_bottom_left.webp" alt="Storyboard et flows de l'expérience" width="284" height="204" loading="lazy" decoding="async" style="--x: 41px; --y: 373px; --w: 284px; --from-x: -50px; --from-y: 60px; --rot: 1.5deg; --delay: 0.4s" />
+              <img class="lp-atelier__piece" data-pillar="ateliers" src="/assets/competences/web/mural_05_figjam_board_top_center.webp" alt="Board FigJam d'atelier de co-conception" width="324" height="204" loading="lazy" decoding="async" style="--x: 557px; --y: -7px; --w: 324px; --from-x: 0px; --from-y: -60px; --rot: -1.5deg; --delay: 0.15s" />
+              <img class="lp-atelier__piece" data-pillar="ateliers" src="/assets/competences/web/mural_06_user_test_doc_mid_center.webp" alt="Compte rendu de test utilisateurs avec Forum Études" width="161" height="206" loading="lazy" decoding="async" style="--x: 763px; --y: 183px; --w: 161px; --from-x: 20px; --from-y: -20px; --rot: 2.5deg; --delay: 0.25s" />
+              <img class="lp-atelier__piece" data-pillar="ateliers" src="/assets/competences/web/mural_07_workshop_visio_bottom_center.webp" alt="Atelier collaboratif en visio avec les équipes" width="323" height="204" loading="lazy" decoding="async" style="--x: 603px; --y: 429px; --w: 323px; --from-x: 0px; --from-y: 70px; --rot: -2deg; --delay: 0.35s" />
+              <img class="lp-atelier__piece" data-pillar="culture-builder" src="/assets/competences/web/mural_08_architecture_canvas_mid_bottom.webp" alt="Canvas d'architecture produit" width="350" height="204" loading="lazy" decoding="async" style="--x: 349px; --y: 484px; --w: 350px; --from-x: 30px; --from-y: 60px; --rot: 1deg; --delay: 0.45s" />
+              <img class="lp-atelier__piece" data-pillar="culture-builder" src="/assets/competences/web/mural_09_mobile_screens_flow_top_right.webp" alt="Flow d'écrans mobiles de l'application" width="441" height="204" loading="lazy" decoding="async" style="--x: 853px; --y: 45px; --w: 441px; --from-x: 80px; --from-y: -40px; --rot: 2deg; --delay: 0.2s" />
+              </div>
+            <article class="lp-atelier__card" data-pillar="vision-produit" style="--x: 159px; --y: 76px; --w: 290px" aria-labelledby="lp-atelier-card-1">
+              <h3 id="lp-atelier-card-1" class="lp-atelier__title">DONNER LE CAP : VISION PRODUIT &amp; PROTOTYPAGE STRATÉGIQUE</h3>
+              <p class="lp-atelier__text">Clarifier la direction basé sur les enjeux business à moyen terme et matérialiser la nouvelle expérience client sous forme de prototypes interactifs pour aligner les équipes.</p>
+              <ul class="lp-atelier__tags" aria-label="Savoir-faire">
+                <li>co-conception</li>
+                <li>figjam</li>
+                <li>facilitation</li>
+              </ul>
+              <a class="lp-atelier__link" href="#contact">plus de détails <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="lp-atelier__card" data-pillar="ateliers" style="--x: 513px; --y: 141px; --w: 290px" aria-labelledby="lp-atelier-card-2">
+              <h3 id="lp-atelier-card-2" class="lp-atelier__title">ATELIERS COLLABORATIFS POUR CO-CRÉER DES SOLUTIONS ADAPTÉES À VOS BESOINS.</h3>
+              <p class="lp-atelier__text">Mes ateliers favorisent l'innovation et l'engagement des équipes.</p>
+              <ul class="lp-atelier__tags" aria-label="Savoir-faire">
+                <li>audit ui</li>
+                <li>recherche terrain</li>
+                <li>parcours</li>
+                <li>wireframes</li>
+              </ul>
+              <a class="lp-atelier__link" href="#contact">plus de détails <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="lp-atelier__card" data-pillar="culture-builder" style="--x: 971px; --y: 284px; --w: 290px" aria-labelledby="lp-atelier-card-3">
+              <h3 id="lp-atelier-card-3" class="lp-atelier__title">CULTURE BUILDER &amp; PROTOTYPAGE FONCTIONNEL</h3>
+              <p class="lp-atelier__text">Fini la déperdition entre maquette et production. Je livre des MVP et produits fonctionnels, teste avec de vraies APIs, comprends les contraintes d'architecture et des équipes techs.</p>
+              <ul class="lp-atelier__tags" aria-label="Savoir-faire">
+                <li>PRD</li>
+                <li>architecture</li>
+                <li>MVP</li>
+                <li>integration backend</li>
+              </ul>
+              <a class="lp-atelier__link" href="#contact">plus de détails <span aria-hidden="true">↗</span></a>
+            </article>
+            </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Apple-style Bento Contact Grid -->
-        <div class="apple-bento-grid">
-          
-          <!-- Bento 1: Disponibilité & Territoire -->
-          <div class="apple-bento-card bento-hero-card">
-            <div>
-              <div class="bento-icon-box" style="background: rgba(16, 185, 129, 0.1); color: #059669;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              </div>
-              <div class="bento-card-title">Disponibilité Q3/Q4 2026</div>
-              <div class="bento-card-desc">
-                Basé à <strong>Montaigu-Vendée</strong> (à 30 min de Nantes et La Roche-sur-Yon). Disponible pour des missions de <strong>Lead / Senior Product Designer &amp; Builder</strong>.
-              </div>
+    <!-- =======================================================================
+         CONTACT — PopUp « Contact.sh » (Figma 4515:46267)
+         ======================================================================= -->
+    <section id="contact" class="lp-contact lp-container" aria-labelledby="lp-contact-title">
+      <h2 id="lp-contact-title" class="lp-sr-only">Contact</h2>
+      <div class="olin-popup">
+        <div class="olin-popup__header">Contact.sh</div>
+        <div class="olin-popup__body lp-contact__body">
+          <div class="lp-contact__col">
+            <div class="lp-contact__head">
+              <h3 class="lp-contact__title">Réserver un appel</h3>
+              <span class="olin-tag olin-tag--green olin-tag--pill"><span class="olin-tag__dot" aria-hidden="true"></span>créneaux ouverts</span>
             </div>
-            <span class="bento-action-link" style="color: #059669;">Montaigu • Nantes • Remote</span>
+            <p>Échangeons de vive voix sur vos enjeux business, délais et faisabilité produit.</p>
+            <a class="olin-btn olin-btn--primary" href="mailto:olin.creativelab@gmail.com?subject=Appel%20de%2015%20min">appel de 15 min <span aria-hidden="true">↗</span></a>
           </div>
-
-          <!-- Bento 2: LinkedIn -->
-          <a href="https://www.linkedin.com/in/josselinhillion/" target="_blank" rel="noopener noreferrer" class="apple-bento-card">
-            <div>
-              <div class="bento-icon-box" style="background: rgba(10, 102, 194, 0.1); color: #0A66C2;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-              </div>
-              <div class="bento-card-title">LinkedIn</div>
-              <div class="bento-card-desc">
-                Josselin Hillion : Articles, retours d'expérience et réseau professionnel.
-              </div>
+          <div class="lp-contact__col">
+            <div class="lp-contact__head">
+              <h3 class="lp-contact__title">Email direct</h3>
+              <span class="olin-tag olin-tag--blue olin-tag--pill">réponse sous 24h</span>
             </div>
-            <span class="bento-action-link" style="color: #0A66C2;">
-              <span>Se connecter</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-            </span>
-          </a>
-
-          <!-- Bento 3: X (Twitter) -->
-          <a href="https://x.com/josselinhillion" target="_blank" rel="noopener noreferrer" class="apple-bento-card">
-            <div>
-              <div class="bento-icon-box" style="background: rgba(15, 23, 42, 0.08); color: #0F172A;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
-              </div>
-              <div class="bento-card-title">X (Twitter)</div>
-              <div class="bento-card-desc">
-                @josselinhillion : Veille continue sur l'UI, l'IA et le build fonctionnel.
-              </div>
-            </div>
-            <span class="bento-action-link" style="color: var(--color-dark-ink);">
-              <span>Suivre le profil</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-            </span>
-          </a>
-
-          <!-- Bento 4: Email Direct -->
-          <div class="apple-bento-card" id="email-contact-box" style="cursor: pointer;">
-            <div>
-              <div class="bento-icon-box" style="background: rgba(67, 83, 255, 0.1); color: #4353FF;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </div>
-              <div class="bento-card-title">Email Direct</div>
-              <div class="bento-card-desc">
-                josselin@olin.design : Cliquez pour copier l'adresse dans le presse-papiers.
-              </div>
-            </div>
-            <span class="bento-action-link" style="color: #4353FF;">
-              <span>Copier l'email</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-            </span>
+            <a class="olin-link lp-contact__mail" href="mailto:olin.creativelab@gmail.com">olin.creativelab@gmail.com <span class="olin-link-arrow" aria-hidden="true">↗</span></a>
           </div>
-
         </div>
-      </section>
-    </div>
-
+      </div>
+    </section>
   </main>
 
-  <!-- =========================================================================
-       OS DESKTOP FOOTER (Riso Minimalist)
-       ========================================================================= -->
-  <footer class="footer">
-    <div class="footer-brand">
-      <img src="/assets/olin_logo_riso.png" alt="Olin Riso Logo" class="footer-logo" />
-      <span class="footer-copy">© 2026 Josselin Hillion • Olin.os Design System</span>
+  <!-- Footer d'atelier sur le motif Olin (.olin-footer — Figma BG 4314:138629) -->
+  <footer class="olin-footer">
+    <div class="olin-footer__inner">
+      <p class="olin-footer__mantra"><span>La tête dans les nuages,<br />les mains dans le concret.</span></p>
+      <nav class="olin-footer__nav" aria-label="Liens de pied de page">
+        <a href="#main">↑ Haut de page</a>
+        <a href="/#projets">Tous les projets</a>
+        <a href="https://www.linkedin.com/in/josselinhillion/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="mailto:olin.creativelab@gmail.com">Email ↗</a>
+      </nav>
     </div>
-    <div class="footer-pill">
-      MONTAIGU • NANTES &amp; GRAND OUEST • HANDCRAFTED WITH CODE &amp; CARE
+    <div class="olin-footer__legal">
+      <span>© 2026 Josselin Hillion • Olin.os — La tête dans les nuages, les mains dans le concret.</span>
     </div>
   </footer>
 
-  <!-- =========================================================================
-       CANVAS MINIMAP (Miro & FigJam Style Interactive Navigation)
-       ========================================================================= -->
-  <nav class="canvas-minimap" id="canvas-minimap" aria-label="Minimap de navigation spatiale">
-    <div class="minimap-header">
-      <div>
-        <span class="minimap-dot-live"></span>
-        <span>OLIN.OS CANVAS</span>
-      </div>
-      <span id="minimap-pct" style="color: var(--color-electric-blue); font-weight: 800;">100%</span>
-    </div>
-    <div class="minimap-board">
-      <a href="#hero" class="minimap-node active" data-target="hero">
-        <span class="minimap-node-thumb"></span>
-        <span>00 Bureau</span>
-      </a>
-      <a href="#atelier" class="minimap-node" data-target="atelier">
-        <span class="minimap-node-thumb"></span>
-        <span>01 Atelier</span>
-      </a>
-      <a href="#projets" class="minimap-node" data-target="projets">
-        <span class="minimap-node-thumb"></span>
-        <span>02 Projets</span>
-      </a>
-      <a href="#contact" class="minimap-node" data-target="contact">
-        <span class="minimap-node-thumb"></span>
-        <span>03 Contact</span>
-      </a>
-    </div>
-  </nav>
-
-  <!-- =========================================================================
-       INTERACTIVE CASE STUDY MODAL DRAWER
-       ========================================================================= -->
-  <div class="modal-backdrop" id="case-study-modal" aria-hidden="true">
-    <div class="modal-sheet">
-      <button class="modal-close-btn" id="modal-close-btn" aria-label="Fermer la fenêtre">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-
-      <div id="modal-content-container">
-        <!-- Dynamically injected via main.js -->
-      </div>
-    </div>
-  </div>
-
-  <!-- Toast Notification -->
-  <div class="toast-notice" id="toast-notice">
-    Adresse email copiée dans le presse-papiers !
-  </div>
-
-  <!-- Main JavaScript -->
-  <script type="module" src="/src/main.js"></script>
+  <script type="module" src="/src/landing.js"></script>
 </body>
 </html>

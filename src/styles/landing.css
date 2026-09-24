@@ -1,0 +1,1015 @@
+/* ==========================================================================
+   OLIN.OS — LANDING PAGE (index.html)
+   Mise en page uniquement : les composants viennent de components.css
+   (.olin-header, .olin-window, .olin-picture-frame, .olin-photo-duotone,
+   .olin-sticky, .olin-sticker, .olin-cursor-figjam, .olin-popup, .olin-footer).
+   ========================================================================== */
+
+.lp-page {
+  --lp-ink: #01050F;
+  --lp-midnight: #242237;
+  --lp-blue: #0028FF;
+  --lp-body: #334155;
+  --lp-muted: #475569;
+  --lp-gradient: linear-gradient(124.44deg, #A100FF 7%, #0028FF 118%);
+  --lp-ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Fond identique aux case studies (.cs-page) : trame statique de secours,
+     remplacée par la trame interactive (canvas) quand elle est active */
+  background-color: #FDFAFE;
+  background-image:
+    radial-gradient(circle, rgba(122, 122, 255, 0.35) 1.2px, transparent 1.2px),
+    url('/assets/motif_canvas.svg');
+  background-size: 28px 28px, 400px 400px;
+  background-repeat: repeat;
+  color: var(--lp-ink);
+}
+
+/* Trame interactive active : on retire la trame CSS statique */
+.dot-grid-live .lp-page {
+  background-image: none;
+}
+
+.lp-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.lp-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.lp-skip-link {
+  position: absolute;
+  left: 16px;
+  top: -100px;
+  z-index: 1000;
+  padding: 12px 16px;
+  background: var(--lp-ink);
+  color: #FAFAFA;
+  border-radius: 8px;
+  font-family: var(--font-tech);
+}
+
+.lp-skip-link:focus {
+  top: 8px;
+}
+
+:where(.lp-page) a:focus-visible,
+:where(.lp-page) button:focus-visible {
+  outline: 2px solid var(--lp-blue);
+  outline-offset: 3px;
+}
+
+:where(.lp-page) section[id] {
+  scroll-margin-top: 80px;
+}
+
+.lp-section-head {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.lp-eyebrow {
+  font-family: var(--font-tech);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--lp-blue);
+}
+
+.lp-section-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -1px;
+  color: var(--lp-ink);
+}
+
+/* --------------------------------------------------------------------------
+   B. HERO — promesse + mascotte, puis CTA et ambiance Brain.fm
+   -------------------------------------------------------------------------- */
+.lp-hero {
+  padding-top: 72px;
+  padding-bottom: 112px;
+}
+
+.lp-hero__inner {
+  max-width: 1080px;
+  display: grid;
+  justify-items: center;
+  gap: 40px;
+}
+
+/* Amorce (gauche) · mascotte (centre) · chute (droite) */
+.lp-hero__title {
+  width: 100%;
+  display: grid;
+  gap: 12px;
+  margin: 0;
+}
+
+.lp-hero__line {
+  display: block;
+}
+
+.lp-hero__line--left {
+  justify-self: start;
+  font-family: var(--font-display);
+  font-size: clamp(38px, 6vw, 88px);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+  background: var(--lp-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.lp-hero__mascot {
+  justify-self: center;
+  width: clamp(112px, 14vw, 200px);
+  height: auto;
+  transform: rotate(-8deg);
+  transition: transform 0.4s var(--lp-ease);
+}
+
+.lp-hero__mascot:hover {
+  transform: rotate(4deg) scale(1.04);
+}
+
+.lp-hero__line--right {
+  justify-self: end;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(34px, 5.4vw, 80px);
+  line-height: 0.95;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+  text-align: right;
+  text-wrap: balance;
+  color: var(--lp-ink);
+}
+
+.lp-caret {
+  font-family: var(--font-tech);
+  font-style: normal;
+  color: var(--lp-blue);
+  animation: lp-blink 1.1s steps(1) infinite;
+}
+
+@keyframes lp-blink {
+  50% { opacity: 0; }
+}
+
+.lp-hero__actions {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  width: min(360px, 100%);
+}
+
+.lp-hero__cta {
+  width: 100%;
+}
+
+/* Ambiance : le player, et le curseur FigJam qui vient le survoler */
+.lp-hero__ambience {
+  position: relative;
+  display: inline-flex;
+}
+
+.lp-hero__cursor {
+  /* pointe de la main posée sur le bouton Play (sans cliquer) */
+  left: 8px;
+  top: 14px;
+  animation:
+    lp-cursor-approach 1.6s var(--lp-ease) 1.6s both,
+    olinCursorFloat 6s ease-in-out 3.4s infinite;
+}
+
+@keyframes lp-cursor-approach {
+  0% { opacity: 0; transform: translate(180px, 110px); }
+  15% { opacity: 1; }
+  78% { transform: translate(-3px, -2px); }
+  90% { transform: translate(2px, 2px); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+
+/* --------------------------------------------------------------------------
+   C. STICKERS — board FigJam (rotations et décalages désordonnés)
+   -------------------------------------------------------------------------- */
+.lp-stickers {
+  padding: 56px 0 64px;
+}
+
+.lp-stickers__board {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: center;
+  justify-items: center;
+  gap: 36px 24px;
+}
+
+.lp-stickers__board .olin-sticker {
+  position: relative;
+  height: 72px;
+  transform: translate(var(--lp-dx, 0), var(--lp-dy, 0)) rotate(var(--olin-sticker-tilt, 0deg));
+}
+
+.lp-stickers__board .olin-sticker:hover {
+  z-index: 2;
+  transform: translate(var(--lp-dx, 0), var(--lp-dy, 0)) rotate(0deg) scale(1.08);
+}
+
+.lp-stickers__board .lp-sticker--wide {
+  height: 64px;
+}
+
+.lp-stickers__board .lp-sticker--round {
+  height: 92px;
+}
+
+/* --------------------------------------------------------------------------
+   IDENTITÉ — PopUp Olin.md + PopUp profil-pic.png (Figma 4515:46030)
+   Desk de 897px : Olin.md 720px, photo 330px qui chevauche en bas à droite.
+   -------------------------------------------------------------------------- */
+.lp-identity {
+  padding-top: 24px;
+  padding-bottom: 32px;
+}
+
+.lp-identity__desk {
+  position: relative;
+  max-width: 897px;
+  margin: 0 auto;
+  padding-bottom: 167px;
+}
+
+.lp-olinmd {
+  width: 80.27%;
+}
+
+.lp-olinmd__icon {
+  margin-right: 6px;
+  font-size: 9px;
+  letter-spacing: -1px;
+}
+
+.lp-olinmd__body {
+  display: grid;
+  gap: 12px;
+  padding: 12px;
+}
+
+.lp-olinmd__name {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  color: var(--lp-midnight);
+}
+
+.lp-olinmd__role {
+  max-width: 13em;
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3vw, 32px);
+  font-weight: 800;
+  line-height: 1.05;
+  text-transform: uppercase;
+  color: var(--lp-midnight);
+}
+
+.lp-olinmd__prompt {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 12px 20px 16px;
+  background: #2B2F3A;
+  border-radius: 4px;
+  font-family: var(--font-tech);
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: #E5EDFF;
+}
+
+.lp-olinmd__prompt-head,
+.lp-olinmd__key,
+.lp-olinmd__prompt dt {
+  color: #00F5A0;
+}
+
+.lp-olinmd__prompt dl {
+  max-width: 400px;
+  display: grid;
+  gap: 8px;
+}
+
+.lp-olinmd__prompt dt,
+.lp-olinmd__prompt dd {
+  display: inline;
+}
+
+.lp-olinmd__link {
+  justify-self: start;
+  margin-left: -14px;
+}
+
+/* Fenêtre photo : bouton qui ouvre la lightbox */
+.lp-profile {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 36.79%;
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: inherit;
+  cursor: zoom-in;
+  transition: transform 0.25s var(--lp-ease);
+}
+
+.lp-profile:hover,
+.lp-profile:focus-visible {
+  transform: translate(-2px, -2px);
+}
+
+.lp-profile .olin-popup__header {
+  display: flex;
+}
+
+/* Composition Figma 328 × 287 (unité --u = 1px Figma, via container query) */
+.lp-profile__canvas {
+  --u: calc(100cqw / 328);
+  position: relative;
+  display: block;
+  container-type: inline-size;
+  aspect-ratio: 328 / 287;
+  overflow: hidden;
+  background-color: #4B4BFF;
+  border: 1px solid #01050F;
+  border-top: 0;
+  border-radius: 0 0 2px 2px;
+}
+
+/* Trame de carrés 4px au pas de 24px (pattern Figma), à l'échelle de la fenêtre */
+.lp-profile__dots {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Crect width='4' height='4' fill='%23DDDDDE'/%3E%3C/svg%3E");
+  background-position: calc(19 * var(--u)) calc(21 * var(--u));
+  background-size: calc(24 * var(--u)) calc(24 * var(--u));
+}
+
+.lp-profile__frame,
+.lp-profile__portrait {
+  position: absolute;
+  max-width: none;
+}
+
+.lp-profile__frame {
+  left: calc(53 * var(--u));
+  top: calc(31 * var(--u));
+  width: calc(227 * var(--u));
+  height: auto;
+}
+
+.lp-profile__portrait {
+  left: calc(77.55 * var(--u));
+  top: calc(18.33 * var(--u));
+  width: calc(162.8 * var(--u));
+  height: calc(203.94 * var(--u));
+  transform: rotate(-11deg);
+}
+
+.lp-profile__grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Lightbox */
+.lp-lightbox {
+  width: min(660px, calc(100vw - 32px));
+  max-width: none;
+  margin: auto;
+  padding: 0;
+  overflow: visible;
+  background: none;
+  border: 0;
+}
+
+.lp-lightbox::backdrop {
+  background: rgba(1, 5, 15, 0.72);
+}
+
+.lp-lightbox__window {
+  box-shadow: 3px 3px 0px #01050F;
+}
+
+.lp-lightbox__close {
+  position: absolute;
+  top: -52px;
+  right: 0;
+  min-width: 44px;
+  min-height: 44px;
+  background: #FFFFFF;
+  border: 1px solid #01050F;
+  border-radius: 8px;
+  box-shadow: 2px 2px 0px #01050F;
+  font-size: 18px;
+  color: #01050F;
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   D. PROJETS — un étage par projet
+   -------------------------------------------------------------------------- */
+.lp-projects {
+  padding-top: 112px;
+}
+
+.lp-floor {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 56px;
+  align-items: start;
+  padding-top: 56px;
+  padding-bottom: 88px;
+}
+
+.lp-floor + .lp-floor {
+  border-top: 1px dashed rgba(1, 5, 15, 0.18);
+  padding-top: 88px;
+}
+
+.lp-floor__pitch {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+}
+
+.lp-floor__pitch > .olin-tag {
+  justify-self: start;
+}
+
+.lp-floor__title {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 4vw, 52px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -1px;
+  color: var(--lp-ink);
+}
+
+.lp-floor__title span {
+  font-size: 0.45em;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--lp-muted);
+}
+
+.lp-floor__lead {
+  font-size: clamp(18px, 1.6vw, 21px);
+  line-height: 1.45;
+  color: var(--lp-ink);
+}
+
+.lp-floor__text {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--lp-body);
+}
+
+.lp-floor__metrics {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.lp-floor__tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.lp-sticky--neon {
+  background-color: #00F5A0;
+  color: #003026;
+}
+
+.lp-sticky--solar {
+  background-color: #FFF04B;
+  color: #01050F;
+}
+
+.lp-sticky--solar .olin-sticky__header,
+.lp-sticky--solar .olin-sticky__action {
+  color: #01050F;
+}
+
+.lp-floor__soon {
+  margin-top: 4px;
+}
+
+/* Royal Canin : pas encore d'illustration, la fenêtre porte le logo et les preuves */
+.lp-kiosk {
+  display: grid;
+  gap: 20px;
+  justify-items: center;
+  padding: 32px 24px;
+}
+
+.lp-kiosk__logo {
+  height: 64px;
+}
+
+.lp-kiosk__metrics {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+}
+
+/* Moodboard d'ingénierie Excibat */
+.lp-flow {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+}
+
+.lp-flow__step {
+  display: grid;
+  gap: 10px;
+}
+
+.lp-flow__step + .lp-flow__step::before {
+  content: "↓";
+  justify-self: center;
+  font-family: var(--font-tech);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--lp-blue);
+}
+
+.lp-flow__num {
+  font-family: var(--font-tech);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--lp-blue);
+}
+
+.lp-flow__apis {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 6px 4px;
+}
+
+.lp-flow__apis .olin-sticker {
+  height: 56px;
+}
+
+.lp-flow__caption {
+  font-size: 13px;
+  color: var(--lp-muted);
+}
+
+.lp-flow__code {
+  margin: 0;
+  padding: 14px 16px;
+  background: var(--lp-midnight);
+  border-radius: 4px;
+  font-family: var(--font-tech);
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #E5EDFF;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.lp-code-accent {
+  color: #00F5A0;
+}
+
+.lp-code-muted {
+  color: #A2B5DA;
+}
+
+.lp-flow__shot {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Cockpit bi-écran Renault */
+.lp-cockpit {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  align-items: end;
+}
+
+.lp-cockpit .olin-photo-duotone img {
+  height: auto;
+}
+
+.lp-moments {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--lp-body);
+}
+
+.lp-moments li {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.lp-moments strong {
+  color: var(--lp-ink);
+}
+
+.lp-moments__num {
+  font-family: var(--font-tech);
+  font-weight: 700;
+  color: var(--lp-blue);
+}
+
+/* --------------------------------------------------------------------------
+   E. L'ATELIER D'OLIN — mural de livrables réels + post-its bleu ardoise
+   (Figma « Frame 1 : Mes compétences » 4515:46096 — scène de 1294 × 696)
+   -------------------------------------------------------------------------- */
+.lp-atelier {
+  padding: 96px 0;
+}
+
+/* La scène Figma fait 1294px : le conteneur s'élargit pour l'afficher à 100% */
+.lp-atelier__wide {
+  max-width: 1440px;
+}
+
+.lp-atelier__window {
+  --lp-atelier-w: 1294px;
+  --lp-atelier-h: 696px;
+}
+
+.lp-atelier__viewport {
+  position: relative;
+  flex: none;
+  padding: 24px;
+  overflow: hidden;
+}
+
+/* Scène à l'échelle Figma, réduite par JS (--lp-atelier-scale) si la
+   fenêtre est plus étroite que 1294px. */
+.lp-atelier__stage {
+  position: relative;
+  width: var(--lp-atelier-w);
+  height: var(--lp-atelier-h);
+  transform: scale(var(--lp-atelier-scale, 1));
+  transform-origin: top left;
+}
+
+.lp-atelier__mural {
+  position: absolute;
+  inset: 0;
+}
+
+.lp-atelier__piece {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--w);
+  height: auto;
+  background: #FFFFFF;
+  box-shadow: 0 1px 8px rgba(1, 5, 15, 0.08);
+  transition:
+    opacity 0.35s var(--lp-ease),
+    transform 0.35s var(--lp-ease);
+}
+
+/* Arrivée progressive au scroll : chaque planche glisse depuis son offset */
+.lp-atelier__stage.is-armed .lp-atelier__piece {
+  opacity: 0;
+  transform: translate(var(--from-x), var(--from-y)) rotate(var(--rot));
+}
+
+.lp-atelier__stage.is-armed.is-in .lp-atelier__piece {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.7s var(--lp-ease) var(--delay),
+    transform 0.9s var(--lp-ease) var(--delay);
+}
+
+/* Spotlight : le post-it survolé met en avant ses 3 planches */
+.lp-atelier__stage[data-focus] .lp-atelier__piece {
+  opacity: 0.4;
+}
+
+.lp-atelier__stage[data-focus="vision-produit"] .lp-atelier__piece[data-pillar="vision-produit"],
+.lp-atelier__stage[data-focus="ateliers"] .lp-atelier__piece[data-pillar="ateliers"],
+.lp-atelier__stage[data-focus="culture-builder"] .lp-atelier__piece[data-pillar="culture-builder"] {
+  z-index: 1;
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+.lp-atelier__card {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  z-index: 10;
+  width: var(--w);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  background: #A2B5DA;
+  border-radius: 2px;
+  box-shadow: 2px 2px 0px #000000;
+  color: var(--lp-ink);
+}
+
+.lp-atelier__title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 1.15;
+  text-transform: uppercase;
+  color: var(--lp-ink);
+}
+
+.lp-atelier__text {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.lp-atelier__tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.lp-atelier__tags li {
+  padding: 5px 8px;
+  background: #FFFFFF;
+  border-radius: 2px;
+  font-family: var(--font-tech);
+  font-size: 11px;
+  line-height: 1.2;
+  color: var(--lp-ink);
+}
+
+.lp-atelier__link {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  margin-top: auto;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--lp-ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s var(--lp-ease);
+}
+
+.lp-atelier__link:hover,
+.lp-atelier__link:focus-visible {
+  color: var(--lp-blue);
+}
+
+/* < 1024px : pas de mural, les 3 post-its s'empilent */
+@media (max-width: 1023.98px) {
+  .lp-atelier__stage {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    transform: none;
+  }
+
+  .lp-atelier__mural {
+    display: none;
+  }
+
+  .lp-atelier__card {
+    position: static;
+    width: auto;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   CONTACT — PopUp Contact.sh
+   -------------------------------------------------------------------------- */
+.lp-contact {
+  padding-top: 96px;
+  padding-bottom: 112px;
+}
+
+.lp-contact .olin-popup {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.lp-contact__body {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+}
+
+.lp-contact__col {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--lp-body);
+}
+
+.lp-contact__col .olin-btn {
+  justify-self: start;
+}
+
+.lp-contact__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.lp-contact__title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--lp-midnight);
+}
+
+.lp-contact__mail {
+  justify-self: start;
+  margin-left: -14px;
+  font-family: var(--font-tech);
+  overflow-wrap: anywhere;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .lp-container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .lp-stickers__board {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .lp-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .lp-hero {
+    padding-top: 32px;
+    padding-bottom: 64px;
+  }
+
+  .lp-hero__inner {
+    gap: 32px;
+  }
+
+  .lp-hero__actions {
+    width: 100%;
+  }
+
+  .lp-identity__desk {
+    padding-bottom: 0;
+  }
+
+  .lp-kiosk__metrics {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .lp-olinmd {
+    width: 100%;
+  }
+
+  .lp-profile {
+    position: relative;
+    display: block;
+    width: min(300px, 82%);
+    margin: -12px 0 0 auto;
+  }
+
+  .lp-stickers__board {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 12px;
+  }
+
+  .lp-stickers__board .olin-sticker {
+    height: 52px;
+  }
+
+  .lp-stickers__board .lp-sticker--wide {
+    height: 44px;
+  }
+
+  .lp-stickers__board .lp-sticker--round {
+    height: 68px;
+  }
+
+  .lp-projects {
+    padding-top: 72px;
+  }
+
+  .lp-floor {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    padding-bottom: 64px;
+  }
+
+  .lp-floor + .lp-floor {
+    padding-top: 64px;
+  }
+
+  /* Étage inversé : le pitch reste en tête sur mobile */
+  .lp-floor--reverse .lp-floor__pitch {
+    order: -1;
+  }
+
+  .lp-atelier {
+    padding: 72px 0;
+  }
+
+  .lp-atelier__viewport {
+    padding: 16px;
+  }
+
+  .lp-contact__body {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .lp-contact__col .olin-btn {
+    justify-self: stretch;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-caret {
+    animation: none;
+  }
+
+  .lp-hero__mascot,
+  .lp-page .olin-sticker {
+    transition: none;
+  }
+
+  .lp-hero__cursor {
+    animation: none;
+  }
+
+  .lp-atelier__piece,
+  .lp-atelier__stage.is-armed.is-in .lp-atelier__piece {
+    transition: opacity 0.2s linear;
+  }
+}

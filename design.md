@@ -227,6 +227,62 @@ tokens:
           Show_Tape:
             type: "BOOLEAN"
             default: true
+
+      picture_slot:
+        name: "❖ Picture slot"
+        node_id: "4318:140409"
+        page: "4. Molecules"
+        properties:
+          Ratio:
+            type: "VARIANT"
+            values: ["16:9", "4:3", "1:1", "Free"]
+          Show_Grain:
+            type: "BOOLEAN"
+            default: true
+          Frame_Style:
+            type: "VARIANT"
+            values: ["Raw", "Window Card", "Tape Pinned"]
+
+      cursor_figjam:
+        name: "❖ cursor-figjam"
+        node_id: "4515:45983"
+        page: "4. Molecules"
+        properties:
+          Pointer_Type:
+            type: "VARIANT"
+            values: ["Hand", "Arrow"]
+          Theme:
+            type: "VARIANT"
+            values: ["Lead Architect (Blue)", "Creative UI (Purple)", "Engineering (Mint)", "Reviewer (Dark)"]
+          Motion:
+            type: "VARIANT"
+            values: ["Floating", "Static"]
+          User_Name:
+            type: "TEXT"
+            default: "Josselin Hillion"
+          Show_Tag:
+            type: "BOOLEAN"
+            default: true
+
+      mini_player_brainfm:
+        name: "❖ mini-player-brainfm"
+        page: "4. Molecules"
+        properties:
+          Format:
+            type: "VARIANT"
+            values: ["Pill", "Card"]
+          Playback_State:
+            type: "VARIANT"
+            values: ["Paused", "Playing"]
+          Mental_State:
+            type: "VARIANT"
+            values: ["Focus", "Relax", "Create"]
+          Track_Name:
+            type: "TEXT"
+            default: "Kyoto // 40Hz Neural Flow"
+          Show_Visualizer:
+            type: "BOOLEAN"
+            default: true
 ---
 
 # 🤖 Olin.os Machine-Readable Design Contract (`design.md`)
@@ -243,6 +299,7 @@ tokens:
 - ❌ **DON'T (Zéro Couleur Hex en Dur) :** Ne JAMAIS injecter de code couleur hexadécimal arbitraire non déclaré dans le YAML `tokens.colors`.
 - ❌ **DON'T (Zéro Frame Vide pour les Icônes) :** Ne jamais insérer un Frame vide `Frame 1` comme placeholder d'icône. Toujours instancier un vrai composant icône de la bibliothèque d'atomes.
 - ❌ **DON'T (Zéro Dépassement Hit-Target) :** Ne jamais concevoir de composant interactif tactile d'une hauteur inférieure à 44px (`minHeight: 44`).
+- ❌ **DON'T (Zéro Chevauchement) :** INTERDICTION ABSOLUE de positionner des composants par-dessus des éléments existants. TOUJOURS analyser d'abord tous les éléments de la page (`atomsPage.children`), calculer le `maxY` (point le plus bas), puis positionner les nouveaux éléments APRÈS avec une marge de sécurité minimale de 200px. Utiliser des SECTIONS Figma pour organiser visuellement les composants par type (01 · Button, 02 · Link, etc.).
 
 ---
 

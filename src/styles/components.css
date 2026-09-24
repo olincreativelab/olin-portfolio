@@ -1062,29 +1062,56 @@
 }
 
 /* ==========================================================================
-   10. MOCKUP WINDOW HEADER (● ● ● macOS DOCK & FINDER)
+   10. WINDOW / FRAME (FIGMA 4515:46240 — « Derniers projets »)
+   Onglet-pilule (header) posé 4px au-dessus d'un corps bleu glacier.
+   <div class="olin-window">
+     <div class="olin-window__header"><span class="olin-window__title">…</span></div>
+     <div class="olin-window__body">…</div>
+   </div>
+   Les pastilles macOS (.olin-window__dots) restent disponibles mais ne font
+   plus partie du rendu Figma par défaut.
    ========================================================================== */
 .olin-window {
-  background: #FFFFFF;
-  border: 1px solid #01050F;
-  border-radius: 8px;
-  box-shadow: 3px 3px 0px #01050F;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
+  gap: 4px;
+  min-width: 0;
 }
 
 .olin-window__header {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 10px 16px;
-  background: #F1F5F9;
-  border-bottom: 1px solid #01050F;
+  align-self: flex-start;
+  gap: 8px;
+  max-width: 100%;
+  min-height: 34px;
+  padding: 7px 16px;
+  background: rgba(229, 237, 255, 0.8);
+  border: 1px solid #A2B5DA;
+  border-radius: 40px;
   font-family: var(--font-tech, 'Kode Mono', monospace);
   font-size: 12px;
-  color: #64748B;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #434B5A;
   user-select: none;
+}
+
+.olin-window__title {
+  font-weight: 500;
+  color: #434B5A;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.olin-window__body {
+  flex: 1;
+  padding: 12px;
+  background: rgba(229, 237, 255, 0.6);
+  border: 1px solid #7D8BA8;
+  border-radius: 2px;
 }
 
 .olin-window__dots {
@@ -1104,61 +1131,43 @@
 .olin-window__dot--yellow { background-color: #FFBD2E; }
 .olin-window__dot--green { background-color: #27C93F; }
 
-.olin-window__title {
-  font-weight: 500;
-  color: #01050F;
-}
-
-.olin-window__body {
-  padding: 24px;
-  background: #FFFFFF;
-}
-
 /* ==========================================================================
-   11. PINNED STICKY NOTE (MOLÉCULE D'ATELIER - 4 TONS & INCLINAISON)
+   11. DIGITAL POST-IT / NOTE D'ATELIER (FIGMA 4340:159014 / MASTER POST-IT)
+   Strictement conforme à Figma : 24px padding, drop-shadow 2px, zéros gadgets
+   (ni scotch ni rotation forcée), typographie Geologica #003026 & lien Kode Mono.
    ========================================================================== */
 .olin-sticky {
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 20px;
-  border-radius: 4px;
-  border: 1px solid #01050F;
-  box-shadow: 3px 3px 0px #01050F;
+  padding: 24px;
+  border-radius: 2px;
+  border: 1.5px solid #01050F;
+  box-shadow: 2px 2px 0px #01050F;
   font-family: var(--font-body, 'Geologica', sans-serif);
-  font-size: 14px;
-  line-height: 1.5;
-  color: #01050F;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #003026;
+  letter-spacing: -0.02em;
+  background-color: #FFFF5C;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.olin-sticky:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0px #01050F;
 }
 
 .olin-sticky--tilted {
-  transform: rotate(-1.5deg);
-  transition: transform 0.2s ease;
+  /* Aligné Figma 4340:159014 : affichage numérique net sans inclinaison parasite */
+  transform: none;
 }
 
-.olin-sticky--tilted:hover {
-  transform: rotate(0deg) translateY(-2px);
-}
-
-/* Ruban adhésif / Scotch Washi */
-.olin-sticky::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 20px;
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px dashed rgba(0, 0, 0, 0.2);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-.olin-sticky--yellow { background-color: #FFE500; }
-.olin-sticky--mint { background-color: #E0F7F0; }
-.olin-sticky--pink { background-color: #FCE7F3; }
-.olin-sticky--white { background-color: #FFFFFF; }
+.olin-sticky--yellow { background-color: #FFFF5C; color: #003026; }
+.olin-sticky--mint { background-color: #01EEBA; color: #003026; }
+.olin-sticky--pink { background-color: #FCE7F3; color: #01050F; }
+.olin-sticky--white { background-color: #FFFFFF; color: #01050F; }
 
 .olin-sticky__header {
   display: flex;
@@ -1166,9 +1175,44 @@
   justify-content: space-between;
   font-family: var(--font-tech, 'Kode Mono', monospace);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  color: #003026;
+  opacity: 0.85;
+}
+
+.olin-sticky blockquote {
+  margin: 0;
+  font-family: var(--font-body, 'Geologica', sans-serif);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #003026;
+}
+
+.olin-sticky .cs-note__sign {
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  font-size: 12px;
+  font-weight: 700;
+  color: #003026;
+  margin-top: 4px;
+}
+
+.olin-sticky__action {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  font-size: 14px;
+  font-weight: 700;
+  color: #003026;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: opacity 0.2s ease;
+}
+
+.olin-sticky__action:hover {
   opacity: 0.8;
 }
 
@@ -1294,4 +1338,880 @@
   font-size: 14px;
   line-height: 1.6;
   color: #334155;
+}
+
+/* ==========================================================================
+   15. PICTURE SLOT & PHOTO DUOTONE (FIGMA ❖ Picture slot 4318:140411)
+   .olin-picture-frame = Picture slot Figma : passe-partout blanc 3px, image en
+   couleur, dégradé #0F00DB → #570299 (screen), masque #F3F5FB (color-burn) et
+   grain. À utiliser pour toute image, seule ou dans le corps d'une .olin-window.
+   Légende en overlay flou révélée au survol (.olin-picture-frame__caption).
+   .olin-photo-duotone seul (hors slot) = variante photo N&B.
+   ========================================================================== */
+
+.olin-picture-frame {
+  position: relative;
+  display: block;
+  padding: 3px;
+  background: #FFFFFF;
+  border-radius: 2px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+a.olin-picture-frame:hover {
+  transform: translateY(-2px);
+}
+
+.olin-picture-frame .olin-photo-duotone {
+  --olin-duotone-mask-opacity: 1;
+  border-radius: 0;
+}
+
+/* Slot Figma : l'image garde ses couleurs (aucun filtre sur le calque image) */
+.olin-picture-frame .olin-photo-duotone > img {
+  filter: none;
+}
+
+/* Survol d'un slot cliquable : le dégradé s'efface pour lire la vraie image */
+a.olin-picture-frame:hover .olin-photo-duotone::before,
+a.olin-picture-frame:focus-visible .olin-photo-duotone::before {
+  opacity: 0.3;
+}
+
+/* Légende overlay floutée révélée au survol */
+/* Posée à l'intérieur du passe-partout (3px) : ne recouvre jamais le cadre blanc */
+.olin-picture-frame__caption {
+  position: absolute;
+  bottom: 3px;
+  left: 3px;
+  right: 3px;
+  padding: 14px 18px;
+  background: rgba(1, 5, 15, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #FAFAFA;
+  font-family: var(--font-body, 'Geologica', sans-serif);
+  font-size: 13.5px;
+  line-height: 1.45;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  z-index: 10;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.olin-picture-frame:hover .olin-picture-frame__caption,
+.olin-picture-frame:focus-visible .olin-picture-frame__caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.olin-picture-frame__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.olin-picture-frame__title {
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #01EEBA;
+}
+
+.olin-picture-frame__zoom {
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  font-size: 12px;
+  font-weight: 700;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+/* Base Photo Duotone */
+.olin-photo-duotone {
+  --olin-duotone-mask-opacity: 0.6;
+  --olin-duotone-grain-opacity: 0.18;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: #01050F;
+}
+
+/* Couche 1 — Base image désaturée avec transition fluide */
+.olin-photo-duotone > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(1.08);
+  transition: filter 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Révélation dynamique au survol */
+.olin-photo-duotone--interactive:hover > img {
+  filter: grayscale(20%) contrast(1.04);
+  transform: scale(1.015);
+}
+
+a.olin-picture-frame:hover .olin-photo-duotone > img {
+  transform: scale(1.015);
+}
+
+/* Couche 2 — Dégradé signature */
+.olin-photo-duotone::before,
+.olin-photo-duotone::after,
+.olin-photo-duotone__grain {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.olin-photo-duotone::before {
+  z-index: 1;
+  background: linear-gradient(162.5deg, rgb(15, 0, 219) 39.9%, rgb(87, 2, 153) 59.9%);
+  mix-blend-mode: screen;
+}
+
+/* Couche 3 — Masque de contraste (#F3F5FB en color-burn) */
+.olin-photo-duotone::after {
+  z-index: 2;
+  background: #F3F5FB;
+  mix-blend-mode: color-burn;
+  opacity: var(--olin-duotone-mask-opacity);
+}
+
+/* Couche 4 — Grain / dither (feTurbulence) */
+.olin-photo-duotone__grain {
+  z-index: 3;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+  mix-blend-mode: overlay;
+  opacity: var(--olin-duotone-grain-opacity);
+}
+
+.olin-picture-frame:hover .olin-photo-duotone::before {
+  opacity: 0.35;
+}
+
+.olin-picture-frame:hover .olin-photo-duotone::after {
+  opacity: 0.25;
+}
+
+/* ==========================================================================
+   ❖ MINI-PLAYER BRAIN.FM (.olin-brainfm-player) — 02 · Molécule
+   ========================================================================== */
+
+.olin-brainfm-player {
+  --player-bg: #FAFAFA;
+  --player-border: #01050F;
+  --player-mint: #00F5A0;
+  --player-blue: #0128FE;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--player-bg);
+  border: 1.5px solid var(--player-border);
+  box-shadow: 2px 2px 0px var(--player-border);
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  color: var(--player-border);
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s ease;
+  user-select: none;
+}
+
+/* Format Pilule Compact */
+.olin-brainfm-player--pill {
+  height: 38px;
+  padding: 3px 10px 3px 4px;
+  border-radius: 9999px;
+}
+
+.olin-brainfm-player:hover {
+  transform: translateY(-1px);
+  box-shadow: 3px 3px 0px var(--player-border);
+}
+
+/* Bouton Play/Pause avec hit-target tactile garanti */
+.olin-brainfm-player__btn-play {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: var(--player-border);
+  color: #FAFAFA;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.olin-brainfm-player__btn-play::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  bottom: -8px;
+  left: -8px;
+  right: -8px; /* Garantit le hit-target de 44px */
+}
+
+.olin-brainfm-player__btn-play:hover {
+  background: var(--player-blue);
+  transform: scale(1.05);
+}
+
+.olin-brainfm-player__icon--pause {
+  display: none;
+}
+
+.olin-brainfm-player.is-playing .olin-brainfm-player__icon--play {
+  display: none;
+}
+
+.olin-brainfm-player.is-playing .olin-brainfm-player__icon--pause {
+  display: block;
+}
+
+/* Égaliseur visuel (4 barres) */
+.olin-brainfm-equalizer {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2.5px;
+  height: 14px;
+  padding: 0 2px;
+}
+
+.olin-brainfm-equalizer__bar {
+  width: 2.5px;
+  height: 100%;
+  background: var(--player-mint);
+  border: 0.5px solid var(--player-border);
+  border-radius: 1px;
+  transform-origin: bottom;
+  transform: scaleY(0.25);
+  transition: transform 0.2s ease;
+}
+
+/* Animation active en lecture (GPU-accelerated scaleY) */
+.olin-brainfm-player.is-playing .olin-brainfm-equalizer__bar:nth-child(1) {
+  animation: olinEqualizerJump 0.8s ease-in-out infinite alternate;
+}
+.olin-brainfm-player.is-playing .olin-brainfm-equalizer__bar:nth-child(2) {
+  animation: olinEqualizerJump 1.1s ease-in-out infinite 0.15s alternate;
+}
+.olin-brainfm-player.is-playing .olin-brainfm-equalizer__bar:nth-child(3) {
+  animation: olinEqualizerJump 0.9s ease-in-out infinite 0.3s alternate;
+}
+.olin-brainfm-player.is-playing .olin-brainfm-equalizer__bar:nth-child(4) {
+  animation: olinEqualizerJump 1.2s ease-in-out infinite 0.1s alternate;
+}
+
+@keyframes olinEqualizerJump {
+  0% { transform: scaleY(0.2); }
+  50% { transform: scaleY(0.9); }
+  100% { transform: scaleY(0.4); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .olin-brainfm-player.is-playing .olin-brainfm-equalizer__bar {
+    animation: none;
+    transform: scaleY(0.6);
+  }
+}
+
+/* Métadonnées */
+.olin-brainfm-player__meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  line-height: 1;
+}
+
+.olin-brainfm-player__badge {
+  padding: 2px 5px;
+  background: var(--player-mint);
+  border: 1px solid var(--player-border);
+  border-radius: 3px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  font-size: 9.5px;
+}
+
+.olin-brainfm-player__track {
+  font-weight: 600;
+  color: #2D3748;
+  white-space: nowrap;
+}
+
+/* Toggle expansion */
+.olin-brainfm-player__btn-toggle {
+  background: transparent;
+  border: none;
+  color: #718096;
+  cursor: pointer;
+  padding: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.olin-brainfm-player__btn-toggle:hover {
+  color: var(--player-border);
+  transform: translateY(1px);
+}
+
+
+/* ==========================================================================
+   16. OS HEADER TRANSVERSE (FIGMA Header 4515:45981)
+   Barre de 64px sans fond plein : ombre 0 1px 8px rgba(0,0,0,.04) + flou.
+   Logo · navigation d'atelier · mini-player Brain.fm · statut · menu mobile.
+   ========================================================================== */
+.olin-header {
+  position: sticky;
+  top: 0;
+  z-index: 120;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 0 60px;
+  background: rgba(253, 250, 254, 0.72);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
+}
+
+.olin-header__brand {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.olin-header__brand img {
+  width: 36px;
+  height: 36px;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.olin-header__brand:hover img {
+  transform: rotate(-6deg) scale(1.06);
+}
+
+.olin-header__nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: auto;
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  font-size: 13px;
+}
+
+.olin-header__nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 12px;
+  color: #242237;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: color 0.15s ease;
+}
+
+.olin-header__nav a:hover,
+.olin-header__nav a[aria-current="page"] {
+  color: #0028FF;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.olin-header__right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Tag de statut (Figma Tag 4333:156886) */
+.olin-status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  background: #25FEA8;
+  border: 1px solid #007147;
+  border-radius: 12px;
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  font-size: 10px;
+  letter-spacing: 0.1px;
+  line-height: 12px;
+  color: #007147;
+  white-space: nowrap;
+}
+
+.olin-status-tag__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 12px;
+  background: #006C44;
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+/* Bouton « Menu workshop » (Figma 40×40, cible tactile portée à 44px) */
+.olin-menu-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.olin-menu-btn__face {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #FFFFFF;
+  border: 0.9px solid #E1E8F9;
+  border-radius: 10.9px;
+  box-shadow: 0 0.9px 1.8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.15s ease;
+}
+
+.olin-menu-btn:hover .olin-menu-btn__face,
+.olin-menu-btn[aria-expanded="true"] .olin-menu-btn__face {
+  border-color: #242237;
+  transform: translateY(-1px);
+}
+
+.olin-header__panel {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .olin-header {
+    padding: 0 20px;
+    gap: 12px;
+  }
+
+  .olin-header__nav,
+  .olin-header__right .olin-status-tag {
+    display: none;
+  }
+
+  .olin-menu-btn {
+    display: inline-flex;
+  }
+
+  .olin-header .olin-brainfm-player {
+    margin-left: auto;
+  }
+
+  /* Panneau déroulant mobile : navigation + statut */
+  .olin-header__panel.is-open {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: absolute;
+    top: 64px;
+    right: 12px;
+    left: 12px;
+    padding: 12px;
+    background: #FFFFFF;
+    border: 1px solid #01050F;
+    border-radius: 8px;
+    box-shadow: 3px 3px 0px #01050F;
+  }
+
+  .olin-header__panel a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 12px;
+    font-family: var(--font-tech, 'Kode Mono', monospace);
+    font-size: 15px;
+    color: #242237;
+    border-radius: 6px;
+  }
+
+  .olin-header__panel a:hover {
+    background: #EEF2FF;
+    color: #0028FF;
+  }
+
+  .olin-header__panel .olin-status-tag {
+    align-self: flex-start;
+    margin: 8px 12px 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .olin-header .olin-brainfm-player__track {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   17. CURSOR FIGJAM (FIGMA ❖ cursor-figjam 4515:45983 / HandCursor 4368:18097)
+   Main blanche pointée + pilule bleu glacier, en flottement discret.
+   ========================================================================== */
+.olin-cursor-figjam {
+  position: absolute;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  pointer-events: none;
+  user-select: none;
+  animation: olinCursorFloat 5s ease-in-out infinite;
+}
+
+.olin-cursor-figjam__hand {
+  width: 26px;
+  height: 26px;
+  filter: drop-shadow(0 1px 1px rgba(1, 5, 15, 0.2));
+}
+
+.olin-cursor-figjam__tag {
+  margin-left: 16px;
+  padding: 6px 10px;
+  background: #E5EDFF;
+  border: 1px solid #0028FF;
+  border-radius: 8px;
+  font-family: var(--font-body, 'Geologica', sans-serif);
+  font-size: 15px;
+  font-weight: 600;
+  color: #0028FF;
+  white-space: nowrap;
+}
+
+@keyframes olinCursorFloat {
+  0%, 100% { transform: translate(0, 0); }
+  35% { transform: translate(6px, -8px); }
+  70% { transform: translate(-4px, 4px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .olin-cursor-figjam {
+    animation: none;
+  }
+}
+
+/* ==========================================================================
+   18. STICKER VINYLE D'ATELIER (FIGMA section Stickers 4557:79075)
+   Les SVG Figma portent déjà leur découpe blanche et leur ombre bleue.
+   --cut recrée cette découpe en CSS pour un logo livré sans contour.
+   ========================================================================== */
+.olin-sticker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(var(--olin-sticker-tilt, -2deg));
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.olin-sticker:hover {
+  transform: rotate(0deg) scale(1.06);
+}
+
+.olin-sticker img {
+  display: block;
+  height: 100%;
+  width: auto;
+}
+
+.olin-sticker--cut img {
+  filter:
+    drop-shadow(3px 0 0 #FAFAFA)
+    drop-shadow(-3px 0 0 #FAFAFA)
+    drop-shadow(0 3px 0 #FAFAFA)
+    drop-shadow(0 -3px 0 #FAFAFA)
+    drop-shadow(2px 3px 0 #0028FF);
+}
+
+/* ==========================================================================
+   19. POPUP WINDOW (FIGMA PopUp « Contact.sh » 4135:32009)
+   En-tête sombre #242237 · 3 points · titre Kode Mono 10px · corps #F3F5FB.
+   ========================================================================== */
+.olin-popup {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.olin-popup__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 24px;
+  padding: 4px 36px;
+  background: #242237;
+  border-radius: 2px 2px 0 0;
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  font-size: 11px;
+  color: #F3F5FB;
+}
+
+.olin-popup__header::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  width: 4px;
+  height: 4px;
+  margin-top: -2px;
+  border-radius: 50%;
+  background: #EDF5FE;
+  box-shadow: 8px 0 0 #EDF5FE, 16px 0 0 #EDF5FE;
+}
+
+.olin-popup__body {
+  padding: 20px;
+  background: #F3F5FB;
+  border: 1px solid #01050F;
+  border-top: 0;
+  border-radius: 0 0 2px 2px;
+}
+
+/* ==========================================================================
+   20. FOOTER D'ATELIER SUR MOTIF OLIN (FIGMA BG 4314:138629)
+   Le texte repose sur des découpes du bleu de fond : le motif reste autour.
+   ========================================================================== */
+.olin-footer {
+  background-color: #231FFF;
+  background-image: url('/assets/motif_olin_tile.svg');
+  background-size: 400px 400px;
+  background-repeat: repeat;
+  border-top: 1.5px solid #01050F;
+  color: #EAEEFF;
+}
+
+.olin-footer__inner,
+.olin-footer__legal {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.olin-footer__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 40px;
+  padding-top: 64px;
+  padding-bottom: 56px;
+}
+
+.olin-footer__mantra {
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  font-size: 15px;
+  line-height: 1.5;
+  color: #FFFFFF;
+}
+
+.olin-footer__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.olin-footer__nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  font-size: 14px;
+  font-weight: 500;
+  color: #EAEEFF;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: color 0.15s ease, text-decoration-thickness 0.15s ease;
+}
+
+/* Sur fond bleu, le survol passe au jaune atelier (le bleu DS serait illisible) */
+.olin-footer__nav a:hover {
+  color: #FFE500;
+  text-decoration-thickness: 2px;
+}
+
+.olin-footer a:focus-visible {
+  outline: 2px solid #FFE500;
+  outline-offset: 3px;
+}
+
+.olin-footer__legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding-top: 18px;
+  padding-bottom: 24px;
+  border-top: 1px solid rgba(234, 238, 255, 0.3);
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  font-size: 12px;
+  color: #EAEEFF;
+}
+
+.olin-footer__mantra span,
+.olin-footer__nav a,
+.olin-footer__legal span {
+  background-color: #231FFF;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.olin-footer__mantra span,
+.olin-footer__legal span {
+  display: inline;
+  padding: 5px 8px;
+  margin-left: -8px;
+}
+
+.olin-footer__nav a {
+  padding: 0 8px;
+  margin-left: -8px;
+}
+
+.olin-footer__legal span:last-child {
+  margin-left: 0;
+  margin-right: -8px;
+}
+
+@media (max-width: 1024px) {
+  .olin-footer__inner,
+  .olin-footer__legal {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .olin-footer__inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    padding-top: 48px;
+    padding-bottom: 40px;
+  }
+
+  .olin-footer__nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 20px;
+  }
+
+  .olin-footer__legal {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .olin-footer__legal span:last-child {
+    margin-left: -8px;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .olin-footer__inner,
+  .olin-footer__legal {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media print {
+  .olin-header,
+  .olin-footer {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   21. EFFET MACHINE À ÉCRIRE (src/typewriter.js)
+   Le texte garde sa place et le curseur sa largeur : aucun reflow.
+   ========================================================================== */
+.js-typing [data-typewriter] {
+  visibility: hidden;
+  /* Filet de sécurité si le script ne s'exécute pas */
+  animation: olin-type-failsafe 0s 3s forwards;
+}
+
+@keyframes olin-type-failsafe {
+  to { visibility: visible; }
+}
+
+.olin-type-char {
+  visibility: hidden;
+}
+
+.olin-type-char.is-typed {
+  visibility: visible;
+}
+
+/* Curseur fixe pendant la frappe, clignotant ensuite */
+.is-typing [data-typewriter-caret] {
+  animation: none !important;
+}
+
+.olin-brainfm-player.is-loading .olin-brainfm-player__btn-play {
+  animation: pulse-dot 1s infinite ease-in-out;
+}
+
+@media print {
+  .olin-type-char,
+  .js-typing [data-typewriter] {
+    visibility: visible !important;
+    animation: none !important;
+  }
+}
+
+/* ==========================================================================
+   22. TRAME D'ATELIER INTERACTIVE (src/dot-grid.js)
+   Le canvas n'apparaît que lorsque le script l'active (html.dot-grid-live) ;
+   sinon la page garde sa trame CSS statique.
+   ========================================================================== */
+#canvas-dot-grid {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  display: none;
+}
+
+.dot-grid-live #canvas-dot-grid {
+  display: block;
+}
+
+@media print {
+  #canvas-dot-grid {
+    display: none !important;
+  }
 }
