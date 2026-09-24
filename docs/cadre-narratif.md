@@ -469,8 +469,18 @@ Voici la matérialisation visuelle exacte des écrans et des 4 moments de conver
 > 📱 *Insight de la rue :*  
 > *« En atelier, on teste en fibre optique à 1 Gb/s. Dans le 11e arrondissement avec un forfait roaming étranger à 15$ le mégaoctet, le touriste coupe la 4G plus vite que son ombre. Le meilleur design a été un bon vieux carnet de route PDF hors-ligne. »*
 
-* **Livrables Clés de l'Étape :** Webapp responsive opérationnelle, Protocole de test terrain en 3 étapes, Synthèse des retours in-situ et carnet PDF hors-ligne.
-* **Artefact Preuve en Regard :** Schéma du protocole de test in-situ en 3 étapes P.13 (`Portfolio/Cas d'usage/assets_datacity/p13_tests_in_situ_3_etapes.png`).
+* **Livrables Clés de l'Étape :** Webapp responsive opérationnelle, Protocole de test terrain en 3 étapes, Matrice de priorisation des 9 frictions réelles issues du Reality Check :
+  1. *Point de départ ambigu (Sévérité Moyenne)* : hésitation entre adresse actuelle, départ de visite ou quartier désiré.
+  2. *Catégories de POI imprécises* : besoin de libellés proches du vocabulaire spontané des touristes.
+  3. *Limite de 3 centres d'intérêt trop contraignante* : sentiment d'un profilage trop réducteur.
+  4. *Ambiguïté du triptyque de recommandations (Sévérité Moyenne)* : confusion entre 3 alternatives au choix vs 3 étapes successives.
+  5. *Tracés en lignes droites et points mal interprétés* : difficulté de projection dans un cheminement réel.
+  6. *Sentiment de suggestions aléatoires / Manque de personnalisation (Data & Usage - Sévérité Moyenne)* : besoin d'explicabilité (*« Pourquoi ce lieu m'est proposé à moi ? »*).
+  7. *Manque des fonctions cartographiques standard* : zoom fluide, alternatives de transport, repérage immédiat.
+  8. *Manque d'informations détaillées sur les lieux (SÉVÉRITÉ MAJEURE - Bloquant)* : photos, prix, horaires réels, affluence, transports. La curiosité est là, mais l'action exige de la réassurance.
+  9. *Nombre insuffisant de suggestions intra-quartier* : besoin d'options une fois sur place pour préserver le libre arbitre.
+* **Point de Vérité sur la Confiance & Données Personnelles :** Contrairement à un projet comme Renault Moments, aucun retour utilisateur n'a exprimé de crainte de surveillance ou de réticence sur la vie privée. L'enjeu de confiance était purement **fonctionnel et décisionnel** : crédibilité de l'algorithme, explicabilité de la recommandation et fiabilité des informations pratiques avant d'engager 2 heures de visite.
+* **Artefact Preuve en Regard :** Schéma du protocole de test in-situ en 3 étapes P.13 (`Portfolio/Cas d'usage/assets_datacity/p13_tests_in_situ_3_etapes.png`) et Matrice de priorisation des besoins d'usage P.14.
 
 ---
 
