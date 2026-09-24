@@ -1062,29 +1062,56 @@
 }
 
 /* ==========================================================================
-   10. MOCKUP WINDOW HEADER (● ● ● macOS DOCK & FINDER)
+   10. WINDOW / FRAME (FIGMA 4515:46240 — « Derniers projets »)
+   Onglet-pilule (header) posé 4px au-dessus d'un corps bleu glacier.
+   <div class="olin-window">
+     <div class="olin-window__header"><span class="olin-window__title">…</span></div>
+     <div class="olin-window__body">…</div>
+   </div>
+   Les pastilles macOS (.olin-window__dots) restent disponibles mais ne font
+   plus partie du rendu Figma par défaut.
    ========================================================================== */
 .olin-window {
-  background: #FFFFFF;
-  border: 1px solid #01050F;
-  border-radius: 8px;
-  box-shadow: 3px 3px 0px #01050F;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
+  gap: 4px;
+  min-width: 0;
 }
 
 .olin-window__header {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 10px 16px;
-  background: #F1F5F9;
-  border-bottom: 1px solid #01050F;
+  align-self: flex-start;
+  gap: 8px;
+  max-width: 100%;
+  min-height: 34px;
+  padding: 7px 16px;
+  background: rgba(229, 237, 255, 0.8);
+  border: 1px solid #A2B5DA;
+  border-radius: 40px;
   font-family: var(--font-tech, 'Kode Mono', monospace);
   font-size: 12px;
-  color: #64748B;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #434B5A;
   user-select: none;
+}
+
+.olin-window__title {
+  font-weight: 500;
+  color: #434B5A;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.olin-window__body {
+  flex: 1;
+  padding: 12px;
+  background: rgba(229, 237, 255, 0.6);
+  border: 1px solid #7D8BA8;
+  border-radius: 2px;
 }
 
 .olin-window__dots {
@@ -1103,16 +1130,6 @@
 .olin-window__dot--red { background-color: #FF5F56; }
 .olin-window__dot--yellow { background-color: #FFBD2E; }
 .olin-window__dot--green { background-color: #27C93F; }
-
-.olin-window__title {
-  font-weight: 500;
-  color: #01050F;
-}
-
-.olin-window__body {
-  padding: 24px;
-  background: #FFFFFF;
-}
 
 /* ==========================================================================
    11. DIGITAL POST-IT / NOTE D'ATELIER (FIGMA 4340:159014 / MASTER POST-IT)
@@ -1324,34 +1341,44 @@
 }
 
 /* ==========================================================================
-   15. PHOTO DUOTONE SIGNATURE & PICTURE FRAME (FIGMA 4385:17403 / 4318:140409)
-   Composant cadre d'image souverain Olin.os :
-   - Format Fenêtre (.olin-window) quand des métadonnées riches / liens existent.
-   - Format Cadre (.olin-picture-frame) quand seule l'image existe, avec révélation
-     de la légende en overlay flou (backdrop-filter: blur) au survol.
-   Couches : image N&B → dégradé (screen) → masque #F3F5FB (color-burn) → grain (overlay).
+   15. PICTURE SLOT & PHOTO DUOTONE (FIGMA ❖ Picture slot 4318:140411)
+   .olin-picture-frame = Picture slot Figma : passe-partout blanc 3px, image en
+   couleur, dégradé #0F00DB → #570299 (screen), masque #F3F5FB (color-burn) et
+   grain. À utiliser pour toute image, seule ou dans le corps d'une .olin-window.
+   Légende en overlay flou révélée au survol (.olin-picture-frame__caption).
+   .olin-photo-duotone seul (hors slot) = variante photo N&B.
    ========================================================================== */
 
 .olin-picture-frame {
   position: relative;
   display: block;
+  padding: 3px;
   background: #FFFFFF;
-  border: 1.5px solid #01050F;
-  border-radius: 4px;
-  box-shadow: 3px 3px 0px #01050F;
+  border-radius: 2px;
   overflow: hidden;
   text-decoration: none;
   color: inherit;
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.olin-picture-frame:hover {
+a.olin-picture-frame:hover {
   transform: translateY(-2px);
-  box-shadow: 5px 5px 0px #01050F;
 }
 
 .olin-picture-frame .olin-photo-duotone {
-  border-radius: 2px;
+  --olin-duotone-mask-opacity: 1;
+  border-radius: 0;
+}
+
+/* Slot Figma : l'image garde ses couleurs (aucun filtre sur le calque image) */
+.olin-picture-frame .olin-photo-duotone > img {
+  filter: none;
+}
+
+/* Survol d'un slot cliquable : le dégradé s'efface pour lire la vraie image */
+a.olin-picture-frame:hover .olin-photo-duotone::before,
+a.olin-picture-frame:focus-visible .olin-photo-duotone::before {
+  opacity: 0.3;
 }
 
 /* Légende overlay floutée révélée au survol */
@@ -1432,9 +1459,12 @@
 }
 
 /* Révélation dynamique au survol */
-.olin-picture-frame:hover .olin-photo-duotone > img,
 .olin-photo-duotone--interactive:hover > img {
   filter: grayscale(20%) contrast(1.04);
+  transform: scale(1.015);
+}
+
+a.olin-picture-frame:hover .olin-photo-duotone > img {
   transform: scale(1.015);
 }
 

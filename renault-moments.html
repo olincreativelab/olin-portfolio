@@ -28,7 +28,7 @@
   <header class="cs-menubar">
     <nav class="cs-menubar__path" aria-label="Fil d'Ariane">
       <a href="/" class="cs-menubar__home">
-        <img src="/assets/olin_icon_riso.png" alt="Olin.os — retour à l'accueil" width="36" height="36" />
+        <img src="/assets/olin_logo_icon.svg" alt="Olin.os — retour à l'accueil" width="36" height="36" />
       </a>
       <span class="cs-menubar__crumbs">/ <a href="/#projets">case-studies</a> / <strong>renault-moments.dcx</strong></span>
     </nav>
@@ -80,20 +80,20 @@
         <figure class="cs-hero__visual">
           <div class="olin-window">
             <div class="olin-window__header">
-              <div class="olin-window__dots" aria-hidden="true">
-                <span class="olin-window__dot olin-window__dot--red"></span>
-                <span class="olin-window__dot olin-window__dot--yellow"></span>
-                <span class="olin-window__dot olin-window__dot--green"></span>
-              </div>
               <span class="olin-window__title">cockpit-openr.aaos</span>
               <span aria-hidden="true">12"</span>
             </div>
-            <div class="cs-cockpit">
-              <img
-                src="/assets/renault/extracted/p242_img4.png"
-                width="912" height="1368"
-                alt="Écran central OpenR sous Moment OS : guidage « 3 km — Aire de la Sarthe », carte sombre et Timeline « voyage à Nantes » de 10:37 à 12:26."
-                fetchpriority="high" />
+            <div class="olin-window__body cs-cockpit">
+              <a class="olin-picture-frame cs-cockpit__slot" href="/assets/renault/extracted/p242_img4.png" target="_blank" rel="noopener" aria-label="Ouvrir l'écran cockpit OpenR en pleine résolution (nouvel onglet)">
+                <div class="olin-photo-duotone">
+                  <img
+                    src="/assets/renault/extracted/p242_img4.png"
+                    width="912" height="1368"
+                    alt="Écran central OpenR sous Moment OS : guidage « 3 km — Aire de la Sarthe », carte sombre et Timeline « voyage à Nantes » de 10:37 à 12:26."
+                    fetchpriority="high" />
+                  <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+                </div>
+              </a>
             </div>
           </div>
           <img class="cs-hero__sticker" src="/assets/stickers/sticker_client_renault_group.svg" width="160" height="53" alt="Client : Renault Group" />
@@ -213,29 +213,28 @@
         <aside class="cs-context__media">
           <div class="olin-window cs-context-figure">
             <div class="olin-window__header">
-              <div class="olin-window__dots" aria-hidden="true">
-                <span class="olin-window__dot olin-window__dot--red"></span>
-                <span class="olin-window__dot olin-window__dot--yellow"></span>
-                <span class="olin-window__dot olin-window__dot--green"></span>
-              </div>
               <span class="olin-window__title">luca-de-meo_renaulution.jpg</span>
-              <span class="olin-tag olin-tag--blue olin-tag--pill" style="font-size: 10px; padding: 1px 8px;">KEYNOTE</span>
+              <span class="olin-tag olin-tag--blue olin-tag--pill cs-window-tag">KEYNOTE</span>
               <a href="https://www.youtube.com/watch?v=68E6y6F_g2o" target="_blank" rel="noopener" class="olin-window__action" aria-label="Voir la keynote Renaulution sur YouTube (nouvel onglet)">Conférence ↗</a>
             </div>
-            <div class="cs-context-photo-wrap olin-photo-duotone">
-              <img
-                src="/assets/renault/luca_de_meo_renaulution.jpg"
-                alt="Luca de Meo, CEO de Renault Group, lors de la présentation du plan stratégique Renaulution"
-                width="1199" height="1200"
-                loading="lazy"
-                class="cs-context-photo" />
-              <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+            <div class="olin-window__body cs-context-body">
+            <div class="olin-picture-frame">
+              <div class="cs-context-photo-wrap olin-photo-duotone">
+                <img
+                  src="/assets/renault/luca_de_meo_renaulution.jpg"
+                  alt="Luca de Meo, CEO de Renault Group, lors de la présentation du plan stratégique Renaulution"
+                  width="1199" height="1200"
+                  loading="lazy"
+                  class="cs-context-photo" />
+                <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+              </div>
             </div>
             <div class="cs-context-quote">
               <blockquote>
                 « Nous allons passer d'une entreprise automobile travaillant avec de la technologie à une entreprise technologique travaillant avec des voitures. »
               </blockquote>
               <cite>— <strong>Luca de Meo</strong>, CEO Renault Group (Lancement du plan Renaulution)</cite>
+            </div>
             </div>
           </div>
         </aside>
@@ -539,11 +538,6 @@
       <!-- Transposition & Enseignements Transverses -->
       <aside class="olin-window cs-sowhat" aria-labelledby="sowhat-title">
         <div class="olin-window__header">
-          <div class="olin-window__dots" aria-hidden="true">
-            <span class="olin-window__dot olin-window__dot--red"></span>
-            <span class="olin-window__dot olin-window__dot--yellow"></span>
-            <span class="olin-window__dot olin-window__dot--green"></span>
-          </div>
           <span class="olin-window__title" id="sowhat-title">🎯 The so what? // Ce que ce cas démontre pour vos produits</span>
         </div>
         <div class="olin-window__body cs-sowhat__body">

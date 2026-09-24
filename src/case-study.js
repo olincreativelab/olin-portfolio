@@ -1,12 +1,10 @@
 /**
  * OLIN.OS — CASE STUDY (Progressive Disclosure)
- * Stepper actif au scroll, tiroirs Bento (desktop) / accordéons (mobile),
+ * Stepper actif au scroll (tiroirs : <details> natifs, fermés par défaut),
  * export One-Pager via impression, trame de fond interactive.
  */
 
 import { initDotGrid } from './dot-grid.js';
-
-const MOBILE_QUERY = window.matchMedia('(max-width: 768px)');
 
 // --------------------------------------------------------------------------
 // 1. Stepper : état actif synchronisé avec l'acte visible
@@ -46,15 +44,6 @@ function initStepper() {
 }
 
 // --------------------------------------------------------------------------
-// 2. Tiroirs senior : Bento 2x2 ouvert sur desktop, accordéons repliés sur mobile
-// --------------------------------------------------------------------------
-function syncDrawers() {
-  document.querySelectorAll('[data-drawer]').forEach((drawer) => {
-    drawer.open = !MOBILE_QUERY.matches;
-  });
-}
-
-// --------------------------------------------------------------------------
 // 3. One-Pager PDF : impression du Niveau 1 (voir @media print)
 // --------------------------------------------------------------------------
 function initPrint() {
@@ -64,7 +53,5 @@ function initPrint() {
 }
 
 initStepper();
-syncDrawers();
-MOBILE_QUERY.addEventListener('change', syncDrawers);
 initPrint();
 initDotGrid(document.getElementById('canvas-dot-grid'));

@@ -307,22 +307,20 @@
   margin: 0;
 }
 
+/* Corps de la window cockpit : picture slot centré */
 .cs-cockpit {
-  background: var(--cs-cockpit);
-  padding: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.cs-cockpit img {
-  display: block;
+.cs-cockpit__slot {
   width: 100%;
-  max-width: 340px;
-  max-height: 480px;
-  object-fit: contain;
+  max-width: 320px;
+}
+
+.cs-cockpit__slot img {
   height: auto;
-  border-radius: 12px;
 }
 
 .cs-hero__sticker {
@@ -500,17 +498,14 @@
   align-items: start;
 }
 
-.cs-context-figure {
-  overflow: hidden;
-  background: #FFFFFF;
+.cs-context-body {
+  display: grid;
+  gap: 12px;
 }
 
 .cs-context-photo-wrap {
   width: 100%;
   aspect-ratio: 16 / 11;
-  overflow: hidden;
-  background: #01050F;
-  border-bottom: 1px solid #01050F;
 }
 
 .cs-context-photo {
@@ -527,8 +522,7 @@
 }
 
 .cs-context-quote {
-  padding: 16px 20px;
-  background: #FFFFFF;
+  padding: 4px 4px 0;
 }
 
 .cs-context-quote blockquote {
@@ -1078,17 +1072,28 @@
   color: var(--cs-ink);
 }
 
+/* Lien dans l'onglet-pilule : cible 44px via marges négatives (pilule inchangée) */
 .olin-window__action {
-  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin: -12px -8px -12px auto;
+  padding: 0 8px;
   font-family: var(--font-tech, 'Kode Mono', monospace);
   font-size: 11px;
   font-weight: 700;
   color: var(--cs-blue);
   text-decoration: underline;
   text-underline-offset: 3px;
-  padding: 2px 6px;
-  border-radius: 4px;
+  border-radius: 20px;
+  white-space: nowrap;
   transition: background-color 0.2s ease;
+}
+
+.cs-window-tag {
+  height: 20px;
+  padding: 1px 8px;
+  font-size: 10px;
 }
 
 .olin-window__action:hover {
@@ -1203,7 +1208,7 @@
     margin: 28px 8px 0 0;
   }
 
-  .cs-cockpit img {
+  .cs-cockpit__slot {
     max-width: 220px;
   }
 
@@ -1364,12 +1369,10 @@
 
   .cs-cockpit {
     padding: 8px !important;
-    background: #0F0C20 !important;
   }
 
-  .cs-cockpit img {
-    max-height: 210px !important;
-    width: auto !important;
+  .cs-cockpit__slot {
+    max-width: 140px !important;
   }
 
   .cs-synthese {
@@ -1385,10 +1388,6 @@
     gap: 8px !important;
   }
 
-  .cs-matrix__col .olin-window {
-    box-shadow: none !important;
-    border: 1px solid #CBD5E1 !important;
-  }
 
   .cs-matrix__col .olin-window__header {
     padding: 4px 8px !important;
