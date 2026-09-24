@@ -410,7 +410,7 @@ Voici la matérialisation visuelle exacte des écrans et des 4 moments de conver
 
 #### A. Mise en Situation & Contexte Stratégique Enrichi
 * **Le Programme DataCity (NUMA) :** Initiative d'innovation ouverte associant la Ville de Paris, des partenaires industriels mondiaux (Mastercard) et des agences expertes en data pour résoudre des défis urbains majeurs.
-* **La Squad Intégrée :** Rôle de Lead Product Designer & UX Researcher chez MFG Labs en binôme et mentorat avec 1 Designer Junior. Travail au coude-à-coude avec 1 Data Scientist, 1 Data Engineer, 2 Développeurs Front-End et 1 Product Manager.
+* **La Squad Intégrée :** Rôle d'UX Designer confirmé chez MFG Labs en binôme avec 1 Designer Junior. Travail au coude-à-coude avec 1 Data Scientist, 1 Data Engineer, 2 Développeurs Front-End et 1 Product Manager.
 
 ---
 
