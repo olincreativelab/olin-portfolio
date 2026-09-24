@@ -65,12 +65,15 @@ Réutiliser systématiquement les classes suivantes :
 ## 📁 5. Cartographie des Ressources Locales
 
 - **Documentation Cadre Narratif :** [`docs/cadre-narratif.md`](file:///docs/cadre-narratif.md) (Architecture séquentielle en 4 niveaux, scan 90s, moments de conversion).
-- **Contenu Brut des Projets :** [`docs/renault-moments-content.md`](file:///docs/renault-moments-content.md) (Données, quotes, personas, métriques).
+- **Contenu Brut des Projets :** 
+  - [`docs/renault-moments-content.md`](file:///docs/renault-moments-content.md) (Renault Moments : cockpit OpenR, AAOS, driver distraction).
+  - [`docs/datacity-content.md`](file:///docs/datacity-content.md) (DataCity ParisSee : React, Mapbox API, storyboard Jeff, Demoday Hôtel de Ville).
 - **Assets Haute Définition :**
-  - Slides PDF Retina 2x : `/assets/renault/slides/`
-  - Visuels & cockpits isolés : `/assets/renault/extracted/`
-  - Logos clients en stickers : `/assets/stickers/` (`sticker_client_renault_group.svg`, etc.)
+  - Slides PDF Retina 2x : `/assets/renault/slides/` et `/assets/datacity/slides/`
+  - Visuels & cockpits isolés : `/assets/renault/extracted/` et `/assets/datacity/extracted/`
+  - Logos clients en stickers : `/assets/stickers/` (`sticker_client_renault_group.svg`, `sticker_client_numa.svg`, `sticker_stripe.svg`, etc.)
   - Assets de la landing : `/assets/landing/`
+
 
 ---
 
