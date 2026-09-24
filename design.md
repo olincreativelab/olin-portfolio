@@ -227,6 +227,21 @@ tokens:
           Show_Tape:
             type: "BOOLEAN"
             default: true
+
+      picture_slot:
+        name: "❖ Picture slot"
+        node_id: "4318:140409"
+        page: "4. Molecules"
+        properties:
+          Ratio:
+            type: "VARIANT"
+            values: ["16:9", "4:3", "1:1", "Free"]
+          Show_Grain:
+            type: "BOOLEAN"
+            default: true
+          Frame_Style:
+            type: "VARIANT"
+            values: ["Raw", "Window Card", "Tape Pinned"]
 ---
 
 # 🤖 Olin.os Machine-Readable Design Contract (`design.md`)
@@ -243,6 +258,7 @@ tokens:
 - ❌ **DON'T (Zéro Couleur Hex en Dur) :** Ne JAMAIS injecter de code couleur hexadécimal arbitraire non déclaré dans le YAML `tokens.colors`.
 - ❌ **DON'T (Zéro Frame Vide pour les Icônes) :** Ne jamais insérer un Frame vide `Frame 1` comme placeholder d'icône. Toujours instancier un vrai composant icône de la bibliothèque d'atomes.
 - ❌ **DON'T (Zéro Dépassement Hit-Target) :** Ne jamais concevoir de composant interactif tactile d'une hauteur inférieure à 44px (`minHeight: 44`).
+- ❌ **DON'T (Zéro Chevauchement) :** INTERDICTION ABSOLUE de positionner des composants par-dessus des éléments existants. TOUJOURS analyser d'abord tous les éléments de la page (`atomsPage.children`), calculer le `maxY` (point le plus bas), puis positionner les nouveaux éléments APRÈS avec une marge de sécurité minimale de 200px. Utiliser des SECTIONS Figma pour organiser visuellement les composants par type (01 · Button, 02 · Link, etc.).
 
 ---
 

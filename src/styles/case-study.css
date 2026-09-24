@@ -637,16 +637,42 @@
 
 .cs-act__header {
   display: grid;
-  gap: 14px;
+  gap: 12px;
   margin-bottom: 32px;
-  max-width: 880px;
+  max-width: 920px;
 }
 
-.cs-act__tag-bar {
-  display: flex;
+/* Highlight Pills (aligné capture utilisateur media_1790261536513.png) */
+.cs-act__pill-group {
+  display: inline-flex;
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
+}
+
+.cs-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.cs-pill--blue {
+  color: var(--cs-blue);
+  border: 1.5px solid var(--cs-blue);
+  background: rgba(0, 40, 255, 0.04);
+}
+
+.cs-pill--dark {
+  color: var(--cs-ink);
+  border: 1.5px solid var(--cs-ink);
+  background: #FFFFFF;
 }
 
 .cs-act__num {
@@ -715,8 +741,8 @@
 
 .cs-act__body {
   display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
-  gap: 56px;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 48px;
   align-items: start;
 }
 
@@ -735,14 +761,14 @@
 }
 
 .cs-note {
-  max-width: 400px;
-  margin-top: 12px;
+  max-width: 440px;
+  margin-top: 0;
 }
 
 .cs-note blockquote p {
   font-size: 15px;
   font-weight: 500;
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
 .cs-note__sign {
@@ -750,28 +776,44 @@
   font-size: 12px;
 }
 
+/* Grammaire d'interaction en 5 temps (aligné capture utilisateur media_1790261611735.png) */
 .cs-grammar {
   list-style: none;
-  display: grid;
-  gap: 8px;
-  counter-reset: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
 }
 
 .cs-grammar li {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 10px 16px;
+  gap: 16px;
+  padding: 12px 20px;
+  min-height: 48px;
   background: #FFFFFF;
-  border: 1px solid var(--cs-ink);
+  border: 1.5px solid var(--cs-ink);
   border-radius: 8px;
   box-shadow: 2px 2px 0px var(--cs-ink);
-  font-weight: 600;
+  font-family: var(--font-display, 'Geologica', sans-serif);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--cs-ink);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cs-grammar li:hover {
+  transform: translateX(4px);
+  box-shadow: 3px 3px 0px var(--cs-ink);
 }
 
 .cs-grammar .cs-mono {
-  font-size: 12px;
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  font-size: 13px;
+  font-weight: 700;
   color: var(--cs-blue);
+  min-width: 28px;
 }
 
 /* Artefact visuel pleine largeur */
@@ -930,18 +972,127 @@
 
 .cs-sowhat__body {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
   font-size: 15px;
   line-height: 1.6;
   color: var(--cs-body);
 }
 
-.cs-sowhat__heading {
-  font-size: 17px;
+.cs-sowhat__item {
+  background: #FFFFFF;
+  border: 1px solid rgba(1, 5, 15, 0.12);
+  border-radius: 6px;
+  padding: 20px;
+  box-shadow: 1px 1px 0px rgba(1, 5, 15, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cs-sowhat__tag {
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  font-size: 11px;
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--cs-blue);
+}
+
+.cs-sowhat__heading {
+  font-family: var(--font-display, 'Geologica', sans-serif);
+  font-size: 16px;
+  font-weight: 800;
   color: var(--cs-ink);
-  margin-bottom: 8px;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.cs-sowhat__item p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--cs-body);
+  margin: 0;
+}
+
+/* Carte Squad & Contexte Renault Vision DCX */
+.cs-squad-card {
+  margin-top: 24px;
+  padding: 22px 24px;
+  background: #FFFFFF;
+  border: 1.5px solid var(--cs-ink);
+  border-radius: 8px;
+  box-shadow: 2px 2px 0px var(--cs-ink);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cs-squad-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cs-squad-card__title {
+  font-family: var(--font-display, 'Geologica', sans-serif);
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--cs-ink);
+  margin: 0;
+}
+
+.cs-squad-card__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.cs-squad-col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px 14px;
+  background: rgba(0, 40, 255, 0.03);
+  border: 1px solid rgba(0, 40, 255, 0.15);
+  border-radius: 6px;
+}
+
+.cs-squad-col__tag {
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--cs-blue);
+  text-transform: uppercase;
+}
+
+.cs-squad-col p {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--cs-body);
+  margin: 0;
+}
+
+.cs-squad-col strong {
+  color: var(--cs-ink);
+}
+
+.olin-window__action {
+  margin-left: auto;
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--cs-blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.olin-window__action:hover {
+  background: rgba(0, 40, 255, 0.08);
 }
 
 .cs-final-cta {
