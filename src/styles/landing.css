@@ -1,0 +1,702 @@
+/* ==========================================================================
+   OLIN.OS — LANDING PAGE (index.html)
+   Mise en page uniquement : les composants viennent de components.css
+   (.olin-header, .olin-window, .olin-picture-frame, .olin-photo-duotone,
+   .olin-sticky, .olin-sticker, .olin-cursor-figjam, .olin-popup, .olin-footer).
+   ========================================================================== */
+
+.lp-page {
+  --lp-ink: #01050F;
+  --lp-midnight: #242237;
+  --lp-blue: #0028FF;
+  --lp-body: #334155;
+  --lp-muted: #475569;
+  --lp-gradient: linear-gradient(124.44deg, #A100FF 7%, #0028FF 118%);
+  --lp-ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  background-color: #FDFAFE;
+  background-image: radial-gradient(circle, rgba(122, 122, 255, 0.35) 1.2px, transparent 1.2px);
+  background-size: 28px 28px;
+  color: var(--lp-ink);
+}
+
+/* Trame interactive active : on retire la trame CSS statique */
+.dot-grid-live .lp-page {
+  background-image: none;
+}
+
+.lp-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.lp-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.lp-skip-link {
+  position: absolute;
+  left: 16px;
+  top: -100px;
+  z-index: 1000;
+  padding: 12px 16px;
+  background: var(--lp-ink);
+  color: #FAFAFA;
+  border-radius: 8px;
+  font-family: var(--font-tech);
+}
+
+.lp-skip-link:focus {
+  top: 8px;
+}
+
+:where(.lp-page) a:focus-visible,
+:where(.lp-page) button:focus-visible {
+  outline: 2px solid var(--lp-blue);
+  outline-offset: 3px;
+}
+
+:where(.lp-page) section[id] {
+  scroll-margin-top: 80px;
+}
+
+.lp-section-head {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.lp-eyebrow {
+  font-family: var(--font-tech);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--lp-blue);
+}
+
+.lp-section-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -1px;
+  color: var(--lp-ink);
+}
+
+/* --------------------------------------------------------------------------
+   B. HERO — 60 / 40
+   -------------------------------------------------------------------------- */
+.lp-hero {
+  padding-top: 56px;
+  padding-bottom: 96px;
+}
+
+.lp-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 56px;
+  align-items: center;
+}
+
+.lp-hero__stage {
+  position: relative;
+}
+
+/* Amorce (gauche) · mascotte (centre) · chute (droite) */
+.lp-hero__title {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+}
+
+.lp-hero__line {
+  display: block;
+}
+
+.lp-hero__line--left {
+  justify-self: start;
+  font-family: var(--font-display);
+  font-size: clamp(38px, 5.4vw, 80px);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+  background: var(--lp-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.lp-hero__mascot {
+  justify-self: center;
+  width: clamp(112px, 13vw, 190px);
+  height: auto;
+  transform: rotate(-8deg);
+  transition: transform 0.4s var(--lp-ease);
+}
+
+.lp-hero__mascot:hover {
+  transform: rotate(4deg) scale(1.04);
+}
+
+.lp-hero__line--right {
+  justify-self: end;
+  text-wrap: balance;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(44px, 6vw, 92px);
+  line-height: 0.95;
+  letter-spacing: -1px;
+  text-align: right;
+  color: var(--lp-ink);
+}
+
+.lp-caret {
+  font-family: var(--font-tech);
+  font-style: normal;
+  color: var(--lp-blue);
+  animation: lp-blink 1.1s steps(1) infinite;
+}
+
+@keyframes lp-blink {
+  50% { opacity: 0; }
+}
+
+.lp-hero__cursor {
+  left: 60%;
+  top: 44%;
+}
+
+.lp-hero__actions {
+  margin-top: 32px;
+}
+
+/* Cartouche OS Terminal */
+.lp-terminal__body {
+  display: grid;
+  gap: 18px;
+}
+
+.lp-terminal__id {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+}
+
+.lp-terminal__photo {
+  width: 96px;
+}
+
+.lp-terminal__photo .olin-photo-duotone {
+  aspect-ratio: 1;
+}
+
+.lp-terminal__photo img {
+  object-position: center top;
+}
+
+.lp-terminal__name {
+  font-family: var(--font-tech);
+  font-size: 14px;
+  color: var(--lp-midnight);
+}
+
+.lp-terminal__role {
+  margin-top: 4px;
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.1vw, 28px);
+  font-weight: 800;
+  line-height: 1.05;
+  text-transform: uppercase;
+  color: var(--lp-midnight);
+}
+
+.lp-terminal__school {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--lp-muted);
+}
+
+.lp-terminal__prompt {
+  padding: 16px;
+  background: var(--lp-midnight);
+  border-radius: 4px;
+  font-family: var(--font-tech);
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: #E5EDFF;
+}
+
+.lp-terminal__prompt-head {
+  margin-bottom: 10px;
+  color: #00F5A0;
+}
+
+.lp-terminal__prompt dl {
+  display: grid;
+  gap: 8px;
+}
+
+.lp-terminal__prompt dt {
+  display: inline;
+  color: #00F5A0;
+}
+
+.lp-terminal__prompt dd {
+  display: inline;
+}
+
+.lp-terminal__cta {
+  justify-self: start;
+  min-width: 208px;
+}
+
+/* --------------------------------------------------------------------------
+   C. STICKERS VINYLES
+   -------------------------------------------------------------------------- */
+.lp-stickers {
+  padding: 48px 0;
+  border-top: 1px dashed rgba(1, 5, 15, 0.18);
+  border-bottom: 1px dashed rgba(1, 5, 15, 0.18);
+}
+
+.lp-stickers__list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 32px 56px;
+}
+
+.lp-stickers__list .olin-sticker {
+  height: 64px;
+}
+
+/* --------------------------------------------------------------------------
+   D. PROJETS — un étage par projet
+   -------------------------------------------------------------------------- */
+.lp-projects {
+  padding-top: 112px;
+}
+
+.lp-floor {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 56px;
+  align-items: start;
+  padding-top: 56px;
+  padding-bottom: 88px;
+}
+
+.lp-floor + .lp-floor {
+  border-top: 1px dashed rgba(1, 5, 15, 0.18);
+  padding-top: 88px;
+}
+
+.lp-floor__pitch {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+}
+
+.lp-floor__pitch > .olin-tag {
+  justify-self: start;
+}
+
+.lp-floor__title {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 4vw, 52px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -1px;
+  color: var(--lp-ink);
+}
+
+.lp-floor__title span {
+  font-size: 0.45em;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--lp-muted);
+}
+
+.lp-floor__lead {
+  font-size: clamp(18px, 1.6vw, 21px);
+  line-height: 1.45;
+  color: var(--lp-ink);
+}
+
+.lp-floor__text {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--lp-body);
+}
+
+.lp-floor__metrics {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.lp-floor__tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.lp-sticky--neon {
+  background-color: #00F5A0;
+  color: #003026;
+}
+
+.lp-sticky--solar {
+  background-color: #FFF04B;
+  color: #01050F;
+}
+
+.lp-sticky--solar .olin-sticky__header,
+.lp-sticky--solar .olin-sticky__action {
+  color: #01050F;
+}
+
+/* Moodboard d'ingénierie Excibat */
+.lp-flow {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+}
+
+.lp-flow__step {
+  display: grid;
+  gap: 10px;
+}
+
+.lp-flow__step + .lp-flow__step::before {
+  content: "↓";
+  justify-self: center;
+  font-family: var(--font-tech);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--lp-blue);
+}
+
+.lp-flow__num {
+  font-family: var(--font-tech);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--lp-blue);
+}
+
+.lp-flow__apis {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 6px 4px;
+}
+
+.lp-flow__apis .olin-sticker {
+  height: 56px;
+}
+
+.lp-flow__caption {
+  font-size: 13px;
+  color: var(--lp-muted);
+}
+
+.lp-flow__code {
+  margin: 0;
+  padding: 14px 16px;
+  background: var(--lp-midnight);
+  border-radius: 4px;
+  font-family: var(--font-tech);
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #E5EDFF;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.lp-code-accent {
+  color: #00F5A0;
+}
+
+.lp-code-muted {
+  color: #A2B5DA;
+}
+
+.lp-flow__shot {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Cockpit bi-écran Renault */
+.lp-cockpit {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  align-items: end;
+}
+
+.lp-cockpit .olin-photo-duotone img {
+  height: auto;
+}
+
+.lp-moments {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--lp-body);
+}
+
+.lp-moments li {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.lp-moments strong {
+  color: var(--lp-ink);
+}
+
+.lp-moments__num {
+  font-family: var(--font-tech);
+  font-weight: 700;
+  color: var(--lp-blue);
+}
+
+/* --------------------------------------------------------------------------
+   E. SERVICES — fond blueprint, bordures franches
+   -------------------------------------------------------------------------- */
+.lp-services {
+  padding: 96px 0;
+  background: #EDF2F9;
+  border-top: 1.5px solid var(--lp-ink);
+  border-bottom: 1.5px solid var(--lp-ink);
+}
+
+.lp-services__grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.lp-service {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 28px 24px 20px;
+  background: #FFFFFF;
+  border: 1px solid var(--lp-ink);
+  border-radius: 8px;
+  box-shadow: 3px 3px 0px var(--lp-ink);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--lp-body);
+}
+
+.lp-service__num {
+  font-family: var(--font-tech);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--lp-blue);
+}
+
+.lp-service__title {
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--lp-ink);
+}
+
+.lp-service__tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.lp-service .olin-link {
+  align-self: flex-start;
+  margin-top: auto;
+  margin-left: -14px;
+}
+
+/* --------------------------------------------------------------------------
+   CONTACT — PopUp Contact.sh
+   -------------------------------------------------------------------------- */
+.lp-contact {
+  padding-top: 96px;
+  padding-bottom: 112px;
+}
+
+.lp-contact .olin-popup {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.lp-contact__body {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+}
+
+.lp-contact__col {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--lp-body);
+}
+
+.lp-contact__col .olin-btn {
+  justify-self: start;
+}
+
+.lp-contact__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.lp-contact__title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--lp-midnight);
+}
+
+.lp-contact__mail {
+  justify-self: start;
+  margin-left: -14px;
+  font-family: var(--font-tech);
+  overflow-wrap: anywhere;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .lp-container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .lp-hero__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 48px;
+  }
+
+  .lp-services__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .lp-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .lp-hero {
+    padding-top: 32px;
+    padding-bottom: 64px;
+  }
+
+  .lp-hero__cursor {
+    left: auto;
+    right: 4%;
+    top: 36%;
+  }
+
+  .lp-terminal__id {
+    grid-template-columns: 72px minmax(0, 1fr);
+  }
+
+  .lp-terminal__photo {
+    width: 72px;
+  }
+
+  .lp-terminal__cta {
+    justify-self: stretch;
+  }
+
+  .lp-stickers__list {
+    gap: 24px 32px;
+  }
+
+  .lp-stickers__list .olin-sticker {
+    height: 44px;
+  }
+
+  .lp-projects {
+    padding-top: 72px;
+  }
+
+  .lp-floor {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    padding-bottom: 64px;
+  }
+
+  .lp-floor + .lp-floor {
+    padding-top: 64px;
+  }
+
+  /* Étage inversé : le pitch reste en tête sur mobile */
+  .lp-floor--reverse .lp-floor__pitch {
+    order: -1;
+  }
+
+  .lp-services {
+    padding: 72px 0;
+  }
+
+  .lp-contact__body {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .lp-contact__col .olin-btn {
+    justify-self: stretch;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-caret {
+    animation: none;
+  }
+
+  .lp-hero__mascot,
+  .lp-page .olin-sticker {
+    transition: none;
+  }
+}

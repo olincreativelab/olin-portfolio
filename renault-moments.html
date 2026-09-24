@@ -29,19 +29,49 @@
   <a class="cs-skip-link" href="#main">Aller au contenu</a>
 
   <!-- =========================================================================
-       TOP MENUBAR — OLIN.OS / case-studies / renault-moments.dcx
+       HEADER OS TRANSVERSE (.olin-header — Figma Header 4515:45981)
+       Même balisage sur toutes les pages du site
        ========================================================================= -->
-  <header class="cs-menubar">
-    <nav class="cs-menubar__path" aria-label="Fil d'Ariane">
-      <a href="/" class="cs-menubar__home">
-        <img src="/assets/olin_logo_icon.svg" alt="Olin.os — retour à l'accueil" width="36" height="36" />
-      </a>
-      <span class="cs-menubar__crumbs">/ <a href="/#projets">case-studies</a> / <strong>renault-moments.dcx</strong></span>
+  <header class="olin-header" data-site-header>
+    <a class="olin-header__brand" href="/">
+      <img src="/assets/olin_logo_icon.svg" alt="Olin.os — accueil" width="36" height="36" />
+    </a>
+    <nav class="olin-header__nav" aria-label="Navigation principale">
+      <a href="/#hero">Bureau</a>
+      <a href="/#projets">Projets</a>
+      <a href="/#services">Services</a>
+      <a href="/#contact">Contact</a>
     </nav>
-    <div class="cs-menubar__right">
-      <span class="olin-tag olin-tag--green olin-tag--pill cs-menubar__status">
-        <span class="olin-tag__dot" aria-hidden="true"></span>Disponible Q3/Q4
-      </span>
+    <div class="olin-header__right">
+      <div class="olin-brainfm-player olin-brainfm-player--pill" data-brainfm-player>
+        <button type="button" class="olin-brainfm-player__btn-play" aria-pressed="false" aria-label="Lancer ou mettre en pause la musique de concentration Brain.fm">
+          <svg class="olin-brainfm-player__icon--play" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.8v8.4L10 6 3 1.8Z" fill="currentColor" /></svg>
+          <svg class="olin-brainfm-player__icon--pause" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 1.5h2.5v9H2.5zM7 1.5h2.5v9H7z" fill="currentColor" /></svg>
+        </button>
+        <span class="olin-brainfm-equalizer" aria-hidden="true">
+          <span class="olin-brainfm-equalizer__bar"></span>
+          <span class="olin-brainfm-equalizer__bar"></span>
+          <span class="olin-brainfm-equalizer__bar"></span>
+          <span class="olin-brainfm-equalizer__bar"></span>
+        </span>
+        <span class="olin-brainfm-player__meta">
+          <span class="olin-brainfm-player__badge">FOCUS</span>
+          <span class="olin-brainfm-player__track">Kyoto // 40Hz Beta Flow</span>
+        </span>
+      </div>
+      <span class="olin-status-tag"><span class="olin-status-tag__dot" aria-hidden="true"></span>DISPONIBLE // OCTOBRE 2026</span>
+      <button type="button" class="olin-menu-btn" aria-expanded="false" aria-controls="olin-menu-panel" aria-label="Ouvrir le menu" data-menu-toggle>
+        <span class="olin-menu-btn__face">
+          <svg width="15" height="15" viewBox="0 0 15 15" aria-hidden="true"><path d="M0 6.66667V0H6.66667V6.66667H0ZM0 15V8.33333H6.66667V15H0ZM8.33333 6.66667V0H15V6.66667H8.33333ZM8.33333 15V8.33333H15V15H8.33333ZM1.66667 5H5V1.66667H1.66667V5ZM10 5H13.3333V1.66667H10V5ZM10 13.3333H13.3333V10H10V13.3333ZM1.66667 13.3333H5V10H1.66667V13.3333Z" fill="#242237" /></svg>
+        </span>
+      </button>
+    </div>
+    <div class="olin-header__panel" id="olin-menu-panel" data-menu-panel>
+      <a href="/#hero">Bureau</a>
+      <a href="/#projets">Projets</a>
+      <a href="/#services">Services</a>
+      <a href="/#contact">Contact</a>
+      <span class="olin-status-tag"><span class="olin-status-tag__dot" aria-hidden="true"></span>DISPONIBLE // OCTOBRE 2026</span>
     </div>
   </header>
 
@@ -55,7 +85,7 @@
 
       <div class="cs-hero__grid">
         <div class="cs-hero__content">
-          <h1 id="cs-title" class="cs-hero__title" aria-label="Renault Moments"><span class="cs-typewriter" aria-hidden="true" data-typewriter>Renault Moments</span><span class="cs-caret" aria-hidden="true">_</span></h1>
+          <h1 id="cs-title" class="cs-hero__title" aria-label="Renault Moments"><span class="cs-typewriter" aria-hidden="true" data-typewriter>Renault Moments</span><span class="cs-caret" aria-hidden="true" data-typewriter-caret>_</span></h1>
           <p class="cs-hero__lead">
             Design de service &amp; prospective : projeter l'expérience client à l'ère des services connectés et de la Renaulution.
           </p>
@@ -589,20 +619,19 @@
     </section>
   </main>
 
-  <!-- Footer sur le motif Olin (Figma BG 4314:138629) -->
-  <footer class="cs-footer">
-    <div class="cs-footer__inner cs-container">
-      <p class="cs-footer__mantra"><span>La tête dans les nuages,<br />les mains dans le concret.</span></p>
-      <nav class="cs-footer__nav" aria-label="Liens de pied de page">
+  <!-- Footer d'atelier sur le motif Olin (.olin-footer — Figma BG 4314:138629) -->
+  <footer class="olin-footer">
+    <div class="olin-footer__inner">
+      <p class="olin-footer__mantra"><span>La tête dans les nuages,<br />les mains dans le concret.</span></p>
+      <nav class="olin-footer__nav" aria-label="Liens de pied de page">
         <a href="#main">↑ Haut de page</a>
         <a href="/#projets">Tous les projets</a>
         <a href="https://www.linkedin.com/in/josselinhillion/" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="mailto:josselin.hillion@gmail.com">Email ↗</a>
+        <a href="mailto:olin.creativelab@gmail.com">Email ↗</a>
       </nav>
     </div>
-    <div class="cs-footer__legal cs-container">
-      <span>© 2026 Josselin Hillion • Olin.os</span>
-      <span>Case study // Renault Moments</span>
+    <div class="olin-footer__legal">
+      <span>© 2026 Josselin Hillion • Olin.os — La tête dans les nuages, les mains dans le concret.</span>
     </div>
   </footer>
 

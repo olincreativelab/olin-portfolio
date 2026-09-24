@@ -1677,3 +1677,536 @@ a.olin-picture-frame:hover .olin-photo-duotone > img {
   transform: translateY(1px);
 }
 
+
+/* ==========================================================================
+   16. OS HEADER TRANSVERSE (FIGMA Header 4515:45981)
+   Barre de 64px sans fond plein : ombre 0 1px 8px rgba(0,0,0,.04) + flou.
+   Logo · navigation d'atelier · mini-player Brain.fm · statut · menu mobile.
+   ========================================================================== */
+.olin-header {
+  position: sticky;
+  top: 0;
+  z-index: 120;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 0 60px;
+  background: rgba(253, 250, 254, 0.72);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
+}
+
+.olin-header__brand {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.olin-header__brand img {
+  width: 36px;
+  height: 36px;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.olin-header__brand:hover img {
+  transform: rotate(-6deg) scale(1.06);
+}
+
+.olin-header__nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: auto;
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  font-size: 13px;
+}
+
+.olin-header__nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 12px;
+  color: #242237;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: color 0.15s ease;
+}
+
+.olin-header__nav a:hover,
+.olin-header__nav a[aria-current="page"] {
+  color: #0028FF;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.olin-header__right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Tag de statut (Figma Tag 4333:156886) */
+.olin-status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  background: #25FEA8;
+  border: 1px solid #007147;
+  border-radius: 12px;
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  font-size: 10px;
+  letter-spacing: 0.1px;
+  line-height: 12px;
+  color: #007147;
+  white-space: nowrap;
+}
+
+.olin-status-tag__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 12px;
+  background: #006C44;
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+/* Bouton « Menu workshop » (Figma 40×40, cible tactile portée à 44px) */
+.olin-menu-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.olin-menu-btn__face {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #FFFFFF;
+  border: 0.9px solid #E1E8F9;
+  border-radius: 10.9px;
+  box-shadow: 0 0.9px 1.8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.15s ease;
+}
+
+.olin-menu-btn:hover .olin-menu-btn__face,
+.olin-menu-btn[aria-expanded="true"] .olin-menu-btn__face {
+  border-color: #242237;
+  transform: translateY(-1px);
+}
+
+.olin-header__panel {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .olin-header {
+    padding: 0 20px;
+    gap: 12px;
+  }
+
+  .olin-header__nav,
+  .olin-header__right .olin-status-tag {
+    display: none;
+  }
+
+  .olin-menu-btn {
+    display: inline-flex;
+  }
+
+  .olin-header .olin-brainfm-player {
+    margin-left: auto;
+  }
+
+  /* Panneau déroulant mobile : navigation + statut */
+  .olin-header__panel.is-open {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: absolute;
+    top: 64px;
+    right: 12px;
+    left: 12px;
+    padding: 12px;
+    background: #FFFFFF;
+    border: 1px solid #01050F;
+    border-radius: 8px;
+    box-shadow: 3px 3px 0px #01050F;
+  }
+
+  .olin-header__panel a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 12px;
+    font-family: var(--font-tech, 'Kode Mono', monospace);
+    font-size: 15px;
+    color: #242237;
+    border-radius: 6px;
+  }
+
+  .olin-header__panel a:hover {
+    background: #EEF2FF;
+    color: #0028FF;
+  }
+
+  .olin-header__panel .olin-status-tag {
+    align-self: flex-start;
+    margin: 8px 12px 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .olin-header .olin-brainfm-player__track {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   17. CURSOR FIGJAM (FIGMA ❖ cursor-figjam 4515:45983 / HandCursor 4368:18097)
+   Main blanche pointée + pilule bleu glacier, en flottement discret.
+   ========================================================================== */
+.olin-cursor-figjam {
+  position: absolute;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  pointer-events: none;
+  user-select: none;
+  animation: olinCursorFloat 5s ease-in-out infinite;
+}
+
+.olin-cursor-figjam__hand {
+  width: 26px;
+  height: 26px;
+  filter: drop-shadow(0 1px 1px rgba(1, 5, 15, 0.2));
+}
+
+.olin-cursor-figjam__tag {
+  margin-left: 16px;
+  padding: 6px 10px;
+  background: #E5EDFF;
+  border: 1px solid #0028FF;
+  border-radius: 8px;
+  font-family: var(--font-body, 'Geologica', sans-serif);
+  font-size: 15px;
+  font-weight: 600;
+  color: #0028FF;
+  white-space: nowrap;
+}
+
+@keyframes olinCursorFloat {
+  0%, 100% { transform: translate(0, 0); }
+  35% { transform: translate(6px, -8px); }
+  70% { transform: translate(-4px, 4px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .olin-cursor-figjam {
+    animation: none;
+  }
+}
+
+/* ==========================================================================
+   18. STICKER VINYLE D'ATELIER (die-cut blanc 2.5px + ombre dure 3px)
+   ========================================================================== */
+.olin-sticker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(var(--olin-sticker-tilt, -2deg));
+  filter:
+    drop-shadow(2.5px 0 0 #FFFFFF)
+    drop-shadow(-2.5px 0 0 #FFFFFF)
+    drop-shadow(0 2.5px 0 #FFFFFF)
+    drop-shadow(0 -2.5px 0 #FFFFFF)
+    drop-shadow(3px 3px 0 #01050F);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.olin-sticker:hover {
+  transform: rotate(0deg) scale(1.06);
+}
+
+.olin-sticker img {
+  display: block;
+  height: 100%;
+  width: auto;
+}
+
+/* ==========================================================================
+   19. POPUP WINDOW (FIGMA PopUp « Contact.sh » 4135:32009)
+   En-tête sombre #242237 · 3 points · titre Kode Mono 10px · corps #F3F5FB.
+   ========================================================================== */
+.olin-popup {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.olin-popup__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 24px;
+  padding: 4px 36px;
+  background: #242237;
+  border-radius: 2px 2px 0 0;
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  font-size: 11px;
+  color: #F3F5FB;
+}
+
+.olin-popup__header::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  width: 4px;
+  height: 4px;
+  margin-top: -2px;
+  border-radius: 50%;
+  background: #EDF5FE;
+  box-shadow: 8px 0 0 #EDF5FE, 16px 0 0 #EDF5FE;
+}
+
+.olin-popup__body {
+  padding: 20px;
+  background: #F3F5FB;
+  border: 1px solid #01050F;
+  border-top: 0;
+  border-radius: 0 0 2px 2px;
+}
+
+/* ==========================================================================
+   20. FOOTER D'ATELIER SUR MOTIF OLIN (FIGMA BG 4314:138629)
+   Le texte repose sur des découpes du bleu de fond : le motif reste autour.
+   ========================================================================== */
+.olin-footer {
+  background-color: #231FFF;
+  background-image: url('/assets/motif_olin_tile.svg');
+  background-size: 400px 400px;
+  background-repeat: repeat;
+  border-top: 1.5px solid #01050F;
+  color: #EAEEFF;
+}
+
+.olin-footer__inner,
+.olin-footer__legal {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.olin-footer__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 40px;
+  padding-top: 64px;
+  padding-bottom: 56px;
+}
+
+.olin-footer__mantra {
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  font-size: 15px;
+  line-height: 1.5;
+  color: #FFFFFF;
+}
+
+.olin-footer__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.olin-footer__nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  font-size: 14px;
+  font-weight: 500;
+  color: #EAEEFF;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: color 0.15s ease, text-decoration-thickness 0.15s ease;
+}
+
+/* Sur fond bleu, le survol passe au jaune atelier (le bleu DS serait illisible) */
+.olin-footer__nav a:hover {
+  color: #FFE500;
+  text-decoration-thickness: 2px;
+}
+
+.olin-footer a:focus-visible {
+  outline: 2px solid #FFE500;
+  outline-offset: 3px;
+}
+
+.olin-footer__legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding-top: 18px;
+  padding-bottom: 24px;
+  border-top: 1px solid rgba(234, 238, 255, 0.3);
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  font-size: 12px;
+  color: #EAEEFF;
+}
+
+.olin-footer__mantra span,
+.olin-footer__nav a,
+.olin-footer__legal span {
+  background-color: #231FFF;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.olin-footer__mantra span,
+.olin-footer__legal span {
+  display: inline;
+  padding: 5px 8px;
+  margin-left: -8px;
+}
+
+.olin-footer__nav a {
+  padding: 0 8px;
+  margin-left: -8px;
+}
+
+.olin-footer__legal span:last-child {
+  margin-left: 0;
+  margin-right: -8px;
+}
+
+@media (max-width: 1024px) {
+  .olin-footer__inner,
+  .olin-footer__legal {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .olin-footer__inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    padding-top: 48px;
+    padding-bottom: 40px;
+  }
+
+  .olin-footer__nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 20px;
+  }
+
+  .olin-footer__legal {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .olin-footer__legal span:last-child {
+    margin-left: -8px;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .olin-footer__inner,
+  .olin-footer__legal {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media print {
+  .olin-header,
+  .olin-footer {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   21. EFFET MACHINE À ÉCRIRE (src/typewriter.js)
+   Le texte garde sa place et le curseur sa largeur : aucun reflow.
+   ========================================================================== */
+.js-typing [data-typewriter] {
+  visibility: hidden;
+  /* Filet de sécurité si le script ne s'exécute pas */
+  animation: olin-type-failsafe 0s 3s forwards;
+}
+
+@keyframes olin-type-failsafe {
+  to { visibility: visible; }
+}
+
+.olin-type-char {
+  visibility: hidden;
+}
+
+.olin-type-char.is-typed {
+  visibility: visible;
+}
+
+/* Curseur fixe pendant la frappe, clignotant ensuite */
+.is-typing [data-typewriter-caret] {
+  animation: none !important;
+}
+
+.olin-brainfm-player.is-loading .olin-brainfm-player__btn-play {
+  animation: pulse-dot 1s infinite ease-in-out;
+}
+
+@media print {
+  .olin-type-char,
+  .js-typing [data-typewriter] {
+    visibility: visible !important;
+    animation: none !important;
+  }
+}
+
+/* ==========================================================================
+   22. TRAME D'ATELIER INTERACTIVE (src/dot-grid.js)
+   Le canvas n'apparaît que lorsque le script l'active (html.dot-grid-live) ;
+   sinon la page garde sa trame CSS statique.
+   ========================================================================== */
+#canvas-dot-grid {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  display: none;
+}
+
+.dot-grid-live #canvas-dot-grid {
+  display: block;
+}
+
+@media print {
+  #canvas-dot-grid {
+    display: none !important;
+  }
+}

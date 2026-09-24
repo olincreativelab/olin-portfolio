@@ -5,46 +5,8 @@
  */
 
 import { initDotGrid } from './dot-grid.js';
-
-// --------------------------------------------------------------------------
-// 0. Titre machine à écrire (préparé par le script inline du <head>)
-// --------------------------------------------------------------------------
-function initTypewriter() {
-  const root = document.documentElement;
-  const target = document.querySelector('[data-typewriter]');
-  if (!target || !root.classList.contains('js-typing')) return;
-
-  const title = target.closest('h1');
-  const caret = title.querySelector('.cs-caret');
-  const chars = [...target.textContent].map((char) => {
-    const span = document.createElement('span');
-    span.className = 'cs-type-char';
-    span.textContent = char;
-    return span;
-  });
-
-  target.replaceChildren(...chars);
-  title.classList.add('is-typing');
-  root.classList.remove('js-typing');
-
-  let index = 0;
-  const typeNext = () => {
-    const span = chars[index];
-    span.classList.add('is-typed');
-    span.after(caret);
-    index += 1;
-    if (index < chars.length) {
-      // Rythme légèrement irrégulier, pause plus longue sur l'espace
-      const delay = chars[index - 1].textContent === ' ' ? 140 : 55 + Math.random() * 45;
-      setTimeout(typeNext, delay);
-    } else {
-      target.after(caret);
-      title.classList.remove('is-typing');
-    }
-  };
-
-  setTimeout(typeNext, 350);
-}
+import { initSiteHeader } from './site-header.js';
+import { initTypewriter } from './typewriter.js';
 
 // --------------------------------------------------------------------------
 // 1. Stepper : état actif synchronisé avec l'acte visible
@@ -133,6 +95,7 @@ function initPrint() {
   });
 }
 
+initSiteHeader();
 initTypewriter();
 initStepper();
 initStepperAccordion();

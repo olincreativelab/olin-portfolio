@@ -101,6 +101,7 @@ export class BrainFmPlayerController {
     this.player = null;
     this.isPlaying = false;
     this.isReady = false;
+    this.pendingPlay = false;
 
     if (!this.element) {
       console.warn("[BrainFmPlayer] Élément racine .olin-brainfm-player non trouvé.");
@@ -176,6 +177,11 @@ export class BrainFmPlayerController {
         onReady: (event) => {
           this.isReady = true;
           event.target.setVolume(this.initialVolume);
+          // Un Play demandé avant la fin du chargement démarre maintenant
+          if (this.pendingPlay) {
+            this.pendingPlay = false;
+            this.play();
+          }
         },
         onStateChange: (event) => {
           this._handleStateChange(event.data);
@@ -193,6 +199,7 @@ export class BrainFmPlayerController {
    */
   _handleStateChange(state) {
     // YT.PlayerState.PLAYING = 1, PAUSED = 2, ENDED = 0
+    this.element.classList.remove("is-loading");
     if (state === 1) {
       this.isPlaying = true;
       this.element.classList.add("is-playing");
@@ -209,7 +216,9 @@ export class BrainFmPlayerController {
    */
   toggle() {
     if (!this.player || !this.isReady) {
-      console.log("[BrainFmPlayer] En attente de l'initialisation de YouTube API...");
+      // Mémorise l'intention : la lecture partira dès que le lecteur est prêt
+      this.pendingPlay = !this.pendingPlay;
+      this.element.classList.toggle("is-loading", this.pendingPlay);
       return;
     }
 
