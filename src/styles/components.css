@@ -1281,3 +1281,63 @@
   line-height: 1.6;
   color: #334155;
 }
+
+/* ==========================================================================
+   15. PHOTO DUOTONE SIGNATURE (FIGMA 4340:159012 / PICTURE SLOT 4385:17403)
+   Réservé aux photos d'ambiance et de terrain — jamais aux captures d'UI.
+   Couches : image N&B → dégradé (screen) → masque (color-burn) → grain (overlay)
+   <div class="olin-photo-duotone">
+     <img src="…" alt="…" />
+     <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+   </div>
+   ========================================================================== */
+.olin-photo-duotone {
+  --olin-duotone-mask-opacity: 0.6;
+  --olin-duotone-grain-opacity: 0.18;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: #01050F;
+}
+
+/* Couche 1 — Base image désaturée */
+.olin-photo-duotone > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(1.08);
+}
+
+/* Couche 2 — Dégradé signature */
+.olin-photo-duotone::before,
+.olin-photo-duotone::after,
+.olin-photo-duotone__grain {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.olin-photo-duotone::before {
+  z-index: 1;
+  background: linear-gradient(162.5deg, rgb(15, 0, 219) 39.9%, rgb(87, 2, 153) 59.9%);
+  mix-blend-mode: screen;
+}
+
+/* Couche 3 — Masque de contraste */
+.olin-photo-duotone::after {
+  z-index: 2;
+  background: #F3F5FB;
+  mix-blend-mode: color-burn;
+  opacity: var(--olin-duotone-mask-opacity);
+}
+
+/* Couche 4 — Grain / dither (feTurbulence) */
+.olin-photo-duotone__grain {
+  z-index: 3;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+  mix-blend-mode: overlay;
+  opacity: var(--olin-duotone-grain-opacity);
+}

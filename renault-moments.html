@@ -17,6 +17,9 @@
 </head>
 <body class="cs-page">
 
+  <!-- Trame d'atelier interactive (fallback CSS statique si reduced-motion / tactile) -->
+  <canvas id="canvas-dot-grid" aria-hidden="true"></canvas>
+
   <a class="cs-skip-link" href="#main">Aller au contenu</a>
 
   <!-- =========================================================================
@@ -221,13 +224,14 @@
               <span class="olin-window__title">luca-de-meo_renaulution.jpg</span>
               <span class="olin-tag olin-tag--blue olin-tag--pill" style="font-size: 10px; padding: 1px 8px;">KEYNOTE RENAULUTION</span>
             </div>
-            <div class="cs-context-photo-wrap">
-              <img 
-                src="/assets/renault/luca_de_meo_renaulution.jpg" 
-                alt="Luca de Meo, CEO de Renault Group, lors de la présentation du plan stratégique Renaulution" 
-                width="800" height="550" 
-                loading="lazy" 
+            <div class="cs-context-photo-wrap olin-photo-duotone">
+              <img
+                src="/assets/renault/luca_de_meo_renaulution.jpg"
+                alt="Luca de Meo, CEO de Renault Group, lors de la présentation du plan stratégique Renaulution"
+                width="1199" height="1200"
+                loading="lazy"
                 class="cs-context-photo" />
+              <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
             </div>
             <div class="cs-context-quote">
               <blockquote>
@@ -429,14 +433,28 @@
 
       <div class="olin-drawers-grid">
         <details class="olin-drawer" data-drawer open>
-          <summary class="olin-drawer__title"><span>01 • Gouvernance PM / Tech &amp; SAFe</span><span class="cs-drawer__icon" aria-hidden="true">+</span></summary>
+          <summary class="olin-drawer__title cs-drawer__summary">
+            <span class="cs-drawer__head">
+              <span class="olin-tag olin-tag--blue olin-tag--tag">❖ Gouvernance</span>
+              <span class="cs-drawer__name">Gouvernance PM / Tech &amp; SAFe</span>
+              <span class="cs-drawer__teaser">Matrice DCX « Rend le cap » &amp; synchronisation des trains SAFe</span>
+            </span>
+            <span class="cs-drawer__icon" aria-hidden="true"><span class="cs-drawer__glyph">+</span></span>
+          </summary>
           <div class="olin-drawer__content">
             <p>Positionnement au niveau <strong>« Rend le cap »</strong> de la matrice DCX (entre « Range chambre » — stratégie — et « Lance cap » — pilotage) : traduire les orientations de l'équipe Vision en un Concept Model rigoureux, prototyper les parcours et transmettre un référentiel ergonomique clair aux Product Owners et aux trains SAFe.</p>
             <p>Articulation fluide entre le temps long de la vision et le temps court des sprints.</p>
           </div>
         </details>
         <details class="olin-drawer" data-drawer open>
-          <summary class="olin-drawer__title"><span>02 • Ergonomie HMI &amp; charge cognitive</span><span class="cs-drawer__icon" aria-hidden="true">+</span></summary>
+          <summary class="olin-drawer__title cs-drawer__summary">
+            <span class="cs-drawer__head">
+              <span class="olin-tag olin-tag--purple olin-tag--tag">❖ HMI &amp; Ergonomie</span>
+              <span class="cs-drawer__name">Ergonomie HMI &amp; charge cognitive</span>
+              <span class="cs-drawer__teaser">Driver Distraction Rules, touch targets ≥ 12 mm &amp; gradient d'attention</span>
+            </span>
+            <span class="cs-drawer__icon" aria-hidden="true"><span class="cs-drawer__glyph">+</span></span>
+          </summary>
           <div class="olin-drawer__content">
             <p>Conception assujettie aux Driver Distraction Rules (touch targets ≥ 12 mm). Gradient d'attention à 3 niveaux :</p>
             <ul class="cs-bullets">
@@ -447,7 +465,14 @@
           </div>
         </details>
         <details class="olin-drawer" data-drawer open>
-          <summary class="olin-drawer__title"><span>03 • Vérité terrain &amp; reality check</span><span class="cs-drawer__icon" aria-hidden="true">+</span></summary>
+          <summary class="olin-drawer__title cs-drawer__summary">
+            <span class="cs-drawer__head">
+              <span class="olin-tag olin-tag--green olin-tag--tag">❖ Reality Check</span>
+              <span class="cs-drawer__name">Vérité terrain &amp; enseignements</span>
+              <span class="cs-drawer__teaser">15 conducteurs testés : décompte anxiogène supprimé, 6/7 pour le partage de données</span>
+            </span>
+            <span class="cs-drawer__icon" aria-hidden="true"><span class="cs-drawer__glyph">+</span></span>
+          </summary>
           <div class="olin-drawer__content">
             <ul class="cs-bullets">
               <li>La Timeline est plébiscitée pour l'anticipation utile (charge, météo, retards) ; le décompte temps réel est rejeté. Règle validée : <em>« Montrer ce qui est utile au bon moment, permettre une action, puis s'effacer. »</em></li>
@@ -456,7 +481,14 @@
           </div>
         </details>
         <details class="olin-drawer" data-drawer open>
-          <summary class="olin-drawer__title"><span>04 • Recul critique de senior</span><span class="cs-drawer__icon" aria-hidden="true">+</span></summary>
+          <summary class="olin-drawer__title cs-drawer__summary">
+            <span class="cs-drawer__head">
+              <span class="olin-tag olin-tag--neutral olin-tag--tag">❖ Recul critique</span>
+              <span class="cs-drawer__name">Ce que je ferais autrement</span>
+              <span class="cs-drawer__teaser">Un simulateur de volant branché en WebSocket dès la semaine 2</span>
+            </span>
+            <span class="cs-drawer__icon" aria-hidden="true"><span class="cs-drawer__glyph">+</span></span>
+          </summary>
           <div class="olin-drawer__content">
             <p>Dans le contexte politique lourd d'un grand constructeur, l'agilité a été poussée au maximum. Avec l'outillage moderne, j'aurais branché <strong>un simulateur de volant physique en WebSocket dès la semaine 2</strong> pour mesurer la charge motrice et la distraction visuelle avant même les premiers essais sur véhicule.</p>
           </div>

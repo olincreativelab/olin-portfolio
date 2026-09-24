@@ -27,6 +27,25 @@
   /* Pas de overflow-x: hidden sur le body pour ne pas casser position: sticky */
 }
 
+/* Trame interactive : le canvas remplace la trame CSS statique quand il est actif */
+#canvas-dot-grid {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  display: none;
+}
+
+.dot-grid-live #canvas-dot-grid {
+  display: block;
+}
+
+.dot-grid-live .cs-page {
+  background-image: none;
+}
+
 .cs-container {
   width: 100%;
   max-width: 1240px;
@@ -799,35 +818,98 @@
   padding-bottom: 96px;
 }
 
-.cs-drawers .olin-drawer__title {
-  min-height: 44px;
+/* Bento 2x2 : hauteurs égales ouverts, compact (non étiré) une fois fermé */
+.cs-drawers .olin-drawer:not([open]) {
+  align-self: start;
+}
+
+.cs-drawers .olin-drawer {
+  padding: 0;
+  gap: 0;
+  transition: box-shadow 0.2s var(--cs-ease), transform 0.2s var(--cs-ease);
+}
+
+.cs-drawers .olin-drawer:not([open]):hover {
+  transform: translateY(-1px);
+  box-shadow: 3px 3px 0px var(--cs-ink);
+}
+
+/* État contracté riche : tag + titre + teaser + icône */
+.cs-drawers .cs-drawer__summary {
+  align-items: flex-start;
+  gap: 16px;
+  min-height: 56px;
+  padding: 18px 20px;
   cursor: pointer;
   list-style: none;
-  gap: 12px;
+  text-transform: none;
 }
 
-.cs-drawers .olin-drawer:not([open]) {
-  gap: 0;
-}
-
-.cs-drawers .olin-drawer__title::-webkit-details-marker {
+.cs-drawers .cs-drawer__summary::-webkit-details-marker {
   display: none;
+}
+
+.cs-drawer__head {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.cs-drawer__head .olin-tag {
+  justify-self: start;
+}
+
+.cs-drawer__name {
+  font-family: var(--font-tech);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--cs-ink);
+}
+
+.cs-drawer__teaser {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--cs-muted);
 }
 
 .cs-drawer__icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   flex-shrink: 0;
   border: 1px solid var(--cs-ink);
   border-radius: 4px;
-  transition: transform 0.2s var(--cs-ease);
+  background: #FFFFFF;
+  font-family: var(--font-tech);
+  font-size: 18px;
+  line-height: 1;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.cs-drawer__glyph {
+  display: block;
+  transition: transform 0.25s var(--cs-ease);
 }
 
 .olin-drawer[open] .cs-drawer__icon {
+  background: var(--cs-ink);
+  color: #FAFAFA;
+}
+
+.olin-drawer[open] .cs-drawer__glyph {
   transform: rotate(45deg);
+}
+
+.cs-drawers .olin-drawer[open] .olin-drawer__content {
+  padding: 16px 20px 20px;
+  border-top: 1px dashed rgba(1, 5, 15, 0.25);
 }
 
 .cs-drawers .olin-drawer__content {
@@ -1065,6 +1147,7 @@
   }
 
   /* Masquer tout ce qui est hors du One-Pager synthétique */
+  #canvas-dot-grid,
   .cs-menubar,
   .cs-skip-link,
   .cs-cta-row,
