@@ -1388,3 +1388,24 @@
     page-break-inside: avoid !important;
   }
 }
+
+/* Capture longue basse définition (front web Excibat, 228 × 1024) :
+   affichée à sa taille native et défilable, jamais étirée */
+.cs-longshot {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.cs-longshot__scroll {
+  max-height: 560px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.cs-longshot__scroll img {
+  display: block;
+  width: 228px;
+  max-width: none;
+  height: auto;
+}
