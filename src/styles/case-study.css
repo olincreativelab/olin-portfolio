@@ -1407,3 +1407,28 @@
   width: 100%;
   height: auto;
 }
+
+/* Paire de planches complémentaires sous la planche principale d'un acte */
+.cs-artifact-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.cs-artifact-pair--wide-narrow {
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+}
+
+@media (max-width: 768px) {
+  .cs-artifact-pair,
+  .cs-artifact-pair--wide-narrow {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Écran portrait : pas plus large qu'un téléphone, centré */
+  .cs-artifact-pair--wide-narrow > .cs-artifact:last-child {
+    justify-self: center;
+    width: min(100%, 280px);
+  }
+}
