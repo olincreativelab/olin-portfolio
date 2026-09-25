@@ -501,26 +501,6 @@
   color: inherit;
 }
 
-/* Royal Canin : pas encore d'illustration, la fenêtre porte le logo et les preuves */
-.lp-kiosk {
-  display: grid;
-  gap: 20px;
-  justify-items: center;
-  padding: 32px 24px;
-}
-
-.lp-kiosk__logo {
-  height: 64px;
-}
-
-.lp-kiosk__metrics {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  width: 100%;
-}
-
 /* Moodboard d'ingénierie Excibat */
 .lp-flow {
   list-style: none;
@@ -914,9 +894,6 @@
     padding-bottom: 0;
   }
 
-  .lp-kiosk__metrics {
-    grid-template-columns: minmax(0, 1fr);
-  }
 
   .lp-olinmd {
     width: 100%;
