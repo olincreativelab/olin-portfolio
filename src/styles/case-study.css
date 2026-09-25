@@ -1389,25 +1389,6 @@
   }
 }
 
-/* Capture pleine page (site Excibat, 1440 × 6464) : cadre défilant,
-   l'image garde ses proportions et on la parcourt comme la vraie page */
-.cs-longshot {
-  width: 100%;
-  max-width: 760px;
-  margin: 0 auto;
-}
-
-.cs-longshot__scroll {
-  max-height: 640px;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-}
-
-.cs-longshot__scroll img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
 /* Verbatim traduit : l'original anglais en petit, sous la traduction */
 .cs-quote-original {
   display: block;
@@ -1417,4 +1398,12 @@
   font-style: normal;
   line-height: 1.5;
   opacity: 0.75;
+}
+
+/* Capture d'interface en couleur dans un picture slot (sans duotone) :
+   toujours à la largeur du cadre, proportions conservées */
+.cs-shot {
+  display: block;
+  width: 100%;
+  height: auto;
 }
