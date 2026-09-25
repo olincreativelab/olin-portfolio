@@ -1389,27 +1389,25 @@
   }
 }
 
-/* Capture longue basse définition (front web Excibat, 228 × 1024) :
-   affichée à sa taille native et défilable, jamais étirée */
+/* Capture pleine page (site Excibat, 1440 × 6464) : cadre défilant,
+   l'image garde ses proportions et on la parcourt comme la vraie page */
 .cs-longshot {
-  width: fit-content;
-  max-width: 100%;
+  width: 100%;
+  max-width: 760px;
   margin: 0 auto;
 }
 
 .cs-longshot__scroll {
-  max-height: 560px;
+  max-height: 640px;
   overflow-y: auto;
   overscroll-behavior: contain;
 }
 
 .cs-longshot__scroll img {
   display: block;
-  width: 228px;
-  max-width: none;
+  width: 100%;
   height: auto;
 }
-
 /* Verbatim traduit : l'original anglais en petit, sous la traduction */
 .cs-quote-original {
   display: block;
