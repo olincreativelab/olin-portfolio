@@ -1389,27 +1389,6 @@
   }
 }
 
-/* Capture longue basse définition (front web Excibat, 228 × 1024) :
-   affichée à sa taille native et défilable, jamais étirée */
-.cs-longshot {
-  width: fit-content;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.cs-longshot__scroll {
-  max-height: 560px;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-}
-
-.cs-longshot__scroll img {
-  display: block;
-  width: 228px;
-  max-width: none;
-  height: auto;
-}
-
 /* Verbatim traduit : l'original anglais en petit, sous la traduction */
 .cs-quote-original {
   display: block;
@@ -1419,4 +1398,37 @@
   font-style: normal;
   line-height: 1.5;
   opacity: 0.75;
+}
+
+/* Capture d'interface en couleur dans un picture slot (sans duotone) :
+   toujours à la largeur du cadre, proportions conservées */
+.cs-shot {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Paire de planches complémentaires sous la planche principale d'un acte */
+.cs-artifact-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.cs-artifact-pair--wide-narrow {
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+}
+
+@media (max-width: 768px) {
+  .cs-artifact-pair,
+  .cs-artifact-pair--wide-narrow {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Écran portrait : pas plus large qu'un téléphone, centré */
+  .cs-artifact-pair--wide-narrow > .cs-artifact:last-child {
+    justify-self: center;
+    width: min(100%, 280px);
+  }
 }

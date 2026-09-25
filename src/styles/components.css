@@ -1691,7 +1691,8 @@ a.olin-picture-frame:hover .olin-photo-duotone > img {
   height: 64px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
+  gap: 24px;
   padding: 0 60px;
   background: rgba(253, 250, 254, 0.72);
   backdrop-filter: blur(24px);
@@ -1699,10 +1700,48 @@ a.olin-picture-frame:hover .olin-photo-duotone > img {
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
 }
 
+/* Logo : retour à l'accueil. Sur la landing (data-brand-reveal), il reste
+   caché tant que la mascotte du hero est visible, puis apparaît en fondu. */
+.olin-header__brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  transition:
+    opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0.3s;
+}
+
+.olin-header__brand img {
+  width: 36px;
+  height: 36px;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.olin-header__brand:hover img,
+.olin-header__brand:focus-visible img {
+  transform: rotate(-6deg) scale(1.06);
+}
+
+.olin-header[data-brand-reveal]:not(.is-brand-visible) .olin-header__brand {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .olin-header__brand {
+    transition: none;
+  }
+}
+
 .olin-header__right {
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-left: auto;
 }
 
 /* Tag de statut (Figma Tag 4333:156886) */

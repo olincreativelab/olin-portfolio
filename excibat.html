@@ -29,6 +29,9 @@
   <a class="cs-skip-link" href="#main">Aller au contenu</a>
 
   <header class="olin-header" data-site-header>
+    <a class="olin-header__brand" href="/" aria-label="Olin.os — accueil">
+      <img src="/assets/olin_logo_icon.svg" alt="" width="36" height="36" />
+    </a>
     <div class="olin-header__right">
       <span class="olin-status-tag"><span class="olin-status-tag__dot" aria-hidden="true"></span>DISPONIBLE • Q3/Q4 2026</span>
       <button type="button" class="olin-menu-btn" aria-expanded="false" aria-controls="olin-menu-panel" aria-label="Ouvrir le menu" data-menu-toggle>
@@ -359,19 +362,20 @@
           </ul>
         </div>
         <figure class="cs-artifact">
-          <a class="olin-picture-frame cs-longshot" href="/assets/excibat/mockup_front_web_hd.png" target="_blank" rel="noopener" aria-label="Agrandir la capture du front web Excibat (nouvel onglet)">
-            <div class="cs-longshot__scroll">
-              <img src="/assets/excibat/mockup_front_web_hd.png" width="228" height="1024" loading="lazy" alt="Interface web Excibat : De la consultation à la GPA sans friction, valorisation du SaaS BTP." />
-            </div>
+          <a class="olin-picture-frame" href="/assets/excibat/web/excibat_landing.webp" target="_blank" rel="noopener" aria-label="Ouvrir la capture complète du site Excibat (nouvel onglet)">
+            <picture>
+              <source media="(max-width: 768px)" srcset="/assets/excibat/web/excibat_abonnement_carte.webp" width="780" height="911" />
+              <img class="cs-shot" src="/assets/excibat/web/excibat_abonnement.webp" width="2000" height="820" loading="lazy" alt="Bloc abonnement du site Excibat : « Transformez la gestion de vos chantiers dès maintenant », abonnement annuel à 95 € HT par mois ou 1045 € HT par an, bouton « Commencer dès maintenant », signature certifiée via Oodrive, facturation mensuelle ou annuelle, paiement sécurisé avec Stripe, onboarding accompagné en visio." />
+            </picture>
             <div class="olin-picture-frame__caption">
               <div class="olin-picture-frame__text">
-                <span class="olin-picture-frame__title">Proposition de Valeur SaaS // Front Web</span>
-                <span>Clarification du parcours : de la consultation d'entreprises au suivi GPA.</span>
+                <span class="olin-picture-frame__title">Offre self-service // Stripe Checkout</span>
+                <span>L'abonnement annuel, souscrit en ligne sans créer de compte au préalable.</span>
               </div>
-              <span class="olin-picture-frame__zoom">zoom ↗</span>
+              <span class="olin-picture-frame__zoom">site complet ↗</span>
             </div>
           </a>
-          <figcaption class="cs-caption">Interface publique et tunnel d'onboarding : positionnement métier BTP clair et sans jargon technique.</figcaption>
+          <figcaption class="cs-caption">Le bloc d'abonnement du site public : l'offre annuelle et son tunnel Stripe Checkout, conçus pendant cette phase.</figcaption>
         </figure>
       </section>
 
@@ -557,17 +561,20 @@
         <div class="olin-window__header">
           <span class="olin-window__title" id="sowhat-title">🎯 The so what? // Ce que ce cas démontre pour vos produits</span>
         </div>
-        <div class="olin-window__body cs-sowhat__grid">
-          <div class="cs-sowhat__col">
-            <h3 class="cs-sowhat__title">01 // Maîtrise des écosystèmes multi-organisations denses</h3>
+        <div class="olin-window__body cs-sowhat__body">
+          <div class="cs-sowhat__item">
+            <span class="cs-sowhat__tag">01 // MULTI-ORGANISATION</span>
+            <h3 class="cs-sowhat__heading">Maîtrise des écosystèmes multi-organisations denses</h3>
             <p>Pour les produits B2B exigeants (Koralplay, ERPs transactionnels, fintechs), savoir gérer des droits d'accès à granularité fine, isoler strictement les données de clients concurrents et concevoir des flux financiers récurrents sans faille.</p>
           </div>
-          <div class="cs-sowhat__col">
-            <h3 class="cs-sowhat__title">02 // Posture hybride Designer &amp; Builder</h3>
+          <div class="cs-sowhat__item">
+            <span class="cs-sowhat__tag">02 // DESIGNER × BUILDER</span>
+            <h3 class="cs-sowhat__heading">Posture hybride Designer &amp; Builder</h3>
             <p>Fini le fossé entre la promesse graphique et la réalité du code. Capacité à modéliser la base de données relationnelle, intégrer les webhooks d'APIs tierces et designer des interfaces intuitives adaptées aux contraintes techniques sous-jacentes.</p>
           </div>
-          <div class="cs-sowhat__col">
-            <h3 class="cs-sowhat__title">03 // Pragmatisme &amp; écoute métier authentique</h3>
+          <div class="cs-sowhat__item">
+            <span class="cs-sowhat__tag">03 // ÉCOUTE MÉTIER</span>
+            <h3 class="cs-sowhat__heading">Pragmatisme &amp; écoute métier authentique</h3>
             <p>Ne jamais concevoir en chambre d'écho. Travailler main dans la main avec les utilisateurs métiers sur le terrain, déconstruire les dogmes d'agence pour adapter l'outil aux usages réels et garantir une adoption immédiate.</p>
           </div>
         </div>
