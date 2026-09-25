@@ -1409,3 +1409,14 @@
   max-width: none;
   height: auto;
 }
+
+/* Verbatim traduit : l'original anglais en petit, sous la traduction */
+.cs-quote-original {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--font-tech, 'Kode Mono', monospace);
+  font-size: 12px;
+  font-style: normal;
+  line-height: 1.5;
+  opacity: 0.75;
+}

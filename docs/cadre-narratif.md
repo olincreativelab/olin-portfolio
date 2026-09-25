@@ -724,10 +724,10 @@ Le modèle économique repose sur un abonnement annuel payé mensuellement. Une 
 
 ##### 1. Cartouche d'Identité du Projet
 * **Client :** Royal Canin *(Groupe Mars)*
-* **Rôle de Josselin :** `Lead UX/UI & Service Designer (ekino x MFG Labs)`
+* **Rôle de Josselin :** `UX/UI & Service Designer (ekino x MFG Labs)` : designer aux côtés d'un lead relation client ; présent sur la recherche terrain (entretiens avec les gérants d'animalerie) ; en charge de la conception et de l'animation des ateliers, et de toute l'interface digitale de la borne (contraintes ergonomiques spécifiques, en dialogue avec HMY)
 * **Période :** `2021` (Cadrage, Design Sprints et Prototypage Industriel)
 * **Typologie :** Design de Service Phygital • Borne Tactile Interactive Kiosk • Ergonomie Matérielle Retail
-* **Squad & Écosystème :** Lead UX/UI & Service Designer (Josselin Hillion), Fabricant de mobilier métallique / Designers Industriels, Équipe Produit & Vétérinaires Nutritionnistes Royal Canin, Développeurs embarqués.
+* **Squad & Écosystème :** Lead relation client, UX/UI & Service Designer (Josselin Hillion), HMY (agencement retail, fabricant du meuble de la borne), Équipe Produit & Vétérinaires Nutritionnistes Royal Canin, Développeurs embarqués.
 
 ##### 2. Titre & Positionnement Stratégique
 * **Titre Affiché :** **Royal Canin — Borne Phygitale & Prescription Nutritionnelle**
@@ -756,7 +756,7 @@ Le modèle économique repose sur un abonnement annuel payé mensuellement. Une 
 
 ##### 📖 Le Contexte & Le Reality Check
 Royal Canin possède une réputation scientifique d'excellence mondiale auprès des éleveurs et des vétérinaires. Cependant, sur le point de vente physique (animaleries spécialisées de périphérie), cette expertise se retourne contre la marque : un linéaire massif de 15 mètres de long exposant plus de 200 sacs aux emballages presque identiques. Si le vendeur de l'animalerie est occupé en caisse ou en conseil ailleurs, le client, submergé par des termes biochimiques hermétiques (L.I.P., hydrolysat de protéines, teneur en phosphore), hésite quelques instants et quitte le rayon sans acheter, ou se rabat sur un produit basique.
-La mission confiée à ekino x MFG Labs sous le lead de Josselin : concevoir le service phygital et l'interface tactile intégrée au mobilier pour convertir les visiteurs hésitants en linéaire sans cannibaliser le rôle du vendeur.
+La mission confiée à ekino x MFG Labs (lead relation client, Josselin designer en charge des ateliers et de l'interface) : concevoir le service phygital et l'interface tactile intégrée au mobilier pour convertir les visiteurs hésitants en linéaire sans cannibaliser le rôle du vendeur.
 
 ---
 
