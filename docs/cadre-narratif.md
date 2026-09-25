@@ -351,7 +351,7 @@ Voici la matérialisation visuelle exacte des écrans et des 4 moments de conver
   * La Timeline est plébiscitée pour l'anticipation utile (alertes charge, météo, retards), mais le décompte temps réel est rejeté comme anxiogène. Règle validée : *« Montrer ce qui est utile au bon moment, permettre une action, puis s'effacer »*.
   * Le pacte de confiance (6 testeurs sur 7 favorables au partage de données) exige une transparence préalable absolue (*« Pas de vendeur collant en passager clandestin »*).
 * **Tiroir 4 : Recul Critique de Senior (« Ce que je ferais autrement »)**
-  Dans le contexte politique lourd d'un grand constructeur, l'agilité a été poussée au maximum. Avec le recul et l'outillage moderne, nous aurions branché un simulateur de volant physique en WebSocket dès la semaine 2 pour éprouver la charge motrice et la distraction visuelle avant même les premiers tests en usine.
+  Dans le contexte politique lourd d'un grand constructeur, l'agilité a été poussée au maximum. Avec l'outillage moderne, j'aurais fait un prototype interactif codé pour travailler les interactions et les animations, et gérer le relationnel en temps réel en fonction de l'attention de l'utilisateur.
 
 ---
 

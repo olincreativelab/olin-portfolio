@@ -1408,27 +1408,38 @@
   height: auto;
 }
 
-/* Paire de planches complémentaires sous la planche principale d'un acte */
-.cs-artifact-pair {
+/* Section d'images (frame Figma « section », cf. 4515:46192) : plusieurs
+   picture slots regroupés dans une fenêtre à titre en pastille */
+.cs-section-frame__body {
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+}
+
+.cs-section-frame__pair {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+  gap: 16px;
   align-items: start;
 }
 
-.cs-artifact-pair--wide-narrow {
+.cs-section-frame__pair--wide-narrow {
   grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
 }
 
 @media (max-width: 768px) {
-  .cs-artifact-pair,
-  .cs-artifact-pair--wide-narrow {
+  .cs-section-frame__body {
+    padding: 10px;
+  }
+
+  .cs-section-frame__pair,
+  .cs-section-frame__pair--wide-narrow {
     grid-template-columns: minmax(0, 1fr);
   }
 
   /* Écran portrait : pas plus large qu'un téléphone, centré */
-  .cs-artifact-pair--wide-narrow > .cs-artifact:last-child {
+  .cs-section-frame__pair--wide-narrow > .olin-picture-frame:last-child {
     justify-self: center;
-    width: min(100%, 280px);
+    width: min(100%, 260px);
   }
 }

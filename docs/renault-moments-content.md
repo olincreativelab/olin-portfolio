@@ -173,7 +173,7 @@ Pour garantir une consommation immédiate sur mobile comme sur desktop sans satu
   > Déploiement de l'application MVP directement sur le système multimédia d'un véhicule de série prototype au sein des centres techniques Renault.
   > * Tests ergonomiques réels assis au volant : validation de l'accessibilité physique des boutons, des reflets lumineux et de la réactivité sous différentes conditions d'éclairage.
 * **La Rétrospective de Senior (« Ce que je ferais différemment aujourd'hui ») :**
-  > *« Si je devais reconduire ce projet aujourd'hui avec l'outillage moderne, je brancherais un simulateur de volant physique directement sur Figma et le code via un serveur WebSocket local. Cela permettrait de mesurer les temps de réaction musculaires et la distraction visuelle dès la première semaine, avant même le premier passage en usine. »*
+  > *« Si je devais reconduire ce projet aujourd'hui avec l'outillage moderne, j'aurais fait un prototype interactif codé pour travailler les interactions et les animations, et gérer le relationnel en temps réel en fonction de l'attention de l'utilisateur. »*
 
 #### Colonne Droite — Visuel en Regard
 * **Visuel à intégrer :** Photo d'immersion du test utilisateur **assis dans le prototype en usine**, montrant la main du conducteur interagissant avec l'écran OpenR allumé dans l'habitacle.
