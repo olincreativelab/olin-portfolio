@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "sync:readme": "node -e \"import('fs').then(fs => { if (fs.existsSync('../scripts/sync_portfolio_readme.js')) import('child_process').then(cp => cp.execSync('node ../scripts/sync_portfolio_readme.js', { stdio: 'inherit' })); else console.log('ℹ️ sync:readme skipped (standalone clone)'); });\"",
+    "sync:tokens": "node scripts/sync-figma-tokens.js",
+    "sync:all": "npm run sync:readme && npm run sync:tokens",
     "predev": "npm run sync:readme",
     "dev": "vite",
     "prebuild": "npm run sync:readme",
@@ -13,5 +15,9 @@
   },
   "devDependencies": {
     "vite": "^6.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "node-fetch": "^3.3.2"
   }
 }
