@@ -1,0 +1,12 @@
+{
+  "case": "Royal Canin",
+  "role": "Lead UX/UI & Service Designer (ekino x MFG Labs)",
+  "components": {
+    "borne_phygitale_hd": "BorneRC.png",
+    "empathy_map_client": "EmpathyMapClient.png",
+    "store_persona_analysis": "store_persona_analysis.png",
+    "grid_of_personas": "grid_of_personas.png",
+    "retail_scene_photo": "retail_scene_photo.png",
+    "user_journey_map": "user_journey_map.png"
+  }
+}

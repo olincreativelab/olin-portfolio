@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Excibat — Reprise Technique &amp; Transformation SaaS BTP | Olin.os</title>
+  <meta name="description" content="Case study Excibat : reprise brownfield d'une GED BTP sous Bubble, intégration Oodrive Sign et Stripe, et pivot architectural multi-organisation sécurisé." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300..900&family=Kode+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/src/styles/tokens.css" />
+  <link rel="stylesheet" href="/src/styles/base.css" />
+  <link rel="stylesheet" href="/src/styles/components.css" />
+  <link rel="stylesheet" href="/src/styles/case-study.css" />
+  <!-- Masque le titre avant l'effet machine à écrire (pas de flash), sauf reduced-motion -->
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-typing');
+    }
+  </script>
+</head>
+<body class="cs-page">
+
+  <!-- Trame d'atelier interactive (fallback CSS statique si reduced-motion / tactile) -->
+  <canvas id="canvas-dot-grid" aria-hidden="true"></canvas>
+
+  <a class="cs-skip-link" href="#main">Aller au contenu</a>
+
+  <header class="olin-header" data-site-header>
+    <div class="olin-header__right">
+      <span class="olin-status-tag"><span class="olin-status-tag__dot" aria-hidden="true"></span>DISPONIBLE • Q3/Q4 2026</span>
+      <button type="button" class="olin-menu-btn" aria-expanded="false" aria-controls="olin-menu-panel" aria-label="Ouvrir le menu" data-menu-toggle>
+        <span class="olin-menu-btn__face">
+          <svg width="15" height="15" viewBox="0 0 15 15" aria-hidden="true"><path d="M0 6.66667V0H6.66667V6.66667H0ZM0 15V8.33333H6.66667V15H0ZM8.33333 6.66667V0H15V6.66667H8.33333ZM8.33333 15V8.33333H15V15H8.33333ZM1.66667 5H5V1.66667H1.66667V5ZM10 5H13.3333V1.66667H10V5ZM10 13.3333H13.3333V10H10V13.3333ZM1.66667 13.3333H5V10H1.66667V13.3333Z" fill="#242237" /></svg>
+        </span>
+      </button>
+    </div>
+    <nav class="olin-header__panel" id="olin-menu-panel" aria-label="Navigation principale" data-menu-panel>
+      <a href="/#hero">Bureau</a>
+      <a href="/#projets">Projets</a>
+      <a href="/#services">Atelier</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- =======================================================================
+         NIVEAU 1 — EXECUTIVE CARD (Scan 90s)
+         ======================================================================= -->
+    <section class="cs-hero cs-container" aria-labelledby="cs-title">
+      <span class="olin-tag olin-tag--blue olin-tag--tag cs-hero__chip">Case study // B2B SaaS • PropTech</span>
+
+      <div class="cs-hero__grid">
+        <div class="cs-hero__content">
+          <h1 id="cs-title" class="cs-hero__title" aria-label="Excibat"><span class="cs-typewriter" aria-hidden="true" data-typewriter>Excibat</span><span class="cs-caret" aria-hidden="true" data-typewriter-caret>_</span></h1>
+          <p class="cs-hero__lead">
+            The Promoters' EDM • De la dette technique Bubble au SaaS multi-organisation en production : circuits de signature eIDAS, billing Stripe et étanchéité absolue des données.
+          </p>
+
+          <!-- Cartouche projet -->
+          <dl class="cs-cartouche" aria-label="Cartouche projet">
+            <div><dt>Client</dt><dd>Excibat • The Promoters' EDM (PropTech / BTP)</dd></div>
+            <div><dt>Rôle</dt><dd>Product Designer × Builder (Reprise &amp; Transformation SaaS)</dd></div>
+            <div><dt>Squad</dt><dd>Josselin Hillion (Designer × Builder) en binôme direct avec Francis (Fondateur &amp; Expert Métier BTP)</dd></div>
+            <div><dt>Durée</dt><dd>Juillet 2025 → Septembre 2026+ (Accompagnement continu en production)</dd></div>
+            <div><dt>Stack</dt><dd>Bubble • Oodrive Sign (eIDAS) • Stripe Billing • Meteo-Concept • SendGrid • Webhooks Backend</dd></div>
+          </dl>
+
+          <ul class="cs-badges" aria-label="Preuves d'impact">
+            <li><span class="olin-tag olin-tag--green olin-tag--pill"><span class="olin-tag__dot" aria-hidden="true"></span>100% Operational SaaS en production</span></li>
+            <li><span class="olin-tag olin-tag--purple olin-tag--pill"><span class="olin-tag__dot" aria-hidden="true"></span>Signatures Oodrive &amp; Stripe récurrent</span></li>
+            <li><span class="olin-tag olin-tag--blue olin-tag--pill"><span class="olin-tag__dot" aria-hidden="true"></span>0 porosité documentaire multi-organisations</span></li>
+          </ul>
+
+          <!-- MOMENT CTA 1 — Triage -->
+          <div class="cs-cta-row" role="group" aria-label="Choisir sa lecture">
+            <a class="olin-btn olin-btn--primary" href="#synthese">⚡ Scanner la synthèse 90s <span aria-hidden="true">↓</span></a>
+            <button type="button" class="olin-btn olin-btn--secondary" data-action="print-onepager">📥 One-Pager PDF</button>
+          </div>
+        </div>
+
+        <!-- Hero mockup — Dashboard Gestionnaire Excibat -->
+        <figure class="cs-hero__visual">
+          <div class="olin-window">
+            <div class="olin-window__header">
+              <span class="olin-window__title">app.excibat.com/dashboard/promoter</span>
+              <span aria-hidden="true">200 OK</span>
+            </div>
+            <div class="olin-window__body cs-cockpit">
+              <a class="olin-picture-frame cs-cockpit__slot" href="/assets/excibat/Excibat_DashboardGestionnaire.png" target="_blank" rel="noopener" aria-label="Ouvrir le dashboard Excibat en pleine résolution (nouvel onglet)">
+                <div class="olin-photo-duotone">
+                  <img
+                    src="/assets/excibat/Excibat_DashboardGestionnaire.png"
+                    width="1440" height="900"
+                    alt="Interface du dashboard gestionnaire Excibat : suivi des chantiers, situations de travaux et circuits de visas."
+                    fetchpriority="high" />
+                  <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <img class="cs-hero__sticker" src="/assets/excibat/slot_logo_eb.png" width="96" height="96" alt="Client : Excibat" />
+          <figcaption class="cs-caption">↳ Vue gestionnaire d'opérations immobilières : pilotage documentaire et circuits d'approbation sans friction.</figcaption>
+        </figure>
+      </div>
+
+      <!-- Matrice 3x3 — Scan exécutif 90s -->
+      <div id="synthese" class="cs-synthese" aria-labelledby="synthese-title">
+        <div class="cs-section-header">
+          <span class="olin-tag olin-tag--blue olin-tag--pill cs-section-tag">SCAN EXÉCUTIF // 90 SECONDES</span>
+          <h2 id="synthese-title" class="cs-section-title">Synthèse de la mission &amp; impact</h2>
+        </div>
+        <div class="cs-matrix">
+          <article class="olin-window cs-matrix__col">
+            <div class="olin-window__header"><span class="olin-window__title">01 // The_Challenges.md</span></div>
+            <ul class="olin-window__body cs-bullets">
+              <li><strong>Plafond technique du fondateur.</strong> Architecture SaaS Bubble bloquée, risque de dérive fonctionnelle et de dette front-end instable.</li>
+              <li><strong>Complexité métier BTP.</strong> Gestion des PV de réception, réserves d'artisans, convocations, délais légaux (GPA/biennale) et certificats de situation.</li>
+              <li><strong>Enjeux de sécurisation.</strong> Nécessité impérative de signatures électroniques certifiées eIDAS et d'un billing récurrent automatisé.</li>
+            </ul>
+          </article>
+          <article class="olin-window cs-matrix__col">
+            <div class="olin-window__header"><span class="olin-window__title">02 // The_Approach_Builder.flow</span></div>
+            <ul class="olin-window__body cs-bullets">
+              <li><strong>Refonte UX &amp; parcours.</strong> Simplification invisible des parcours promoteurs, conducteurs de travaux, architectes et acquéreurs finaux.</li>
+              <li><strong>Intégration d'APIs tierces.</strong> Branchement d'Oodrive Sign (e-signatures légales), Stripe Billing (abonnements B2B) et Météo 14j sans dette.</li>
+              <li><strong>Le pivot multi-organisation.</strong> Découverte des rôles croisés ➔ Dissociation Organisation/Entreprise et recalcul des droits via backend Bubble.</li>
+            </ul>
+          </article>
+          <article class="olin-window cs-matrix__col">
+            <div class="olin-window__header"><span class="olin-window__title">03 // The_Results_ROI.out</span></div>
+            <ul class="olin-window__body cs-bullets">
+              <li><strong>100% Operational SaaS.</strong> Facturation Stripe récurrente et signatures Oodrive certifiées en production sans rupture de service.</li>
+              <li><strong>Architecture multi-orga étanche.</strong> Isolation absolue des dossiers entre donneurs d'ordre concurrents, sans sélecteur d'organisation visible.</li>
+              <li><strong>0 Dev Friction.</strong> Autonomie totale du fondateur, montée en compétences produit et console d'administration centralisée.</li>
+            </ul>
+          </article>
+        </div>
+
+        <ul class="cs-metrics" aria-label="Chiffres clés">
+          <li class="olin-metric-card">
+            <span class="olin-metric-card__value">100%</span>
+            <span class="olin-metric-card__label">Operational SaaS • facturation Stripe &amp; signatures Oodrive en production</span>
+          </li>
+          <li class="olin-metric-card">
+            <span class="olin-metric-card__value">&lt; 14 D</span>
+            <span class="olin-metric-card__label">Velocity to Prod • du diagnostic de dette au lancement du premier programme</span>
+          </li>
+          <li class="olin-metric-card">
+            <span class="olin-metric-card__value">6 phases</span>
+            <span class="olin-metric-card__label">migration multi-organisation structurée sans rupture ni fuite de données</span>
+          </li>
+          <li class="olin-metric-card">
+            <span class="olin-metric-card__value">0</span>
+            <span class="olin-metric-card__label">Dev Friction • autonomie complète du fondateur et transmission technique</span>
+          </li>
+        </ul>
+
+        <!-- MOMENT CTA 2 — Carrefour décisionnel -->
+        <div class="cs-crossroads">
+          <p class="cs-crossroads__label">Vous avez l'essentiel. Deux chemins :</p>
+          <div class="cs-cta-row">
+            <a class="olin-btn olin-btn--primary" href="https://cal.com/contact-excibat-z152ts/15min" target="_blank" rel="noopener">Discuter de ce projet avec Josselin (15 min) <span aria-hidden="true">↗</span></a>
+            <a class="olin-link" href="#contexte">Découvrir le cadrage &amp; les 4 étapes <span class="olin-link-arrow" aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         CADRAGE STRATÉGIQUE — COMPLEXITÉ BROWNFIELD & VÉRITÉ MÉTIER
+         ======================================================================= -->
+    <section id="contexte" class="cs-context cs-container" aria-labelledby="context-title">
+      <div class="cs-section-header">
+        <span class="olin-tag olin-tag--blue olin-tag--pill cs-section-tag">01 // CADRAGE STRATÉGIQUE</span>
+        <h2 id="context-title" class="cs-section-title">Mise en situation : Reprise brownfield d'une GED BTP</h2>
+        <p class="cs-section-subtitle">
+          Passer d'un outil mono-organisationnel conçu pour un seul utilisateur à une plateforme SaaS multi-acteurs étanche et scalable.
+        </p>
+      </div>
+
+      <div class="cs-context__grid">
+        <!-- Narratif & 3 Mandats Stratégiques -->
+        <div class="cs-context__text">
+          <p class="cs-prose cs-prose--lead">
+            Excibat est une application de gestion électronique et d'envoi de documents dédiée aux acteurs de la construction et de la promotion immobilière. L'intervention ne relève pas d'une création sur page blanche, mais d'une reprise technique et produit progressive (<em>brownfield</em>) : compréhension d'un existant Bubble développé par le fondateur et un tiers, domptage d'APIs complexes et refonte de l'architecture pour absorber le passage à l'échelle.
+          </p>
+
+          <div class="cs-missions-card">
+            <h3 class="cs-missions-title">Les 3 mandats de la mission design-builder :</h3>
+            <ol class="cs-missions">
+              <li>
+                <span class="cs-mission-badge">01</span>
+                <div>
+                  <strong>Sécuriser les circuits légaux (eIDAS).</strong> Cartographier et automatiser les chaînes de signatures électroniques critiques (Avenants, DGD, PVR, PVLR) sans rupture juridique.
+                </div>
+              </li>
+              <li>
+                <span class="cs-mission-badge">02</span>
+                <div>
+                  <strong>Opérer le pivot multi-organisation.</strong> Déconstruire le modèle de données mono-orga pour permettre à un artisan ou un architecte d'intervenir pour plusieurs promoteurs sans fuite de devis.
+                </div>
+              </li>
+              <li>
+                <span class="cs-mission-badge">03</span>
+                <div>
+                  <strong>Ancrer l'ergonomie dans le réel chantier.</strong> Refuser le minimalisme d'agence pour concevoir des écrans contrastés, robustes et conformes aux repères des professionnels du bâtiment.
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Visuel Backend Workflows & Citation Clé -->
+        <aside class="cs-context__media">
+          <div class="olin-window cs-context-figure">
+            <div class="olin-window__header">
+              <span class="olin-window__title">excibat-workflows-backend.png</span>
+              <span class="olin-tag olin-tag--blue olin-tag--pill cs-window-tag">BACKEND</span>
+            </div>
+            <div class="olin-window__body cs-context-body">
+              <a class="olin-picture-frame" href="/assets/excibat/Excibat_backendWorkflows.png" target="_blank" rel="noopener" aria-label="Voir les workflows backend Excibat en pleine résolution (nouvel onglet)">
+                <div class="cs-context-photo-wrap olin-photo-duotone">
+                  <img
+                    src="/assets/excibat/Excibat_backendWorkflows.png"
+                    alt="Workflows backend Bubble et API webhooks pour l'isolation des droits multi-organisations"
+                    width="1200" height="800"
+                    loading="lazy"
+                    class="cs-context-photo" />
+                  <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+                </div>
+                <div class="olin-picture-frame__caption">
+                  <div class="olin-picture-frame__text">
+                    <span class="olin-picture-frame__title">Workflows Backend // Architecture Bubble</span>
+                    <span>Recalcul sécurisé des listes d'autorisations et déclencheurs APIs.</span>
+                  </div>
+                  <span class="olin-picture-frame__zoom">zoom ↗</span>
+                </div>
+              </a>
+              <div class="cs-context-quote">
+                <blockquote>
+                  « Dans le bâtiment, un artisan travaille pour cinq promoteurs à la fois. Si un devis fuit chez le voisin, le logiciel est mort. L'étanchéité doit être absolue, sans que l'utilisateur n'ait à manipuler un sélecteur d'organisation complexe. »
+                </blockquote>
+                <cite>— <strong>Francis</strong>, Fondateur d'Excibat &amp; Promoteur Immobilier</cite>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Carte Contexte : L'Équipe & Mode de Collaboration -->
+      <div class="cs-squad-card" aria-labelledby="squad-title">
+        <div class="cs-squad-card__header">
+          <span class="olin-tag olin-tag--blue olin-tag--pill" style="align-self: flex-start;">ORGANISATION &amp; GOUVERNANCE</span>
+          <h3 id="squad-title" class="cs-squad-card__title">Un binôme direct Designer-Builder × Expert Métier</h3>
+        </div>
+        <div class="cs-squad-card__grid">
+          <div class="cs-squad-col">
+            <span class="cs-squad-col__tag">EXPERTISE MÉTIER &amp; TERRAIN</span>
+            <p><strong>Francis</strong> (Fondateur et Promoteur BTP) apporte la vision business, teste chaque brique en conditions réelles sur ses chantiers et arbitre les flux juridiques.</p>
+          </div>
+          <div class="cs-squad-col">
+            <span class="cs-squad-col__tag">DESIGN &amp; FULLSTACK BUILD</span>
+            <p><strong>Josselin Hillion</strong> assure l'architecture de données, la refonte UI/UX, le développement Bubble, l'intégration des APIs (Stripe, Oodrive) et la sécurité backend.</p>
+          </div>
+          <div class="cs-squad-col">
+            <span class="cs-squad-col__tag">LIVRAISON CONTINUE EN PROD</span>
+            <p>Zéro perte en ligne entre maquette et code : chaque sprint livre des fonctionnalités testées immédiatement sur de vrais dossiers de consultation d'entreprises.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         NIVEAU 2 — STEPPER D'AIGUILLAGE NARRATIF (STICKY MOBILE & DESKTOP)
+         ======================================================================= -->
+    <nav class="cs-stepper-bar" aria-label="Progression du deep dive en 4 actes" data-stepper-bar>
+      <button type="button" class="cs-stepper-toggle" aria-expanded="false" aria-controls="cs-stepper-list" data-stepper-toggle>
+        <span class="cs-stepper-toggle__count"><span class="cs-sr-only">Étape en cours : </span><span data-stepper-count>01</span>/04</span>
+        <span class="cs-stepper-toggle__label" data-stepper-label>Cadrage &amp; Oodrive Sign</span>
+        <span class="cs-stepper-toggle__chevron" aria-hidden="true">▾</span>
+      </button>
+      <ol id="cs-stepper-list" class="olin-stepper cs-container" data-stepper>
+        <li><a class="olin-stepper__item olin-stepper__item--active" href="#acte-01" aria-current="step"><span class="olin-stepper__num">01 • Juil.–sept. 2025</span><span class="olin-stepper__label">Cadrage &amp; Oodrive Sign</span></a></li>
+        <li><a class="olin-stepper__item" href="#acte-02"><span class="olin-stepper__num">02 • Sept.–nov. 2025</span><span class="olin-stepper__label">Extension SaaS Stripe</span></a></li>
+        <li><a class="olin-stepper__item" href="#acte-03"><span class="olin-stepper__num">03 • Déc. 2025–mars 2026</span><span class="olin-stepper__label">Pivot Multi-Organisation</span></a></li>
+        <li><a class="olin-stepper__item" href="#acte-04"><span class="olin-stepper__num">04 • Avril–sept. 2026+</span><span class="olin-stepper__label">Vérité terrain &amp; prod</span></a></li>
+      </ol>
+    </nav>
+
+    <!-- =======================================================================
+         NIVEAU 3 — LE DEEP DIVE EN 4 ACTES (Modular Storyboard)
+         ======================================================================= -->
+    <div id="deep-dive" class="cs-deep-dive">
+
+      <!-- ACTE 01 -->
+      <section id="acte-01" class="cs-act cs-container" data-act aria-labelledby="acte-01-title">
+        <header class="cs-act__header">
+          <div class="cs-act__pill-group">
+            <span class="cs-pill cs-pill--blue">ACTE 01 // JUILLET – SEPTEMBRE 2025</span>
+            <span class="cs-pill cs-pill--dark">PHASE 1/4</span>
+          </div>
+          <h2 id="acte-01-title" class="cs-act__title">Cadrage, reprise de l'existant &amp; intégration Oodrive Sign</h2>
+          <p class="cs-act__thesis">Diagnostiquer la dette technique accumulée, comprendre les responsabilités de signature et dompter l'API Oodrive Sign pour sécuriser les circuits d'actes juridiques critiques.</p>
+        </header>
+        <div class="cs-act__body">
+          <div class="cs-prose">
+            <p>Dès le lancement de la mission en juillet 2025, le premier enjeu a été de cartographier la complexité documentaire du BTP : Avenants, Décomptes Généraux Définitifs (DGD), Factures de situation, Procès-Verbaux de Réception (PVR) et de Levée de Réserves (PVLR). Chaque document répond à des statuts de visa stricts et engage la responsabilité légale des signataires.</p>
+            <p>L'exploration technique a rapidement mis en évidence la lourdeur de l'API Oodrive « all-in-one » et de ses mécanismes de soumission. J'ai architecturé les appels d'API et les webhooks bidirectionnels pour tracer en temps réel l'avancement des signatures, automatisé la mise à jour des taux de TVA, synchronisé les boucles de relance e-mail via SendGrid et conditionné l'accès aux documents selon le statut de chaque utilisateur sur le projet.</p>
+          </div>
+          <ul class="cs-deliverables" aria-label="Livrables clés">
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Socle API Oodrive Sign &amp; webhooks</li>
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Boucles automatiques SendGrid</li>
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Matrice des circuits de signature</li>
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Audit de la dette Bubble</li>
+          </ul>
+        </div>
+        <figure class="cs-artifact">
+          <a class="olin-picture-frame" href="/assets/excibat/Excibat_API.png" target="_blank" rel="noopener" aria-label="Agrandir le schéma des connecteurs APIs Excibat (nouvel onglet)">
+            <div class="olin-photo-duotone">
+              <img src="/assets/excibat/Excibat_API.png" width="1440" height="900" loading="lazy" alt="Connecteurs d'APIs tierces dans Excibat : Oodrive Sign, Stripe Billing et webhooks d'états." />
+              <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+            </div>
+            <div class="olin-picture-frame__caption">
+              <div class="olin-picture-frame__text">
+                <span class="olin-picture-frame__title">Connecteurs API // Oodrive Sign &amp; Webhooks</span>
+                <span>Traçabilité légale eIDAS et gestion des statuts de signature asynchrones.</span>
+              </div>
+              <span class="olin-picture-frame__zoom">zoom ↗</span>
+            </div>
+          </a>
+          <figcaption class="cs-caption">Architecture des flux API Oodrive Sign : soumission multi-documents et mise à jour temps réel par webhooks.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ACTE 02 -->
+      <section id="acte-02" class="cs-act cs-container" data-act aria-labelledby="acte-02-title">
+        <header class="cs-act__header">
+          <div class="cs-act__pill-group">
+            <span class="cs-pill cs-pill--blue">ACTE 02 // SEPTEMBRE – NOVEMBRE 2025</span>
+            <span class="cs-pill cs-pill--dark">PHASE 2/4</span>
+          </div>
+          <h2 id="acte-02-title" class="cs-act__title">Extension fonctionnelle &amp; mise en place du SaaS Stripe</h2>
+          <p class="cs-act__thesis">Structurer le modèle économique en self-service et enrichir la proposition de valeur métier avec des services contextuels de chantier sans désorienter l'utilisateur.</p>
+        </header>
+        <div class="cs-act__body">
+          <div class="cs-prose">
+            <p>À l'automne 2025, nous avons étendu la webapp vers un fonctionnement SaaS autonome. J'ai conçu et documenté le tunnel de souscription à l'abonnement annuel (payé mensuellement) via Stripe Checkout, en ajustant l'architecture pour permettre le paiement sans exiger la création préalable d'un compte.</p>
+            <p>Parallèlement, le produit s'est enrichi de services directement utiles sur le terrain : intégration de l'API Météo-Concept pour afficher les prévisions météo à 14 jours géolocalisées sur chaque chantier, téléchargement groupé d'appels d'offres et gestion de la suppression de données en fin de Garantie de Parfait Achèvement (GPA). Lors de la revue de fin novembre, un travail ergonomique approfondi a été mené sur la navigation globale pour guider pas à pas les utilisateurs et corriger des anomalies critiques de statut.</p>
+          </div>
+          <ul class="cs-deliverables" aria-label="Livrables clés">
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Tunnel Stripe Checkout &amp; Billing</li>
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">API Météo chantier 14j</li>
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Téléchargement groupé DCE</li>
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Navigation guidée par phase</li>
+          </ul>
+        </div>
+        <figure class="cs-artifact">
+          <a class="olin-picture-frame" href="/assets/excibat/mockup_front_web_hd.png" target="_blank" rel="noopener" aria-label="Agrandir la capture du front web Excibat (nouvel onglet)">
+            <div class="olin-photo-duotone">
+              <img src="/assets/excibat/mockup_front_web_hd.png" width="1440" height="900" loading="lazy" alt="Interface web Excibat : De la consultation à la GPA sans friction, valorisation du SaaS BTP." />
+              <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+            </div>
+            <div class="olin-picture-frame__caption">
+              <div class="olin-picture-frame__text">
+                <span class="olin-picture-frame__title">Proposition de Valeur SaaS // Front Web</span>
+                <span>Clarification du parcours : de la consultation d'entreprises au suivi GPA.</span>
+              </div>
+              <span class="olin-picture-frame__zoom">zoom ↗</span>
+            </div>
+          </a>
+          <figcaption class="cs-caption">Interface publique et tunnel d'onboarding : positionnement métier BTP clair et sans jargon technique.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ACTE 03 -->
+      <section id="acte-03" class="cs-act cs-container" data-act aria-labelledby="acte-03-title">
+        <header class="cs-act__header">
+          <div class="cs-act__pill-group">
+            <span class="cs-pill cs-pill--blue">ACTE 03 // DÉCEMBRE 2025 – MARS 2026</span>
+            <span class="cs-pill cs-pill--dark">PHASE 3/4</span>
+          </div>
+          <h2 id="acte-03-title" class="cs-act__title">Le déclic métier &amp; la migration multi-organisation</h2>
+          <p class="cs-act__thesis">Remettre en question un modèle de données mono-organisationnel devenu bloquant pour aligner l'architecture logicielle avec la réalité des relations d'affaires du BTP.</p>
+        </header>
+        <div class="cs-act__body">
+          <div class="cs-prose">
+            <p>En décembre 2025, un constat structurel majeur a fait pivoter le produit : un architecte ou un bureau d'études intervient sur des chantiers pour le compte de plusieurs promoteurs différents, et une même entreprise sous-traitante travaille simultanément pour plusieurs organisations. Le modèle Bubble initial, pensé pour une organisation unique fermée, devenait un goulet d'étranglement dangereux pour la sécurité des données.</p>
+            <p>En mars 2026, j'ai piloté la <strong>migration multi-organisation en 6 phases méthodiques</strong> :</p>
+            <ol class="cs-steps-list">
+              <li><strong>Architecture :</strong> Formalisation de la distinction stricte entre <em>Organisation donneuse d'ordre</em> et <em>Entreprise intervenante</em>.</li>
+              <li><strong>Migration des données :</strong> Réaffectation sans perte de l'historique des projets et déplacement des attributs SIRET/TVA vers l'organisation.</li>
+              <li><strong>Sécurité &amp; Privacy Rules :</strong> Bubble ne permettant pas de comparer deux listes dans ses Privacy Rules, j'ai déporté le contrôle d'accès dans des workflows backend calculant des listes explicites de personnes autorisées.</li>
+              <li><strong>Refactorisation des workflows :</strong> Adaptation des créations de projets, des notifications et des suppressions en cascade pour éliminer tout risque de relation orpheline « fantôme ».</li>
+              <li><strong>Interfaces transparentes :</strong> Absorption de la complexité en coulisses (refus délibéré d'un sélecteur visible d'organisation pour garder une UI fluide).</li>
+              <li><strong>Recette multi-comptes :</strong> Protocoles de validation croisée en environnement de test et pré-production.</li>
+            </ol>
+          </div>
+          <ul class="cs-deliverables" aria-label="Livrables clés">
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Plan de migration en 6 phases</li>
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Modèle Organisation ⇄ Entreprise</li>
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Privacy Rules déportées en backend</li>
+            <li class="olin-tag olin-tag--neutral olin-tag--tag">Scripts de migration zéro-perte</li>
+          </ul>
+        </div>
+        <figure class="cs-artifact">
+          <a class="olin-picture-frame" href="/assets/excibat/Excibat_privacy.png" target="_blank" rel="noopener" aria-label="Agrandir la configuration des Privacy Rules Excibat (nouvel onglet)">
+            <div class="olin-photo-duotone">
+              <img src="/assets/excibat/Excibat_privacy.png" width="1440" height="900" loading="lazy" alt="Configuration des règles de sécurité et Privacy Rules pour le cloisonnement multi-organisation dans Bubble." />
+              <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+            </div>
+            <div class="olin-picture-frame__caption">
+              <div class="olin-picture-frame__text">
+                <span class="olin-picture-frame__title">Sécurité des Données // Privacy Rules</span>
+                <span>Cloisonnement hermétique des dossiers par recalcul explicite des droits.</span>
+              </div>
+              <span class="olin-picture-frame__zoom">zoom ↗</span>
+            </div>
+          </a>
+          <figcaption class="cs-caption">Architecture de sécurité : contournement des limites Bubble par des listes d'autorisations explicites calculées côté serveur.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ACTE 04 -->
+      <section id="acte-04" class="cs-act cs-container" data-act aria-labelledby="acte-04-title">
+        <header class="cs-act__header">
+          <div class="cs-act__pill-group">
+            <span class="cs-pill cs-pill--blue">ACTE 04 // AVRIL – SEPTEMBRE 2026+</span>
+            <span class="cs-pill cs-pill--dark">PHASE 4/4</span>
+          </div>
+          <h2 id="acte-04-title" class="cs-act__title">Recette opérationnelle, retours terrain &amp; stabilisation</h2>
+          <p class="cs-act__thesis">Frotter l'outil à la réalité du terrain auprès de l'expert métier, déconstruire les préjugés d'agence (minimalisme excessif, automatisation rigide) et outiller le fondateur pour son autonomie complète.</p>
+        </header>
+        <div class="cs-act__body">
+          <div class="cs-prose">
+            <p>Le processus de validation d'Excibat repose sur une collaboration étroite avec Francis, qui cumule les casquettes de commanditaire, expert métier et utilisateur sur ses propres opérations immobilières. Ses retours ont été cruciaux pour corriger des erreurs de conception théoriques :</p>
+            <ul class="cs-bullets">
+              <li><strong>Clôture manuelle vs automatique :</strong> Dans la réalité d'un appel d'offres BTP, le dépôt d'une offre ne clôture pas le dossier : une négociation technique et financière continue. Nous avons donc remplacé la clôture automatique par une action manuelle concertée.</li>
+              <li><strong>Ergonomie adaptée au bâtiment :</strong> Face à des interfaces initiales jugées trop épurées pour les repères des professionnels du bâtiment, nous avons fait évoluer l'UI vers des écrans plus cadrés, structurés et contrastés, avec une identité affirmée (vert signalétique, typographie forte, maintien du logo historique EB).</li>
+              <li><strong>Autonomie client :</strong> Pour que Francis ne dépende pas d'un prestataire à chaque ajustement, j'ai développé une page d'administration centralisée (gestion par lot, contrôles techniques) et documenté chaque workflow de manière limpide.</li>
+            </ul>
+            <p>Le travail s'est poursuivi sur la fiabilisation des certificats de paiement (gestion du responsive et des situations de travaux) et le positionnement marketing ciblé sur la gestion de la GPA.</p>
+          </div>
+          <aside class="olin-sticky cs-note olin-sticky--mint" aria-label="Verbatim terrain de Francis">
+            <div class="cs-note__pin" aria-hidden="true"></div>
+            <div class="cs-note__header">
+              <span class="cs-note__tag">RETEX TERRAIN // FRANCIS</span>
+            </div>
+            <blockquote class="cs-note__quote">
+              « Sur le chantier, les gars n'ont pas le temps de chercher un bouton caché dans un menu épuré. Il faut que ça soit franc, contrasté, et que ça réponde comme un outil de travail. Josselin a su écouter ça plutôt que de m'imposer un design de magazine. »
+            </blockquote>
+            <div class="cs-note__sign">— Francis, Promoteur &amp; Utilisateur d'Excibat</div>
+            <a href="#drawers-title" class="olin-sticky__action">voir les 4 tiroirs de maîtrise ↗</a>
+          </aside>
+        </div>
+        <figure class="cs-artifact">
+          <a class="olin-picture-frame" href="/assets/excibat/Excibat_CertifPaiementArchi.png" target="_blank" rel="noopener" aria-label="Agrandir la validation des certificats de paiement (nouvel onglet)">
+            <div class="olin-photo-duotone">
+              <img src="/assets/excibat/Excibat_CertifPaiementArchi.png" width="1440" height="900" loading="lazy" alt="Interface de validation des certificats de paiement architecte et situations de travaux dans Excibat." />
+              <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+            </div>
+            <div class="olin-picture-frame__caption">
+              <div class="olin-picture-frame__text">
+                <span class="olin-picture-frame__title">Validation Financière // Certificats de Paiement</span>
+                <span>Contrôle des situations de travaux, retenues de garantie et visas architecte.</span>
+              </div>
+              <span class="olin-picture-frame__zoom">zoom ↗</span>
+            </div>
+          </a>
+          <figcaption class="cs-caption">Interface de certification financière : clarté des montants HT/TTC, gestion des acomptes et chaîne d'approbation MOE/MOA.</figcaption>
+        </figure>
+
+        <!-- MOMENT CTA 3 — Micro-preuves -->
+        <div class="cs-proof-cta">
+          <p class="cs-proof-cta__label">Voir les preuves d'architecture :</p>
+          <div class="cs-cta-row">
+            <a class="olin-btn olin-btn--secondary" href="/assets/excibat/board_backend_workflows_hd.png" target="_blank" rel="noopener">Ouvrir le schéma des workflows complets <span aria-hidden="true">↗</span></a>
+            <a class="olin-link" href="mailto:josselin.hillion@gmail.com?subject=Discussion%20architecture%20Bubble%20Excibat">Échanger sur l'architecture backend Bubble <span class="olin-link-arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- =======================================================================
+         NIVEAU 4 — TIROIRS DE MAÎTRISE SENIOR & CONVERSION FINALE
+         ======================================================================= -->
+    <section class="cs-drawers cs-container" aria-labelledby="drawers-title">
+      <header class="cs-act__header">
+        <span class="cs-act__num">Niveau 4 // Maîtrise senior</span>
+        <h2 id="drawers-title" class="cs-act__title">Les 4 tiroirs</h2>
+      </header>
+
+      <div class="olin-drawers-grid">
+        <details class="olin-drawer" data-drawer>
+          <summary class="olin-drawer__title cs-drawer__summary">
+            <span class="cs-drawer__head">
+              <span class="olin-tag olin-tag--blue olin-tag--tag">❖ Posture Builder</span>
+              <span class="cs-drawer__name">Designer–Builder sur code brownfield</span>
+              <span class="cs-drawer__teaser">Savoir plonger dans une dette technique sans tout réécrire</span>
+            </span>
+            <span class="cs-drawer__icon" aria-hidden="true"><span class="cs-drawer__glyph">+</span></span>
+          </summary>
+          <div class="olin-drawer__content">
+            <p>Savoir plonger dans une application existante, décoder la logique d'un tiers, cartographier les dépendances cachées et opérer une refonte chirurgicale sans détruire les données historiques ni interrompre l'exploitation en cours.</p>
+            <p>Capacité à dialoguer en continu avec le commanditaire pour prioriser la stabilité avant d'ajouter de nouvelles fonctionnalités.</p>
+          </div>
+        </details>
+        <details class="olin-drawer" data-drawer>
+          <summary class="olin-drawer__title cs-drawer__summary">
+            <span class="cs-drawer__head">
+              <span class="olin-tag olin-tag--purple olin-tag--tag">❖ Données &amp; Sécurité</span>
+              <span class="cs-drawer__name">Architecture relationnelle &amp; Privacy Rules</span>
+              <span class="cs-drawer__teaser">Contourner les limites Bubble via des workflows backend calculés</span>
+            </span>
+            <span class="cs-drawer__icon" aria-hidden="true"><span class="cs-drawer__glyph">+</span></span>
+          </summary>
+          <div class="olin-drawer__content">
+            <p>Pour Excibat, la confiance ne se décrète pas par un discours marketing : elle s'établit par l'étanchéité absolue des devis et des factures entre promoteurs concurrents. Contournement des limites techniques de Bubble en gérant le calcul des droits d'accès à l'écriture via des workflows backend sécurisés et des suppressions en cascade propres.</p>
+          </div>
+        </details>
+        <details class="olin-drawer" data-drawer>
+          <summary class="olin-drawer__title cs-drawer__summary">
+            <span class="cs-drawer__head">
+              <span class="olin-tag olin-tag--green olin-tag--tag">❖ Humilité Métier</span>
+              <span class="cs-drawer__name">Écoute du terrain réel vs théorie d'agence</span>
+              <span class="cs-drawer__teaser">Refus du minimalisme aseptisé et clôture manuelle des appels d'offres</span>
+            </span>
+            <span class="cs-drawer__icon" aria-hidden="true"><span class="cs-drawer__glyph">+</span></span>
+          </summary>
+          <div class="olin-drawer__content">
+            <p>Savoir effacer ses réflexes de designer (vouloir des écrans ultra-minimalistes ou des automatisations parfaites) dès que l'expert terrain démontre que le BTP a besoin de cadres visuels forts et de négociations humaines non bloquées par la machine :</p>
+            <ul class="cs-bullets">
+              <li>Passage de la clôture automatique à une action manuelle concertée post-négociation.</li>
+              <li>Écrans denses, repères stables et absence de sélecteur d'organisation visible pour préserver la fluidité cognitive.</li>
+            </ul>
+          </div>
+        </details>
+        <details class="olin-drawer" data-drawer>
+          <summary class="olin-drawer__title cs-drawer__summary">
+            <span class="cs-drawer__head">
+              <span class="olin-tag olin-tag--neutral olin-tag--tag">❖ Transparence Senior</span>
+              <span class="cs-drawer__name">Vérité terrain &amp; lucidité sur les métriques</span>
+              <span class="cs-drawer__teaser">Assumer le beta-testing opérationnel continu plutôt que des métriques inventées</span>
+            </span>
+            <span class="cs-drawer__icon" aria-hidden="true"><span class="cs-drawer__glyph">+</span></span>
+          </summary>
+          <div class="olin-drawer__content">
+            <p>Assumer pleinement la nature des apprentissages : parler de <strong>beta-testing opérationnel continu et de recettes de production</strong> avec un promoteur en activité plutôt que de masquer la réalité derrière de fausses études de laboratoire ou des métriques d'ARR non vérifiées. Valorisation de la rigueur de delivery technique et de la transmission client.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- Transposition & Enseignements Transverses -->
+      <aside class="olin-window cs-sowhat" aria-labelledby="sowhat-title">
+        <div class="olin-window__header">
+          <span class="olin-window__title" id="sowhat-title">🎯 The so what? // Ce que ce cas démontre pour vos produits</span>
+        </div>
+        <div class="olin-window__body cs-sowhat__grid">
+          <div class="cs-sowhat__col">
+            <h3 class="cs-sowhat__title">01 // Maîtrise des écosystèmes multi-organisations denses</h3>
+            <p>Pour les produits B2B exigeants (Koralplay, ERPs transactionnels, fintechs), savoir gérer des droits d'accès à granularité fine, isoler strictement les données de clients concurrents et concevoir des flux financiers récurrents sans faille.</p>
+          </div>
+          <div class="cs-sowhat__col">
+            <h3 class="cs-sowhat__title">02 // Posture hybride Designer &amp; Builder</h3>
+            <p>Fini le fossé entre la promesse graphique et la réalité du code. Capacité à modéliser la base de données relationnelle, intégrer les webhooks d'APIs tierces et designer des interfaces intuitives adaptées aux contraintes techniques sous-jacentes.</p>
+          </div>
+          <div class="cs-sowhat__col">
+            <h3 class="cs-sowhat__title">03 // Pragmatisme &amp; écoute métier authentique</h3>
+            <p>Ne jamais concevoir en chambre d'écho. Travailler main dans la main avec les utilisateurs métiers sur le terrain, déconstruire les dogmes d'agence pour adapter l'outil aux usages réels et garantir une adoption immédiate.</p>
+          </div>
+        </div>
+      </aside>
+
+      <!-- MOMENT CTA 4 — Conversion finale -->
+      <div class="cs-final-cta">
+        <p class="cs-final-cta__title">Prêt à transformer une architecture complexe en produit B2B fluide ?</p>
+        <div class="cs-cta-row">
+          <a class="olin-btn olin-btn--primary" href="https://cal.com/contact-excibat-z152ts/15min" target="_blank" rel="noopener">Planifier un call découverte (15 min) <span aria-hidden="true">↗</span></a>
+          <a class="olin-link" href="/renault-moments.html">Explorer le cas suivant : Renault Moments <span class="olin-link-arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer sur le motif Olin -->
+  <footer class="olin-footer">
+    <div class="olin-footer__inner">
+      <p class="olin-footer__mantra"><span>La tête dans les nuages,<br />les mains dans le concret.</span></p>
+      <nav class="olin-footer__nav" aria-label="Liens de pied de page">
+        <a href="#main">↑ Haut de page</a>
+        <a href="/#projets">Tous les projets</a>
+        <a href="https://www.linkedin.com/in/josselinhillion/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="mailto:olin.creativelab@gmail.com">Email ↗</a>
+      </nav>
+    </div>
+    <div class="olin-footer__legal">
+      <span>© 2026 Josselin Hillion • Olin.os — La tête dans les nuages, les mains dans le concret.</span>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/case-study.js"></script>
+</body>
+</html>

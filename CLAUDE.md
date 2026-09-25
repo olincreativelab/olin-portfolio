@@ -96,3 +96,13 @@ Claude Cloud dispose de 4 compétences maîtresses embarquées dans le repo :
 3. **`responsive-checker`** (`.claude/skills/responsive-checker/SKILL.md`) : Zéro débordement horizontal, repliement fluide des grilles et lisibilité mobile 390px.
 4. **`bmad-quality-gate`** (`.claude/skills/bmad-quality-gate/SKILL.md`) : Grille d'audit contradictoire (Business, Marketing, Architecture, Design) obligatoire avant toute Pull Request.
 
+---
+
+## 👤 8. Répertoire des Assets & Photo de Profil Master
+- **Profil Pic Master HD (4868 × 4868 px, 34 MB) :**
+  - Cas d'usage : [`../Cas d'usage/assets_general/profil_pic.png`](file:///Users/josselinhillion/olin/Portfolio/Cas%20d%27usage/assets_general/profil_pic.png)
+  - Public Web : [`public/assets/general/profil_pic.png`](file:///Users/josselinhillion/olin/Portfolio/code/public/assets/general/profil_pic.png) et [`public/assets/profil_pic_master_4k.png`](file:///Users/josselinhillion/olin/Portfolio/code/public/assets/profil_pic_master_4k.png)
+  - Fichier d'origine : `../Cas d'usage/assets_general/ProfilPic/BGBleu+whiteScreen2.png`
+- **Workshop Visio HD :** [`../Cas d'usage/assets_general/workshop pic.png`](file:///Users/josselinhillion/olin/Portfolio/Cas%20d%27usage/assets_general/workshop%20pic.png) et [`public/assets/workshop_visio_hd.png`](file:///Users/josselinhillion/olin/Portfolio/code/public/assets/workshop_visio_hd.png)
+
+

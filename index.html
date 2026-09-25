@@ -34,30 +34,20 @@
        Même balisage sur toutes les pages du site
        ========================================================================= -->
   <header class="olin-header" data-site-header>
-    <a class="olin-header__brand" href="/">
-      <img src="/assets/olin_logo_icon.svg" alt="Olin.os — accueil" width="36" height="36" />
-    </a>
-    <nav class="olin-header__nav" aria-label="Navigation principale">
-      <a href="/#hero">Bureau</a>
-      <a href="/#projets">Projets</a>
-      <a href="/#services">Services</a>
-      <a href="/#contact">Contact</a>
-    </nav>
     <div class="olin-header__right">
-      <span class="olin-status-tag"><span class="olin-status-tag__dot" aria-hidden="true"></span>DISPONIBLE // OCTOBRE 2026</span>
+      <span class="olin-status-tag"><span class="olin-status-tag__dot" aria-hidden="true"></span>DISPONIBLE • Q3/Q4 2026</span>
       <button type="button" class="olin-menu-btn" aria-expanded="false" aria-controls="olin-menu-panel" aria-label="Ouvrir le menu" data-menu-toggle>
         <span class="olin-menu-btn__face">
           <svg width="15" height="15" viewBox="0 0 15 15" aria-hidden="true"><path d="M0 6.66667V0H6.66667V6.66667H0ZM0 15V8.33333H6.66667V15H0ZM8.33333 6.66667V0H15V6.66667H8.33333ZM8.33333 15V8.33333H15V15H8.33333ZM1.66667 5H5V1.66667H1.66667V5ZM10 5H13.3333V1.66667H10V5ZM10 13.3333H13.3333V10H10V13.3333ZM1.66667 13.3333H5V10H1.66667V13.3333Z" fill="#242237" /></svg>
         </span>
       </button>
     </div>
-    <div class="olin-header__panel" id="olin-menu-panel" data-menu-panel>
+    <nav class="olin-header__panel" id="olin-menu-panel" aria-label="Navigation principale" data-menu-panel>
       <a href="/#hero">Bureau</a>
       <a href="/#projets">Projets</a>
-      <a href="/#services">Services</a>
+      <a href="/#services">Atelier</a>
       <a href="/#contact">Contact</a>
-      <span class="olin-status-tag"><span class="olin-status-tag__dot" aria-hidden="true"></span>DISPONIBLE // OCTOBRE 2026</span>
-    </div>
+    </nav>
   </header>
 
   <main id="main">
@@ -97,7 +87,7 @@
             </span>
             <span class="olin-brainfm-player__meta">
               <span class="olin-brainfm-player__badge">FOCUS</span>
-              <span class="olin-brainfm-player__track">Kyoto // 40Hz Beta Flow</span>
+              <span class="olin-brainfm-player__track">Pluie cosmique // 40Hz</span>
             </span>
           </div>
           <div class="olin-cursor-figjam lp-hero__cursor" aria-hidden="true">
@@ -154,24 +144,14 @@
 
         <button type="button" class="olin-popup lp-profile" data-profile-open aria-haspopup="dialog" aria-label="Agrandir la photo de profil de Josselin Hillion">
           <span class="olin-popup__header">profil-pic.png</span>
-          <span class="lp-profile__canvas" aria-hidden="true">
-            <span class="lp-profile__dots"></span>
-            <img class="lp-profile__frame" src="/assets/profile/profil_window_frame.svg" alt="" width="227" height="227" />
-            <img class="lp-profile__portrait" src="/assets/josselin_portrait_vector_window.svg" alt="" width="163" height="204" decoding="async" />
-            <span class="lp-profile__grain"></span>
-          </span>
+          <img class="lp-profile__img" src="/assets/general/profil_pic_660.webp" srcset="/assets/general/profil_pic_660.webp 660w, /assets/general/profil_pic_1320.webp 1320w" sizes="330px" alt="" width="660" height="660" loading="lazy" decoding="async" />
         </button>
       </div>
 
       <dialog class="lp-lightbox" data-profile-dialog aria-label="Photo de profil de Josselin Hillion">
         <div class="olin-popup lp-lightbox__window">
           <div class="olin-popup__header">profil-pic.png</div>
-          <div class="lp-profile__canvas">
-            <span class="lp-profile__dots" aria-hidden="true"></span>
-            <img class="lp-profile__frame" src="/assets/profile/profil_window_frame.svg" alt="" width="227" height="227" />
-            <img class="lp-profile__portrait" src="/assets/josselin_portrait_vector_window.svg" alt="Portrait de Josselin Hillion, souriant, lunettes bleues, dans une fenêtre Olin.os" width="163" height="204" />
-            <span class="lp-profile__grain" aria-hidden="true"></span>
-          </div>
+          <img class="lp-profile__img" src="/assets/general/profil_pic_1320.webp" alt="Portrait de Josselin Hillion, souriant, lunettes bleues, dans une fenêtre Olin.os sur fond de motif Olin" width="1320" height="1320" loading="lazy" decoding="async" />
         </div>
         <form method="dialog">
           <button class="lp-lightbox__close" type="submit" aria-label="Fermer la photo agrandie">✕</button>
@@ -218,8 +198,8 @@
           <div class="olin-sticky lp-sticky--neon">
             <div class="olin-sticky__header"><span>Le build comme preuve</span></div>
             <p>Une webapp en production : facturation Stripe et signatures Oodrive certifiées, sans dette technique.</p>
-            <p class="lp-floor__soon"><span class="olin-tag olin-tag--neutral olin-tag--pill">case study en préparation</span></p>
-            <a class="olin-sticky__action" href="mailto:olin.creativelab@gmail.com?subject=Cas%20Excibat">demander le cas complet ↗</a>
+            <p class="lp-floor__soon"><span class="olin-tag olin-tag--green olin-tag--pill"><span class="olin-tag__dot" aria-hidden="true"></span>EN PRODUCTION // LIVE</span></p>
+            <a class="olin-link lp-floor__case-link" href="/excibat.html">Explorer le case study <span class="olin-link-arrow" aria-hidden="true">→</span></a>
           </div>
         </div>
 
@@ -244,15 +224,15 @@
             </li>
             <li class="lp-flow__step">
               <span class="lp-flow__num">03 // Webapp</span>
-              <a class="olin-picture-frame" href="/assets/excibat/excibat_dashboard.png" target="_blank" rel="noopener" aria-label="Agrandir le dashboard promoteur Excibat (nouvel onglet)">
+              <a class="olin-picture-frame" href="/assets/excibat/Excibat_DashboardGestionnaire.png" target="_blank" rel="noopener" aria-label="Agrandir le dashboard gestionnaire Excibat en HD (nouvel onglet)">
                 <div class="olin-photo-duotone">
-                  <img class="lp-flow__shot" src="/assets/excibat/excibat_dashboard.png" width="956" height="423" loading="lazy" alt="Dashboard promoteur Excibat : 14 programmes actifs, 128 signatures Oodrive, 18,4 k€ de revenus Stripe récurrents et tableau des programmes immobiliers avec statut GPA, signatures et facturation." />
+                  <img class="lp-flow__shot" src="/assets/excibat/web/excibat_dashboard_gestionnaire.webp" width="1400" height="839" loading="lazy" alt="Dashboard gestionnaire Excibat en production : liste des chantiers (Nala, Mazone, Sami) avec adresse, statut, QR code et modification, navigation chantiers, clients, entreprises et intervenants." />
                   <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
                 </div>
                 <div class="olin-picture-frame__caption">
                   <div class="olin-picture-frame__text">
-                    <span class="olin-picture-frame__title">Dashboard promoteur // Excibat</span>
-                    <span>Signatures Oodrive et facturation Stripe.</span>
+                    <span class="olin-picture-frame__title">Dashboard gestionnaire // Excibat</span>
+                    <span>La webapp en production, capture HD.</span>
                   </div>
                   <span class="olin-picture-frame__zoom">Agrandir ↗</span>
                 </div>
@@ -297,7 +277,7 @@
           <div class="olin-sticky lp-sticky--solar">
             <div class="olin-sticky__header"><span>Renaulution</span><span>COMEX</span></div>
             <p>Vision validée par le COMEX Renault Group et lancement immédiat du MVP embarqué <em>Collections</em>.</p>
-            <a class="olin-sticky__action" href="/renault-moments.html">découvrez ce projet ↗</a>
+            <a class="olin-link lp-floor__case-link" href="/renault-moments.html">Explorer le case study <span class="olin-link-arrow" aria-hidden="true">→</span></a>
           </div>
         </div>
       </article>
@@ -324,7 +304,7 @@
           <div class="olin-sticky olin-sticky--white">
             <div class="olin-sticky__header"><span>Open Data</span><span>Mastercard</span></div>
             <p>De la donnée transactionnelle à un parcours de visite que l'on a envie de suivre.</p>
-            <a class="olin-sticky__action" href="/datacity-paris-for-you.html">découvrez ce projet ↗</a>
+            <a class="olin-link lp-floor__case-link" href="/datacity-paris-for-you.html">Explorer le case study <span class="olin-link-arrow" aria-hidden="true">→</span></a>
           </div>
         </div>
 
@@ -348,7 +328,7 @@
         </div>
       </article>
 
-      <!-- Étage 4 — ROYAL CANIN (layout inversé, pas encore d'illustration) -->
+      <!-- Étage 4 — ROYAL CANIN (layout inversé) -->
       <article class="lp-floor lp-floor--reverse lp-container" aria-labelledby="lp-royalcanin-title">
         <div class="olin-window lp-floor__visual">
           <div class="olin-window__header"><span class="olin-window__title">royal-canin.kiosk — borne phygitale</span></div>
@@ -380,8 +360,7 @@
           <div class="olin-sticky olin-sticky--pink">
             <div class="olin-sticky__header"><span>Magasins pilotes</span><span>Venture</span></div>
             <p>Concept validé en magasins pilotes : le prototype a débloqué le financement corporate venture de l'industrialisation.</p>
-            <p class="lp-floor__soon"><span class="olin-tag olin-tag--neutral olin-tag--pill">case study en préparation</span></p>
-            <a class="olin-sticky__action" href="mailto:olin.creativelab@gmail.com?subject=Cas%20Royal%20Canin">demander le cas complet ↗</a>
+            <a class="olin-link lp-floor__case-link" href="/royal-canin.html">Explorer le case study <span class="olin-link-arrow" aria-hidden="true">→</span></a>
           </div>
         </div>
       </article>
@@ -405,15 +384,53 @@
           <div class="olin-window__body lp-atelier__viewport" data-atelier>
             <div class="lp-atelier__stage">
               <div class="lp-atelier__mural">
-              <img class="lp-atelier__piece" data-pillar="vision-produit" src="/assets/competences/web/mural_01_use_case_blueprint_top_left.webp" alt="Service blueprint « Use case : designing the before and after maintenance »" width="359" height="204" loading="lazy" decoding="async" style="--x: 33px; --y: 11px; --w: 359px; --from-x: -60px; --from-y: -40px; --rot: -3deg; --delay: 0.1s" />
-              <img class="lp-atelier__piece" data-pillar="vision-produit" src="/assets/competences/web/mural_02_ux_wireframes_mid_left.webp" alt="Wireframes UX et matrice de parcours" width="246" height="204" loading="lazy" decoding="async" style="--x: 0px; --y: 189px; --w: 246px; --from-x: -80px; --from-y: 0px; --rot: 2deg; --delay: 0.2s" />
-              <img class="lp-atelier__piece" data-pillar="vision-produit" src="/assets/competences/web/mural_03_research_matrix_center_left.webp" alt="Matrice de recherche utilisateur" width="245" height="325" loading="lazy" decoding="async" style="--x: 270px; --y: 229px; --w: 245px; --from-x: -40px; --from-y: 40px; --rot: -2deg; --delay: 0.3s" />
-              <img class="lp-atelier__piece" data-pillar="culture-builder" src="/assets/competences/web/mural_04_storyboard_flows_bottom_left.webp" alt="Storyboard et flows de l'expérience" width="284" height="204" loading="lazy" decoding="async" style="--x: 41px; --y: 373px; --w: 284px; --from-x: -50px; --from-y: 60px; --rot: 1.5deg; --delay: 0.4s" />
-              <img class="lp-atelier__piece" data-pillar="ateliers" src="/assets/competences/web/mural_05_figjam_board_top_center.webp" alt="Board FigJam d'atelier de co-conception" width="324" height="204" loading="lazy" decoding="async" style="--x: 557px; --y: -7px; --w: 324px; --from-x: 0px; --from-y: -60px; --rot: -1.5deg; --delay: 0.15s" />
-              <img class="lp-atelier__piece" data-pillar="ateliers" src="/assets/competences/web/mural_06_user_test_doc_mid_center.webp" alt="Compte rendu de test utilisateurs avec Forum Études" width="161" height="206" loading="lazy" decoding="async" style="--x: 763px; --y: 183px; --w: 161px; --from-x: 20px; --from-y: -20px; --rot: 2.5deg; --delay: 0.25s" />
-              <img class="lp-atelier__piece" data-pillar="ateliers" src="/assets/competences/web/mural_07_workshop_visio_bottom_center.webp" alt="Atelier collaboratif en visio avec les équipes" width="323" height="204" loading="lazy" decoding="async" style="--x: 603px; --y: 429px; --w: 323px; --from-x: 0px; --from-y: 70px; --rot: -2deg; --delay: 0.35s" />
-              <img class="lp-atelier__piece" data-pillar="culture-builder" src="/assets/competences/web/mural_08_architecture_canvas_mid_bottom.webp" alt="Canvas d'architecture produit" width="350" height="204" loading="lazy" decoding="async" style="--x: 349px; --y: 484px; --w: 350px; --from-x: 30px; --from-y: 60px; --rot: 1deg; --delay: 0.45s" />
-              <img class="lp-atelier__piece" data-pillar="culture-builder" src="/assets/competences/web/mural_09_mobile_screens_flow_top_right.webp" alt="Flow d'écrans mobiles de l'application" width="441" height="204" loading="lazy" decoding="async" style="--x: 853px; --y: 45px; --w: 441px; --from-x: 80px; --from-y: -40px; --rot: 2deg; --delay: 0.2s" />
+              <figure class="olin-picture-frame lp-atelier__piece" data-pillar="vision-produit" style="--x: 33px; --y: 11px; --w: 359px; --from-x: -60px; --from-y: -40px; --rot: -3deg; --delay: 0.1s">
+                <div class="lp-atelier__shot">
+                  <img src="/assets/competences/web/mural_01_use_case_blueprint_top_left.webp" alt="Service blueprint « Use case : designing the before and after maintenance »" width="359" height="204" loading="lazy" decoding="async" />
+                </div>
+              </figure>
+              <figure class="olin-picture-frame lp-atelier__piece" data-pillar="ateliers" style="--x: 0px; --y: 189px; --w: 246px; --from-x: -80px; --from-y: 0px; --rot: 2deg; --delay: 0.2s">
+                <div class="lp-atelier__shot">
+                  <img src="/assets/competences/web/mural_02_ux_wireframes_mid_left.webp" alt="Wireframes UX et matrice de parcours" width="246" height="204" loading="lazy" decoding="async" />
+                </div>
+              </figure>
+              <figure class="olin-picture-frame lp-atelier__piece" data-pillar="vision-produit" style="--x: 270px; --y: 229px; --w: 245px; --from-x: -40px; --from-y: 40px; --rot: -2deg; --delay: 0.3s">
+                <div class="lp-atelier__shot">
+                  <img src="/assets/competences/web/mural_03_research_matrix_center_left.webp" alt="Matrice de recherche utilisateur" width="245" height="325" loading="lazy" decoding="async" />
+                </div>
+              </figure>
+              <figure class="olin-picture-frame lp-atelier__piece" data-pillar="culture-builder" style="--x: 41px; --y: 373px; --w: 284px; --from-x: -50px; --from-y: 60px; --rot: 1.5deg; --delay: 0.4s">
+                <div class="lp-atelier__shot">
+                  <img src="/assets/competences/web/mural_04_storyboard_flows_bottom_left.webp" alt="Storyboard et flows de l'expérience" width="284" height="204" loading="lazy" decoding="async" />
+                </div>
+              </figure>
+              <figure class="olin-picture-frame lp-atelier__piece" data-pillar="ateliers" style="--x: 557px; --y: -7px; --w: 324px; --from-x: 0px; --from-y: -60px; --rot: -1.5deg; --delay: 0.15s">
+                <div class="olin-photo-duotone">
+                  <img src="/assets/competences/web/mural_05_figjam_board_top_center.webp" alt="Board FigJam d'atelier de co-conception" width="324" height="204" loading="lazy" decoding="async" />
+                  <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+                </div>
+              </figure>
+              <figure class="olin-picture-frame lp-atelier__piece" data-pillar="ateliers" style="--x: 763px; --y: 183px; --w: 161px; --from-x: 20px; --from-y: -20px; --rot: 2.5deg; --delay: 0.25s">
+                <div class="lp-atelier__shot">
+                  <img src="/assets/competences/web/mural_06_user_test_doc_mid_center.webp" alt="Compte rendu de test utilisateurs avec Forum Études" width="161" height="206" loading="lazy" decoding="async" />
+                </div>
+              </figure>
+              <figure class="olin-picture-frame lp-atelier__piece" data-pillar="vision-produit" style="--x: 603px; --y: 429px; --w: 323px; --from-x: 0px; --from-y: 70px; --rot: -2deg; --delay: 0.35s">
+                <div class="olin-photo-duotone">
+                  <img src="/assets/competences/web/mural_07_workshop_visio_bottom_center.webp" alt="Atelier collaboratif en visio avec les équipes" width="323" height="204" loading="lazy" decoding="async" />
+                  <span class="olin-photo-duotone__grain" aria-hidden="true"></span>
+                </div>
+              </figure>
+              <figure class="olin-picture-frame lp-atelier__piece" data-pillar="culture-builder" style="--x: 349px; --y: 484px; --w: 350px; --from-x: 30px; --from-y: 60px; --rot: 1deg; --delay: 0.45s">
+                <div class="lp-atelier__shot">
+                  <img src="/assets/competences/web/mural_08_architecture_canvas_mid_bottom.webp" alt="Canvas d'architecture produit" width="350" height="204" loading="lazy" decoding="async" />
+                </div>
+              </figure>
+              <figure class="olin-picture-frame lp-atelier__piece" data-pillar="culture-builder" style="--x: 853px; --y: 45px; --w: 441px; --from-x: 80px; --from-y: -40px; --rot: 2deg; --delay: 0.2s">
+                <div class="lp-atelier__shot">
+                  <img src="/assets/competences/web/mural_09_mobile_screens_flow_top_right.webp" alt="Flow d'écrans mobiles de l'application" width="441" height="204" loading="lazy" decoding="async" />
+                </div>
+              </figure>
               </div>
             <article class="lp-atelier__card" data-pillar="vision-produit" style="--x: 159px; --y: 76px; --w: 290px" aria-labelledby="lp-atelier-card-1">
               <h3 id="lp-atelier-card-1" class="lp-atelier__title">DONNER LE CAP : VISION PRODUIT &amp; PROTOTYPAGE STRATÉGIQUE</h3>
@@ -467,7 +484,7 @@
               <span class="olin-tag olin-tag--green olin-tag--pill"><span class="olin-tag__dot" aria-hidden="true"></span>créneaux ouverts</span>
             </div>
             <p>Échangeons de vive voix sur vos enjeux business, délais et faisabilité produit.</p>
-            <a class="olin-btn olin-btn--primary" href="mailto:olin.creativelab@gmail.com?subject=Appel%20de%2015%20min">appel de 15 min <span aria-hidden="true">↗</span></a>
+            <a class="olin-btn olin-btn--primary" href="https://cal.com/contact-excibat-z152ts/15min" target="_blank" rel="noopener">appel de 15 min <span aria-hidden="true">↗</span></a>
           </div>
           <div class="lp-contact__col">
             <div class="lp-contact__head">
